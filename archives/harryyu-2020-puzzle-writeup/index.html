@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head>
+	<title>HarryYu 的 2020 新年解密 Writeup | Berd&#039;s Playground (Deprecated)</title>
+
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="theme_author" content="dimpurr">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="application-name" content="Berd&#039;s Playground (Deprecated)">
+
+	<link rel="stylesheet" href="/wp-content/themes/clearision/style.css?t=1616595409">
+	<link rel="stylesheet" href="/wp-content/themes/clearision/style.opacity.css?t=1616595500">
+<style>body { background-image: url("https://static.berd.moe/images/background_repeat.png"); }</style>
+	<link rel="home" href="/">
+	<link rel="profile" href="https://gmpg.org/xfn/11">
+	<link rel="pingback" href="/xmlrpc.php">
+	<link rel="shortcut icon" type="image/x-icon">
+
+	<link rel="alternate" type="application/rdf+xml" title="RSS 1.0" href="/feed/rss/">
+	<link rel="alternate" type="application/rss+xml" title="RSS 2.0" href="/feed/">
+	<link rel="alternate" type="application/atom+xml" title="ATOM 1.0" href="/feed/atom/">
+
+	<!--[if lt IE 9]>
+	<script src="/wp-content/themes/clearision/js/html5shiv.min.js" type="text/javascript"></script>
+	<![endif]-->
+
+	<meta name="robots" content="max-image-preview:large">
+<link rel="dns-prefetch" href="//s.w.org">
+		<script type="text/javascript">
+			window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/13.1.0\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/13.1.0\/svg\/","svgExt":".svg","source":{"concatemoji":"\/wp-includes\/js\/wp-emoji-release.min.js?ver=5.8"}};
+			!function(e,a,t){var n,r,o,i=a.createElement("canvas"),p=i.getContext&&i.getContext("2d");function s(e,t){var a=String.fromCharCode;p.clearRect(0,0,i.width,i.height),p.fillText(a.apply(this,e),0,0);e=i.toDataURL();return p.clearRect(0,0,i.width,i.height),p.fillText(a.apply(this,t),0,0),e===i.toDataURL()}function c(e){var t=a.createElement("script");t.src=e,t.defer=t.type="text/javascript",a.getElementsByTagName("head")[0].appendChild(t)}for(o=Array("flag","emoji"),t.supports={everything:!0,everythingExceptFlag:!0},r=0;r<o.length;r++)t.supports[o[r]]=function(e){if(!p||!p.fillText)return!1;switch(p.textBaseline="top",p.font="600 32px Arial",e){case"flag":return s([127987,65039,8205,9895,65039],[127987,65039,8203,9895,65039])?!1:!s([55356,56826,55356,56819],[55356,56826,8203,55356,56819])&&!s([55356,57332,56128,56423,56128,56418,56128,56421,56128,56430,56128,56423,56128,56447],[55356,57332,8203,56128,56423,8203,56128,56418,8203,56128,56421,8203,56128,56430,8203,56128,56423,8203,56128,56447]);case"emoji":return!s([10084,65039,8205,55357,56613],[10084,65039,8203,55357,56613])}return!1}(o[r]),t.supports.everything=t.supports.everything&&t.supports[o[r]],"flag"!==o[r]&&(t.supports.everythingExceptFlag=t.supports.everythingExceptFlag&&t.supports[o[r]]);t.supports.everythingExceptFlag=t.supports.everythingExceptFlag&&!t.supports.flag,t.DOMReady=!1,t.readyCallback=function(){t.DOMReady=!0},t.supports.everything||(n=function(){t.readyCallback()},a.addEventListener?(a.addEventListener("DOMContentLoaded",n,!1),e.addEventListener("load",n,!1)):(e.attachEvent("onload",n),a.attachEvent("onreadystatechange",function(){"complete"===a.readyState&&t.readyCallback()})),(n=t.source||{}).concatemoji?c(n.concatemoji):n.wpemoji&&n.twemoji&&(c(n.twemoji),c(n.wpemoji)))}(window,document,window._wpemojiSettings);
+		</script>
+		<style type="text/css">img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}</style>
+	<link rel="stylesheet" id="wp-block-library-css" href="/wp-includes/css/dist/block-library/style.min.css?ver=5.8" type="text/css" media="all">
+<link rel="stylesheet" id="azc-tsh-css" href="/wp-content/plugins/azurecurve-toggle-showhide/style.css?ver=1.0.0" type="text/css" media="all">
+<style id="azc-tsh-inline-css" type="text/css">.azc_tsh_toggle_active {
+							background-image: url(/wp-content/plugins/azurecurve-toggle-showhide/images/azure_up.png) !important;
+						}
+						.azc_tsh_toggle_open_active {
+							background-image: url(/wp-content/plugins/azurecurve-toggle-showhide/images/azure_up.png);
+						}
+						.azc_tsh_toggle {
+							background-image: url(/wp-content/plugins/azurecurve-toggle-showhide/images/azure_down.png);
+						}
+						.azc_tsh_toggle_open {
+							background-image: url(/wp-content/plugins/azurecurve-toggle-showhide/images/azure_down.png) !important;
+						}</style>
+<script type="text/javascript" src="/wp-includes/js/jquery/jquery.min.js?ver=3.6.0" id="jquery-core-js"></script>
+<script type="text/javascript" src="/wp-includes/js/jquery/jquery-migrate.min.js?ver=3.3.2" id="jquery-migrate-js"></script>
+<script type="text/javascript" src="/wp-content/plugins/azurecurve-toggle-showhide/jquery.js?ver=3.9.1" id="azc-tsh-js"></script>
+<link rel="https://api.w.org/" href="/wp-json/">
+<link rel="alternate" type="application/json" href="/wp-json/wp/v2/posts/402">
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="/xmlrpc.php?rsd">
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="/wp-includes/wlwmanifest.xml"> 
+<meta name="generator" content="WordPress 5.8">
+<link rel="canonical" href="/archives/harryyu-2020-puzzle-writeup/">
+<link rel="shortlink" href="/?p=402">
+<link rel="alternate" type="application/json+oembed" href="/wp-json/oembed/1.0/embed?url=https%3A%2F%2F%2Farchives%2Fharryyu-2020-puzzle-writeup%2F">
+<link rel="alternate" type="text/xml+oembed" href="/wp-json/oembed/1.0/embed?url=https%3A%2F%2F%2Farchives%2Fharryyu-2020-puzzle-writeup%2F&#038;format=xml">
+<style type="text/css">.recentcomments a{display:inline !important;padding:0 !important;margin:0 !important;}</style>
+<link rel="icon" href="/wp-content/uploads/2019/05/icon.png" sizes="32x32">
+<link rel="icon" href="/wp-content/uploads/2019/05/icon.png" sizes="192x192">
+<link rel="apple-touch-icon" href="/wp-content/uploads/2019/05/icon.png">
+<meta name="msapplication-TileImage" content="/wp-content/uploads/2019/05/icon.png">
+		<style type="text/css" id="wp-custom-css">/*
+You can add your own CSS here.
+
+Click the help icon above to learn more.
+*/
+body > * {
+	filter: grayscale();
+}</style>
+		</head>
+
+<body class="post-template-default single single-post postid-402 single-format-standard">
+	<div id="page">
+		<hgroup id="ctn_header">
+			<div id="title">
+				<h1 id="site-title">
+					<span>
+						<a href="/" title="Berd&#039;s Playground (Deprecated)" rel="home">Berd&#039;s Playground (Deprecated)</a>
+					</span>
+				</h1>
+				<h2 id="site-description">Won&#039;t receive any further updates.</h2>
+			</div>
+			<div id="title_r">
+								<a href="/feed/" target="_blank"><button id="tr_rss"></button></a>
+				<a href="/wp-admin/" target="_blank"><button id="tr_admin"></button></a>
+				<span id="tr_clear"></span>
+				<form id="tr_s_f" method="get" action="/">
+					<input id="tr_search" type="text" name="s" placeholder="" size="10">
+				</form>
+			</div>
+			<div class="clearfix"></div>
+		</hgroup>
+		<div id="float">
+			<a href="/" title="Berd&#039;s Playground (Deprecated)" rel="home">
+				<img id="logo" alt="Berd&#039;s Playground (Deprecated)" title="Berd&#039;s Playground (Deprecated)" src="/wp-content/uploads/2019/05/icon.png">
+			</a>
+			<nav id="nav" role="navigation">
+				<div class="menu-sliding-main-menu-container"><ul id="menu-sliding-main-menu" class="menu">
+<li id="menu-item-388" class="menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor menu-item-388"><a href="/categories/magic/">技术</a></li>
+<li id="menu-item-371" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-371"><a href="/categories/magic/repair/">踩坑</a></li>
+<li id="menu-item-372" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-372"><a href="/categories/magic/code/">迷の代码</a></li>
+<li id="menu-item-373" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-373"><a href="/categories/magic/diy/">硬核魔改</a></li>
+<li id="menu-item-374" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-374"><a href="/categories/other/">零碎内容</a></li>
+</ul></div>			</nav>
+			<nav id="next" role="sencond_navigation">
+				<div class="menu-sliding-assist-menu-container"><ul id="menu-sliding-assist-menu" class="menu">
+<li id="menu-item-101" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-101"><a href="/about/">关于 &#038; 留言板</a></li>
+</ul></div>			</nav>
+		</div>
+<div id="ctn">
+	<div id="content">
+					<article class="post-402 post type-post status-publish format-standard hentry category-ctf tag-writeup">
+				<hgroup class="post_hctn">
+	<div class="post_time">
+		<div class="post_t_d">01/1</div>
+		<div class="post_t_u">04:33</div>
+	</div>
+
+	<div class="post_h_l">
+		<span class="post_ct"><a href="/categories/magic/ctf/" rel="category tag">CTF</a></span>
+		<h2 class="post_h"><a href="/archives/harryyu-2020-puzzle-writeup/">HarryYu 的 2020 新年解密 Writeup</a></h2>
+
+		<div class="post_tag">
+			
+			<a href="/tags/writeup/" rel="tag">Writeup</a>
+			<span class="post_c">
+				<a href="/archives/harryyu-2020-puzzle-writeup/#respond">No Reply</a>
+
+				
+							</span>
+		</div>
+	</div>
+</hgroup>
+
+<div class="post_t">
+			
+<h2>0x00 题目地址</h2>
+
+
+
+<p>在群里看到这个解密游戏, 感觉很有意思就玩了一下, 还是挺好玩的. 看了一眼红包都领完了, 正好失眠就来写个 Writeup.</p>
+
+
+
+<p>URL: <a href="https://harrynull.tech/2020/">https://harrynull.tech/2020/</a></p>
+
+
+
+<div class="wp-block-image"><figure class="aligncenter size-large"><img loading="lazy" width="853" height="419" src="/wp-content/uploads/2020/01/snipaste_20200101_035426.png" alt="" class="wp-image-403" srcset="/wp-content/uploads/2020/01/snipaste_20200101_035426.png 853w, /wp-content/uploads/2020/01/snipaste_20200101_035426-300x147.png 300w, /wp-content/uploads/2020/01/snipaste_20200101_035426-768x377.png 768w" sizes="(max-width: 853px) 100vw, 853px"><figcaption> 顺便放一张截图 </figcaption></figure></div>
+
+
+
+<span id="more-402"></span>
+
+
+
+<h2>0x01 第一题 &#8211; Morse</h2>
+
+
+
+<p>刚刚拿到这题看着这个空白页面和满屏幕的 LOLOLO 我还是懵了很久的, 想了半天发现 LO 如果输入拼音只会有“咯”这一个字, 就把答案当成 <strong><em>咯</em></strong> 了&#8230;</p>
+
+
+
+<div class="wp-block-image"><figure class="aligncenter size-large"><img loading="lazy" width="1024" height="732" src="/wp-content/uploads/2020/01/snipaste_20200101_035557-1024x732.png" alt="" class="wp-image-404" srcset="/wp-content/uploads/2020/01/snipaste_20200101_035557-1024x732.png 1024w, /wp-content/uploads/2020/01/snipaste_20200101_035557-300x214.png 300w, /wp-content/uploads/2020/01/snipaste_20200101_035557-768x549.png 768w, /wp-content/uploads/2020/01/snipaste_20200101_035557.png 1395w" sizes="(max-width: 1024px) 100vw, 1024px"></figure></div>
+
+
+
+<p>没想到关键点藏在 WebSocket 的发送时间上, 难怪页面开头说了一句 &#8220;建议在较好的网络环境下游玩以获得最佳体验&#8221;. 当时只当是网络不好可能造成 WebSocket 掉线, 没想太多. 知道和时间相关就好办了, 很容易猜测到可能是 Morse, 写一个简单的 JS 输出 WebSocket 的发送时间:</p>
+
+
+
+<div class="wp-block-image"><figure class="aligncenter size-large"><img loading="lazy" width="777" height="449" src="/wp-content/uploads/2020/01/snipaste_20200101_041829.png" alt="" class="wp-image-410" srcset="/wp-content/uploads/2020/01/snipaste_20200101_041829.png 777w, /wp-content/uploads/2020/01/snipaste_20200101_041829-300x173.png 300w, /wp-content/uploads/2020/01/snipaste_20200101_041829-768x444.png 768w" sizes="(max-width: 777px) 100vw, 777px"></figure></div>
+
+
+
+<p>采集到几分钟的数据应该就足够了, 将数据粘贴到文本编辑器进行分析, 发现时间长度大致分为 1s, 2s, 3s, 6s 几种. 根据出现频率不难猜测 6s 对应的可能是一个完整的发送周期结束, 据此进行分割再观察.</p>
+
+
+
+<div class="wp-block-image"><figure class="aligncenter size-large"><img loading="lazy" width="259" height="278" src="/wp-content/uploads/2020/01/snipaste_20200101_040340.png" alt="" class="wp-image-405"></figure></div>
+
+
+
+<p>在一个周期中, 可以看到 L:3 出现了多次, 但频率并非很高, 猜测 L:3 指示的是两个字符的间隔, 据此进行分割后不难推断出 O:1 对应点, O:2 对应横, L:1 对应两个电码的间隔, 而 L:2 可能是网络波动造成的. 根据上面的分析对电文进行替换, 得到下图</p>
+
+
+
+<div class="wp-block-image"><figure class="aligncenter size-large"><img loading="lazy" width="539" height="889" src="/wp-content/uploads/2020/01/snipaste_20200101_040749.png" alt="" class="wp-image-406" srcset="/wp-content/uploads/2020/01/snipaste_20200101_040749.png 539w, /wp-content/uploads/2020/01/snipaste_20200101_040749-182x300.png 182w" sizes="(max-width: 539px) 100vw, 539px"></figure></div>
+
+
+
+<p>不难看出红框中的数据应该就是服务器真正想发送的, 其他不匹配的数据都存在网络波动造成的干扰. 将这段 Morse 进行解码, 得到一串字符 <code>e5afb9</code></p>
+
+
+
+<p>由于我是先做了后面几个题才知道第一题是 Morse 的, 这时就猜测这串字符可能是某种编码, 而三个字节的编码很容易联想到 UTF-8.</p>
+
+
+
+<div class="wp-block-image"><figure class="aligncenter size-large"><img loading="lazy" width="279" height="63" src="/wp-content/uploads/2020/01/snipaste_20200101_041112.png" alt="" class="wp-image-407"><figcaption>作者: 对 <img src="/wp-content/plugins/tiebaface/images/yellow_16.png" style="width: 24px !important;height: 24px !important;min-height: 0 !important;"></figcaption></figure></div>
+
+
+
+<p>解码得到第一题的答案, 完成</p>
+
+
+
+<h2>0x02 第二关 &#8211; 二分法查找冲突</h2>
+
+
+
+<p>这一关的设计比较有意思, 中间延迟是服务器做的, 而且每次连接的冲突编号都不一样, 不能进行爆破.</p>
+
+
+
+<div class="wp-block-image"><figure class="aligncenter size-large"><img loading="lazy" width="1024" height="370" src="/wp-content/uploads/2020/01/snipaste_20200101_041749-1024x370.png" alt="" class="wp-image-408" srcset="/wp-content/uploads/2020/01/snipaste_20200101_041749-1024x370.png 1024w, /wp-content/uploads/2020/01/snipaste_20200101_041749-300x108.png 300w, /wp-content/uploads/2020/01/snipaste_20200101_041749-768x277.png 768w, /wp-content/uploads/2020/01/snipaste_20200101_041749.png 1044w" sizes="(max-width: 1024px) 100vw, 1024px"></figure></div>
+
+
+
+<p>写一段小 JS 帮助我们进行批量选择</p>
+
+
+
+<div class="wp-block-image"><figure class="aligncenter size-large"><img loading="lazy" width="385" height="272" src="/wp-content/uploads/2020/01/snipaste_20200101_041834.png" alt="" class="wp-image-409" srcset="/wp-content/uploads/2020/01/snipaste_20200101_041834.png 385w, /wp-content/uploads/2020/01/snipaste_20200101_041834-300x212.png 300w" sizes="(max-width: 385px) 100vw, 385px"></figure></div>
+
+
+
+<p>然后使用二分法进行查找就行了, 这里给一下大致思路, 不上图</p>
+
+
+
+<ul>
+<li>将数据持续分为 A B 两块, 持续排除其他 ID 直到两块各包含一个冲突 ID</li>
+<li>保持 A 的选择状态不变, 在 B 中用二分法查找出精确的 ID</li>
+<li>在 B 中只选中冲突 ID, 然后在 A 中使用二分法查找冲突 ID</li>
+<li>最后得到 A 和 B 中各自的冲突 ID, 勾选并提交即可</li>
+</ul>
+
+
+
+<p>提交正确的两个选项后服务器就会返回口令, 完成</p>
+
+
+
+<h2>0x03 第三关 &#8211; WebASM!</h2>
+
+
+
+<p>这关的解题思路比较反常规. 一开始进入页面只有一个密码输入框, 查看源代码发现调用了 WebASM 校验密码.</p>
+
+
+
+<div class="wp-block-image"><figure class="aligncenter size-large"><img loading="lazy" width="786" height="689" src="/wp-content/uploads/2020/01/snipaste_20200101_041928.png" alt="" class="wp-image-411" srcset="/wp-content/uploads/2020/01/snipaste_20200101_041928.png 786w, /wp-content/uploads/2020/01/snipaste_20200101_041928-300x263.png 300w, /wp-content/uploads/2020/01/snipaste_20200101_041928-768x673.png 768w" sizes="(max-width: 786px) 100vw, 786px"></figure></div>
+
+
+
+<p>常规思路应该是对这个 lvl3.wasm 进行逆向, 而我也确实这么搞了一下.</p>
+
+
+
+<div class="wp-block-image"><figure class="aligncenter"><img loading="lazy" width="304" height="479" src="/wp-content/uploads/2020/01/photo_2020-01-01_04-21-32.jpg" alt="" class="wp-image-413" srcset="/wp-content/uploads/2020/01/photo_2020-01-01_04-21-32.jpg 304w, /wp-content/uploads/2020/01/photo_2020-01-01_04-21-32-190x300.jpg 190w" sizes="(max-width: 304px) 100vw, 304px"></figure></div>
+
+
+
+<div class="wp-block-image"><figure class="aligncenter size-large"><img loading="lazy" width="510" height="419" src="/wp-content/uploads/2020/01/photo_2020-01-01_04-21-48-1.jpg" alt="" class="wp-image-415" srcset="/wp-content/uploads/2020/01/photo_2020-01-01_04-21-48-1.jpg 510w, /wp-content/uploads/2020/01/photo_2020-01-01_04-21-48-1-300x246.jpg 300w" sizes="(max-width: 510px) 100vw, 510px"><figcaption>  甚至还写了一点伪代码</figcaption></figure></div>
+
+
+
+<p>但是这个算法看起来并不容易逆推结果, 于是换个思路. 由于页面中调用了 <code>.charCodeAt(0)</code> 来做输入, 而且有明确的提示输入只是一个汉字, 而在 UTF16 中汉字只有 20991 个, 不妨直接套一个 for 循环进行爆破.</p>
+
+
+
+<div class="wp-block-image"><figure class="aligncenter size-large"><img loading="lazy" width="398" height="240" src="/wp-content/uploads/2020/01/snipaste_20200101_042719.png" alt="" class="wp-image-416" srcset="/wp-content/uploads/2020/01/snipaste_20200101_042719.png 398w, /wp-content/uploads/2020/01/snipaste_20200101_042719-300x181.png 300w" sizes="(max-width: 398px) 100vw, 398px"></figure></div>
+
+
+
+<p>按下回车的瞬间就出结果了, 轻松愉快, <em>呐</em>. <img src="/wp-content/plugins/tiebaface/images/yellow_16.png" style="width: 24px !important;height: 24px !important;min-height: 0 !important;"></p>
+
+
+
+<h2>0x04 第四关 &#8211; Whitespace!</h2>
+
+
+
+<p>这关的提示挺明显的, 首先页面进去只能看到一行提示, 查看源代码才发现前面有一段空白.</p>
+
+
+
+<div class="wp-block-image"><figure class="aligncenter size-large"><img loading="lazy" width="662" height="330" src="/wp-content/uploads/2020/01/snipaste_20200101_042913.png" alt="" class="wp-image-417" srcset="/wp-content/uploads/2020/01/snipaste_20200101_042913.png 662w, /wp-content/uploads/2020/01/snipaste_20200101_042913-300x150.png 300w" sizes="(max-width: 662px) 100vw, 662px"></figure></div>
+
+
+
+<p>前半段 Hint 告诉我们要找奇怪的语言, 可以在 <a href="https://esolangs.org/wiki/Language_list">https://esolangs.org/wiki/Language_list</a> 找到一个比较完整的列表, 看到这一串空白明显就是某迷惑 Whitespace 语言.</p>
+
+
+
+<p>随便找一个在线 IDE:  <a href="https://vii5ard.github.io/whitespace/">https://vii5ard.github.io/whitespace/</a> 输入代码查看汇编, 得到数字  <em>21915+1=21916</em></p>
+
+
+
+<div class="wp-block-image"><figure class="aligncenter size-large"><img loading="lazy" width="811" height="223" src="/wp-content/uploads/2020/01/snipaste_20200101_043059.png" alt="" class="wp-image-418" srcset="/wp-content/uploads/2020/01/snipaste_20200101_043059.png 811w, /wp-content/uploads/2020/01/snipaste_20200101_043059-300x82.png 300w, /wp-content/uploads/2020/01/snipaste_20200101_043059-768x211.png 768w" sizes="(max-width: 811px) 100vw, 811px"></figure></div>
+
+
+
+<p>再结合 UTF-16 的提示, 直接使用 String.fromCharCode() 即可得到结果, 完成</p>
+
+
+
+<div class="wp-block-image"><figure class="aligncenter size-large"><img loading="lazy" width="223" height="71" src="/wp-content/uploads/2020/01/snipaste_20200101_043228.png" alt="" class="wp-image-419"></figure></div>
+		<h2 class="post_h_quote">HarryYu 的 2020 新年解密 Writeup</h2>
+</div>				<nav id="post_nav">
+					<span id="p_n_l"><a href="/archives/remote-desktop-setup-ssl-certificate/" rel="prev">&larr; 简单的给远程桌面连接 (Remote Desktop) 配置自定义 SSL 证书</a></span>
+					<span id="p_n_r"><a href="/archives/milkice-2020-redpacket-writeup/" rel="next">奶冰的 2020 新年红包 Writeup &rarr;</a></span>
+				</nav>
+				
+<div id="cmt" class="cmt">
+	
+	</div>			</article>
+			</div>
+</div>
+
+<div id="sidebar">
+	<div class="widget" id="one">
+			</div>
+	<div class="widget" id="two">
+			</div>
+	<div class="clearfix"></div>
+</div>
+<footer id="footer" role="contentinfo">
+    
+    <a href="http://dimpurr.com/" title="Dimpurr (钉子)" target="_blank">Dimpurr</a>'s
+    <a href="http://blog.dimpurr.com/clearision/" title="Clearision" target="_blank">Clearision</a><br>
+    Powered by <a href="https://wordpress.org/" title="WordPress" target="_blank">WordPress</a>
+
+    <script src="/wp-content/themes/clearision/js/script.js" type="text/javascript"></script>
+    <script type="text/javascript" src="/wp-includes/js/wp-embed.min.js?ver=5.8" id="wp-embed-js"></script>
+</footer>
+
+</div>
+</body>
+</html>

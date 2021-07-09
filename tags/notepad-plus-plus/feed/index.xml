@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>Notepad++ &#8211; Berd&#039;s Playground (Deprecated)</title>
+	<atom:link href="/tags/notepad-plus-plus/feed/" rel="self" type="application/rss+xml" />
+	<link>/</link>
+	<description>Won&#039;t receive any further updates.</description>
+	<lastBuildDate>Tue, 29 Jun 2021 01:02:56 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=5.8</generator>
+
+<image>
+	<url>/wp-content/uploads/2019/05/icon.png</url>
+	<title>Notepad++ &#8211; Berd&#039;s Playground (Deprecated)</title>
+	<link>/</link>
+	<width>32</width>
+	<height>32</height>
+</image> 
+	<item>
+		<title>&#8220;修复&#8221; NppExplorer 造成的 Notepad++ 卡死并且无法打开</title>
+		<link>/archives/fix-nppexplorer-stuck/</link>
+		
+		<dc:creator><![CDATA[FENGberd]]></dc:creator>
+		<pubDate>Sun, 25 Dec 2016 04:57:12 +0000</pubDate>
+				<category><![CDATA[踩坑]]></category>
+		<category><![CDATA[Notepad++]]></category>
+		<category><![CDATA[Windows]]></category>
+		<guid isPermaLink="false">/?p=65</guid>
+
+					<description><![CDATA[如果你某日遇到Notepad++突然卡死并且强制关闭后无法再次打开的问题,本文也许能告诉你一个正(luan )确(gao) 的修复(调教) 方法 如果你的Windows错误报告长的是这样↓ 并且Google后又不想就重启电脑(这已经成技术&#8221;专家&#8221;回复问题的标准格式了么),比如我的机器(写这篇文章的时候)关机大概需要30min左右- -↓ 再回过头看错误报告,里面不是说Waiting for&#160;SearchIndexer.exe么,我猜大概是这玩意卡死了 那就简单粗暴的解决就好了(x 稍等一会给SearchIndexer重启&#8230;. 然后就修好了]]></description>
+		
+		
+		
+			</item>
+	</channel>
+</rss>

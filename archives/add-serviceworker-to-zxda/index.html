@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head>
+	<title>给 ZXDA 加了个 ServiceWorker, 效果似乎还不错呢 | Berd&#039;s Playground (Deprecated)</title>
+
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="theme_author" content="dimpurr">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="application-name" content="Berd&#039;s Playground (Deprecated)">
+
+	<link rel="stylesheet" href="/wp-content/themes/clearision/style.css?t=1616595409">
+	<link rel="stylesheet" href="/wp-content/themes/clearision/style.opacity.css?t=1616595500">
+<style>body { background-image: url("https://static.berd.moe/images/background_repeat.png"); }</style>
+	<link rel="home" href="/">
+	<link rel="profile" href="https://gmpg.org/xfn/11">
+	<link rel="pingback" href="/xmlrpc.php">
+	<link rel="shortcut icon" type="image/x-icon">
+
+	<link rel="alternate" type="application/rdf+xml" title="RSS 1.0" href="/feed/rss/">
+	<link rel="alternate" type="application/rss+xml" title="RSS 2.0" href="/feed/">
+	<link rel="alternate" type="application/atom+xml" title="ATOM 1.0" href="/feed/atom/">
+
+	<!--[if lt IE 9]>
+	<script src="/wp-content/themes/clearision/js/html5shiv.min.js" type="text/javascript"></script>
+	<![endif]-->
+
+	<meta name="robots" content="max-image-preview:large">
+<link rel="dns-prefetch" href="//s.w.org">
+		<script type="text/javascript">
+			window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/13.1.0\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/13.1.0\/svg\/","svgExt":".svg","source":{"concatemoji":"\/wp-includes\/js\/wp-emoji-release.min.js?ver=5.8"}};
+			!function(e,a,t){var n,r,o,i=a.createElement("canvas"),p=i.getContext&&i.getContext("2d");function s(e,t){var a=String.fromCharCode;p.clearRect(0,0,i.width,i.height),p.fillText(a.apply(this,e),0,0);e=i.toDataURL();return p.clearRect(0,0,i.width,i.height),p.fillText(a.apply(this,t),0,0),e===i.toDataURL()}function c(e){var t=a.createElement("script");t.src=e,t.defer=t.type="text/javascript",a.getElementsByTagName("head")[0].appendChild(t)}for(o=Array("flag","emoji"),t.supports={everything:!0,everythingExceptFlag:!0},r=0;r<o.length;r++)t.supports[o[r]]=function(e){if(!p||!p.fillText)return!1;switch(p.textBaseline="top",p.font="600 32px Arial",e){case"flag":return s([127987,65039,8205,9895,65039],[127987,65039,8203,9895,65039])?!1:!s([55356,56826,55356,56819],[55356,56826,8203,55356,56819])&&!s([55356,57332,56128,56423,56128,56418,56128,56421,56128,56430,56128,56423,56128,56447],[55356,57332,8203,56128,56423,8203,56128,56418,8203,56128,56421,8203,56128,56430,8203,56128,56423,8203,56128,56447]);case"emoji":return!s([10084,65039,8205,55357,56613],[10084,65039,8203,55357,56613])}return!1}(o[r]),t.supports.everything=t.supports.everything&&t.supports[o[r]],"flag"!==o[r]&&(t.supports.everythingExceptFlag=t.supports.everythingExceptFlag&&t.supports[o[r]]);t.supports.everythingExceptFlag=t.supports.everythingExceptFlag&&!t.supports.flag,t.DOMReady=!1,t.readyCallback=function(){t.DOMReady=!0},t.supports.everything||(n=function(){t.readyCallback()},a.addEventListener?(a.addEventListener("DOMContentLoaded",n,!1),e.addEventListener("load",n,!1)):(e.attachEvent("onload",n),a.attachEvent("onreadystatechange",function(){"complete"===a.readyState&&t.readyCallback()})),(n=t.source||{}).concatemoji?c(n.concatemoji):n.wpemoji&&n.twemoji&&(c(n.twemoji),c(n.wpemoji)))}(window,document,window._wpemojiSettings);
+		</script>
+		<style type="text/css">img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}</style>
+	<link rel="stylesheet" id="wp-block-library-css" href="/wp-includes/css/dist/block-library/style.min.css?ver=5.8" type="text/css" media="all">
+<link rel="stylesheet" id="azc-tsh-css" href="/wp-content/plugins/azurecurve-toggle-showhide/style.css?ver=1.0.0" type="text/css" media="all">
+<style id="azc-tsh-inline-css" type="text/css">.azc_tsh_toggle_active {
+							background-image: url(/wp-content/plugins/azurecurve-toggle-showhide/images/azure_up.png) !important;
+						}
+						.azc_tsh_toggle_open_active {
+							background-image: url(/wp-content/plugins/azurecurve-toggle-showhide/images/azure_up.png);
+						}
+						.azc_tsh_toggle {
+							background-image: url(/wp-content/plugins/azurecurve-toggle-showhide/images/azure_down.png);
+						}
+						.azc_tsh_toggle_open {
+							background-image: url(/wp-content/plugins/azurecurve-toggle-showhide/images/azure_down.png) !important;
+						}</style>
+<script type="text/javascript" src="/wp-includes/js/jquery/jquery.min.js?ver=3.6.0" id="jquery-core-js"></script>
+<script type="text/javascript" src="/wp-includes/js/jquery/jquery-migrate.min.js?ver=3.3.2" id="jquery-migrate-js"></script>
+<script type="text/javascript" src="/wp-content/plugins/azurecurve-toggle-showhide/jquery.js?ver=3.9.1" id="azc-tsh-js"></script>
+<link rel="https://api.w.org/" href="/wp-json/">
+<link rel="alternate" type="application/json" href="/wp-json/wp/v2/posts/139">
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="/xmlrpc.php?rsd">
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="/wp-includes/wlwmanifest.xml"> 
+<meta name="generator" content="WordPress 5.8">
+<link rel="canonical" href="/archives/add-serviceworker-to-zxda/">
+<link rel="shortlink" href="/?p=139">
+<link rel="alternate" type="application/json+oembed" href="/wp-json/oembed/1.0/embed?url=https%3A%2F%2F%2Farchives%2Fadd-serviceworker-to-zxda%2F">
+<link rel="alternate" type="text/xml+oembed" href="/wp-json/oembed/1.0/embed?url=https%3A%2F%2F%2Farchives%2Fadd-serviceworker-to-zxda%2F&#038;format=xml">
+<style type="text/css">.recentcomments a{display:inline !important;padding:0 !important;margin:0 !important;}</style>
+<link rel="icon" href="/wp-content/uploads/2019/05/icon.png" sizes="32x32">
+<link rel="icon" href="/wp-content/uploads/2019/05/icon.png" sizes="192x192">
+<link rel="apple-touch-icon" href="/wp-content/uploads/2019/05/icon.png">
+<meta name="msapplication-TileImage" content="/wp-content/uploads/2019/05/icon.png">
+		<style type="text/css" id="wp-custom-css">/*
+You can add your own CSS here.
+
+Click the help icon above to learn more.
+*/
+body > * {
+	filter: grayscale();
+}</style>
+		</head>
+
+<body class="post-template-default single single-post postid-139 single-format-standard">
+	<div id="page">
+		<hgroup id="ctn_header">
+			<div id="title">
+				<h1 id="site-title">
+					<span>
+						<a href="/" title="Berd&#039;s Playground (Deprecated)" rel="home">Berd&#039;s Playground (Deprecated)</a>
+					</span>
+				</h1>
+				<h2 id="site-description">Won&#039;t receive any further updates.</h2>
+			</div>
+			<div id="title_r">
+								<a href="/feed/" target="_blank"><button id="tr_rss"></button></a>
+				<a href="/wp-admin/" target="_blank"><button id="tr_admin"></button></a>
+				<span id="tr_clear"></span>
+				<form id="tr_s_f" method="get" action="/">
+					<input id="tr_search" type="text" name="s" placeholder="" size="10">
+				</form>
+			</div>
+			<div class="clearfix"></div>
+		</hgroup>
+		<div id="float">
+			<a href="/" title="Berd&#039;s Playground (Deprecated)" rel="home">
+				<img id="logo" alt="Berd&#039;s Playground (Deprecated)" title="Berd&#039;s Playground (Deprecated)" src="/wp-content/uploads/2019/05/icon.png">
+			</a>
+			<nav id="nav" role="navigation">
+				<div class="menu-sliding-main-menu-container"><ul id="menu-sliding-main-menu" class="menu">
+<li id="menu-item-388" class="menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor menu-item-388"><a href="/categories/magic/">技术</a></li>
+<li id="menu-item-371" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-371"><a href="/categories/magic/repair/">踩坑</a></li>
+<li id="menu-item-372" class="menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor current-menu-parent current-post-parent menu-item-372"><a href="/categories/magic/code/">迷の代码</a></li>
+<li id="menu-item-373" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-373"><a href="/categories/magic/diy/">硬核魔改</a></li>
+<li id="menu-item-374" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-374"><a href="/categories/other/">零碎内容</a></li>
+</ul></div>			</nav>
+			<nav id="next" role="sencond_navigation">
+				<div class="menu-sliding-assist-menu-container"><ul id="menu-sliding-assist-menu" class="menu">
+<li id="menu-item-101" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-101"><a href="/about/">关于 &#038; 留言板</a></li>
+</ul></div>			</nav>
+		</div>
+<div id="ctn">
+	<div id="content">
+					<article class="post-139 post type-post status-publish format-standard hentry category-outdated category-code tag-javascript tag-serviceworker tag-zxda">
+				<hgroup class="post_hctn">
+	<div class="post_time">
+		<div class="post_t_d">04/22</div>
+		<div class="post_t_u">21:46</div>
+	</div>
+
+	<div class="post_h_l">
+		<span class="post_ct"><a href="/categories/outdated/" rel="category tag">失效/过期</a> <a href="/categories/magic/code/" rel="category tag">迷の代码</a></span>
+		<h2 class="post_h"><a href="/archives/add-serviceworker-to-zxda/">给 ZXDA 加了个 ServiceWorker, 效果似乎还不错呢</a></h2>
+
+		<div class="post_tag">
+			
+			<a href="/tags/javascript/" rel="tag">Javascript</a> <a href="/tags/serviceworker/" rel="tag">ServiceWorker</a> <a href="/tags/zxda/" rel="tag">ZXDA</a>
+			<span class="post_c">
+				<a href="/archives/add-serviceworker-to-zxda/#respond">No Reply</a>
+
+				
+							</span>
+		</div>
+	</div>
+</hgroup>
+
+<div class="post_t">
+			<p>最近在 <a href="https://www.anotherhome.net/2954" target="_blank" rel="noopener noreferrer">DIYGOD大佬的博客</a> 看到了ServiceWorker这个东西:<br>
+</p>
+<h3 class="azc_tsh_toggle" style="border: 1px solid #ffffffcc; "><a href="#" style="color: #fff; ">ServiceWorker简介 from anotherhome.net</a></h3>
+<div class="azc_tsh_toggle_container" style="border: 1px solid #ffffffcc; ">
+<br>
+它可以根据配置为用户缓存网站静态与动态资源：截获用户的所有网络请求，根据缓存配置来决定是从缓存还是网络获取相应资源，从而可以极大提高网页的加载速度。优点有可定制性高、不需要服务端支持、效果显著。并且它还可以实现网站的离线访问<br>
+</div>
+<br>
+这等神器怎么能不赶紧加上呢
+<p><span id="more-139"></span></p>
+<p>查找了 <a href="https://developers.google.com/web/fundamentals/getting-started/primers/service-workers" target="_blank" rel="noopener noreferrer">一些资料</a> 然后参考了一下 <a href="https://yangbo.tech/2017/01/15/2017-01-15-speedy-and-offline-site-by-service-worker/" target="_blank" rel="noopener noreferrer">这个博客</a> 提供的JavaScript脚本后,终于用一下午折腾出来一个JS,如图<br>
+<a href="/wp-content/uploads/2017/04/snipaste_20170422_204353.png"><img loading="lazy" class="alignnone size-full wp-image-141" src="/wp-content/uploads/2017/04/snipaste_20170422_204353.png" alt="" width="1012" height="842" srcset="/wp-content/uploads/2017/04/snipaste_20170422_204353.png 1012w, /wp-content/uploads/2017/04/snipaste_20170422_204353-300x250.png 300w, /wp-content/uploads/2017/04/snipaste_20170422_204353-768x639.png 768w" sizes="(max-width: 1012px) 100vw, 1012px"></a></p>
+<p>这个JS是基于我们站的实际情况修改的,主要是对HTML页面的离线请求与ajax离线请求做了一些优化<br>
+添加这个脚本后,网站访问速度确实得到了一定的提升,并且访问过的部分页面也可以离线访问了:<br>
+<a href="/wp-content/uploads/2017/04/snipaste_20170422_214105.png"><img loading="lazy" src="/wp-content/uploads/2017/04/snipaste_20170422_214105-1024x636.png" alt="" width="1024" height="636" class="alignnone size-large wp-image-152" srcset="/wp-content/uploads/2017/04/snipaste_20170422_214105-1024x636.png 1024w, /wp-content/uploads/2017/04/snipaste_20170422_214105-300x186.png 300w, /wp-content/uploads/2017/04/snipaste_20170422_214105-768x477.png 768w, /wp-content/uploads/2017/04/snipaste_20170422_214105.png 1254w" sizes="(max-width: 1024px) 100vw, 1024px"></a></p>
+<p>当然,对于离线状态下访问没有缓存的页面也有相应的措施:<br>
+<a href="/wp-content/uploads/2017/04/snipaste_20170422_214132.png"><img loading="lazy" src="/wp-content/uploads/2017/04/snipaste_20170422_214132-1024x636.png" alt="" width="1024" height="636" class="alignnone size-large wp-image-153" srcset="/wp-content/uploads/2017/04/snipaste_20170422_214132-1024x636.png 1024w, /wp-content/uploads/2017/04/snipaste_20170422_214132-300x186.png 300w, /wp-content/uploads/2017/04/snipaste_20170422_214132-768x477.png 768w, /wp-content/uploads/2017/04/snipaste_20170422_214132.png 1254w" sizes="(max-width: 1024px) 100vw, 1024px"></a><br>
+<a href="/wp-content/uploads/2017/04/snipaste_20170422_214124.png"><img loading="lazy" src="/wp-content/uploads/2017/04/snipaste_20170422_214124.png" alt="" width="333" height="130" class="alignnone size-full wp-image-154" srcset="/wp-content/uploads/2017/04/snipaste_20170422_214124.png 333w, /wp-content/uploads/2017/04/snipaste_20170422_214124-300x117.png 300w" sizes="(max-width: 333px) 100vw, 333px"></a></p>
+<p><b>在此放上URL: <a href="https://pl.zxda.net/sw.js" target="_blank" rel="noopener noreferrer">https://pl.zxda.net/sw.js</a> 欢迎使用哦~</b><br>
+建议使用前针对自己的网站做一些修改,下面解释一下这几个配置项:</p>
+<ul style="padding: 0;">
+<li>这是之前的JS中就有的一些缓存设置
+<pre>const offlineResources=[
+	// ↓无论如何都要缓存一下首页,主页都访问不了会很尴尬
+	'/',
+	// ↓缓存提示缓存不存在的页面
+	'//static.zxda.net/offline/page.html', 
+	// ↓这是ajax页面的返回数据,&lt;s&gt;假装服务器返回了一个失败信息&lt;/s&gt;
+	'//static.zxda.net/offline/ajax.html',
+];
+</pre>
+</li>
+<li>不缓存的匹配表达式,根据网页中用到的各种请求配置
+<pre>const ignoreFetch=[
+	/https?:\/\/seal.godaddy.com\//,
+	/https?:\/\/.*.cnzz.com\//,
+	/https?:\/\/.*.googleapis.com\//,
+	/https?:\/\/.*.gstatic.com\//,
+];
+</pre>
+</li>
+<li>这似乎是DIYGOD自己加上的,我稍微修改了一下
+<pre>const offline={
+	// ↓图片不解释
+	img: '',
+	// ↓普通HTML页面访问不了的提示
+	page: '//static.zxda.net/offline/page.html',
+	// ↓ajax失败的离线数据
+	ajax: '//static.zxda.net/offline/ajax.html',
+};
+</pre>
+</li>
+<li>这块是自己加上的恩,被这些正则匹配到的是特殊路径
+<pre>const specialUrls={
+	// ↓被这个匹配到的就当作ajax请求处理
+	ajax: /https?:\/\/pl.zxda.net\/ajax\//
+};
+</pre>
+</li>
+</ul>
+<h3 class="azc_tsh_toggle" style="border: 1px solid #ffffffcc; "><a href="#" style="color: #fff; ">大概就是这么一些配置</a></h3>
+<div class="azc_tsh_toggle_container" style="border: 1px solid #ffffffcc; ">
+<br>
+<s>于是我又水了一篇博客</s><img loading="lazy" src="/wp-content/uploads/2016/12/QQ图片20161225125619.jpg" alt="" width="73" height="60" class="alignnone size-full wp-image-69"><br>
+</div>
+		<h2 class="post_h_quote">给 ZXDA 加了个 ServiceWorker, 效果似乎还不错呢</h2>
+</div>				<nav id="post_nav">
+					<span id="p_n_l"><a href="/archives/load-alipay-cert-in-chrome/" rel="prev">&larr; 在 Chrome 中加载企业支付宝的数字证书</a></span>
+					<span id="p_n_r"><a href="/archives/ffmpeg-streaming-problems/" rel="next">FFmpeg 推送直播流的那些坑 &rarr;</a></span>
+				</nav>
+				
+<div id="cmt" class="cmt">
+	
+	</div>			</article>
+			</div>
+</div>
+
+<div id="sidebar">
+	<div class="widget" id="one">
+			</div>
+	<div class="widget" id="two">
+			</div>
+	<div class="clearfix"></div>
+</div>
+<footer id="footer" role="contentinfo">
+    
+    <a href="http://dimpurr.com/" title="Dimpurr (钉子)" target="_blank">Dimpurr</a>'s
+    <a href="http://blog.dimpurr.com/clearision/" title="Clearision" target="_blank">Clearision</a><br>
+    Powered by <a href="https://wordpress.org/" title="WordPress" target="_blank">WordPress</a>
+
+    <script src="/wp-content/themes/clearision/js/script.js" type="text/javascript"></script>
+    <script type="text/javascript" src="/wp-includes/js/wp-embed.min.js?ver=5.8" id="wp-embed-js"></script>
+</footer>
+
+</div>
+</body>
+</html>

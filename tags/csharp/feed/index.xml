@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>C# &#8211; Berd&#039;s Playground (Deprecated)</title>
+	<atom:link href="/tags/csharp/feed/" rel="self" type="application/rss+xml" />
+	<link>/</link>
+	<description>Won&#039;t receive any further updates.</description>
+	<lastBuildDate>Tue, 29 Jun 2021 01:02:55 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=5.8</generator>
+
+<image>
+	<url>/wp-content/uploads/2019/05/icon.png</url>
+	<title>C# &#8211; Berd&#039;s Playground (Deprecated)</title>
+	<link>/</link>
+	<width>32</width>
+	<height>32</height>
+</image> 
+	<item>
+		<title>搞了个 Steam 注册/激活 CDK/自动加组的辅助工具</title>
+		<link>/archives/steam-register-assistance/</link>
+		
+		<dc:creator><![CDATA[FENGberd]]></dc:creator>
+		<pubDate>Sat, 03 Mar 2018 14:56:11 +0000</pubDate>
+				<category><![CDATA[迷の代码]]></category>
+		<category><![CDATA[C#]]></category>
+		<category><![CDATA[Steam]]></category>
+		<guid isPermaLink="false">/?p=187</guid>
+
+					<description><![CDATA[最近在弄举报机器人,需要大量账户.不过一个个注册真的挺麻烦的,于是就抽时间写了这个辅助软件. 不多解释,扔个视频一看就懂. 除了输入了那个最开始的验证码以外我没有进行其他操作,都是自动完成的. 项目地址:GitHub使用前务必按照README.md修改源代码]]></description>
+		
+		
+		<enclosure url="/wp-content/uploads/2018/03/register_assistance_1-1.mp4" length="7818512" type="video/mp4" />
+
+			</item>
+	</channel>
+</rss>

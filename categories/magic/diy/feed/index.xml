@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>硬核魔改 &#8211; Berd&#039;s Playground (Deprecated)</title>
+	<atom:link href="/categories/magic/diy/feed/" rel="self" type="application/rss+xml" />
+	<link>/</link>
+	<description>Won&#039;t receive any further updates.</description>
+	<lastBuildDate>Tue, 29 Jun 2021 01:02:55 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=5.8</generator>
+
+<image>
+	<url>/wp-content/uploads/2019/05/icon.png</url>
+	<title>硬核魔改 &#8211; Berd&#039;s Playground (Deprecated)</title>
+	<link>/</link>
+	<width>32</width>
+	<height>32</height>
+</image> 
+	<item>
+		<title>i9-7980XE 开盖换液金</title>
+		<link>/archives/i9-7980xe-delidding/</link>
+		
+		<dc:creator><![CDATA[FENGberd]]></dc:creator>
+		<pubDate>Sat, 12 May 2018 08:06:36 +0000</pubDate>
+				<category><![CDATA[硬核魔改]]></category>
+		<category><![CDATA[Delidding]]></category>
+		<guid isPermaLink="false">/?p=230</guid>
+
+					<description><![CDATA[终于对7980XE的温度忍无可忍还是拆下来换液金了（这次开盖真是问题相当多,第一次因为没经验液金瞎涂,温度居高不下&#8230;然后重新开盖涂,结果又出现了黑胶太高导致液金无法接触到盖子.最后折腾下来大概开了5次盖才弄好还是开前来一张 以上就是第一次开盖了,中间的几次都没有拍照- &#8211;最后一次,终于搞定了]]></description>
+		
+		
+		
+			</item>
+		<item>
+		<title>i7-7800X 开盖换液金</title>
+		<link>/archives/i7-7800x-delidding/</link>
+		
+		<dc:creator><![CDATA[FENGberd]]></dc:creator>
+		<pubDate>Sun, 06 May 2018 08:24:03 +0000</pubDate>
+				<category><![CDATA[硬核魔改]]></category>
+		<category><![CDATA[Delidding]]></category>
+		<guid isPermaLink="false">/?p=211</guid>
+
+					<description><![CDATA[对i9-7980XE的温度实在是忍不了了,不过在开那玩意之前我先开个i7-7800X练练手 不太会写这种文章,就扔一堆图吧 注意:由于是第一次开盖,液金涂法严重错误,正确涂法请参考7980XE开盖底部图片 开盖前来一张 最后还是点亮了 待机温度如图,压测温度可能是因为我外面没涂硅脂,大概稳定在49°C,和网上的评测没差多少]]></description>
+		
+		
+		
+			</item>
+	</channel>
+</rss>

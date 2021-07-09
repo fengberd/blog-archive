@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>迷の代码 &#8211; Berd&#039;s Playground (Deprecated)</title>
+	<atom:link href="/categories/magic/code/feed/" rel="self" type="application/rss+xml" />
+	<link>/</link>
+	<description>Won&#039;t receive any further updates.</description>
+	<lastBuildDate>Tue, 29 Jun 2021 01:02:56 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=5.8</generator>
+
+<image>
+	<url>/wp-content/uploads/2019/05/icon.png</url>
+	<title>迷の代码 &#8211; Berd&#039;s Playground (Deprecated)</title>
+	<link>/</link>
+	<width>32</width>
+	<height>32</height>
+</image> 
+	<item>
+		<title>某游戏 xLua 逆向笔记</title>
+		<link>/archives/xlua-reverse-note/</link>
+		
+		<dc:creator><![CDATA[FENGberd]]></dc:creator>
+		<pubDate>Mon, 21 Sep 2020 13:17:50 +0000</pubDate>
+				<category><![CDATA[迷の代码]]></category>
+		<category><![CDATA[Lua]]></category>
+		<category><![CDATA[Reverse]]></category>
+		<category><![CDATA[xLua]]></category>
+		<guid isPermaLink="false">/?p=813</guid>
+
+					<description><![CDATA[0x00 前言 最近好像某款游戏挺火的，虽然我没怎么关注，不过群友在拆着玩，所以我也来凑个热闹 因为我压根没装游戏，搞逆向调试啥的基本不可能，群友就给我扔了一堆 luac 来拆着玩，之前我也没拆过这种 lua 游戏，正好学习一下，于是就有了这篇博客 0x01 基本分析 拿到一堆 luac 后，第一件事当然是扔到 unluac 这个万能工具里面去跑一下看看能不能直接解开啦: 意料之内的报错了，错误提示 &#8220;The input chunk reports a non-standard lua format: 1&#8221; 让我们挑一个小一点的 luac 来研究一下: 用 HEX 编辑器打开后，首先要看 lua 版本，有的游戏可能会修改前面的 .Lua 头，但只要确定了是 lua bytecode 而不是 luajit 编译出来的东西，基本上都可以在文件开头找到版本号。这里是 Lua 5.3，结合 xlua.dll 中的 lua 版本字符串可以确定使用的引擎是 lua 5.3.5 随后我们来分析到底哪些地方是“自定义”的，其实这个“自定义格式”是 xLua 搞出来的而不是游戏公司搞出来的，但我一开始以为这个是游戏公司搞的自定义格式，分析了半天走了不少弯路 这里就走捷径直接到 xLua 的仓库中 查看更改，发现这么一条 [&#8230;]]]></description>
+		
+		
+		
+			</item>
+		<item>
+		<title>JavaScript AST 变量绑定静态分析的一些思路</title>
+		<link>/archives/javascript-ast-static-binding-analysis/</link>
+		
+		<dc:creator><![CDATA[FENGberd]]></dc:creator>
+		<pubDate>Mon, 02 Mar 2020 08:14:52 +0000</pubDate>
+				<category><![CDATA[迷の代码]]></category>
+		<category><![CDATA[Javascript]]></category>
+		<guid isPermaLink="false">/?p=690</guid>
+
+					<description><![CDATA[0x00 前言 最近一直在做和 JS 语法分析、代码重构等有关的一些项目, 但是由于种种原因不能公开发布. 这些东西一直在私有库里吃灰也不太好, 就在博客稍微聊一下其中涉及到的 JavaScript 通过 AST 静态分析变量绑定的思路吧. 本文使用的语言是 PHP, AST 分析框架是 mck89/peast. 大部分框架生成的 AST 都大同小异, 本文的叙述应该是普遍适用的. 我的水平有限, 不能保证文章的绝对准确. 如文中有错漏请您在评论区留言或通过其他方式联系我更正, 非常感谢您的协助. 0x01 运行规范 查阅 ECMAScript® 2015 Language Specification 第8章和第13.3节可知, JavaScript 在执行的时候将创建一些 Code Execution Contexts, 在同一时间只会有一个 Context 被执行. 同时, 引擎将使用 Lexical Environment (简称为 Environment) 来实现变量的绑定, 即实现从 Identifier 到变量的映射. 每个 Environment 除了记录当前创建的变量外还可能会记录一个 outer [&#8230;]]]></description>
+		
+		
+		
+			</item>
+		<item>
+		<title>解决新版 Chromium 绕过LSP代理软件(如 Proxifier)</title>
+		<link>/archives/get-rid-of-chromium-lsp-bypass/</link>
+		
+		<dc:creator><![CDATA[FENGberd]]></dc:creator>
+		<pubDate>Fri, 04 Oct 2019 12:45:06 +0000</pubDate>
+				<category><![CDATA[失效/过期]]></category>
+		<category><![CDATA[踩坑]]></category>
+		<category><![CDATA[迷の代码]]></category>
+		<category><![CDATA[C++]]></category>
+		<category><![CDATA[Chrome]]></category>
+		<guid isPermaLink="false">/?p=355</guid>
+
+					<description><![CDATA[0x00 前言 Proxifier 新版已升级到 WFP 框架进行代理，本文已过期 本文为流水账形式, 查看解决方案请 点这里 时间过的真快呢, 不知不觉高考完的第一个国庆就来了. 有了5天的长假, 我又想起来 Chromium-EyeProtect 更新的事情了(上次更新是四个月前, 看到 README.md 的图了么).不过, 用几天完成更新赶上最新的 v77.0.3865.90 (Stable) 后却出现了我意料之外的情况&#8230; Proxifier 居然不能正常代理 Chromium 的流量了. 具体表现是连 Verbose Log 都无法看到任何关于 chrome.exe 的信息, 就像 Chromium 直接绕过了 LSP 去访问互联网一样&#8230; 排除 Proxifier 的问题后, 我还是不太甘心就这样放弃掉 Proxifier, 于是就有了下面这一堆踩坑和这篇 Blog . 0x01 初步分析 查了部分 LSP 的资料后, 我的第一感觉是 Chromium 在创建 Socket 的时候是不是加了什么大魔法, [&#8230;]]]></description>
+		
+		
+		
+			</item>
+		<item>
+		<title>Chromium-EyeProtect: 珍爱眼睛,远离 Google Design</title>
+		<link>/archives/chromium-eyeprotect/</link>
+		
+		<dc:creator><![CDATA[FENGberd]]></dc:creator>
+		<pubDate>Sat, 04 May 2019 04:38:05 +0000</pubDate>
+				<category><![CDATA[踩坑]]></category>
+		<category><![CDATA[迷の代码]]></category>
+		<category><![CDATA[C++]]></category>
+		<category><![CDATA[Chrome]]></category>
+		<guid isPermaLink="false">/?p=325</guid>
+
+					<description><![CDATA[0x00 前言 印象中Chrome一直是很不错的一款浏览器,但随着Google的变化它的功能和UI也不再那么单纯. 从v69开始,Google将默认的Chrome UI改成了Material Refresh, 随后在v71的某个stable release中彻底删掉了用户回滚传统UI的选项. 对大部分用户而言, UI的变更可能根本不是值得在意的事情, 甚至可能有的用户没有注意到UI的变化. 但我是很难接受这个(个人感觉)效率极低而且很丑的UI的, 因此就有了自己修改一个Chromium的想法. * 此页面中部分内容可能已经过时, 请以 GitHub 上最新的 Patch 为准. 如果您想就UI是否好看和我讲道理或者把我批判一番, 建议立刻关闭此页面. FENGberd 不要问我图为什么都是糊的, 你得问 Snipaste&#8230;截图质量已经设为100了而且上传都没有压缩 :/ 0x01 获取代码 获取代码并编译的内容已迁移至 下载源码 &#38; 编译Chromium , 本文只介绍对Chromium进行的修改 0x02 开始修改 此处的修改说明是针对 74.0.3729.108(Stable) EyeProtect-v1.0.1 进行的 注意: 本项目中几乎所有绘制/样式相关的代码都来自v69的Chromium, 这些代码的版权都属于它们的原作者 0001. 添加Flags 为了让用户能方便的开启/关闭Eye-Protect功能, 同时也是为了保证EP出现问题时可以Fallback到原版UI而不需要去安装其他浏览器, 我们在 chrome://flags 里添加一个Flag来控制Eye-Protect功能. 首先我们来到 flag-metadata.json 并添加自己的Flag定义以便编译器能识别这个Flag 然后在 [&#8230;]]]></description>
+		
+		
+		
+			</item>
+		<item>
+		<title>下载源码 &#038; 编译Chromium</title>
+		<link>/archives/get-code-and-compile-chromium/</link>
+		
+		<dc:creator><![CDATA[FENGberd]]></dc:creator>
+		<pubDate>Sun, 24 Mar 2019 07:50:44 +0000</pubDate>
+				<category><![CDATA[迷の代码]]></category>
+		<category><![CDATA[C++]]></category>
+		<category><![CDATA[Chrome]]></category>
+		<guid isPermaLink="false">/?p=299</guid>
+
+					<description><![CDATA[0x00 前言 这篇Blog主要是说明在 Windows 上 Get Code &#38; Compile 的一些步骤和需要注意的坑, 主要是从 Chromium-EyeProtect 迁移过来的内容 注意: 在对Chromium这种大项目进行任何操作前请确保你已经了解了一些Git基本概念, 大部分代码分支切换、合并、更新均通过Git完成. Git不规范, 修库两行泪. 如果需要学习Git基本知识请参考 https://git-scm.com/book/en/v2/ , 这本书写的非常详细, 对于快速入门很有帮助 另外, Chromium的每个SNAPSHOT或者正式版都会建一个版本号Tag, 所以可以直接运行 git checkout -b eye-protect 75.0.3741.2这样的指令来直接切换到特定Release而不用去翻Commit日志 之前翻日志翻得头疼直到无意间敲了git tag 0x01 Get Code 既然要对Chromium动刀, 第一步肯定是Get Code了,官方在 https://www.chromium.org/developers/how-tos/get-the-code 已经很详尽的阐述了拉取代码的步骤, 此处不再赘述. 这里写出来的主要是操作过程中可能碰到的坑和可能加速开发效率的提示 (对初次接触depot_tools的人很重要, 这个工具资料很少, 用起来都得自己摸索): fetch代码时不能断点续传, 如果操作中断必须删掉整个文件夹重新fetch 建议传入 --nohooks 在fetch完成后手动使用gclient运行Hook, 防止不必要的意外 fetch代码时如果有翻阅Commit记录的需求, 不要传入 --no-history [&#8230;]]]></description>
+		
+		
+		
+			</item>
+		<item>
+		<title>搞了个 Steam 注册/激活 CDK/自动加组的辅助工具</title>
+		<link>/archives/steam-register-assistance/</link>
+		
+		<dc:creator><![CDATA[FENGberd]]></dc:creator>
+		<pubDate>Sat, 03 Mar 2018 14:56:11 +0000</pubDate>
+				<category><![CDATA[迷の代码]]></category>
+		<category><![CDATA[C#]]></category>
+		<category><![CDATA[Steam]]></category>
+		<guid isPermaLink="false">/?p=187</guid>
+
+					<description><![CDATA[最近在弄举报机器人,需要大量账户.不过一个个注册真的挺麻烦的,于是就抽时间写了这个辅助软件. 不多解释,扔个视频一看就懂. 除了输入了那个最开始的验证码以外我没有进行其他操作,都是自动完成的. 项目地址:GitHub使用前务必按照README.md修改源代码]]></description>
+		
+		
+		<enclosure url="/wp-content/uploads/2018/03/register_assistance_1-1.mp4" length="7818512" type="video/mp4" />
+
+			</item>
+		<item>
+		<title>支付宝订单批量删除代码</title>
+		<link>/archives/alipay-bill-batch-delete/</link>
+		
+		<dc:creator><![CDATA[FENGberd]]></dc:creator>
+		<pubDate>Sat, 07 Oct 2017 09:46:08 +0000</pubDate>
+				<category><![CDATA[迷の代码]]></category>
+		<category><![CDATA[Alipay]]></category>
+		<category><![CDATA[Javascript]]></category>
+		<guid isPermaLink="false">/?p=175</guid>
+
+					<description><![CDATA[扔到控制台执行就好,会在4s后自动刷新= = 操作不要太频繁 否则很容易炸验证码 我觉得700多个订单一个一个的删很蠢orz]]></description>
+		
+		
+		
+			</item>
+		<item>
+		<title>给 ZXDA 加了个 ServiceWorker, 效果似乎还不错呢</title>
+		<link>/archives/add-serviceworker-to-zxda/</link>
+		
+		<dc:creator><![CDATA[FENGberd]]></dc:creator>
+		<pubDate>Sat, 22 Apr 2017 13:46:06 +0000</pubDate>
+				<category><![CDATA[失效/过期]]></category>
+		<category><![CDATA[迷の代码]]></category>
+		<category><![CDATA[Javascript]]></category>
+		<category><![CDATA[ServiceWorker]]></category>
+		<category><![CDATA[ZXDA]]></category>
+		<guid isPermaLink="false">/?p=139</guid>
+
+					<description><![CDATA[最近在 DIYGOD大佬的博客 看到了ServiceWorker这个东西: 这等神器怎么能不赶紧加上呢 查找了 一些资料 然后参考了一下 这个博客 提供的JavaScript脚本后,终于用一下午折腾出来一个JS,如图 这个JS是基于我们站的实际情况修改的,主要是对HTML页面的离线请求与ajax离线请求做了一些优化 添加这个脚本后,网站访问速度确实得到了一定的提升,并且访问过的部分页面也可以离线访问了: 当然,对于离线状态下访问没有缓存的页面也有相应的措施: 在此放上URL: https://pl.zxda.net/sw.js 欢迎使用哦~ 建议使用前针对自己的网站做一些修改,下面解释一下这几个配置项: 这是之前的JS中就有的一些缓存设置 const offlineResources=[ // ↓无论如何都要缓存一下首页,主页都访问不了会很尴尬 '/', // ↓缓存提示缓存不存在的页面 '//static.zxda.net/offline/page.html', // ↓这是ajax页面的返回数据,&#60;s&#62;假装服务器返回了一个失败信息&#60;/s&#62; '//static.zxda.net/offline/ajax.html', ]; 不缓存的匹配表达式,根据网页中用到的各种请求配置 const ignoreFetch=[ /https?:\/\/seal.godaddy.com\//, /https?:\/\/.*.cnzz.com\//, /https?:\/\/.*.googleapis.com\//, /https?:\/\/.*.gstatic.com\//, ]; 这似乎是DIYGOD自己加上的,我稍微修改了一下 const offline={ // ↓图片不解释 img: '', // ↓普通HTML页面访问不了的提示 page: '//static.zxda.net/offline/page.html', // ↓ajax失败的离线数据 ajax: '//static.zxda.net/offline/ajax.html', }; 这块是自己加上的恩,被这些正则匹配到的是特殊路径 const specialUrls={ // ↓被这个匹配到的就当作ajax请求处理 ajax: /https?:\/\/pl.zxda.net\/ajax\// [&#8230;]]]></description>
+		
+		
+		
+			</item>
+		<item>
+		<title>在 Chrome 中加载企业支付宝的数字证书</title>
+		<link>/archives/load-alipay-cert-in-chrome/</link>
+		
+		<dc:creator><![CDATA[FENGberd]]></dc:creator>
+		<pubDate>Fri, 10 Feb 2017 05:48:16 +0000</pubDate>
+				<category><![CDATA[失效/过期]]></category>
+		<category><![CDATA[踩坑]]></category>
+		<category><![CDATA[迷の代码]]></category>
+		<category><![CDATA[Chrome]]></category>
+		<guid isPermaLink="false">/?p=121</guid>
+
+					<description><![CDATA[我们都知道,支付宝是一个商业公司,Google是一个科技公司 ** 2019年以来,Google连Do no stupid都做不到, 根本不是以前的Do no evil. 上面那句话仅针对Do no evil的Google 🙂 当支付宝开发跟不上Chrome的进步速度时就会出现&#8221;当前操作环境不支持支付宝控件&#8221;这种尴尬的情况(国内大部分银行也这样- -): 如果你一路点进帮助中心,就会发现官方说法中数字证书是不支持Chrome甚至不支持IE11的 本文提供一种方式,让Chrome强行安装数字证书并正常使用(仅在x86机器上测试,x64不确定)首先,通过User-Agent修改插件将UA修改为IE10 刷新即可看到提示安装数字证书控件的页面 点击后下载并安装支付宝数字证书控件,然后重启浏览器(图略)接下来再次回到此页面(别忘了打开UA修改)就可以正常进行证书安装了(依然没图)需要注意的是提示是否进行证书安装那个对话框好像会跑到Chrome下面,注意看着点任务栏,不然还以为一直卡在安装上&#8230; 安装成功后,别急着兴奋,现在数字证书可以正常用一段时间,但你重启浏览器后就会出现无法检测到数字证书的情况,而手动点进管理页面后就会提示已安装数字证书然后证书又可以用了&#8230; 我们总不可能每次都点进这个页面一次吧 &#8211; -那样很累的 因此我写了这个插件:AlipayHelper.zip zip中包含了打包好的crx文件和源码,如果碰到提示&#8221;无法添加来自此网站的应用,程序和用户脚本&#8221;可以尝试直接将扩展程序拖到 chrome://extensions 这个界面,新版Chrome中加载插件后无法启用的解决方案可以参考 这篇博客 ,加载完毕后退出支付宝并重新登录应该就可以正常使用了 插件原理:首先这个插件注册了一个onBeforeRequest的Listener来拦截跳转到&#160;https://authzth.alipay.com/login/certCheck.htm?goto=(这里是目标地址) 的请求,通过这个请求得到下一步跳转的目标地址(从goto=这里用正则表达式匹配) chrome.webRequest.onBeforeRequest.addListener(function(request) { if(request.method=='GET') // 支付宝对这个URL的操作有两步,第一步带着goto=进行GET请求,下一步由GET得到的页面进行POST请求 { var match=request.url.match(/(^&#124;\?&#124;&#38;)goto=([^&#38;]*)(&#38;&#124;$)/); // 正则匹配 if(match) { jump_url=unescape(match[2]); // 设置要拦截的地址 } } }, { urls: [ 'https://authzth.alipay.com/login/certCheck.htm*' ] },['blocking']); 接下来在另一个Listener里拦截目标地址 [&#8230;]]]></description>
+		
+		
+		
+			</item>
+		<item>
+		<title>短消息 PDU 编码的(伪)正确方式</title>
+		<link>/archives/sms-pdu-encoding/</link>
+		
+		<dc:creator><![CDATA[FENGberd]]></dc:creator>
+		<pubDate>Sun, 18 Dec 2016 10:10:51 +0000</pubDate>
+				<category><![CDATA[迷の代码]]></category>
+		<category><![CDATA[Python]]></category>
+		<guid isPermaLink="false">/?p=34</guid>
+
+					<description><![CDATA[现在市面上大多数的GSM模块发送消息都支持Text和PDU两种编码方式Text方式发送短信特简单,但缺点是不能发送中文 &#60;-废话于是就写了这篇文章记录一下PDU的构造方式 先说说A,B,C三块数据,这是关于SMSC(短信中心的),F,G,H三块数据也用同样的方法处理,不再重复,但是注意F块长度不包含F字符长度和B块长度注:如果你不知道SMSC地址,使用AT+CSCA?就能读出来(除非SIM模块坏了或者你手贱设置了错误的SMSC数据)数据块C: 将SMSC地址前面的+号去掉smsc=smsc.lstrip('+'); 用F将SMSC地址的长度补全为偶数smsc=smsc.ljust(int(round(len(smsc)/2.0))*2,'F'); 将SMSC地址的奇偶位交换 smsc=list(smsc); for k in range(len(smsc)/2): smsc[k*2],smsc[k*2+1]=smsc[k*2+1],smsc[k*2]; smsc=''.join(smsc); 数据块B: 一般来说,直接使用91就行了(国际格式号码),如果你要发到小灵通就用81 数据块A: 就是B+C的长度啦,但是B和C都是Hex数据,所以算出来要/2并转成Hex'%02X'%(len(smsc)/2+1) 数据块D: 这是基本参数数据块,暂时不写吧 数据块E: 信息类型,固定00即可 数据块I: 协议标识,固定00即可(普通GSM类型,点到点) 数据块J: 数据编码,建议UCS2(Unicode编码),值是08 数据块K: 信息有效期,一般写00,五分钟 最后是数据块L,M,这两个数据块就是信息内容 因为上面数据块J写的是08,使用UCS2编码,直接将数据转为UTF8编码的Hex数据即可作为M数据块&#60;-实际上麻烦死了同样求出长度放到最前面就能作为L数据块,直接贴代码吧&#8230;Python的%真的很好用 def ucs2_encode(text): result=''; for b in map(ord,text): result=result+'%02X%02X' % (b &#62;&#62; 8,b &#38; 0xFF); return '%02X%s' % (len(result)/2,result); 注:使用时需要传入unicode对象,如u'poi' 数据块全部弄好后,将所有数据加一起就可以传入GSM模块啦最后送上完整代码(只求保留作者;w;) def pdu_build(smsc,dest_address,content): if(len(content)&#62;70): raise Exception('Content too [&#8230;]]]></description>
+		
+		
+		
+			</item>
+	</channel>
+</rss>

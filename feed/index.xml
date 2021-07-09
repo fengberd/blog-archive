@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>Berd&#039;s Playground (Deprecated)</title>
+	<atom:link href="/feed/" rel="self" type="application/rss+xml" />
+	<link>/</link>
+	<description>Won&#039;t receive any further updates.</description>
+	<lastBuildDate>Tue, 29 Jun 2021 01:02:33 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=5.8</generator>
+
+<image>
+	<url>/wp-content/uploads/2019/05/icon.png</url>
+	<title>Berd&#039;s Playground (Deprecated)</title>
+	<link>/</link>
+	<width>32</width>
+	<height>32</height>
+</image> 
+	<item>
+		<title>在 Windows Server 2019 中配置 PIN 并启用 Windows Hello 指纹登录</title>
+		<link>/archives/windows-server-2019-setup-pin-and-biometric-login/</link>
+		
+		<dc:creator><![CDATA[FENGberd]]></dc:creator>
+		<pubDate>Tue, 13 Apr 2021 14:47:20 +0000</pubDate>
+				<category><![CDATA[踩坑]]></category>
+		<category><![CDATA[Biometric]]></category>
+		<category><![CDATA[Fingerprint]]></category>
+		<category><![CDATA[Windows]]></category>
+		<guid isPermaLink="false">/?p=907</guid>
+
+					<description><![CDATA[0x00 前言 放在宿舍的计算机经常需要锁定和解锁，但这就带来了一些问题：一是反复输入长密码非常累人，二是可能产生潜在的安全隐患。 如果我们能通过指纹登录，上述问题就迎刃而解了。但是当我尝试添加指纹的时候却发现 Windows 不让我这么做： 我相信即使是猴子也可以在 Google 上找到一堆解决方案，但是你基本不可能找到一个真正有用的方案（这篇文章不包含在内 ）。因为那些方案针对的问题根源和我们现在碰到的不同。Microsoft 把 Windows Server 的 Windows Hello 功能砍了一部分，并且要求我们 配置 Windows Hello for Business 来实现 PIN 和生物特征登录。 如果你已经配好了一套完整的 AD，也许上面的链接对你帮助更大。但是我并不想配置或加入域，因此这篇博客将记录一个另辟蹊径配置 Windows Hello 指纹登录的方法。 0x01 问题溯源 首先，我们现在看到最直接的现象就是两个灰色按钮点不了，让我们先打开 The Inspect 看看这两个按钮的相关属性： 很明显，IsEnabled: false 表示这个按钮被禁用了（这不是重点），我们关注的是下面的 AutomationId: "CAddPinSetting_AddPinButton"，这个 ID 有助于在后面逆向时快速定位到逻辑。 你问为什么我不看添加指纹按钮？因为添加指纹实际上是可以通过调用 Windows Biometric Framework API 往 System Pool 里注册一个指纹完成的，这个框架没有被 MS 砍掉（因为 WH [&#8230;]]]></description>
+		
+		
+		
+			</item>
+		<item>
+		<title>在 Microsoft Edge 中安装第三方扩展的正确姿势</title>
+		<link>/archives/microsoft-edge-install-third-party-extensions/</link>
+		
+		<dc:creator><![CDATA[FENGberd]]></dc:creator>
+		<pubDate>Sat, 30 Jan 2021 13:58:50 +0000</pubDate>
+				<category><![CDATA[踩坑]]></category>
+		<category><![CDATA[Chrome]]></category>
+		<category><![CDATA[Edge]]></category>
+		<guid isPermaLink="false">/?p=893</guid>
+
+					<description><![CDATA[0x00 前言 最近从 Chromium-EyeProtect 迁移到了 Microsoft Edge, 不过我以前一直通过开发者模式加载的一些扩展又使得 Edge 在启动时弹出了 这篇博客 中提到的禁用提示 这个提示在 Chromium 下可以通过安装一个开发者 APP 来解决，但在 Edge 上无法安装这个 APP 此外，如果我尝试打包扩展后直接加载，依然会造成扩展无法启用，这篇博客简单的记录了我解决这个问题的方法 0x01 打包扩展 首先在 edge://extensions/ 页面启用左下角的开发人员模式，随后点击右上角的 打包扩展 按钮打包获得一个 crx 文件 把这个 crx 文件直接拖进扩展页面并安装，找到安装后的扩展，记录下这里的 ID 0x02 获取并安装 ADMX 管理模板 管理模板只需要安装一次，如果你以前安装过可以直接跳过这一步 现在，转到 Microsoft Edge Business 下载页面，选中你当前使用的 Version、Build 后点击 GET POLICY FILES 按钮下载对应的策略包 注意你并不需要在这个页面下载 Edge，只要 Version 和 Build [&#8230;]]]></description>
+		
+		
+		
+			</item>
+		<item>
+		<title>2020 年度总结</title>
+		<link>/archives/2020-review/</link>
+		
+		<dc:creator><![CDATA[FENGberd]]></dc:creator>
+		<pubDate>Thu, 31 Dec 2020 11:00:00 +0000</pubDate>
+				<category><![CDATA[零碎内容]]></category>
+		<category><![CDATA[AnnualReview]]></category>
+		<guid isPermaLink="false">/?p=871</guid>
+
+					<description><![CDATA[0x00 前言 “惊喜不断” 的 2020 终于快结束啦，在年初疫情的影响下假期高强度加长，我也做了不少有意思的事，在年终总结一下吧因为这篇博客是风鸟在写，所以你不太可能会在这份年度总结中读到和线下生活相关的内容（ 0x01 今年玩的游戏 熟悉我的人应该都知道我有严重的 Motion Sick，大部分 3D 游戏都撑不过十分钟，于是今年也买了不少游戏玩了一会就放库里吃灰了 这就是我买的VN也吃灰的理由简单说说今年投入了不少时间的游戏吧，说起这个当然得先吹 NieR: Automata今年终于实现了全 100% 三周目完美毕业，可喜可贺，可喜可贺 接下来就是 Crystar 啦，这游戏虽然什么都好但就是不好玩，总体感觉还是制作很不错的游戏，但玩法太单一和强行多周目很让人头大 另一个游戏是 Code Vein，虽然在手感和剧情重复的机制上有一些问题，总体上还是很棒的目前刚刚开始二周目，计划在 2021 年把 100% 拿到手 还有不得不提的 Black Mesa，HL1 的重制版，大家都懂不过返校后基本没时间再碰了，目前也没达到全成就 今年 Halo MCC 终于更新完啦，光环的故事在 PC 上也走向了尾声，成就估计这辈子是刷不完了 接下来就是某个用黑黄公告跳票了三次的游戏了，当初画的饼真的没几个做出来的&#8230; 虽然游戏整体也不错，但画饼不填坑还是很不好的 除了上面提到的游戏，令人印象深刻的还有一些 NSFW VNs，这里就不多提了（如果你有关注我的频道，基本上每次我玩 VN 之前都会把游戏拆一遍然后在频道里水一下，看看记录大概就知道我玩了啥 0x02 今年挖的大坑 今年创建了 Berd&#8217;s Playground，从此开始了一去不复返的水频道生活（当然在学习和摸鱼之余我还是有认真做一点东西的.jpg BerdRefactorFramework 这是一个 JS 全自动反混淆框架最初只是被群友勾起好奇心去做的，到现在已经可以全自动拆 obfuscator.io，sojson [&#8230;]]]></description>
+		
+		
+		
+			</item>
+		<item>
+		<title>Intel NUC I210 网卡 WOL 唤醒的一个坑</title>
+		<link>/archives/intel-nuc-i210-wol-troubleshooting/</link>
+		
+		<dc:creator><![CDATA[FENGberd]]></dc:creator>
+		<pubDate>Sat, 05 Dec 2020 10:21:35 +0000</pubDate>
+				<category><![CDATA[踩坑]]></category>
+		<category><![CDATA[I210]]></category>
+		<category><![CDATA[Intel]]></category>
+		<category><![CDATA[NUC]]></category>
+		<category><![CDATA[Troubleshoot]]></category>
+		<category><![CDATA[WOL]]></category>
+		<guid isPermaLink="false">/?p=863</guid>
+
+					<description><![CDATA[今天在写 WOL 文档的时候准备自己测试一下，结果却发现我的 NUC 两个网卡只有 I219-LM 可以正常唤醒，I210 一直没有响应我的唤醒请求 我从来不是“能用就行”的性格，所以深入研究了一下，发现这种双网卡主板的配置实际可能存在需要注意的坑，在这里记录一下 0x01 Troubleshoot 最基本的 Troubleshoot 无非就是 BIOS 中是否开启了唤醒、网卡是否开启了 WOL、网线是没有插上等等，在此就不赘述了，不过我检查后面网线的连接性的时候发现了一个有意思的事情 当我把网线插到 NUC 关机状态下的 LAN1 (I219-LM) 的时候，网口的一个小绿灯会以 1HZ 左右的频率进行闪烁，而当我插到上面的 LAN2 (I210) 的时候，网口并没有任何反应 这很容易推断出可能是上面的网卡电源被切断了，在双网卡主板上这么设计是挺合理的，然而我在 BIOS 里翻了一圈并没有找到任何网卡电源配置，问题一度陷入僵局.jpg 0x02 Solution 搜索了一部分资料后，我发现部分 Linux 用户也碰到了类似的问题，而且可以通过软件上的设置来解决 于是我就去找了下 Intel 的网卡驱动配置文档，发现安装 PROSet 驱动包后会有一个单独的管理程序 Intel PROSet Adapter Configuration Utility 然后重点来了，这个程序中会列出我们在 devmgmt.msc 中看不到的一部分设置，其中就包括 &#8220;电源关闭状态下魔包唤醒&#8221;，这个值在 I210 上默认是禁用，而在 I219 上默认是启用的 如图，devmgmt.msc [&#8230;]]]></description>
+		
+		
+		
+			</item>
+		<item>
+		<title>Chrome 恶意拓展 ModHeader 分析笔记</title>
+		<link>/archives/chrome-malware-extension-modheader/</link>
+		
+		<dc:creator><![CDATA[FENGberd]]></dc:creator>
+		<pubDate>Mon, 02 Nov 2020 15:25:40 +0000</pubDate>
+				<category><![CDATA[技术]]></category>
+		<category><![CDATA[Chrome]]></category>
+		<category><![CDATA[Malware]]></category>
+		<guid isPermaLink="false">/?p=849</guid>
+
+					<description><![CDATA[0x00 前言 一些废话就不说了, 见 Chrome 恶意拓展 User-Agent Switcher 分析笔记 拓展ID: idgpnmonknjnojddfkpgkljpfnnfcklj 这次也是例行流量审查抓到的，拓展更新时间为 2020/10/31，还好没造成什么大危害 真是万圣节惊喜 0x01 恶意行为 代码提取就不赘述了，参见上一篇分析文章，这里直接分析拓展的恶意行为 首先我观察了一下拓展的行为，禁用拓展并重启 Chrome 后首次启用拓展会观察到网络连接，此时没有打开任何标签页，于是可以判定恶意代码位于背景视图中 一样的从 manifest.json 直接追进 Background Script，搜索恶意域名，发现拓展在一定条件下会尝试连接三个服务器，我们先不管条件来看看连接部分 连上服务器后，拓展发送了一个看似人畜无害的数据请求，只发了一些简单的拓展信息，很像在检查更新 但是我们追到下面的 r.onmessage 中就能看出一些不正常的行为了 首先拓展会从服务器接收指令，然后收到下发的指令后似乎可以发起请求以及停止这些请求，这看起来就已经很吓人了 让我们追进具体的逻辑看一下。在服务端的控制下，拓展可以向指定的 URL 带上指定的 Payload 发送一个 HTTP 请求，然后返回头会被第二个红框的部分进行处理，带上 (可能重定向过的) 最终 URL 信息 随后，Body 数据被传到下一个 Handler 里进行处理，在此处将所有信息发回给服务端 不过还好，由于带上了 mode: "cors"，这整一套逻辑似乎只能进行不带本地凭据的 HTTP 请求，因此暂时没有严重的数据泄露风险 表面上看，这套逻辑带来的危害就是拓展用户会被当成一个代理服务器来利用，可能会给攻击者带来出售代理的收益。怎么说呢，比偷数据好很多吧&#8230; 但还需注意: 这个 mode: "cors" [&#8230;]]]></description>
+		
+		
+		
+			</item>
+		<item>
+		<title>Chrome 恶意拓展 User-Agent Switcher 分析笔记</title>
+		<link>/archives/chrome-spyware-extension-user-agent-switcher/</link>
+		
+		<dc:creator><![CDATA[FENGberd]]></dc:creator>
+		<pubDate>Tue, 27 Oct 2020 10:10:17 +0000</pubDate>
+				<category><![CDATA[技术]]></category>
+		<category><![CDATA[Chrome]]></category>
+		<category><![CDATA[GoogleSucks]]></category>
+		<category><![CDATA[Malware]]></category>
+		<category><![CDATA[Reverse]]></category>
+		<guid isPermaLink="false">/?p=838</guid>
+
+					<description><![CDATA[0x00 前言 今天在例行审查本机流量的时候发现 Chromium 在启动的时候请求了一个奇怪的域名: www.useragentswitch.com, 我的第一反应是可能拓展在检查更新或者进行用户量统计, 但仔细一想以前是没这种请求的, 就访问一下这个域名 结果发现这是个空页面, 于是又转到 Chrome 应用商店准备看看评论区怎么说 看到这个 404, 这事就麻烦了, 很可能是拓展包含恶意代码被移除了. 下面对拓展代码进行审查. 0x01 文件提取 对于一个被移除的拓展, 一般我们是不能用各种下载器下载到 crx 的. 不过我们可以简单的从本地数据目录里直接提取. 转到 %localappdata%\Chromium\User Data\Default\Extensions 中寻找我们要提取的拓展 ID clddifkhlkcojbojppdojfeeikdkgiae, 再往下一级就是拓展的各种文件了 0x02 代码分析 拿到文件后先把各个 JS 丢去格式化一下, 然后逐个审查. 首先我去对比了一下 bootstrap.min.js 和 jquery.min.js, 看起来里面是没有藏恶意代码的. 接下来就看看 Background Script 在干什么吧. 我知道因为代码不多, 把所有文件分析一遍也是不难的, 但顺着 Manifest 往下找应该是最简便的方法, 拿这个点抬杠大可不必. 从 Manifest [&#8230;]]]></description>
+		
+		
+		
+			</item>
+		<item>
+		<title>某游戏 xLua 逆向笔记</title>
+		<link>/archives/xlua-reverse-note/</link>
+		
+		<dc:creator><![CDATA[FENGberd]]></dc:creator>
+		<pubDate>Mon, 21 Sep 2020 13:17:50 +0000</pubDate>
+				<category><![CDATA[迷の代码]]></category>
+		<category><![CDATA[Lua]]></category>
+		<category><![CDATA[Reverse]]></category>
+		<category><![CDATA[xLua]]></category>
+		<guid isPermaLink="false">/?p=813</guid>
+
+					<description><![CDATA[0x00 前言 最近好像某款游戏挺火的，虽然我没怎么关注，不过群友在拆着玩，所以我也来凑个热闹 因为我压根没装游戏，搞逆向调试啥的基本不可能，群友就给我扔了一堆 luac 来拆着玩，之前我也没拆过这种 lua 游戏，正好学习一下，于是就有了这篇博客 0x01 基本分析 拿到一堆 luac 后，第一件事当然是扔到 unluac 这个万能工具里面去跑一下看看能不能直接解开啦: 意料之内的报错了，错误提示 &#8220;The input chunk reports a non-standard lua format: 1&#8221; 让我们挑一个小一点的 luac 来研究一下: 用 HEX 编辑器打开后，首先要看 lua 版本，有的游戏可能会修改前面的 .Lua 头，但只要确定了是 lua bytecode 而不是 luajit 编译出来的东西，基本上都可以在文件开头找到版本号。这里是 Lua 5.3，结合 xlua.dll 中的 lua 版本字符串可以确定使用的引擎是 lua 5.3.5 随后我们来分析到底哪些地方是“自定义”的，其实这个“自定义格式”是 xLua 搞出来的而不是游戏公司搞出来的，但我一开始以为这个是游戏公司搞的自定义格式，分析了半天走了不少弯路 这里就走捷径直接到 xLua 的仓库中 查看更改，发现这么一条 [&#8230;]]]></description>
+		
+		
+		
+			</item>
+		<item>
+		<title>《美少女万华镜》无剧透全流程攻略</title>
+		<link>/archives/biman-walkthrough/</link>
+		
+		<dc:creator><![CDATA[FENGberd]]></dc:creator>
+		<pubDate>Sat, 06 Jun 2020 06:31:27 +0000</pubDate>
+				<category><![CDATA[零碎内容]]></category>
+		<category><![CDATA[美少女万华镜]]></category>
+		<guid isPermaLink="false">/?p=744</guid>
+
+					<description><![CDATA[0x00 前言 最近万华镜好像很火, 于是跑去刷了一下 1~4 作. 搜攻略的时候发现网上有的攻略很缺德, 上来先让你进真结局然后进 BE, 还会在每个结局选项后面给你描述一下结局内容提前剧透一脸 于是就写了这个攻略, 本文给出游戏分歧模式和推荐玩法, 参考本攻略可以在不被剧透的情况下完整体验游戏剧情. 本文不包含 R-18 内容, 但文章涉及的游戏非全年龄 Galgame. 请根据相关法律法规和自身情况决定是否阅读本文. 没想到博客除草居然是写这个 0x01 呪われし伝説の少女 第一作是单线的, 游戏选项不会直接改变剧情, 但是把所有选项都看过一遍会在结局后面触发后日谈剧情. 可以考虑第一遍全选第一个选项、第二遍全选第二个选项刷两周目的模式, 也可以考虑每个选项存档、过剧情直到切换场景 (全黑画面然后换场) 然后读档选另一个选项的模式. 0x02 忘れな草と永遠の少女 第二作前三个选项是不影响剧情走向的, 可以用存档过剧情的方式刷完所有文本. BE内容各不同, 为了避免剧透没有写出内容. 具体分歧选项见下图, 注意在各个分歧点保留存档即可. 推荐游戏流程: BE1-&#62;BE3-&#62;BE2-&#62;真结局. 小提示: BE3 看医生的脸之前请做好心理准备, 就在下面的对话后面 0x2040&#160;かつて少女だった君へ ↑ 首先说明一下这是个 float 本作挺尴尬的, 基本上处于官方有意无意忽略的状态&#8230; 连个独立发布页都找不到 本作为单线超短剧情, 也不存在后日谈的设定, 攻略真的没啥写的 这里就提示下看到下面这扇门的时候有恐怖 CG, [&#8230;]]]></description>
+		
+		
+		
+			</item>
+		<item>
+		<title>Yu-RIS 引擎认证回避笔记</title>
+		<link>/archives/yu-ris-engine-crack/</link>
+		
+		<dc:creator><![CDATA[FENGberd]]></dc:creator>
+		<pubDate>Wed, 29 Apr 2020 04:20:56 +0000</pubDate>
+				<category><![CDATA[技术]]></category>
+		<category><![CDATA[Crack]]></category>
+		<category><![CDATA[Reverse]]></category>
+		<category><![CDATA[Yu-RIS]]></category>
+		<guid isPermaLink="false">/?p=712</guid>
+
+					<description><![CDATA[0x00 前言 最近在做 Yu-RIS 的游戏解包和反编译, 发现 YSTB 的数据被加密了. 寻找 XOR 表的时候本来准备打个断点康康结果发现游戏居然要我输激活码 由于 XOR 表的算法静态分析实在是太难, 这里就采用先破解游戏然后打断点导出 Key 的方式来解密 YSTB 数据. 本文主要内容还是游戏的破解过程, 不过分析完也找到了 XOR Key. 程序本身没有符号, 如果你看到奇怪的函数名或者变量名都是我加上去的 0x01 基本分析 打开游戏 (这里是 Maggot Baits 实体版镜像, 来自 HACG) 后会提示输入激活码, 验证失败后会弹出一个消息框 (不要在意乱码) 游戏没有加壳或者进行保护, 所以这个过程很简单, 直接在 MessageBox 下断点往前追几步就可以找到激活码计算函数 0x02 算法分析 进入激活码校验函数, 可以看到游戏先尝试从文件加载激活码, 如果没找到再要求用户输入 然后激活码经过了一系列魔法运算(图中只是一小部分) 由于这些运算实在是太复杂了, 暂时放弃逆出算法的想法, 尝试进行爆破 之前试过直接在校验函数外面爆破失败了, 因此先继续分析看看还有什么其他魔法 继续向下分析, 可以发现 [&#8230;]]]></description>
+		
+		
+		
+			</item>
+		<item>
+		<title>JavaScript AST 变量绑定静态分析的一些思路</title>
+		<link>/archives/javascript-ast-static-binding-analysis/</link>
+		
+		<dc:creator><![CDATA[FENGberd]]></dc:creator>
+		<pubDate>Mon, 02 Mar 2020 08:14:52 +0000</pubDate>
+				<category><![CDATA[迷の代码]]></category>
+		<category><![CDATA[Javascript]]></category>
+		<guid isPermaLink="false">/?p=690</guid>
+
+					<description><![CDATA[0x00 前言 最近一直在做和 JS 语法分析、代码重构等有关的一些项目, 但是由于种种原因不能公开发布. 这些东西一直在私有库里吃灰也不太好, 就在博客稍微聊一下其中涉及到的 JavaScript 通过 AST 静态分析变量绑定的思路吧. 本文使用的语言是 PHP, AST 分析框架是 mck89/peast. 大部分框架生成的 AST 都大同小异, 本文的叙述应该是普遍适用的. 我的水平有限, 不能保证文章的绝对准确. 如文中有错漏请您在评论区留言或通过其他方式联系我更正, 非常感谢您的协助. 0x01 运行规范 查阅 ECMAScript® 2015 Language Specification 第8章和第13.3节可知, JavaScript 在执行的时候将创建一些 Code Execution Contexts, 在同一时间只会有一个 Context 被执行. 同时, 引擎将使用 Lexical Environment (简称为 Environment) 来实现变量的绑定, 即实现从 Identifier 到变量的映射. 每个 Environment 除了记录当前创建的变量外还可能会记录一个 outer [&#8230;]]]></description>
+		
+		
+		
+			</item>
+	</channel>
+</rss>

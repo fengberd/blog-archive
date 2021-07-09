@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head>
+	<title>给 Chrome 添加非应用商店扩展程序的正确姿势 | Berd&#039;s Playground (Deprecated)</title>
+
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="theme_author" content="dimpurr">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="application-name" content="Berd&#039;s Playground (Deprecated)">
+
+	<link rel="stylesheet" href="/wp-content/themes/clearision/style.css?t=1616595409">
+	<link rel="stylesheet" href="/wp-content/themes/clearision/style.opacity.css?t=1616595500">
+<style>body { background-image: url("https://static.berd.moe/images/background_repeat.png"); }</style>
+	<link rel="home" href="/">
+	<link rel="profile" href="https://gmpg.org/xfn/11">
+	<link rel="pingback" href="/xmlrpc.php">
+	<link rel="shortcut icon" type="image/x-icon">
+
+	<link rel="alternate" type="application/rdf+xml" title="RSS 1.0" href="/feed/rss/">
+	<link rel="alternate" type="application/rss+xml" title="RSS 2.0" href="/feed/">
+	<link rel="alternate" type="application/atom+xml" title="ATOM 1.0" href="/feed/atom/">
+
+	<!--[if lt IE 9]>
+	<script src="/wp-content/themes/clearision/js/html5shiv.min.js" type="text/javascript"></script>
+	<![endif]-->
+
+	<meta name="robots" content="max-image-preview:large">
+<link rel="dns-prefetch" href="//s.w.org">
+		<script type="text/javascript">
+			window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/13.1.0\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/13.1.0\/svg\/","svgExt":".svg","source":{"concatemoji":"\/wp-includes\/js\/wp-emoji-release.min.js?ver=5.8"}};
+			!function(e,a,t){var n,r,o,i=a.createElement("canvas"),p=i.getContext&&i.getContext("2d");function s(e,t){var a=String.fromCharCode;p.clearRect(0,0,i.width,i.height),p.fillText(a.apply(this,e),0,0);e=i.toDataURL();return p.clearRect(0,0,i.width,i.height),p.fillText(a.apply(this,t),0,0),e===i.toDataURL()}function c(e){var t=a.createElement("script");t.src=e,t.defer=t.type="text/javascript",a.getElementsByTagName("head")[0].appendChild(t)}for(o=Array("flag","emoji"),t.supports={everything:!0,everythingExceptFlag:!0},r=0;r<o.length;r++)t.supports[o[r]]=function(e){if(!p||!p.fillText)return!1;switch(p.textBaseline="top",p.font="600 32px Arial",e){case"flag":return s([127987,65039,8205,9895,65039],[127987,65039,8203,9895,65039])?!1:!s([55356,56826,55356,56819],[55356,56826,8203,55356,56819])&&!s([55356,57332,56128,56423,56128,56418,56128,56421,56128,56430,56128,56423,56128,56447],[55356,57332,8203,56128,56423,8203,56128,56418,8203,56128,56421,8203,56128,56430,8203,56128,56423,8203,56128,56447]);case"emoji":return!s([10084,65039,8205,55357,56613],[10084,65039,8203,55357,56613])}return!1}(o[r]),t.supports.everything=t.supports.everything&&t.supports[o[r]],"flag"!==o[r]&&(t.supports.everythingExceptFlag=t.supports.everythingExceptFlag&&t.supports[o[r]]);t.supports.everythingExceptFlag=t.supports.everythingExceptFlag&&!t.supports.flag,t.DOMReady=!1,t.readyCallback=function(){t.DOMReady=!0},t.supports.everything||(n=function(){t.readyCallback()},a.addEventListener?(a.addEventListener("DOMContentLoaded",n,!1),e.addEventListener("load",n,!1)):(e.attachEvent("onload",n),a.attachEvent("onreadystatechange",function(){"complete"===a.readyState&&t.readyCallback()})),(n=t.source||{}).concatemoji?c(n.concatemoji):n.wpemoji&&n.twemoji&&(c(n.twemoji),c(n.wpemoji)))}(window,document,window._wpemojiSettings);
+		</script>
+		<style type="text/css">img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}</style>
+	<link rel="stylesheet" id="wp-block-library-css" href="/wp-includes/css/dist/block-library/style.min.css?ver=5.8" type="text/css" media="all">
+<link rel="stylesheet" id="azc-tsh-css" href="/wp-content/plugins/azurecurve-toggle-showhide/style.css?ver=1.0.0" type="text/css" media="all">
+<style id="azc-tsh-inline-css" type="text/css">.azc_tsh_toggle_active {
+							background-image: url(/wp-content/plugins/azurecurve-toggle-showhide/images/azure_up.png) !important;
+						}
+						.azc_tsh_toggle_open_active {
+							background-image: url(/wp-content/plugins/azurecurve-toggle-showhide/images/azure_up.png);
+						}
+						.azc_tsh_toggle {
+							background-image: url(/wp-content/plugins/azurecurve-toggle-showhide/images/azure_down.png);
+						}
+						.azc_tsh_toggle_open {
+							background-image: url(/wp-content/plugins/azurecurve-toggle-showhide/images/azure_down.png) !important;
+						}</style>
+<script type="text/javascript" src="/wp-includes/js/jquery/jquery.min.js?ver=3.6.0" id="jquery-core-js"></script>
+<script type="text/javascript" src="/wp-includes/js/jquery/jquery-migrate.min.js?ver=3.3.2" id="jquery-migrate-js"></script>
+<script type="text/javascript" src="/wp-content/plugins/azurecurve-toggle-showhide/jquery.js?ver=3.9.1" id="azc-tsh-js"></script>
+<link rel="https://api.w.org/" href="/wp-json/">
+<link rel="alternate" type="application/json" href="/wp-json/wp/v2/posts/104">
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="/xmlrpc.php?rsd">
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="/wp-includes/wlwmanifest.xml"> 
+<meta name="generator" content="WordPress 5.8">
+<link rel="canonical" href="/archives/add-third-app-to-chrome/">
+<link rel="shortlink" href="/?p=104">
+<link rel="alternate" type="application/json+oembed" href="/wp-json/oembed/1.0/embed?url=https%3A%2F%2F%2Farchives%2Fadd-third-app-to-chrome%2F">
+<link rel="alternate" type="text/xml+oembed" href="/wp-json/oembed/1.0/embed?url=https%3A%2F%2F%2Farchives%2Fadd-third-app-to-chrome%2F&#038;format=xml">
+<style type="text/css">.recentcomments a{display:inline !important;padding:0 !important;margin:0 !important;}</style>
+<link rel="icon" href="/wp-content/uploads/2019/05/icon.png" sizes="32x32">
+<link rel="icon" href="/wp-content/uploads/2019/05/icon.png" sizes="192x192">
+<link rel="apple-touch-icon" href="/wp-content/uploads/2019/05/icon.png">
+<meta name="msapplication-TileImage" content="/wp-content/uploads/2019/05/icon.png">
+		<style type="text/css" id="wp-custom-css">/*
+You can add your own CSS here.
+
+Click the help icon above to learn more.
+*/
+body > * {
+	filter: grayscale();
+}</style>
+		</head>
+
+<body class="post-template-default single single-post postid-104 single-format-standard">
+	<div id="page">
+		<hgroup id="ctn_header">
+			<div id="title">
+				<h1 id="site-title">
+					<span>
+						<a href="/" title="Berd&#039;s Playground (Deprecated)" rel="home">Berd&#039;s Playground (Deprecated)</a>
+					</span>
+				</h1>
+				<h2 id="site-description">Won&#039;t receive any further updates.</h2>
+			</div>
+			<div id="title_r">
+								<a href="/feed/" target="_blank"><button id="tr_rss"></button></a>
+				<a href="/wp-admin/" target="_blank"><button id="tr_admin"></button></a>
+				<span id="tr_clear"></span>
+				<form id="tr_s_f" method="get" action="/">
+					<input id="tr_search" type="text" name="s" placeholder="" size="10">
+				</form>
+			</div>
+			<div class="clearfix"></div>
+		</hgroup>
+		<div id="float">
+			<a href="/" title="Berd&#039;s Playground (Deprecated)" rel="home">
+				<img id="logo" alt="Berd&#039;s Playground (Deprecated)" title="Berd&#039;s Playground (Deprecated)" src="/wp-content/uploads/2019/05/icon.png">
+			</a>
+			<nav id="nav" role="navigation">
+				<div class="menu-sliding-main-menu-container"><ul id="menu-sliding-main-menu" class="menu">
+<li id="menu-item-388" class="menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor menu-item-388"><a href="/categories/magic/">技术</a></li>
+<li id="menu-item-371" class="menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor current-menu-parent current-post-parent menu-item-371"><a href="/categories/magic/repair/">踩坑</a></li>
+<li id="menu-item-372" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-372"><a href="/categories/magic/code/">迷の代码</a></li>
+<li id="menu-item-373" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-373"><a href="/categories/magic/diy/">硬核魔改</a></li>
+<li id="menu-item-374" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-374"><a href="/categories/other/">零碎内容</a></li>
+</ul></div>			</nav>
+			<nav id="next" role="sencond_navigation">
+				<div class="menu-sliding-assist-menu-container"><ul id="menu-sliding-assist-menu" class="menu">
+<li id="menu-item-101" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-101"><a href="/about/">关于 &#038; 留言板</a></li>
+</ul></div>			</nav>
+		</div>
+<div id="ctn">
+	<div id="content">
+					<article class="post-104 post type-post status-publish format-standard hentry category-outdated category-repair tag-chrome">
+				<hgroup class="post_hctn">
+	<div class="post_time">
+		<div class="post_t_d">01/22</div>
+		<div class="post_t_u">16:37</div>
+	</div>
+
+	<div class="post_h_l">
+		<span class="post_ct"><a href="/categories/outdated/" rel="category tag">失效/过期</a> <a href="/categories/magic/repair/" rel="category tag">踩坑</a></span>
+		<h2 class="post_h"><a href="/archives/add-third-app-to-chrome/">给 Chrome 添加非应用商店扩展程序的正确姿势</a></h2>
+
+		<div class="post_tag">
+			
+			<a href="/tags/chrome/" rel="tag">Chrome</a>
+			<span class="post_c">
+				<a href="/archives/add-third-app-to-chrome/#respond">No Reply</a>
+
+				
+							</span>
+		</div>
+	</div>
+</hgroup>
+
+<div class="post_t">
+			
+<p><strong>从2018年(具体Chrome版本未知)开始此方法已失效,即使添加了信任安装源也无法正常启用拓展.</strong> <strong>请参阅 <a href="/archives/microsoft-edge-install-third-party-extensions/" data-type="URL" data-id="/archives/microsoft-edge-install-third-party-extensions/">这篇博客</a> 获取在 2021 年 (v77+) 有效的方法.</strong></p>
+
+
+
+<p>从Chrome 30+开始,非应用商店的拓展就无法正常启用了,比如</p>
+
+
+
+<figure class="wp-block-image"><a href="/wp-content/uploads/2017/01/1.png"><img loading="lazy" width="364" height="186" src="/wp-content/uploads/2017/01/1.png" alt="" class="wp-image-105" srcset="/wp-content/uploads/2017/01/1.png 364w, /wp-content/uploads/2017/01/1-300x153.png 300w" sizes="(max-width: 364px) 100vw, 364px"></a></figure>
+
+
+
+<p>那么,如何正确的启用这些拓展呢?</p>
+
+
+
+<span id="more-104"></span>
+
+
+
+<p></p>
+<p>Google Support给出了一个方案:</p>
+
+
+
+<blockquote class="wp-block-quote">
+<p>如果需要使用某个已停用的扩展程序，您可以联系该扩展程序的开发者，让他们将该扩展程序上传到 Chrome 网上应用店。这样，您和其他 Chrome 用户便可通过 Chrome 网上应用店来安装该扩展程序；或者，如果您已经安装了该扩展程序，则可手动从您的扩展程序列表中重新启用它。</p>
+<cite><a rel="noreferrer noopener" href="https://support.google.com/chrome/answer/2811969?p=ui_remove_non_cws_extensions" target="_blank">Google Support</a></cite>
+</blockquote>
+
+
+
+<p>很显然这个方法不是很好用, 如果修改了别人的拓展, 更是不可能(也不应该)挂到应用商店去.</p>
+
+
+
+<p>但也不是完全没有办法,可以通过在Chrome的应用白名单里添加appid实现此目的<br></p>
+
+
+
+<p>首先,通过 <a href="https://support.google.com/chrome/a/answer/187202" target="_blank" rel="noopener noreferrer">这篇帮助文档</a>&nbsp;我们可以找到&nbsp;<a href="https://dl.google.com/dl/edgedl/chrome/policy/policy_templates.zip" target="_blank" rel="noopener noreferrer">Chrome管理模板的下载地址</a></p>
+
+
+
+<p>下载后,在windows\adm\系统语言(其他语言也可以,不过可能会存在编码问题/和系统整体风格对不上之类的问题) 这个文件夹内找到对应的管理模板</p>
+
+
+
+<figure class="wp-block-image"><a href="/wp-content/uploads/2017/01/snipaste_20170122_162358.png"><img loading="lazy" width="813" height="508" src="/wp-content/uploads/2017/01/snipaste_20170122_162358.png" alt="" class="wp-image-110" srcset="/wp-content/uploads/2017/01/snipaste_20170122_162358.png 813w, /wp-content/uploads/2017/01/snipaste_20170122_162358-300x187.png 300w, /wp-content/uploads/2017/01/snipaste_20170122_162358-768x480.png 768w" sizes="(max-width: 813px) 100vw, 813px"></a></figure>
+
+
+
+<p>将chrome.adm解压到任意位置,打开组策略(gpedit.msc,没有的话自己想办法解决咯)并右键点击计算机配置-&gt;管理模板一项并选择[添加/删除模板]</p>
+
+
+
+<figure class="wp-block-image"><a href="/wp-content/uploads/2017/01/snipaste_20170122_162111.png"><img loading="lazy" width="366" height="327" src="/wp-content/uploads/2017/01/snipaste_20170122_162111.png" alt="" class="wp-image-107" srcset="/wp-content/uploads/2017/01/snipaste_20170122_162111.png 366w, /wp-content/uploads/2017/01/snipaste_20170122_162111-300x268.png 300w" sizes="(max-width: 366px) 100vw, 366px"></a></figure>
+
+
+
+<p>在新窗口中选择添加一项,找到刚才解压出来的chrome.adm并添加进去</p>
+
+
+
+<figure class="wp-block-image"><a href="/wp-content/uploads/2017/01/snipaste_20170122_162201.png"><img loading="lazy" width="520" height="330" src="/wp-content/uploads/2017/01/snipaste_20170122_162201.png" alt="" class="wp-image-109" srcset="/wp-content/uploads/2017/01/snipaste_20170122_162201.png 520w, /wp-content/uploads/2017/01/snipaste_20170122_162201-300x190.png 300w" sizes="(max-width: 520px) 100vw, 520px"></a></figure>
+
+
+
+<p>添加成功后应该是这个样子的</p>
+
+
+
+<figure class="wp-block-image"><a href="/wp-content/uploads/2017/01/snipaste_20170122_162623.png"><img loading="lazy" width="520" height="330" src="/wp-content/uploads/2017/01/snipaste_20170122_162623.png" alt="" class="wp-image-111" srcset="/wp-content/uploads/2017/01/snipaste_20170122_162623.png 520w, /wp-content/uploads/2017/01/snipaste_20170122_162623-300x190.png 300w" sizes="(max-width: 520px) 100vw, 520px"></a></figure>
+
+
+
+<p>此时就可以关闭窗口并删掉adm文件了(注:此处如果组策略管理器卡住未响应,可以强制关闭并重新打开,模板应该已经添加好了)</p>
+
+
+
+<p>接下来找到 经典管理模板(ADM)\Google\Google Chrome\扩展程序 文件夹中的 &#8220;配置扩展程序安装白名单&#8221;</p>
+
+
+
+<figure class="wp-block-image"><a href="/wp-content/uploads/2017/01/snipaste_20170122_163005.png"><img loading="lazy" width="917" height="616" src="/wp-content/uploads/2017/01/snipaste_20170122_163005.png" alt="" class="wp-image-112" srcset="/wp-content/uploads/2017/01/snipaste_20170122_163005.png 917w, /wp-content/uploads/2017/01/snipaste_20170122_163005-300x202.png 300w, /wp-content/uploads/2017/01/snipaste_20170122_163005-768x516.png 768w" sizes="(max-width: 917px) 100vw, 917px"></a></figure>
+
+
+
+<p>双击此项,选择&#8221;已启用&#8221;并点击&#8221;显示&#8230;&#8221;</p>
+
+
+
+<figure class="wp-block-image"><a href="/wp-content/uploads/2017/01/snipaste_20170122_163133.png"><img loading="lazy" width="708" height="652" src="/wp-content/uploads/2017/01/snipaste_20170122_163133.png" alt="" class="wp-image-113" srcset="/wp-content/uploads/2017/01/snipaste_20170122_163133.png 708w, /wp-content/uploads/2017/01/snipaste_20170122_163133-300x276.png 300w" sizes="(max-width: 708px) 100vw, 708px"></a></figure>
+
+
+
+<p>接下来在 <em><strong>扩展程序管理页面 </strong>(chrome://extensions/)</em> 中找到你要添加的应用ID</p>
+
+
+
+<figure class="wp-block-image"><a href="/wp-content/uploads/2017/01/snipaste_20170122_163249.png"><img loading="lazy" width="893" height="290" src="/wp-content/uploads/2017/01/snipaste_20170122_163249.png" alt="" class="wp-image-114" srcset="/wp-content/uploads/2017/01/snipaste_20170122_163249.png 893w, /wp-content/uploads/2017/01/snipaste_20170122_163249-300x97.png 300w, /wp-content/uploads/2017/01/snipaste_20170122_163249-768x249.png 768w" sizes="(max-width: 893px) 100vw, 893px"></a></figure>
+
+
+
+<p>将此应用ID复制到刚才打开的&#8221;显示内容&#8221;对话框里并点击确定</p>
+
+
+
+<figure class="wp-block-image"><a href="/wp-content/uploads/2017/01/snipaste_20170122_163435.png"><img loading="lazy" width="510" height="320" src="/wp-content/uploads/2017/01/snipaste_20170122_163435.png" alt="" class="wp-image-115" srcset="/wp-content/uploads/2017/01/snipaste_20170122_163435.png 510w, /wp-content/uploads/2017/01/snipaste_20170122_163435-300x188.png 300w" sizes="(max-width: 510px) 100vw, 510px"></a></figure>
+
+
+
+<p>然后关掉组策略配置,刷新扩展管理页面即可启用第三方应用</p>
+
+
+
+<figure class="wp-block-image"><a href="/wp-content/uploads/2017/01/snipaste_20170122_163539.png"><img loading="lazy" width="761" height="212" src="/wp-content/uploads/2017/01/snipaste_20170122_163539.png" alt="" class="wp-image-116" srcset="/wp-content/uploads/2017/01/snipaste_20170122_163539.png 761w, /wp-content/uploads/2017/01/snipaste_20170122_163539-300x84.png 300w" sizes="(max-width: 761px) 100vw, 761px"></a></figure>
+
+
+
+<figure class="wp-block-image"><a href="/wp-content/uploads/2016/12/QQ图片20161225125619.jpg"><img loading="lazy" width="73" height="60" src="/wp-content/uploads/2016/12/QQ图片20161225125619.jpg" alt="" class="wp-image-69"></a></figure>
+
+
+
+<p>话说Chrome很多地方是为大部分用户着想的,但对喜欢折腾的developers来说好像有点不太友好</p>
+		<h2 class="post_h_quote">给 Chrome 添加非应用商店扩展程序的正确姿势</h2>
+</div>				<nav id="post_nav">
+					<span id="p_n_l"><a href="/archives/fix-nppexplorer-stuck/" rel="prev">&larr; &#8220;修复&#8221; NppExplorer 造成的 Notepad++ 卡死并且无法打开</a></span>
+					<span id="p_n_r"><a href="/archives/load-alipay-cert-in-chrome/" rel="next">在 Chrome 中加载企业支付宝的数字证书 &rarr;</a></span>
+				</nav>
+				
+<div id="cmt" class="cmt">
+	
+	</div>			</article>
+			</div>
+</div>
+
+<div id="sidebar">
+	<div class="widget" id="one">
+			</div>
+	<div class="widget" id="two">
+			</div>
+	<div class="clearfix"></div>
+</div>
+<footer id="footer" role="contentinfo">
+    
+    <a href="http://dimpurr.com/" title="Dimpurr (钉子)" target="_blank">Dimpurr</a>'s
+    <a href="http://blog.dimpurr.com/clearision/" title="Clearision" target="_blank">Clearision</a><br>
+    Powered by <a href="https://wordpress.org/" title="WordPress" target="_blank">WordPress</a>
+
+    <script src="/wp-content/themes/clearision/js/script.js" type="text/javascript"></script>
+    <script type="text/javascript" src="/wp-includes/js/wp-embed.min.js?ver=5.8" id="wp-embed-js"></script>
+</footer>
+
+</div>
+</body>
+</html>

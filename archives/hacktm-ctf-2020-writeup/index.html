@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head>
+	<title>HackTM CTF 2020 Writeup | Berd&#039;s Playground (Deprecated)</title>
+
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="theme_author" content="dimpurr">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="application-name" content="Berd&#039;s Playground (Deprecated)">
+
+	<link rel="stylesheet" href="/wp-content/themes/clearision/style.css?t=1616595409">
+	<link rel="stylesheet" href="/wp-content/themes/clearision/style.opacity.css?t=1616595500">
+<style>body { background-image: url("https://static.berd.moe/images/background_repeat.png"); }</style>
+	<link rel="home" href="/">
+	<link rel="profile" href="https://gmpg.org/xfn/11">
+	<link rel="pingback" href="/xmlrpc.php">
+	<link rel="shortcut icon" type="image/x-icon">
+
+	<link rel="alternate" type="application/rdf+xml" title="RSS 1.0" href="/feed/rss/">
+	<link rel="alternate" type="application/rss+xml" title="RSS 2.0" href="/feed/">
+	<link rel="alternate" type="application/atom+xml" title="ATOM 1.0" href="/feed/atom/">
+
+	<!--[if lt IE 9]>
+	<script src="/wp-content/themes/clearision/js/html5shiv.min.js" type="text/javascript"></script>
+	<![endif]-->
+
+	<meta name="robots" content="max-image-preview:large">
+<link rel="dns-prefetch" href="//s.w.org">
+		<script type="text/javascript">
+			window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/13.1.0\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/13.1.0\/svg\/","svgExt":".svg","source":{"concatemoji":"\/wp-includes\/js\/wp-emoji-release.min.js?ver=5.8"}};
+			!function(e,a,t){var n,r,o,i=a.createElement("canvas"),p=i.getContext&&i.getContext("2d");function s(e,t){var a=String.fromCharCode;p.clearRect(0,0,i.width,i.height),p.fillText(a.apply(this,e),0,0);e=i.toDataURL();return p.clearRect(0,0,i.width,i.height),p.fillText(a.apply(this,t),0,0),e===i.toDataURL()}function c(e){var t=a.createElement("script");t.src=e,t.defer=t.type="text/javascript",a.getElementsByTagName("head")[0].appendChild(t)}for(o=Array("flag","emoji"),t.supports={everything:!0,everythingExceptFlag:!0},r=0;r<o.length;r++)t.supports[o[r]]=function(e){if(!p||!p.fillText)return!1;switch(p.textBaseline="top",p.font="600 32px Arial",e){case"flag":return s([127987,65039,8205,9895,65039],[127987,65039,8203,9895,65039])?!1:!s([55356,56826,55356,56819],[55356,56826,8203,55356,56819])&&!s([55356,57332,56128,56423,56128,56418,56128,56421,56128,56430,56128,56423,56128,56447],[55356,57332,8203,56128,56423,8203,56128,56418,8203,56128,56421,8203,56128,56430,8203,56128,56423,8203,56128,56447]);case"emoji":return!s([10084,65039,8205,55357,56613],[10084,65039,8203,55357,56613])}return!1}(o[r]),t.supports.everything=t.supports.everything&&t.supports[o[r]],"flag"!==o[r]&&(t.supports.everythingExceptFlag=t.supports.everythingExceptFlag&&t.supports[o[r]]);t.supports.everythingExceptFlag=t.supports.everythingExceptFlag&&!t.supports.flag,t.DOMReady=!1,t.readyCallback=function(){t.DOMReady=!0},t.supports.everything||(n=function(){t.readyCallback()},a.addEventListener?(a.addEventListener("DOMContentLoaded",n,!1),e.addEventListener("load",n,!1)):(e.attachEvent("onload",n),a.attachEvent("onreadystatechange",function(){"complete"===a.readyState&&t.readyCallback()})),(n=t.source||{}).concatemoji?c(n.concatemoji):n.wpemoji&&n.twemoji&&(c(n.twemoji),c(n.wpemoji)))}(window,document,window._wpemojiSettings);
+		</script>
+		<style type="text/css">img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}</style>
+	<link rel="stylesheet" id="wp-block-library-css" href="/wp-includes/css/dist/block-library/style.min.css?ver=5.8" type="text/css" media="all">
+<link rel="stylesheet" id="azc-tsh-css" href="/wp-content/plugins/azurecurve-toggle-showhide/style.css?ver=1.0.0" type="text/css" media="all">
+<style id="azc-tsh-inline-css" type="text/css">.azc_tsh_toggle_active {
+							background-image: url(/wp-content/plugins/azurecurve-toggle-showhide/images/azure_up.png) !important;
+						}
+						.azc_tsh_toggle_open_active {
+							background-image: url(/wp-content/plugins/azurecurve-toggle-showhide/images/azure_up.png);
+						}
+						.azc_tsh_toggle {
+							background-image: url(/wp-content/plugins/azurecurve-toggle-showhide/images/azure_down.png);
+						}
+						.azc_tsh_toggle_open {
+							background-image: url(/wp-content/plugins/azurecurve-toggle-showhide/images/azure_down.png) !important;
+						}</style>
+<script type="text/javascript" src="/wp-includes/js/jquery/jquery.min.js?ver=3.6.0" id="jquery-core-js"></script>
+<script type="text/javascript" src="/wp-includes/js/jquery/jquery-migrate.min.js?ver=3.3.2" id="jquery-migrate-js"></script>
+<script type="text/javascript" src="/wp-content/plugins/azurecurve-toggle-showhide/jquery.js?ver=3.9.1" id="azc-tsh-js"></script>
+<link rel="https://api.w.org/" href="/wp-json/">
+<link rel="alternate" type="application/json" href="/wp-json/wp/v2/posts/643">
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="/xmlrpc.php?rsd">
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="/wp-includes/wlwmanifest.xml"> 
+<meta name="generator" content="WordPress 5.8">
+<link rel="canonical" href="/archives/hacktm-ctf-2020-writeup/">
+<link rel="shortlink" href="/?p=643">
+<link rel="alternate" type="application/json+oembed" href="/wp-json/oembed/1.0/embed?url=https%3A%2F%2F%2Farchives%2Fhacktm-ctf-2020-writeup%2F">
+<link rel="alternate" type="text/xml+oembed" href="/wp-json/oembed/1.0/embed?url=https%3A%2F%2F%2Farchives%2Fhacktm-ctf-2020-writeup%2F&#038;format=xml">
+<style type="text/css">.recentcomments a{display:inline !important;padding:0 !important;margin:0 !important;}</style>
+<link rel="icon" href="/wp-content/uploads/2019/05/icon.png" sizes="32x32">
+<link rel="icon" href="/wp-content/uploads/2019/05/icon.png" sizes="192x192">
+<link rel="apple-touch-icon" href="/wp-content/uploads/2019/05/icon.png">
+<meta name="msapplication-TileImage" content="/wp-content/uploads/2019/05/icon.png">
+		<style type="text/css" id="wp-custom-css">/*
+You can add your own CSS here.
+
+Click the help icon above to learn more.
+*/
+body > * {
+	filter: grayscale();
+}</style>
+		</head>
+
+<body class="post-template-default single single-post postid-643 single-format-standard">
+	<div id="page">
+		<hgroup id="ctn_header">
+			<div id="title">
+				<h1 id="site-title">
+					<span>
+						<a href="/" title="Berd&#039;s Playground (Deprecated)" rel="home">Berd&#039;s Playground (Deprecated)</a>
+					</span>
+				</h1>
+				<h2 id="site-description">Won&#039;t receive any further updates.</h2>
+			</div>
+			<div id="title_r">
+								<a href="/feed/" target="_blank"><button id="tr_rss"></button></a>
+				<a href="/wp-admin/" target="_blank"><button id="tr_admin"></button></a>
+				<span id="tr_clear"></span>
+				<form id="tr_s_f" method="get" action="/">
+					<input id="tr_search" type="text" name="s" placeholder="" size="10">
+				</form>
+			</div>
+			<div class="clearfix"></div>
+		</hgroup>
+		<div id="float">
+			<a href="/" title="Berd&#039;s Playground (Deprecated)" rel="home">
+				<img id="logo" alt="Berd&#039;s Playground (Deprecated)" title="Berd&#039;s Playground (Deprecated)" src="/wp-content/uploads/2019/05/icon.png">
+			</a>
+			<nav id="nav" role="navigation">
+				<div class="menu-sliding-main-menu-container"><ul id="menu-sliding-main-menu" class="menu">
+<li id="menu-item-388" class="menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor menu-item-388"><a href="/categories/magic/">技术</a></li>
+<li id="menu-item-371" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-371"><a href="/categories/magic/repair/">踩坑</a></li>
+<li id="menu-item-372" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-372"><a href="/categories/magic/code/">迷の代码</a></li>
+<li id="menu-item-373" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-373"><a href="/categories/magic/diy/">硬核魔改</a></li>
+<li id="menu-item-374" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-374"><a href="/categories/other/">零碎内容</a></li>
+</ul></div>			</nav>
+			<nav id="next" role="sencond_navigation">
+				<div class="menu-sliding-assist-menu-container"><ul id="menu-sliding-assist-menu" class="menu">
+<li id="menu-item-101" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-101"><a href="/about/">关于 &#038; 留言板</a></li>
+</ul></div>			</nav>
+		</div>
+<div id="ctn">
+	<div id="content">
+					<article class="post-643 post type-post status-publish format-standard hentry category-ctf tag-writeup">
+				<hgroup class="post_hctn">
+	<div class="post_time">
+		<div class="post_t_d">02/3</div>
+		<div class="post_t_u">21:24</div>
+	</div>
+
+	<div class="post_h_l">
+		<span class="post_ct"><a href="/categories/magic/ctf/" rel="category tag">CTF</a></span>
+		<h2 class="post_h"><a href="/archives/hacktm-ctf-2020-writeup/">HackTM CTF 2020 Writeup</a></h2>
+
+		<div class="post_tag">
+			
+			<a href="/tags/writeup/" rel="tag">Writeup</a>
+			<span class="post_c">
+				<a href="/archives/hacktm-ctf-2020-writeup/#respond">No Reply</a>
+
+				
+							</span>
+		</div>
+	</div>
+</hgroup>
+
+<div class="post_t">
+			
+<h2>0x00 前言</h2>
+
+
+
+<p>题目地址:  <a href="https://ctfx.hacktm.ro/">https://ctfx.hacktm.ro/</a> </p>
+
+
+
+<p>今天也是0分咸鱼呢.jpg</p>
+
+
+
+<p>睡了一觉起来就剩两小时了, 还在 Web 里面卡到时间结束&#8230; 没想到其实取证更好做.</p>
+
+
+
+<span id="more-643"></span>
+
+
+
+<h2>0x01 Strange PCAP</h2>
+
+
+
+<div class="wp-block-image"><figure class="aligncenter size-large"><img loading="lazy" width="1024" height="227" src="/wp-content/uploads/2020/02/snipaste_20200203_192532-1024x227.png" alt="" class="wp-image-644" srcset="/wp-content/uploads/2020/02/snipaste_20200203_192532-1024x227.png 1024w, /wp-content/uploads/2020/02/snipaste_20200203_192532-300x66.png 300w, /wp-content/uploads/2020/02/snipaste_20200203_192532-768x170.png 768w, /wp-content/uploads/2020/02/snipaste_20200203_192532.png 1047w" sizes="(max-width: 1024px) 100vw, 1024px"></figure></div>
+
+
+
+<div class="wp-block-image"><figure class="aligncenter size-large"><img loading="lazy" width="1024" height="649" src="/wp-content/uploads/2020/02/snipaste_20200203_192745-1024x649.png" alt="" class="wp-image-645" srcset="/wp-content/uploads/2020/02/snipaste_20200203_192745-1024x649.png 1024w, /wp-content/uploads/2020/02/snipaste_20200203_192745-300x190.png 300w, /wp-content/uploads/2020/02/snipaste_20200203_192745-768x487.png 768w, /wp-content/uploads/2020/02/snipaste_20200203_192745.png 1289w" sizes="(max-width: 1024px) 100vw, 1024px"></figure></div>
+
+
+
+<p>一个基础的 PCAP 取证题, 拿到文件先大致扫一眼发现有很多 USB Massive Storage 包, 初步猜测是要在这里面找 flag.</p>
+
+
+
+<div class="wp-block-image"><figure class="aligncenter size-large"><img loading="lazy" width="813" height="759" src="/wp-content/uploads/2020/02/snipaste_20200203_192954.png" alt="" class="wp-image-646" srcset="/wp-content/uploads/2020/02/snipaste_20200203_192954.png 813w, /wp-content/uploads/2020/02/snipaste_20200203_192954-300x280.png 300w, /wp-content/uploads/2020/02/snipaste_20200203_192954-768x717.png 768w" sizes="(max-width: 813px) 100vw, 813px"></figure></div>
+
+
+
+<p>顺着一个一个翻数据包, 在 Frame 1224 发现了 ZIP 文件头和 Flag.txt 的字样, 提取出来看看.</p>
+
+
+
+<div class="wp-block-image"><figure class="aligncenter size-large"><img loading="lazy" width="1024" height="573" src="/wp-content/uploads/2020/02/snipaste_20200203_193154-1024x573.png" alt="" class="wp-image-647" srcset="/wp-content/uploads/2020/02/snipaste_20200203_193154-1024x573.png 1024w, /wp-content/uploads/2020/02/snipaste_20200203_193154-300x168.png 300w, /wp-content/uploads/2020/02/snipaste_20200203_193154-768x430.png 768w, /wp-content/uploads/2020/02/snipaste_20200203_193154.png 1293w" sizes="(max-width: 1024px) 100vw, 1024px"></figure></div>
+
+
+
+<p>提取数据后发现是一个加密压缩包, 用 010 Editor 查看发现是真加密. 接下来我们就得找密码了, 初步猜测一下可能得翻键盘发的 HID 包, 因为之前见到过 USB HID 的数据包类型.</p>
+
+
+
+<div class="wp-block-image"><figure class="aligncenter size-large"><img loading="lazy" width="1024" height="649" src="/wp-content/uploads/2020/02/snipaste_20200203_193454-1024x649.png" alt="" class="wp-image-648" srcset="/wp-content/uploads/2020/02/snipaste_20200203_193454-1024x649.png 1024w, /wp-content/uploads/2020/02/snipaste_20200203_193454-300x190.png 300w, /wp-content/uploads/2020/02/snipaste_20200203_193454-768x487.png 768w, /wp-content/uploads/2020/02/snipaste_20200203_193454.png 1289w" sizes="(max-width: 1024px) 100vw, 1024px"></figure></div>
+
+
+
+<p>往下翻果然看到大量 URB_INTERRUPT 类型. 我们将这些数据包用 tshark 导出, 详细过程可参考<a rel="noreferrer noopener" aria-label=" (opens in a new tab)" href="/archives/milkice-2020-redpacket-writeup/" target="_blank"> 奶冰的 2020 新年红包 Writeup</a> 的第二关, 此处不再赘述.</p>
+
+
+
+<p>参考 <a rel="noreferrer noopener" aria-label="USB Keyboard 数据包格式 (opens in a new tab)" href="https://wiki.osdev.org/USB_Human_Interface_Devices" target="_blank">USB Keyboard 数据包格式</a>, 可以得知每个包的第一个 Byte 对应控制键状态, 第三个 Byte 对应的是输入的键.</p>
+
+
+
+<p>再结合 <a rel="noreferrer noopener" aria-label="USB HID Keyboard scan codes (opens in a new tab)" href="https://gist.github.com/MightyPork/6da26e382a7ad91b5496ee55fdc73db2" target="_blank">USB HID Keyboard scan codes</a> 可以构造下面的脚本对数据包进行分析.</p>
+
+
+
+<pre class="wp-block-code"><code>usb_codes = {
+	0x04:"aA", 0x05:"bB", 0x06:"cC", 0x07:"dD", 0x08:"eE", 0x09:"fF",
+	0x0A:"gG", 0x0B:"hH", 0x0C:"iI", 0x0D:"jJ", 0x0E:"kK", 0x0F:"lL",
+	0x10:"mM", 0x11:"nN", 0x12:"oO", 0x13:"pP", 0x14:"qQ", 0x15:"rR",
+	0x16:"sS", 0x17:"tT", 0x18:"uU", 0x19:"vV", 0x1A:"wW", 0x1B:"xX",
+	0x1C:"yY", 0x1D:"zZ", 0x1E:"1!", 0x1F:"2@", 0x20:"3#", 0x21:"4$",
+	0x22:"5%", 0x23:"6^", 0x24:"7&amp;", 0x25:"8*", 0x26:"9(", 0x27:"0)",
+	0x2C:"  ", 0x2D:"-_", 0x2E:"=+", 0x2F:"[{", 0x30:"]}",  0x32:"#~",
+	0x33:";:", 0x34:"'\"",  0x36:",&lt;",  0x37:".>"
+}
+data = ''
+for x in open("xd","r").readlines():
+	code = int(x[4:6],16)
+	print(x[4:6])
+	if code == 0:
+		continue
+	if code == 0x28:
+		print('ENTER!')
+		print(data)
+		data = ''
+		continue
+	upper = 0
+	if int(x[0:2],16) == 0x02 or int(x[0:2],16) == 0x20:
+		upper = 1
+	data += usb_codes[code][upper]
+print(data)</code></pre>
+
+
+
+<p>解析后就得到了压缩包密码, 完成.</p>
+
+
+
+<h2>0x02 RR</h2>
+
+
+
+<div class="wp-block-image"><figure class="aligncenter size-large"><img loading="lazy" width="1024" height="252" src="/wp-content/uploads/2020/02/snipaste_20200203_194758-1024x252.png" alt="" class="wp-image-649" srcset="/wp-content/uploads/2020/02/snipaste_20200203_194758-1024x252.png 1024w, /wp-content/uploads/2020/02/snipaste_20200203_194758-300x74.png 300w, /wp-content/uploads/2020/02/snipaste_20200203_194758-768x189.png 768w, /wp-content/uploads/2020/02/snipaste_20200203_194758.png 1067w" sizes="(max-width: 1024px) 100vw, 1024px"></figure></div>
+
+
+
+<div class="wp-block-image"><figure class="aligncenter size-large"><img loading="lazy" width="636" height="150" src="/wp-content/uploads/2020/02/snipaste_20200203_195034.png" alt="" class="wp-image-650" srcset="/wp-content/uploads/2020/02/snipaste_20200203_195034.png 636w, /wp-content/uploads/2020/02/snipaste_20200203_195034-300x71.png 300w" sizes="(max-width: 636px) 100vw, 636px"></figure></div>
+
+
+
+<p>拿到题目发现是三个img, 其中两个大小相同, 另外一个大小为 0.</p>
+
+
+
+<p>根据题目意思 &#8220;One of my drives failed&#8221; 猜测这个大小为 0 的文件就是那个损坏的磁盘, 而根据两个盘能 &#8220;recovering all my files&#8221; 可能是组了 RAID 阵列.</p>
+
+
+
+<div class="wp-block-image"><figure class="aligncenter size-large"><img loading="lazy" width="1024" height="416" src="/wp-content/uploads/2020/02/snipaste_20200203_195349-1024x416.png" alt="" class="wp-image-652" srcset="/wp-content/uploads/2020/02/snipaste_20200203_195349-1024x416.png 1024w, /wp-content/uploads/2020/02/snipaste_20200203_195349-300x122.png 300w, /wp-content/uploads/2020/02/snipaste_20200203_195349-768x312.png 768w, /wp-content/uploads/2020/02/snipaste_20200203_195349.png 1197w" sizes="(max-width: 1024px) 100vw, 1024px"></figure></div>
+
+
+
+<p>但是这个题还有一个坑, img 文件的开头被填了一段无效的分区表, 采用 file 命令或者用 mdadm 直接检查是不会识别为 RAID 盘的. 用 binwalk 查看我们可以找到正确的 offset.</p>
+
+
+
+<div class="wp-block-image"><figure class="aligncenter size-large"><img loading="lazy" width="736" height="627" src="/wp-content/uploads/2020/02/snipaste_20200203_200719.png" alt="" class="wp-image-653" srcset="/wp-content/uploads/2020/02/snipaste_20200203_200719.png 736w, /wp-content/uploads/2020/02/snipaste_20200203_200719-300x256.png 300w" sizes="(max-width: 736px) 100vw, 736px"></figure></div>
+
+
+
+<p>这里用 dd 简单的裁剪一下这个文件, 再用 mdadm 查看就能看到详细的 RAID 信息了, 确实是一个 RAID5.</p>
+
+
+
+<div class="wp-block-image"><figure class="aligncenter size-large"><img loading="lazy" width="737" height="102" src="/wp-content/uploads/2020/02/snipaste_20200203_201034.png" alt="" class="wp-image-654" srcset="/wp-content/uploads/2020/02/snipaste_20200203_201034.png 737w, /wp-content/uploads/2020/02/snipaste_20200203_201034-300x42.png 300w" sizes="(max-width: 737px) 100vw, 737px"></figure></div>
+
+
+
+<p>接下来用 losetup 创建 loop 然后执行 <code>mdadm --assemble --run /dev/md0 --readonly /dev/loop0 /dev/loop1</code> 直接挂载硬盘就可以了. 这里不用 losetup -o 而要用 dd 处理文件是因为碰到了一些神秘 Bug.</p>
+
+
+
+<div class="wp-block-image"><figure class="aligncenter size-large"><img loading="lazy" width="808" height="591" src="/wp-content/uploads/2020/02/snipaste_20200203_201148.png" alt="" class="wp-image-655" srcset="/wp-content/uploads/2020/02/snipaste_20200203_201148.png 808w, /wp-content/uploads/2020/02/snipaste_20200203_201148-300x219.png 300w, /wp-content/uploads/2020/02/snipaste_20200203_201148-768x562.png 768w" sizes="(max-width: 808px) 100vw, 808px"></figure></div>
+
+
+
+<p>在挂载后的硬盘中找到了 Flag, 完成.</p>
+
+
+
+<h2>0x03 Find My Pass</h2>
+
+
+
+<div class="wp-block-image"><figure class="aligncenter size-large"><img loading="lazy" width="1024" height="322" src="/wp-content/uploads/2020/02/snipaste_20200203_201334-1024x322.png" alt="" class="wp-image-656" srcset="/wp-content/uploads/2020/02/snipaste_20200203_201334-1024x322.png 1024w, /wp-content/uploads/2020/02/snipaste_20200203_201334-300x94.png 300w, /wp-content/uploads/2020/02/snipaste_20200203_201334-768x241.png 768w, /wp-content/uploads/2020/02/snipaste_20200203_201334.png 1053w" sizes="(max-width: 1024px) 100vw, 1024px"></figure></div>
+
+
+
+<p>下载后解压得到一个 HackTM.vmem, 经典的 VMem 取证.</p>
+
+
+
+<div class="wp-block-image"><figure class="aligncenter size-large"><img loading="lazy" width="757" height="278" src="/wp-content/uploads/2020/02/snipaste_20200203_201523.png" alt="" class="wp-image-657" srcset="/wp-content/uploads/2020/02/snipaste_20200203_201523.png 757w, /wp-content/uploads/2020/02/snipaste_20200203_201523-300x110.png 300w" sizes="(max-width: 757px) 100vw, 757px"></figure></div>
+
+
+
+<p>首先用 <code>volatility -f HackTM.vmem imageinfo</code> 扫描镜像, 得知系统是 Win7SP1x86.</p>
+
+
+
+<div class="wp-block-image"><figure class="aligncenter size-large"><img loading="lazy" width="499" height="325" src="/wp-content/uploads/2020/02/snipaste_20200203_201637.png" alt="" class="wp-image-658" srcset="/wp-content/uploads/2020/02/snipaste_20200203_201637.png 499w, /wp-content/uploads/2020/02/snipaste_20200203_201637-300x195.png 300w" sizes="(max-width: 499px) 100vw, 499px"></figure></div>
+
+
+
+<p>然后用 <code>volatility -f HackTM.vmem --profile=Win7SP1x86 pslist</code> 查看运行中的进程, 发现里面有一个 <code>KeePass.exe</code>, 经典++ <img src="/wp-content/plugins/tiebaface/images/yellow_16.png" style="width: 24px !important;height: 24px !important;min-height: 0 !important;"></p>
+
+
+
+<div class="wp-block-image"><figure class="aligncenter size-large"><img loading="lazy" width="694" height="106" src="/wp-content/uploads/2020/02/snipaste_20200203_201848.png" alt="" class="wp-image-659" srcset="/wp-content/uploads/2020/02/snipaste_20200203_201848.png 694w, /wp-content/uploads/2020/02/snipaste_20200203_201848-300x46.png 300w" sizes="(max-width: 694px) 100vw, 694px"></figure></div>
+
+
+
+<p>执行 <code>volatility -f HackTM.vmem --profile=Win7SP1x86 memdump -p 3620 -D .</code> 导出 KeePass 的内存 dump 文件, 然后顺手用 strings 导出一下 txt 备用.</p>
+
+
+
+<div class="wp-block-image"><figure class="aligncenter size-large"><img loading="lazy" width="1024" height="506" src="/wp-content/uploads/2020/02/snipaste_20200203_202122-1024x506.png" alt="" class="wp-image-660" srcset="/wp-content/uploads/2020/02/snipaste_20200203_202122-1024x506.png 1024w, /wp-content/uploads/2020/02/snipaste_20200203_202122-300x148.png 300w, /wp-content/uploads/2020/02/snipaste_20200203_202122-768x380.png 768w, /wp-content/uploads/2020/02/snipaste_20200203_202122.png 1108w" sizes="(max-width: 1024px) 100vw, 1024px"></figure></div>
+
+
+
+<p>从 <a rel="noreferrer noopener" aria-label=" (opens in a new tab)" href="https://github.com/Stoom/KeePass/wiki/KDBX-v2-File-Format#xml-format" target="_blank">KeePass Wiki</a> 中可以得知内存中会存在一段 XML 形式的数据, 直接用文本编辑器搜索我们刚才导出的字符串就可以找到.</p>
+
+
+
+<div class="wp-block-image"><figure class="aligncenter size-large"><img loading="lazy" width="899" height="577" src="/wp-content/uploads/2020/02/snipaste_20200203_202337.png" alt="" class="wp-image-661" srcset="/wp-content/uploads/2020/02/snipaste_20200203_202337.png 899w, /wp-content/uploads/2020/02/snipaste_20200203_202337-300x193.png 300w, /wp-content/uploads/2020/02/snipaste_20200203_202337-768x493.png 768w" sizes="(max-width: 899px) 100vw, 899px"></figure></div>
+
+
+
+<p>当然, 这段 XML 并没有包含我们需要的信息, 可以注意到 <code>MemoryProtection/ProtectPassword</code> 为 True, XML中是不会有明文密码的. 进一步搜寻还发现了一个 <code>nothinghere.7z</code> 可能也会用到</p>
+
+
+
+<div class="wp-block-image"><figure class="aligncenter size-large"><img loading="lazy" width="1024" height="573" src="/wp-content/uploads/2020/02/snipaste_20200203_202547-1024x573.png" alt="" class="wp-image-662" srcset="/wp-content/uploads/2020/02/snipaste_20200203_202547-1024x573.png 1024w, /wp-content/uploads/2020/02/snipaste_20200203_202547-300x168.png 300w, /wp-content/uploads/2020/02/snipaste_20200203_202547-768x430.png 768w, /wp-content/uploads/2020/02/snipaste_20200203_202547.png 1293w" sizes="(max-width: 1024px) 100vw, 1024px"></figure></div>
+
+
+
+<p>还记得 <a rel="noreferrer noopener" aria-label="刚才的 Wiki (opens in a new tab)" href="https://github.com/Stoom/KeePass/wiki/KDBX-v2-File-Format#signatures" target="_blank">刚才的 Wiki</a> 中也有提到文件头么? 直接用 010 Editor 打开内存 dump 文件, 搜索这个文件头我们就可以找到数据. 比较麻烦的是这里找到了三个结果, 通常情况下如果有多个结果可以选择导出最长并且中间没有大块 00 的数据.</p>
+
+
+
+<div class="wp-block-image"><figure class="aligncenter size-large"><img loading="lazy" width="670" height="488" src="/wp-content/uploads/2020/02/snipaste_20200203_202905.png" alt="" class="wp-image-663" srcset="/wp-content/uploads/2020/02/snipaste_20200203_202905.png 670w, /wp-content/uploads/2020/02/snipaste_20200203_202905-300x219.png 300w" sizes="(max-width: 670px) 100vw, 670px"></figure></div>
+
+
+
+<p>尝试用 KeePass 直接打开这个 KDBX, 发现我们还需要提供 Master Password. 这里就只能去之前的 VMEM 里继续找了, 在 dump 里想找这个是比较难的.</p>
+
+
+
+<div class="wp-block-image"><figure class="aligncenter size-large"><img loading="lazy" width="741" height="463" src="/wp-content/uploads/2020/02/snipaste_20200203_203051.png" alt="" class="wp-image-664" srcset="/wp-content/uploads/2020/02/snipaste_20200203_203051.png 741w, /wp-content/uploads/2020/02/snipaste_20200203_203051-300x187.png 300w" sizes="(max-width: 741px) 100vw, 741px"></figure></div>
+
+
+
+<p>执行 <code>volatility -f HackTM.vmem --profile=Win7SP1x86 clipboard -v</code> 查看剪贴板, 发现这里有一个迷之字符串有点像密码</p>
+
+
+
+<div class="wp-block-image"><figure class="aligncenter size-large"><img loading="lazy" width="670" height="488" src="/wp-content/uploads/2020/02/snipaste_20200203_203155.png" alt="" class="wp-image-665" srcset="/wp-content/uploads/2020/02/snipaste_20200203_203155.png 670w, /wp-content/uploads/2020/02/snipaste_20200203_203155-300x219.png 300w" sizes="(max-width: 670px) 100vw, 670px"></figure></div>
+
+
+
+<p>很幸运的是这就是 KDBX 的密码, 数据库中 Jason 的密码是 123456789, 和 nothinghere.7z 的密码并不匹配.</p>
+
+
+
+<p>但是根据题目中的提示 &#8220;I use my one safe password where I want to keep everything safe from hackers.&#8221;, 用 <code>dmVZQmdzOlUrcEBlRj87dHQ3USVBIn</code> 去解压 nothinghere.txt 即可得到 flag.</p>
+
+
+
+<h2>0x04 Secrets Communicated</h2>
+
+
+
+<div class="wp-block-image"><figure class="aligncenter size-large"><img loading="lazy" width="1024" height="293" src="/wp-content/uploads/2020/02/snipaste_20200203_210535-1024x293.png" alt="" class="wp-image-666" srcset="/wp-content/uploads/2020/02/snipaste_20200203_210535-1024x293.png 1024w, /wp-content/uploads/2020/02/snipaste_20200203_210535-300x86.png 300w, /wp-content/uploads/2020/02/snipaste_20200203_210535-768x220.png 768w, /wp-content/uploads/2020/02/snipaste_20200203_210535.png 1062w" sizes="(max-width: 1024px) 100vw, 1024px"></figure></div>
+
+
+
+<div class="wp-block-image"><figure class="aligncenter size-large"><img loading="lazy" width="587" height="292" src="/wp-content/uploads/2020/02/snipaste_20200203_210647.png" alt="" class="wp-image-667" srcset="/wp-content/uploads/2020/02/snipaste_20200203_210647.png 587w, /wp-content/uploads/2020/02/snipaste_20200203_210647-300x149.png 300w" sizes="(max-width: 587px) 100vw, 587px"></figure></div>
+
+
+
+<p>下载解压后得到了一个 7.3 GB 的 img 文件, 用 <code>fdisk -l</code> 查看, 在最下面找到明显是 /data 的分区.</p>
+
+
+
+<div class="wp-block-image"><figure class="aligncenter size-large"><img loading="lazy" width="643" height="64" src="/wp-content/uploads/2020/02/snipaste_20200203_211331.png" alt="" class="wp-image-668" srcset="/wp-content/uploads/2020/02/snipaste_20200203_211331.png 643w, /wp-content/uploads/2020/02/snipaste_20200203_211331-300x30.png 300w" sizes="(max-width: 643px) 100vw, 643px"></figure></div>
+
+
+
+<p>计算出偏移量是 <code>512 * 4751360 = 2432696320</code>, 直接挂载 userdata.</p>
+
+
+
+<div class="wp-block-image"><figure class="aligncenter size-large"><img loading="lazy" width="1024" height="504" src="/wp-content/uploads/2020/02/snipaste_20200203_211808-1024x504.png" alt="" class="wp-image-669" srcset="/wp-content/uploads/2020/02/snipaste_20200203_211808-1024x504.png 1024w, /wp-content/uploads/2020/02/snipaste_20200203_211808-300x148.png 300w, /wp-content/uploads/2020/02/snipaste_20200203_211808-768x378.png 768w, /wp-content/uploads/2020/02/snipaste_20200203_211808.png 1346w" sizes="(max-width: 1024px) 100vw, 1024px"></figure></div>
+
+
+
+<p>接下来就是让人头大的取证时间了&#8230; 这个设备里装了最少 5 个 IM 应用, 而且使用记录显示这些应用都被打开过.</p>
+
+
+
+<div class="wp-block-image"><figure class="aligncenter size-large"><img loading="lazy" width="1024" height="579" src="/wp-content/uploads/2020/02/snipaste_20200203_211901-1024x579.png" alt="" class="wp-image-670" srcset="/wp-content/uploads/2020/02/snipaste_20200203_211901-1024x579.png 1024w, /wp-content/uploads/2020/02/snipaste_20200203_211901-300x170.png 300w, /wp-content/uploads/2020/02/snipaste_20200203_211901-768x435.png 768w, /wp-content/uploads/2020/02/snipaste_20200203_211901.png 1472w" sizes="(max-width: 1024px) 100vw, 1024px"></figure></div>
+
+
+
+<p>翻了一圈以后在 Facebook Messenger &gt; threads_db2 里面找到了一个神秘字符串, 但这并不是 flag.</p>
+
+
+
+<div class="wp-block-image"><figure class="aligncenter size-large"><img loading="lazy" width="711" height="450" src="/wp-content/uploads/2020/02/snipaste_20200203_212014.png" alt="" class="wp-image-671" srcset="/wp-content/uploads/2020/02/snipaste_20200203_212014.png 711w, /wp-content/uploads/2020/02/snipaste_20200203_212014-300x190.png 300w" sizes="(max-width: 711px) 100vw, 711px"></figure></div>
+
+
+
+<p>回头检查内部存储, 发现 DCIM/Camera 里面有一张图片, 但是试了很多方法也没发现里面有隐藏信息.</p>
+
+
+
+<div class="wp-block-image"><figure class="aligncenter size-large"><img loading="lazy" width="586" height="210" src="/wp-content/uploads/2020/02/snipaste_20200203_212147.png" alt="" class="wp-image-672" srcset="/wp-content/uploads/2020/02/snipaste_20200203_212147.png 586w, /wp-content/uploads/2020/02/snipaste_20200203_212147-300x108.png 300w" sizes="(max-width: 586px) 100vw, 586px"></figure></div>
+
+
+
+<p>再来检查 Download 里面那个奇怪的文件, 发现这是一个有密码的 zip, 尝试将刚才的神秘字符串作为密码即可解压成功拿到 flag.</p>
+
+
+
+<p>这里其实有个坑, 这个文件名称在某些 shell 里是不会显示的, 很容易被人忽略掉. 不过在我这里并没有碰到这个问题.</p>
+		<h2 class="post_h_quote">HackTM CTF 2020 Writeup</h2>
+</div>				<nav id="post_nav">
+					<span id="p_n_l"><a href="/archives/sus2019-writeup/" rel="prev">&larr; SUS2019 新春欢乐赛-Writeup</a></span>
+					<span id="p_n_r"><a href="/archives/windows-run-interesting-syntax/" rel="next">Windows 运行 一些有趣的语法 &rarr;</a></span>
+				</nav>
+				
+<div id="cmt" class="cmt">
+	
+	</div>			</article>
+			</div>
+</div>
+
+<div id="sidebar">
+	<div class="widget" id="one">
+			</div>
+	<div class="widget" id="two">
+			</div>
+	<div class="clearfix"></div>
+</div>
+<footer id="footer" role="contentinfo">
+    
+    <a href="http://dimpurr.com/" title="Dimpurr (钉子)" target="_blank">Dimpurr</a>'s
+    <a href="http://blog.dimpurr.com/clearision/" title="Clearision" target="_blank">Clearision</a><br>
+    Powered by <a href="https://wordpress.org/" title="WordPress" target="_blank">WordPress</a>
+
+    <script src="/wp-content/themes/clearision/js/script.js" type="text/javascript"></script>
+    <script type="text/javascript" src="/wp-includes/js/wp-embed.min.js?ver=5.8" id="wp-embed-js"></script>
+</footer>
+
+</div>
+</body>
+</html>

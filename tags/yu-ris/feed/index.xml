@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>Yu-RIS &#8211; Berd&#039;s Playground (Deprecated)</title>
+	<atom:link href="/tags/yu-ris/feed/" rel="self" type="application/rss+xml" />
+	<link>/</link>
+	<description>Won&#039;t receive any further updates.</description>
+	<lastBuildDate>Tue, 29 Jun 2021 01:02:33 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=5.8</generator>
+
+<image>
+	<url>/wp-content/uploads/2019/05/icon.png</url>
+	<title>Yu-RIS &#8211; Berd&#039;s Playground (Deprecated)</title>
+	<link>/</link>
+	<width>32</width>
+	<height>32</height>
+</image> 
+	<item>
+		<title>Yu-RIS 引擎认证回避笔记</title>
+		<link>/archives/yu-ris-engine-crack/</link>
+		
+		<dc:creator><![CDATA[FENGberd]]></dc:creator>
+		<pubDate>Wed, 29 Apr 2020 04:20:56 +0000</pubDate>
+				<category><![CDATA[技术]]></category>
+		<category><![CDATA[Crack]]></category>
+		<category><![CDATA[Reverse]]></category>
+		<category><![CDATA[Yu-RIS]]></category>
+		<guid isPermaLink="false">/?p=712</guid>
+
+					<description><![CDATA[0x00 前言 最近在做 Yu-RIS 的游戏解包和反编译, 发现 YSTB 的数据被加密了. 寻找 XOR 表的时候本来准备打个断点康康结果发现游戏居然要我输激活码 由于 XOR 表的算法静态分析实在是太难, 这里就采用先破解游戏然后打断点导出 Key 的方式来解密 YSTB 数据. 本文主要内容还是游戏的破解过程, 不过分析完也找到了 XOR Key. 程序本身没有符号, 如果你看到奇怪的函数名或者变量名都是我加上去的 0x01 基本分析 打开游戏 (这里是 Maggot Baits 实体版镜像, 来自 HACG) 后会提示输入激活码, 验证失败后会弹出一个消息框 (不要在意乱码) 游戏没有加壳或者进行保护, 所以这个过程很简单, 直接在 MessageBox 下断点往前追几步就可以找到激活码计算函数 0x02 算法分析 进入激活码校验函数, 可以看到游戏先尝试从文件加载激活码, 如果没找到再要求用户输入 然后激活码经过了一系列魔法运算(图中只是一小部分) 由于这些运算实在是太复杂了, 暂时放弃逆出算法的想法, 尝试进行爆破 之前试过直接在校验函数外面爆破失败了, 因此先继续分析看看还有什么其他魔法 继续向下分析, 可以发现 [&#8230;]]]></description>
+		
+		
+		
+			</item>
+	</channel>
+</rss>

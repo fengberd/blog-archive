@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head>
+	<title>Windows 运行 一些有趣的语法 | Berd&#039;s Playground (Deprecated)</title>
+
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="theme_author" content="dimpurr">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="application-name" content="Berd&#039;s Playground (Deprecated)">
+
+	<link rel="stylesheet" href="/wp-content/themes/clearision/style.css?t=1616595409">
+	<link rel="stylesheet" href="/wp-content/themes/clearision/style.opacity.css?t=1616595500">
+<style>body { background-image: url("https://static.berd.moe/images/background_repeat.png"); }</style>
+	<link rel="home" href="/">
+	<link rel="profile" href="https://gmpg.org/xfn/11">
+	<link rel="pingback" href="/xmlrpc.php">
+	<link rel="shortcut icon" type="image/x-icon">
+
+	<link rel="alternate" type="application/rdf+xml" title="RSS 1.0" href="/feed/rss/">
+	<link rel="alternate" type="application/rss+xml" title="RSS 2.0" href="/feed/">
+	<link rel="alternate" type="application/atom+xml" title="ATOM 1.0" href="/feed/atom/">
+
+	<!--[if lt IE 9]>
+	<script src="/wp-content/themes/clearision/js/html5shiv.min.js" type="text/javascript"></script>
+	<![endif]-->
+
+	<meta name="robots" content="max-image-preview:large">
+<link rel="dns-prefetch" href="//s.w.org">
+		<script type="text/javascript">
+			window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/13.1.0\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/13.1.0\/svg\/","svgExt":".svg","source":{"concatemoji":"\/wp-includes\/js\/wp-emoji-release.min.js?ver=5.8"}};
+			!function(e,a,t){var n,r,o,i=a.createElement("canvas"),p=i.getContext&&i.getContext("2d");function s(e,t){var a=String.fromCharCode;p.clearRect(0,0,i.width,i.height),p.fillText(a.apply(this,e),0,0);e=i.toDataURL();return p.clearRect(0,0,i.width,i.height),p.fillText(a.apply(this,t),0,0),e===i.toDataURL()}function c(e){var t=a.createElement("script");t.src=e,t.defer=t.type="text/javascript",a.getElementsByTagName("head")[0].appendChild(t)}for(o=Array("flag","emoji"),t.supports={everything:!0,everythingExceptFlag:!0},r=0;r<o.length;r++)t.supports[o[r]]=function(e){if(!p||!p.fillText)return!1;switch(p.textBaseline="top",p.font="600 32px Arial",e){case"flag":return s([127987,65039,8205,9895,65039],[127987,65039,8203,9895,65039])?!1:!s([55356,56826,55356,56819],[55356,56826,8203,55356,56819])&&!s([55356,57332,56128,56423,56128,56418,56128,56421,56128,56430,56128,56423,56128,56447],[55356,57332,8203,56128,56423,8203,56128,56418,8203,56128,56421,8203,56128,56430,8203,56128,56423,8203,56128,56447]);case"emoji":return!s([10084,65039,8205,55357,56613],[10084,65039,8203,55357,56613])}return!1}(o[r]),t.supports.everything=t.supports.everything&&t.supports[o[r]],"flag"!==o[r]&&(t.supports.everythingExceptFlag=t.supports.everythingExceptFlag&&t.supports[o[r]]);t.supports.everythingExceptFlag=t.supports.everythingExceptFlag&&!t.supports.flag,t.DOMReady=!1,t.readyCallback=function(){t.DOMReady=!0},t.supports.everything||(n=function(){t.readyCallback()},a.addEventListener?(a.addEventListener("DOMContentLoaded",n,!1),e.addEventListener("load",n,!1)):(e.attachEvent("onload",n),a.attachEvent("onreadystatechange",function(){"complete"===a.readyState&&t.readyCallback()})),(n=t.source||{}).concatemoji?c(n.concatemoji):n.wpemoji&&n.twemoji&&(c(n.twemoji),c(n.wpemoji)))}(window,document,window._wpemojiSettings);
+		</script>
+		<style type="text/css">img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}</style>
+	<link rel="stylesheet" id="wp-block-library-css" href="/wp-includes/css/dist/block-library/style.min.css?ver=5.8" type="text/css" media="all">
+<link rel="stylesheet" id="azc-tsh-css" href="/wp-content/plugins/azurecurve-toggle-showhide/style.css?ver=1.0.0" type="text/css" media="all">
+<style id="azc-tsh-inline-css" type="text/css">.azc_tsh_toggle_active {
+							background-image: url(/wp-content/plugins/azurecurve-toggle-showhide/images/azure_up.png) !important;
+						}
+						.azc_tsh_toggle_open_active {
+							background-image: url(/wp-content/plugins/azurecurve-toggle-showhide/images/azure_up.png);
+						}
+						.azc_tsh_toggle {
+							background-image: url(/wp-content/plugins/azurecurve-toggle-showhide/images/azure_down.png);
+						}
+						.azc_tsh_toggle_open {
+							background-image: url(/wp-content/plugins/azurecurve-toggle-showhide/images/azure_down.png) !important;
+						}</style>
+<script type="text/javascript" src="/wp-includes/js/jquery/jquery.min.js?ver=3.6.0" id="jquery-core-js"></script>
+<script type="text/javascript" src="/wp-includes/js/jquery/jquery-migrate.min.js?ver=3.3.2" id="jquery-migrate-js"></script>
+<script type="text/javascript" src="/wp-content/plugins/azurecurve-toggle-showhide/jquery.js?ver=3.9.1" id="azc-tsh-js"></script>
+<link rel="https://api.w.org/" href="/wp-json/">
+<link rel="alternate" type="application/json" href="/wp-json/wp/v2/posts/682">
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="/xmlrpc.php?rsd">
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="/wp-includes/wlwmanifest.xml"> 
+<meta name="generator" content="WordPress 5.8">
+<link rel="canonical" href="/archives/windows-run-interesting-syntax/">
+<link rel="shortlink" href="/?p=682">
+<link rel="alternate" type="application/json+oembed" href="/wp-json/oembed/1.0/embed?url=https%3A%2F%2F%2Farchives%2Fwindows-run-interesting-syntax%2F">
+<link rel="alternate" type="text/xml+oembed" href="/wp-json/oembed/1.0/embed?url=https%3A%2F%2F%2Farchives%2Fwindows-run-interesting-syntax%2F&#038;format=xml">
+<style type="text/css">.recentcomments a{display:inline !important;padding:0 !important;margin:0 !important;}</style>
+<link rel="icon" href="/wp-content/uploads/2019/05/icon.png" sizes="32x32">
+<link rel="icon" href="/wp-content/uploads/2019/05/icon.png" sizes="192x192">
+<link rel="apple-touch-icon" href="/wp-content/uploads/2019/05/icon.png">
+<meta name="msapplication-TileImage" content="/wp-content/uploads/2019/05/icon.png">
+		<style type="text/css" id="wp-custom-css">/*
+You can add your own CSS here.
+
+Click the help icon above to learn more.
+*/
+body > * {
+	filter: grayscale();
+}</style>
+		</head>
+
+<body class="post-template-default single single-post postid-682 single-format-standard">
+	<div id="page">
+		<hgroup id="ctn_header">
+			<div id="title">
+				<h1 id="site-title">
+					<span>
+						<a href="/" title="Berd&#039;s Playground (Deprecated)" rel="home">Berd&#039;s Playground (Deprecated)</a>
+					</span>
+				</h1>
+				<h2 id="site-description">Won&#039;t receive any further updates.</h2>
+			</div>
+			<div id="title_r">
+								<a href="/feed/" target="_blank"><button id="tr_rss"></button></a>
+				<a href="/wp-admin/" target="_blank"><button id="tr_admin"></button></a>
+				<span id="tr_clear"></span>
+				<form id="tr_s_f" method="get" action="/">
+					<input id="tr_search" type="text" name="s" placeholder="" size="10">
+				</form>
+			</div>
+			<div class="clearfix"></div>
+		</hgroup>
+		<div id="float">
+			<a href="/" title="Berd&#039;s Playground (Deprecated)" rel="home">
+				<img id="logo" alt="Berd&#039;s Playground (Deprecated)" title="Berd&#039;s Playground (Deprecated)" src="/wp-content/uploads/2019/05/icon.png">
+			</a>
+			<nav id="nav" role="navigation">
+				<div class="menu-sliding-main-menu-container"><ul id="menu-sliding-main-menu" class="menu">
+<li id="menu-item-388" class="menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor menu-item-388"><a href="/categories/magic/">技术</a></li>
+<li id="menu-item-371" class="menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor current-menu-parent current-post-parent menu-item-371"><a href="/categories/magic/repair/">踩坑</a></li>
+<li id="menu-item-372" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-372"><a href="/categories/magic/code/">迷の代码</a></li>
+<li id="menu-item-373" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-373"><a href="/categories/magic/diy/">硬核魔改</a></li>
+<li id="menu-item-374" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-374"><a href="/categories/other/">零碎内容</a></li>
+</ul></div>			</nav>
+			<nav id="next" role="sencond_navigation">
+				<div class="menu-sliding-assist-menu-container"><ul id="menu-sliding-assist-menu" class="menu">
+<li id="menu-item-101" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-101"><a href="/about/">关于 &#038; 留言板</a></li>
+</ul></div>			</nav>
+		</div>
+<div id="ctn">
+	<div id="content">
+					<article class="post-682 post type-post status-publish format-standard hentry category-repair tag-explorer tag-windows">
+				<hgroup class="post_hctn">
+	<div class="post_time">
+		<div class="post_t_d">03/2</div>
+		<div class="post_t_u">11:41</div>
+	</div>
+
+	<div class="post_h_l">
+		<span class="post_ct"><a href="/categories/magic/repair/" rel="category tag">踩坑</a></span>
+		<h2 class="post_h"><a href="/archives/windows-run-interesting-syntax/">Windows 运行 一些有趣的语法</a></h2>
+
+		<div class="post_tag">
+			
+			<a href="/tags/explorer/" rel="tag">Explorer</a> <a href="/tags/windows/" rel="tag">Windows</a>
+			<span class="post_c">
+				<a href="/archives/windows-run-interesting-syntax/#respond">No Reply</a>
+
+				
+							</span>
+		</div>
+	</div>
+</hgroup>
+
+<div class="post_t">
+			
+<h2>0x00 前言</h2>
+
+
+
+<p>Windows Explorer 中有一个很实用的小工具 &#8220;运行&#8221; , 您可以用 Win+R 快捷键呼出这个小工具. </p>
+
+
+
+<div class="wp-block-image"><figure class="aligncenter size-large"><img loading="lazy" width="413" height="237" src="/wp-content/uploads/2020/03/image.png" alt="" class="wp-image-683" srcset="/wp-content/uploads/2020/03/image.png 413w, /wp-content/uploads/2020/03/image-300x172.png 300w" sizes="(max-width: 413px) 100vw, 413px"></figure></div>
+
+
+
+<p>这个常用的小工具并不只是单纯的 &#8220;执行一个可执行程序&#8221;, 它其实有很多额外的功能. 通过这个工具执行命令与在任意资源管理器窗口的地址栏中输入命令是完全等价的, 本文就探讨一下这个小工具(地址栏)可用的一些语法.</p>
+
+
+
+<span id="more-682"></span>
+
+
+
+<p>由于网上很难找到资料, 本文无法涵盖所有可用的语法. 如果您了解更多有意思的语法欢迎与我交流.</p>
+
+
+
+<h2>0x01 执行一个可执行程序</h2>
+
+
+
+<p>首先自然要说我们最常用的运行方式了, 直接输入一个可执行程序的名称, 系统会根据环境变量搜寻并启动它. 当然您也可以输入绝对路径.</p>
+
+
+
+<div class="wp-block-image"><figure class="aligncenter size-large"><img loading="lazy" width="413" height="237" src="/wp-content/uploads/2020/03/image-1.png" alt="" class="wp-image-684" srcset="/wp-content/uploads/2020/03/image-1.png 413w, /wp-content/uploads/2020/03/image-1-300x172.png 300w" sizes="(max-width: 413px) 100vw, 413px"></figure></div>
+
+
+
+<h2>0x02 打开一个路径</h2>
+
+
+
+<p>由于使用运行和在资源管理器地址栏中进行输入一样, 如果您输入一个目录 (如 C:\Windows) 就会唤起一个新的资源管理器窗口指向您指定的路径. 当然, 您也可以打开所谓的 &#8220;网络路径&#8221;, 如 <code>\\233.233.233.233</code>.</p>
+
+
+
+<div class="wp-block-image"><figure class="aligncenter size-large"><img loading="lazy" width="413" height="237" src="/wp-content/uploads/2020/03/image-2.png" alt="" class="wp-image-685" srcset="/wp-content/uploads/2020/03/image-2.png 413w, /wp-content/uploads/2020/03/image-2-300x172.png 300w" sizes="(max-width: 413px) 100vw, 413px"></figure></div>
+
+
+
+<h2>0x03 打开一个URL</h2>
+
+
+
+<p>由于我对 Windows 处理 URL 的机制不了解, 这里只能讨论我观察到的现象. 在运行中输入一个 URL 将唤起对应 Scheme 的程序进行处理. 如 https:// 通常会唤起默认浏览器, 而 steam:// 会唤起 Steam 客户端.</p>
+
+
+
+<div class="wp-block-image"><figure class="aligncenter size-large"><img loading="lazy" width="413" height="237" src="/wp-content/uploads/2020/03/image-3.png" alt="" class="wp-image-686" srcset="/wp-content/uploads/2020/03/image-3.png 413w, /wp-content/uploads/2020/03/image-3-300x172.png 300w" sizes="(max-width: 413px) 100vw, 413px"></figure></div>
+
+
+
+<h2>0x04 一些特殊的语法</h2>
+
+
+
+<p>下面就是本文想讨论的一些有意思的语法了</p>
+
+
+
+<h4>1. 引用环境变量</h4>
+
+
+
+<p>相信不少人都知道这个, 只要输入一个存在的环境变量, 该变量会被解析成对应的值.</p>
+
+
+
+<div class="wp-block-image"><figure class="aligncenter size-large"><img loading="lazy" width="413" height="237" src="/wp-content/uploads/2020/03/image-4.png" alt="" class="wp-image-687" srcset="/wp-content/uploads/2020/03/image-4.png 413w, /wp-content/uploads/2020/03/image-4-300x172.png 300w" sizes="(max-width: 413px) 100vw, 413px"></figure></div>
+
+
+
+<h4>2. 启动系统特殊文件夹</h4>
+
+
+
+<p>这是比较有意思的一个语法, 通过 <code>shell:&lt;Key&gt;</code> 来打开一个系统的特殊文件夹. 网络上的资料大多都只提到 <code>shell:startup</code> 可以打开启动文件夹, 但是并没有提到其他的目录. 这也是本篇博客最开始想说的东西.</p>
+
+
+
+<p>稍微研究了一下, 我发现这一语法的 Key 与 C# 的 <code>Environment.SpecialFolder</code> 是几乎完全一致的.</p>
+
+
+
+<div class="wp-block-image"><figure class="aligncenter size-large"><img loading="lazy" width="467" height="440" src="/wp-content/uploads/2020/03/image-5.png" alt="" class="wp-image-688" srcset="/wp-content/uploads/2020/03/image-5.png 467w, /wp-content/uploads/2020/03/image-5-300x283.png 300w" sizes="(max-width: 467px) 100vw, 467px"></figure></div>
+
+
+
+<p>举个例子, 我们可以用 <code>shell:Desktop</code> 打开桌面目录, 用 <code>shell:Personal</code> 打开文档目录.</p>
+
+
+
+<p>通常多个单词的键并非与该语法一一对应, 而是要适当的在词间加上空格. 例如 CommonStartMenu 就需要使用 <code>shell:Common Start Menu</code>, 同理 CDBurning 需要使用 <code>shell:CD Burning</code> 打开.</p>
+
+
+
+<p>同时也有不遵守上一规则的键, 如 SendTo 文件夹可以直接使用 <code>shell:SendTo</code> 打开. 最后附上 Environment.SpecialFolders 的一些值, 取自 .Net Framework 4.5.2, 如果您有兴趣可以研究一下.</p>
+
+
+
+<pre class="wp-block-code"><code>// 指定用于检索系统特殊文件夹的目录路径的枚举常数。
+public enum SpecialFolder
+{
+	// 逻辑桌面，而不是物理文件系统位置。
+	Desktop = 0,
+	// 包含用户程序组的目录。
+	Programs = 2,
+	// 用作文档的公共储存库的目录。
+	Personal = 5,
+	// “我的文档”文件夹。
+	MyDocuments = 5,
+	// 用作用户收藏夹项的公共储存库的目录。
+	Favorites = 6,
+	// 对应于用户的“开始”程序组的目录。
+	Startup = 7,
+	// 包含用户最近使用过的文档的目录。
+	Recent = 8,
+	// 包含“发送”菜单项的目录。
+	SendTo = 9,
+	// 包含“开始”菜单项的目录。
+	StartMenu = 11,
+	// “我的音乐”文件夹。
+	MyMusic = 13,
+	// 充当属于某个用户的视频的存储库的文件系统目录。 已在 .NET Framework 4 中添加。
+	MyVideos = 14,
+	// 用于物理上存储桌面上的文件对象的目录。
+	DesktopDirectory = 16,
+	// “我的电脑”文件夹。
+	MyComputer = 17,
+	// 包含“网上邻居”虚拟文件夹中可能存在的链接对象的文件系统目录。 已在 .NET Framework 4 中添加。
+	NetworkShortcuts = 19,
+	// 包含字体的虚拟文件夹。 已在 .NET Framework 4 中添加。
+	Fonts = 20,
+	// 用作文档模板的公共储存库的目录。
+	Templates = 21,
+	// 包含在所有用户的“开始”菜单上都出现的程序和文件夹的文件系统目录。 此特殊文件夹仅对 Windows NT 系统有效。 已在 .NET Framework
+	// 4 中添加。
+	CommonStartMenu = 22,
+	// 跨应用程序共享的组件的文件夹。 此特殊文件夹仅对 Windows NT、Windows 2000 和 Windows XP 系统有效。 已在 .NET Framework
+	// 4 中添加。
+	CommonPrograms = 23,
+	// 包含在所有用户的“开始”文件夹中都出现的程序的文件系统目录。 此特殊文件夹仅对 Windows NT 系统有效。 已在 .NET Framework 4
+	// 中添加。
+	CommonStartup = 24,
+	// 包含在所有用户桌面上出现的文件和文件夹的文件系统目录。 此特殊文件夹仅对 Windows NT 系统有效。 已在 .NET Framework 4 中添加。
+	CommonDesktopDirectory = 25,
+	// 用作当前漫游用户的应用程序特定数据的公共储存库的目录。
+	ApplicationData = 26,
+	// 包含“打印机”虚拟文件夹中可能存在的链接对象的文件系统目录。 已在 .NET Framework 4 中添加。
+	PrinterShortcuts = 27,
+	// 用作当前非漫游用户使用的应用程序特定数据的公共储存库的目录。
+	LocalApplicationData = 28,
+	// 用作 Internet 临时文件的公共储存库的目录。
+	InternetCache = 32,
+	// 用作 Internet Cookie 的公共储存库的目录。
+	Cookies = 33,
+	// 用作 Internet 历史记录项的公共储存库的目录。
+	History = 34,
+	// 用作所有用户使用的应用程序特定数据的公共储存库的目录。
+	CommonApplicationData = 35,
+	// Windows 目录或 SYSROOT。 它与 %windir% 或 %SYSTEMROOT% 环境变量相对应。 已在 .NET Framework 4
+	// 中添加。
+	Windows = 36,
+	// “System”目录。
+	System = 37,
+	// “Program files”目录。 在非 x86 系统中，将 System.Environment.SpecialFolder.ProgramFiles
+	// 传递到 System.Environment.GetFolderPath(System.Environment.SpecialFolder) 方法将返回非
+	// x86 程序的路径。 若要在非 x86 系统上获取 x86 程序文件目录，请使用 System.Environment.SpecialFolder.ProgramFilesX86
+	// 成员。
+	ProgramFiles = 38,
+	// “我的图片”文件夹。
+	MyPictures = 39,
+	// 用户的配置文件文件夹。 应用程序不应在此级别上创建文件或文件夹；它们应将其数据放在 System.Environment.SpecialFolder.ApplicationData
+	// 所引用的位置之下。 已在 .NET Framework 4 中添加。
+	UserProfile = 40,
+	// Windows“System”文件夹。 已在 .NET Framework 4 中添加。
+	SystemX86 = 41,
+	// X86 Program Files 文件夹。 已在 .NET Framework 4 中添加。
+	ProgramFilesX86 = 42,
+	// 用于应用程序间共享的组件的目录。 若要在非 x86 系统上获取 x86 常规程序文件目录，请使用 System.Environment.SpecialFolder.ProgramFilesX86
+	// 成员。
+	CommonProgramFiles = 43,
+	// “Program Files”文件夹。 已在 .NET Framework 4 中添加。
+	CommonProgramFilesX86 = 44,
+	// 包含所有用户都可以使用的模板的文件系统目录。 此特殊文件夹仅对 Windows NT 系统有效。 已在 .NET Framework 4 中添加。
+	CommonTemplates = 45,
+	// 包含所有用户共有的文档的文件系统目录。 此特殊文件夹仅对装有 Shfolder.dll 的 Windows NT 系统、Windows 95 和 Windows
+	// 98 系统有效。 已在 .NET Framework 4 中添加。
+	CommonDocuments = 46,
+	// 包含计算机所有用户的管理工具的文件系统目录。 已在 .NET Framework 4 中添加。
+	CommonAdminTools = 47,
+	// 用于存储各个用户的管理工具的文件系统目录。 Microsoft Management Console (MMC) 会将自定义的控制台保存在此目录中，并且此目录将随用户一起漫游。
+	// 已在 .NET Framework 4 中添加。
+	AdminTools = 48,
+	// 充当所有用户共有的音乐文件的存储库的文件系统目录。 已在 .NET Framework 4 中添加。
+	CommonMusic = 53,
+	// 充当所有用户共有的图像文件的存储库的文件系统目录。 已在 .NET Framework 4 中添加。
+	CommonPictures = 54,
+	// 充当所有用户共有的视频文件的存储库的文件系统目录。 已在 .NET Framework 4 中添加。
+	CommonVideos = 55,
+	// 包含资源数据的文件系统目录。 已在 .NET Framework 4 中添加。
+	Resources = 56,
+	// 包含本地化资源数据的文件系统目录。 已在 .NET Framework 4 中添加。
+	LocalizedResources = 57,
+	// 为了实现向后兼容，Windows Vista 中可以识别此值，但该特殊文件夹本身已不再使用。 已在 .NET Framework 4 中添加。
+	CommonOemLinks = 58,
+	// 充当等待写入 CD 的文件的临时区域的文件系统目录。 已在 .NET Framework 4 中添加。
+	CDBurning = 59
+}</code></pre>
+		<h2 class="post_h_quote">Windows 运行 一些有趣的语法</h2>
+</div>				<nav id="post_nav">
+					<span id="p_n_l"><a href="/archives/hacktm-ctf-2020-writeup/" rel="prev">&larr; HackTM CTF 2020 Writeup</a></span>
+					<span id="p_n_r"><a href="/archives/javascript-ast-static-binding-analysis/" rel="next">JavaScript AST 变量绑定静态分析的一些思路 &rarr;</a></span>
+				</nav>
+				
+<div id="cmt" class="cmt">
+	
+	</div>			</article>
+			</div>
+</div>
+
+<div id="sidebar">
+	<div class="widget" id="one">
+			</div>
+	<div class="widget" id="two">
+			</div>
+	<div class="clearfix"></div>
+</div>
+<footer id="footer" role="contentinfo">
+    
+    <a href="http://dimpurr.com/" title="Dimpurr (钉子)" target="_blank">Dimpurr</a>'s
+    <a href="http://blog.dimpurr.com/clearision/" title="Clearision" target="_blank">Clearision</a><br>
+    Powered by <a href="https://wordpress.org/" title="WordPress" target="_blank">WordPress</a>
+
+    <script src="/wp-content/themes/clearision/js/script.js" type="text/javascript"></script>
+    <script type="text/javascript" src="/wp-includes/js/wp-embed.min.js?ver=5.8" id="wp-embed-js"></script>
+</footer>
+
+</div>
+</body>
+</html>

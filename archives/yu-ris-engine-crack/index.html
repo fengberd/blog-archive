@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head>
+	<title>Yu-RIS 引擎认证回避笔记 | Berd&#039;s Playground (Deprecated)</title>
+
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="theme_author" content="dimpurr">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="application-name" content="Berd&#039;s Playground (Deprecated)">
+
+	<link rel="stylesheet" href="/wp-content/themes/clearision/style.css?t=1616595409">
+	<link rel="stylesheet" href="/wp-content/themes/clearision/style.opacity.css?t=1616595500">
+<style>body { background-image: url("https://static.berd.moe/images/background_repeat.png"); }</style>
+	<link rel="home" href="/">
+	<link rel="profile" href="https://gmpg.org/xfn/11">
+	<link rel="pingback" href="/xmlrpc.php">
+	<link rel="shortcut icon" type="image/x-icon">
+
+	<link rel="alternate" type="application/rdf+xml" title="RSS 1.0" href="/feed/rss/">
+	<link rel="alternate" type="application/rss+xml" title="RSS 2.0" href="/feed/">
+	<link rel="alternate" type="application/atom+xml" title="ATOM 1.0" href="/feed/atom/">
+
+	<!--[if lt IE 9]>
+	<script src="/wp-content/themes/clearision/js/html5shiv.min.js" type="text/javascript"></script>
+	<![endif]-->
+
+	<meta name="robots" content="max-image-preview:large">
+<link rel="dns-prefetch" href="//s.w.org">
+		<script type="text/javascript">
+			window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/13.1.0\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/13.1.0\/svg\/","svgExt":".svg","source":{"concatemoji":"\/wp-includes\/js\/wp-emoji-release.min.js?ver=5.8"}};
+			!function(e,a,t){var n,r,o,i=a.createElement("canvas"),p=i.getContext&&i.getContext("2d");function s(e,t){var a=String.fromCharCode;p.clearRect(0,0,i.width,i.height),p.fillText(a.apply(this,e),0,0);e=i.toDataURL();return p.clearRect(0,0,i.width,i.height),p.fillText(a.apply(this,t),0,0),e===i.toDataURL()}function c(e){var t=a.createElement("script");t.src=e,t.defer=t.type="text/javascript",a.getElementsByTagName("head")[0].appendChild(t)}for(o=Array("flag","emoji"),t.supports={everything:!0,everythingExceptFlag:!0},r=0;r<o.length;r++)t.supports[o[r]]=function(e){if(!p||!p.fillText)return!1;switch(p.textBaseline="top",p.font="600 32px Arial",e){case"flag":return s([127987,65039,8205,9895,65039],[127987,65039,8203,9895,65039])?!1:!s([55356,56826,55356,56819],[55356,56826,8203,55356,56819])&&!s([55356,57332,56128,56423,56128,56418,56128,56421,56128,56430,56128,56423,56128,56447],[55356,57332,8203,56128,56423,8203,56128,56418,8203,56128,56421,8203,56128,56430,8203,56128,56423,8203,56128,56447]);case"emoji":return!s([10084,65039,8205,55357,56613],[10084,65039,8203,55357,56613])}return!1}(o[r]),t.supports.everything=t.supports.everything&&t.supports[o[r]],"flag"!==o[r]&&(t.supports.everythingExceptFlag=t.supports.everythingExceptFlag&&t.supports[o[r]]);t.supports.everythingExceptFlag=t.supports.everythingExceptFlag&&!t.supports.flag,t.DOMReady=!1,t.readyCallback=function(){t.DOMReady=!0},t.supports.everything||(n=function(){t.readyCallback()},a.addEventListener?(a.addEventListener("DOMContentLoaded",n,!1),e.addEventListener("load",n,!1)):(e.attachEvent("onload",n),a.attachEvent("onreadystatechange",function(){"complete"===a.readyState&&t.readyCallback()})),(n=t.source||{}).concatemoji?c(n.concatemoji):n.wpemoji&&n.twemoji&&(c(n.twemoji),c(n.wpemoji)))}(window,document,window._wpemojiSettings);
+		</script>
+		<style type="text/css">img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}</style>
+	<link rel="stylesheet" id="wp-block-library-css" href="/wp-includes/css/dist/block-library/style.min.css?ver=5.8" type="text/css" media="all">
+<link rel="stylesheet" id="azc-tsh-css" href="/wp-content/plugins/azurecurve-toggle-showhide/style.css?ver=1.0.0" type="text/css" media="all">
+<style id="azc-tsh-inline-css" type="text/css">.azc_tsh_toggle_active {
+							background-image: url(/wp-content/plugins/azurecurve-toggle-showhide/images/azure_up.png) !important;
+						}
+						.azc_tsh_toggle_open_active {
+							background-image: url(/wp-content/plugins/azurecurve-toggle-showhide/images/azure_up.png);
+						}
+						.azc_tsh_toggle {
+							background-image: url(/wp-content/plugins/azurecurve-toggle-showhide/images/azure_down.png);
+						}
+						.azc_tsh_toggle_open {
+							background-image: url(/wp-content/plugins/azurecurve-toggle-showhide/images/azure_down.png) !important;
+						}</style>
+<script type="text/javascript" src="/wp-includes/js/jquery/jquery.min.js?ver=3.6.0" id="jquery-core-js"></script>
+<script type="text/javascript" src="/wp-includes/js/jquery/jquery-migrate.min.js?ver=3.3.2" id="jquery-migrate-js"></script>
+<script type="text/javascript" src="/wp-content/plugins/azurecurve-toggle-showhide/jquery.js?ver=3.9.1" id="azc-tsh-js"></script>
+<link rel="https://api.w.org/" href="/wp-json/">
+<link rel="alternate" type="application/json" href="/wp-json/wp/v2/posts/712">
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="/xmlrpc.php?rsd">
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="/wp-includes/wlwmanifest.xml"> 
+<meta name="generator" content="WordPress 5.8">
+<link rel="canonical" href="/archives/yu-ris-engine-crack/">
+<link rel="shortlink" href="/?p=712">
+<link rel="alternate" type="application/json+oembed" href="/wp-json/oembed/1.0/embed?url=https%3A%2F%2F%2Farchives%2Fyu-ris-engine-crack%2F">
+<link rel="alternate" type="text/xml+oembed" href="/wp-json/oembed/1.0/embed?url=https%3A%2F%2F%2Farchives%2Fyu-ris-engine-crack%2F&#038;format=xml">
+<style type="text/css">.recentcomments a{display:inline !important;padding:0 !important;margin:0 !important;}</style>
+<link rel="icon" href="/wp-content/uploads/2019/05/icon.png" sizes="32x32">
+<link rel="icon" href="/wp-content/uploads/2019/05/icon.png" sizes="192x192">
+<link rel="apple-touch-icon" href="/wp-content/uploads/2019/05/icon.png">
+<meta name="msapplication-TileImage" content="/wp-content/uploads/2019/05/icon.png">
+		<style type="text/css" id="wp-custom-css">/*
+You can add your own CSS here.
+
+Click the help icon above to learn more.
+*/
+body > * {
+	filter: grayscale();
+}</style>
+		</head>
+
+<body class="post-template-default single single-post postid-712 single-format-standard">
+	<div id="page">
+		<hgroup id="ctn_header">
+			<div id="title">
+				<h1 id="site-title">
+					<span>
+						<a href="/" title="Berd&#039;s Playground (Deprecated)" rel="home">Berd&#039;s Playground (Deprecated)</a>
+					</span>
+				</h1>
+				<h2 id="site-description">Won&#039;t receive any further updates.</h2>
+			</div>
+			<div id="title_r">
+								<a href="/feed/" target="_blank"><button id="tr_rss"></button></a>
+				<a href="/wp-admin/" target="_blank"><button id="tr_admin"></button></a>
+				<span id="tr_clear"></span>
+				<form id="tr_s_f" method="get" action="/">
+					<input id="tr_search" type="text" name="s" placeholder="" size="10">
+				</form>
+			</div>
+			<div class="clearfix"></div>
+		</hgroup>
+		<div id="float">
+			<a href="/" title="Berd&#039;s Playground (Deprecated)" rel="home">
+				<img id="logo" alt="Berd&#039;s Playground (Deprecated)" title="Berd&#039;s Playground (Deprecated)" src="/wp-content/uploads/2019/05/icon.png">
+			</a>
+			<nav id="nav" role="navigation">
+				<div class="menu-sliding-main-menu-container"><ul id="menu-sliding-main-menu" class="menu">
+<li id="menu-item-388" class="menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor current-menu-parent current-post-parent menu-item-388"><a href="/categories/magic/">技术</a></li>
+<li id="menu-item-371" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-371"><a href="/categories/magic/repair/">踩坑</a></li>
+<li id="menu-item-372" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-372"><a href="/categories/magic/code/">迷の代码</a></li>
+<li id="menu-item-373" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-373"><a href="/categories/magic/diy/">硬核魔改</a></li>
+<li id="menu-item-374" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-374"><a href="/categories/other/">零碎内容</a></li>
+</ul></div>			</nav>
+			<nav id="next" role="sencond_navigation">
+				<div class="menu-sliding-assist-menu-container"><ul id="menu-sliding-assist-menu" class="menu">
+<li id="menu-item-101" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-101"><a href="/about/">关于 &#038; 留言板</a></li>
+</ul></div>			</nav>
+		</div>
+<div id="ctn">
+	<div id="content">
+					<article class="post-712 post type-post status-publish format-standard hentry category-magic tag-crack tag-reverse tag-yu-ris">
+				<hgroup class="post_hctn">
+	<div class="post_time">
+		<div class="post_t_d">04/29</div>
+		<div class="post_t_u">12:20</div>
+	</div>
+
+	<div class="post_h_l">
+		<span class="post_ct"><a href="/categories/magic/" rel="category tag">技术</a></span>
+		<h2 class="post_h"><a href="/archives/yu-ris-engine-crack/">Yu-RIS 引擎认证回避笔记</a></h2>
+
+		<div class="post_tag">
+			
+			<a href="/tags/crack/" rel="tag">Crack</a> <a href="/tags/reverse/" rel="tag">Reverse</a> <a href="/tags/yu-ris/" rel="tag">Yu-RIS</a>
+			<span class="post_c">
+				<a href="/archives/yu-ris-engine-crack/#respond">No Reply</a>
+
+				
+							</span>
+		</div>
+	</div>
+</hgroup>
+
+<div class="post_t">
+			
+<h2>0x00 前言</h2>
+
+
+
+<p>最近在做 Yu-RIS 的游戏解包和反编译, 发现 YSTB 的数据被加密了. 寻找 XOR 表的时候本来准备打个断点康康结果发现游戏居然要我输激活码 <img src="/wp-content/plugins/tiebaface/images/yellow_33.png" style="width: 24px !important;height: 24px !important;min-height: 0 !important;"></p>
+
+
+
+<figure class="wp-block-image size-large"><img loading="lazy" width="447" height="255" src="/wp-content/uploads/2020/04/logo_yu-ris_b.png" alt="" class="wp-image-740" srcset="/wp-content/uploads/2020/04/logo_yu-ris_b.png 447w, /wp-content/uploads/2020/04/logo_yu-ris_b-300x171.png 300w" sizes="(max-width: 447px) 100vw, 447px"></figure>
+
+
+
+<p><s>由于 XOR 表的算法静态分析实在是太难, 这里就采用先破解游戏然后打断点导出 Key 的方式来解密 YSTB 数据</s>. 本文主要内容还是游戏的破解过程, 不过分析完也找到了 XOR Key. 程序本身没有符号, 如果你看到奇怪的函数名或者变量名都是我加上去的 <img src="/wp-content/plugins/tiebaface/images/yellow_16.png" style="width: 24px !important;height: 24px !important;min-height: 0 !important;"></p>
+
+
+
+<span id="more-712"></span>
+
+
+
+<h2>0x01 基本分析</h2>
+
+
+
+<p>打开游戏 (这里是 Maggot Baits 实体版镜像, 来自 HACG) 后会提示输入激活码, 验证失败后会弹出一个消息框 (不要在意乱码)</p>
+
+
+
+<figure class="wp-block-gallery aligncenter columns-2 is-cropped"><ul class="blocks-gallery-grid">
+<li class="blocks-gallery-item"><figure><img loading="lazy" width="301" height="201" src="/wp-content/uploads/2020/04/snipaste_20200429_100028.png" alt="" data-id="713" data-full-url="/wp-content/uploads/2020/04/snipaste_20200429_100028.png" data-link="/?attachment_id=713" class="wp-image-713"></figure></li>
+<li class="blocks-gallery-item"><figure><img loading="lazy" width="258" height="171" src="/wp-content/uploads/2020/04/snipaste_20200429_100107.png" alt="" data-id="714" data-full-url="/wp-content/uploads/2020/04/snipaste_20200429_100107.png" data-link="/?attachment_id=714" class="wp-image-714"></figure></li>
+</ul></figure>
+
+
+
+<p>游戏没有加壳或者进行保护, 所以这个过程很简单, 直接在 MessageBox 下断点往前追几步就可以找到激活码计算函数</p>
+
+
+
+<div class="wp-block-image"><figure class="aligncenter size-large"><img loading="lazy" width="775" height="331" src="/wp-content/uploads/2020/04/image.png" alt="" class="wp-image-715" srcset="/wp-content/uploads/2020/04/image.png 775w, /wp-content/uploads/2020/04/image-300x128.png 300w, /wp-content/uploads/2020/04/image-768x328.png 768w" sizes="(max-width: 775px) 100vw, 775px"></figure></div>
+
+
+
+<h2>0x02 算法分析</h2>
+
+
+
+<p>进入激活码校验函数, 可以看到游戏先尝试从文件加载激活码, 如果没找到再要求用户输入</p>
+
+
+
+<div class="wp-block-image"><figure class="aligncenter size-large"><img loading="lazy" width="662" height="372" src="/wp-content/uploads/2020/04/image-1.png" alt="" class="wp-image-716" srcset="/wp-content/uploads/2020/04/image-1.png 662w, /wp-content/uploads/2020/04/image-1-300x169.png 300w" sizes="(max-width: 662px) 100vw, 662px"></figure></div>
+
+
+
+<p>然后激活码经过了一系列魔法运算(图中只是一小部分) <img src="/wp-content/plugins/tiebaface/images/yellow_16.png" style="width: 24px !important;height: 24px !important;min-height: 0 !important;"> 由于这些运算实在是太复杂了, 暂时放弃逆出算法的想法, 尝试进行爆破</p>
+
+
+
+<p>之前试过直接在校验函数外面爆破失败了, 因此先继续分析看看还有什么其他魔法</p>
+
+
+
+<div class="wp-block-image"><figure class="aligncenter size-large is-resized"><img loading="lazy" src="/wp-content/uploads/2020/04/image-2.png" alt="" class="wp-image-717" width="580" height="546" srcset="/wp-content/uploads/2020/04/image-2.png 601w, /wp-content/uploads/2020/04/image-2-300x283.png 300w" sizes="(max-width: 580px) 100vw, 580px"></figure></div>
+
+
+
+<p>继续向下分析, 可以发现 XOR 表的计算也放在这个函数中(断点处), 并且下面红框中有疑似写入成功 Key 的部分.</p>
+
+
+
+<p>可以判定这个地方已经通过校验了, 这样就确定了大致的激活码校验范围</p>
+
+
+
+<div class="wp-block-image"><figure class="aligncenter size-large"><img loading="lazy" width="633" height="563" src="/wp-content/uploads/2020/04/image-3.png" alt="" class="wp-image-718" srcset="/wp-content/uploads/2020/04/image-3.png 633w, /wp-content/uploads/2020/04/image-3-300x267.png 300w" sizes="(max-width: 633px) 100vw, 633px"></figure></div>
+
+
+
+<p>顺便贴一下 XOR 表的生成过程(与激活码校验无关). 之前分析过英文 DL 版是将字符串 &#8220;CloclupDl&#8221; 进行一套魔法 CRC 后得出的, 但日文实体版没这么简单, 计算被放到了激活函数中.</p>
+
+
+
+<div class="wp-block-image"><figure class="aligncenter size-large"><img loading="lazy" width="473" height="138" src="/wp-content/uploads/2020/04/image-4.png" alt="" class="wp-image-719" srcset="/wp-content/uploads/2020/04/image-4.png 473w, /wp-content/uploads/2020/04/image-4-300x88.png 300w" sizes="(max-width: 473px) 100vw, 473px"></figure></div>
+
+
+
+<h2>0x03 认证回避</h2>
+
+
+
+<p>首先看到一处验证失败逻辑, 记下条件直接改为 jmp</p>
+
+
+
+<div class="wp-block-image"><figure class="aligncenter size-large"><img loading="lazy" width="485" height="177" src="/wp-content/uploads/2020/04/image-6.png" alt="" class="wp-image-721" srcset="/wp-content/uploads/2020/04/image-6.png 485w, /wp-content/uploads/2020/04/image-6-300x109.png 300w" sizes="(max-width: 485px) 100vw, 485px"></figure></div>
+
+
+
+<div class="wp-block-image"><figure class="aligncenter size-large"><img loading="lazy" width="714" height="237" src="/wp-content/uploads/2020/04/image-8.png" alt="" class="wp-image-723" srcset="/wp-content/uploads/2020/04/image-8.png 714w, /wp-content/uploads/2020/04/image-8-300x100.png 300w" sizes="(max-width: 714px) 100vw, 714px"></figure></div>
+
+
+
+<p> 往下分析, 我们输入的激活码被和 &#8220;yu-ris1&#8221; 进行拼接然后放到另外一个变量中</p>
+
+
+
+<div class="wp-block-image"><figure class="aligncenter size-large"><img loading="lazy" width="434" height="221" src="/wp-content/uploads/2020/04/image-10.png" alt="" class="wp-image-725" srcset="/wp-content/uploads/2020/04/image-10.png 434w, /wp-content/uploads/2020/04/image-10-300x153.png 300w" sizes="(max-width: 434px) 100vw, 434px"></figure></div>
+
+
+
+<p>然后对激活码进行了一些魔法, 先不管那些运算来看这个 regKeyComplete 用来干什么</p>
+
+
+
+<div class="wp-block-image"><figure class="aligncenter size-large"><img loading="lazy" width="513" height="94" src="/wp-content/uploads/2020/04/image-11.png" alt="" class="wp-image-727" srcset="/wp-content/uploads/2020/04/image-11.png 513w, /wp-content/uploads/2020/04/image-11-300x55.png 300w" sizes="(max-width: 513px) 100vw, 513px"></figure></div>
+
+
+
+<p>追进这个 sub_462C04, 肉眼可见这是个 SHA1 函数 (之前折腾 SM3 的经验, 开头就是五个常数放到5个寄存器很明显了, 再 Google 一下常数就能确定是 SHA1)</p>
+
+
+
+<div class="wp-block-image"><figure class="aligncenter size-large"><img loading="lazy" width="463" height="343" src="/wp-content/uploads/2020/04/image-12.png" alt="" class="wp-image-729" srcset="/wp-content/uploads/2020/04/image-12.png 463w, /wp-content/uploads/2020/04/image-12-300x222.png 300w" sizes="(max-width: 463px) 100vw, 463px"></figure></div>
+
+
+
+<p>再看下面的 sub_43EFFC, 由于之前逆向过英文版, 我能确定这个算法是某种 CRC, 通过一个程序内的常量表对字符串计算得出一个 uint32. 稍微注意一下这里只处理了 字符串的 17 位.</p>
+
+
+
+<div class="wp-block-image"><figure class="aligncenter size-large"><img loading="lazy" width="814" height="586" src="/wp-content/uploads/2020/04/image-9.png" alt="" class="wp-image-730" srcset="/wp-content/uploads/2020/04/image-9.png 814w, /wp-content/uploads/2020/04/image-9-300x216.png 300w, /wp-content/uploads/2020/04/image-9-768x553.png 768w" sizes="(max-width: 814px) 100vw, 814px"></figure></div>
+
+
+
+<p>现在就很清楚了, 最终校验的 finalKey 是长度为 40 + 8 的一个字符串. 这样我们就可以直接算出下面的循环计数</p>
+
+
+
+<div class="wp-block-image"><figure class="aligncenter size-large"><img loading="lazy" width="663" height="354" src="/wp-content/uploads/2020/04/image-13.png" alt="" class="wp-image-731" srcset="/wp-content/uploads/2020/04/image-13.png 663w, /wp-content/uploads/2020/04/image-13-300x160.png 300w" sizes="(max-width: 663px) 100vw, 663px"></figure></div>
+
+
+
+<p>辣么这个循环是干什么的呢¿</p>
+
+
+
+<p>结合上面的那个蜜汁表格我才发现, 这玩意是把之前的 HEX 字符串转回 byte[] <img src="/wp-content/plugins/tiebaface/images/yellow_33.png" style="width: 24px !important;height: 24px !important;min-height: 0 !important;"><img src="/wp-content/plugins/tiebaface/images/yellow_33.png" style="width: 24px !important;height: 24px !important;min-height: 0 !important;"><img src="/wp-content/plugins/tiebaface/images/yellow_33.png" style="width: 24px !important;height: 24px !important;min-height: 0 !important;"></p>
+
+
+
+<figure class="wp-block-image size-large"><img loading="lazy" width="973" height="159" src="/wp-content/uploads/2020/04/image-14.png" alt="" class="wp-image-732" srcset="/wp-content/uploads/2020/04/image-14.png 973w, /wp-content/uploads/2020/04/image-14-300x49.png 300w, /wp-content/uploads/2020/04/image-14-768x126.png 768w" sizes="(max-width: 973px) 100vw, 973px"></figure>
+
+
+
+<div class="wp-block-image"><figure class="aligncenter size-large"><img loading="lazy" width="298" height="403" src="/wp-content/uploads/2020/04/image-15.png" alt="" class="wp-image-733" srcset="/wp-content/uploads/2020/04/image-15.png 298w, /wp-content/uploads/2020/04/image-15-222x300.png 222w" sizes="(max-width: 298px) 100vw, 298px"></figure></div>
+
+
+
+<p>接下来分析最后的判定算法, 程序从固定的 wtfTable 中每隔 28 byte 取出一截, 用前 24 byte 和我们的 finalKeyByteArray 进行对比.</p>
+
+
+
+<p>当数据匹配的时候跳出循环, 用此时被取出这一截的后 8 byte 作为两个 int 相加, 以此算出 XOR Key (XOR Key 计算部分参见 0x02).</p>
+
+
+
+<div class="wp-block-image"><figure class="aligncenter size-large"><img loading="lazy" width="907" height="357" src="/wp-content/uploads/2020/04/image-16.png" alt="" class="wp-image-734" srcset="/wp-content/uploads/2020/04/image-16.png 907w, /wp-content/uploads/2020/04/image-16-300x118.png 300w, /wp-content/uploads/2020/04/image-16-768x302.png 768w" sizes="(max-width: 907px) 100vw, 907px"></figure></div>
+
+
+
+<p>这个 wtfTable 是怎么来的呢? 其实很简单, 就是嵌在程序里的一个资源而已, 用 Resource Hacker 之类的程序都可以解出来</p>
+
+
+
+<div class="wp-block-image"><figure class="aligncenter size-large"><img loading="lazy" width="553" height="172" src="/wp-content/uploads/2020/05/image.png" alt="" class="wp-image-741" srcset="/wp-content/uploads/2020/05/image.png 553w, /wp-content/uploads/2020/05/image-300x93.png 300w" sizes="(max-width: 553px) 100vw, 553px"></figure></div>
+
+
+
+<p>我们假设游戏发行商不可能给所有用户都发完全一致的 Key <img src="/wp-content/plugins/tiebaface/images/yellow_16.png" style="width: 24px !important;height: 24px !important;min-height: 0 !important;">, 但是 XOR 解密 Key 一定只有一个, 那么现在要干的事情很明显了. 只需要把 Key 的判断跳过, 取出任意一个 wtf 来初始化 Key 即可.</p>
+
+
+
+<p>在此之前, 先验证一下我们的想法. 拆开 EXE 取出 YS_BIN, 让我们随便取几个 8 byte 算一下, 完美证明 <img src="/wp-content/plugins/tiebaface/images/yellow_25.png" style="width: 24px !important;height: 24px !important;min-height: 0 !important;"></p>
+
+
+
+<div class="wp-block-image"><figure class="aligncenter size-large"><img loading="lazy" width="993" height="326" src="/wp-content/uploads/2020/04/image-17.png" alt="" class="wp-image-735" srcset="/wp-content/uploads/2020/04/image-17.png 993w, /wp-content/uploads/2020/04/image-17-300x98.png 300w, /wp-content/uploads/2020/04/image-17-768x252.png 768w" sizes="(max-width: 993px) 100vw, 993px"></figure></div>
+
+
+
+<p>接下来给程序打补丁, 把橙色的几个块直接用一个 jmp 跳掉即可. 别忘了给 edx 赋一个 28 的倍数</p>
+
+
+
+<div class="wp-block-image"><figure class="aligncenter size-large"><img loading="lazy" width="832" height="716" src="/wp-content/uploads/2020/04/image-18.png" alt="" class="wp-image-736" srcset="/wp-content/uploads/2020/04/image-18.png 832w, /wp-content/uploads/2020/04/image-18-300x258.png 300w, /wp-content/uploads/2020/04/image-18-768x661.png 768w" sizes="(max-width: 832px) 100vw, 832px"></figure></div>
+
+
+
+<p>Patch 后如图, 右边是原来的数据作为对照 (好像被 Snipaste 弄糊了, 不要在意细节)</p>
+
+
+
+<div class="wp-block-image"><figure class="aligncenter size-large is-resized"><img loading="lazy" src="/wp-content/uploads/2020/04/image-19-1024x179.png" alt="" class="wp-image-737" width="580" height="101" srcset="/wp-content/uploads/2020/04/image-19-1024x179.png 1024w, /wp-content/uploads/2020/04/image-19-300x53.png 300w, /wp-content/uploads/2020/04/image-19-768x134.png 768w, /wp-content/uploads/2020/04/image-19.png 1314w" sizes="(max-width: 580px) 100vw, 580px"></figure></div>
+
+
+
+<p>这样认证回避就完成啦 <img src="/wp-content/plugins/tiebaface/images/yellow_25.png" style="width: 24px !important;height: 24px !important;min-height: 0 !important;"> 同时我也找到了 XOR Key, 真是可喜可贺 可喜可贺 <img src="/wp-content/plugins/tiebaface/images/yellow_16.png" style="width: 24px !important;height: 24px !important;min-height: 0 !important;"></p>
+
+
+
+<div class="wp-block-image"><figure class="aligncenter size-large"><img loading="lazy" width="1024" height="665" src="/wp-content/uploads/2020/04/image-20-1024x665.png" alt="" class="wp-image-739" srcset="/wp-content/uploads/2020/04/image-20-1024x665.png 1024w, /wp-content/uploads/2020/04/image-20-300x195.png 300w, /wp-content/uploads/2020/04/image-20-768x499.png 768w, /wp-content/uploads/2020/04/image-20.png 1168w" sizes="(max-width: 1024px) 100vw, 1024px"></figure></div>
+
+
+
+<p></p>
+		<h2 class="post_h_quote">Yu-RIS 引擎认证回避笔记</h2>
+</div>				<nav id="post_nav">
+					<span id="p_n_l"><a href="/archives/javascript-ast-static-binding-analysis/" rel="prev">&larr; JavaScript AST 变量绑定静态分析的一些思路</a></span>
+					<span id="p_n_r"><a href="/archives/biman-walkthrough/" rel="next">《美少女万华镜》无剧透全流程攻略 &rarr;</a></span>
+				</nav>
+				
+<div id="cmt" class="cmt">
+	
+	</div>			</article>
+			</div>
+</div>
+
+<div id="sidebar">
+	<div class="widget" id="one">
+			</div>
+	<div class="widget" id="two">
+			</div>
+	<div class="clearfix"></div>
+</div>
+<footer id="footer" role="contentinfo">
+    
+    <a href="http://dimpurr.com/" title="Dimpurr (钉子)" target="_blank">Dimpurr</a>'s
+    <a href="http://blog.dimpurr.com/clearision/" title="Clearision" target="_blank">Clearision</a><br>
+    Powered by <a href="https://wordpress.org/" title="WordPress" target="_blank">WordPress</a>
+
+    <script src="/wp-content/themes/clearision/js/script.js" type="text/javascript"></script>
+    <script type="text/javascript" src="/wp-includes/js/wp-embed.min.js?ver=5.8" id="wp-embed-js"></script>
+</footer>
+
+</div>
+</body>
+</html>

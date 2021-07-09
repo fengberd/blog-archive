@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>Explorer &#8211; Berd&#039;s Playground (Deprecated)</title>
+	<atom:link href="/tags/explorer/feed/" rel="self" type="application/rss+xml" />
+	<link>/</link>
+	<description>Won&#039;t receive any further updates.</description>
+	<lastBuildDate>Tue, 29 Jun 2021 01:02:33 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=5.8</generator>
+
+<image>
+	<url>/wp-content/uploads/2019/05/icon.png</url>
+	<title>Explorer &#8211; Berd&#039;s Playground (Deprecated)</title>
+	<link>/</link>
+	<width>32</width>
+	<height>32</height>
+</image> 
+	<item>
+		<title>Windows 运行 一些有趣的语法</title>
+		<link>/archives/windows-run-interesting-syntax/</link>
+		
+		<dc:creator><![CDATA[FENGberd]]></dc:creator>
+		<pubDate>Mon, 02 Mar 2020 03:41:23 +0000</pubDate>
+				<category><![CDATA[踩坑]]></category>
+		<category><![CDATA[Explorer]]></category>
+		<category><![CDATA[Windows]]></category>
+		<guid isPermaLink="false">/?p=682</guid>
+
+					<description><![CDATA[0x00 前言 Windows Explorer 中有一个很实用的小工具 &#8220;运行&#8221; , 您可以用 Win+R 快捷键呼出这个小工具. 这个常用的小工具并不只是单纯的 &#8220;执行一个可执行程序&#8221;, 它其实有很多额外的功能. 通过这个工具执行命令与在任意资源管理器窗口的地址栏中输入命令是完全等价的, 本文就探讨一下这个小工具(地址栏)可用的一些语法. 由于网上很难找到资料, 本文无法涵盖所有可用的语法. 如果您了解更多有意思的语法欢迎与我交流. 0x01 执行一个可执行程序 首先自然要说我们最常用的运行方式了, 直接输入一个可执行程序的名称, 系统会根据环境变量搜寻并启动它. 当然您也可以输入绝对路径. 0x02 打开一个路径 由于使用运行和在资源管理器地址栏中进行输入一样, 如果您输入一个目录 (如 C:\Windows) 就会唤起一个新的资源管理器窗口指向您指定的路径. 当然, 您也可以打开所谓的 &#8220;网络路径&#8221;, 如 \\233.233.233.233. 0x03 打开一个URL 由于我对 Windows 处理 URL 的机制不了解, 这里只能讨论我观察到的现象. 在运行中输入一个 URL 将唤起对应 Scheme 的程序进行处理. 如 https:// 通常会唤起默认浏览器, 而 steam:// 会唤起 [&#8230;]]]></description>
+		
+		
+		
+			</item>
+	</channel>
+</rss>

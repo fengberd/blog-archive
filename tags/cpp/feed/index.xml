@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>C++ &#8211; Berd&#039;s Playground (Deprecated)</title>
+	<atom:link href="/tags/cpp/feed/" rel="self" type="application/rss+xml" />
+	<link>/</link>
+	<description>Won&#039;t receive any further updates.</description>
+	<lastBuildDate>Tue, 29 Jun 2021 01:02:55 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=5.8</generator>
+
+<image>
+	<url>/wp-content/uploads/2019/05/icon.png</url>
+	<title>C++ &#8211; Berd&#039;s Playground (Deprecated)</title>
+	<link>/</link>
+	<width>32</width>
+	<height>32</height>
+</image> 
+	<item>
+		<title>解决新版 Chromium 绕过LSP代理软件(如 Proxifier)</title>
+		<link>/archives/get-rid-of-chromium-lsp-bypass/</link>
+		
+		<dc:creator><![CDATA[FENGberd]]></dc:creator>
+		<pubDate>Fri, 04 Oct 2019 12:45:06 +0000</pubDate>
+				<category><![CDATA[失效/过期]]></category>
+		<category><![CDATA[踩坑]]></category>
+		<category><![CDATA[迷の代码]]></category>
+		<category><![CDATA[C++]]></category>
+		<category><![CDATA[Chrome]]></category>
+		<guid isPermaLink="false">/?p=355</guid>
+
+					<description><![CDATA[0x00 前言 Proxifier 新版已升级到 WFP 框架进行代理，本文已过期 本文为流水账形式, 查看解决方案请 点这里 时间过的真快呢, 不知不觉高考完的第一个国庆就来了. 有了5天的长假, 我又想起来 Chromium-EyeProtect 更新的事情了(上次更新是四个月前, 看到 README.md 的图了么).不过, 用几天完成更新赶上最新的 v77.0.3865.90 (Stable) 后却出现了我意料之外的情况&#8230; Proxifier 居然不能正常代理 Chromium 的流量了. 具体表现是连 Verbose Log 都无法看到任何关于 chrome.exe 的信息, 就像 Chromium 直接绕过了 LSP 去访问互联网一样&#8230; 排除 Proxifier 的问题后, 我还是不太甘心就这样放弃掉 Proxifier, 于是就有了下面这一堆踩坑和这篇 Blog . 0x01 初步分析 查了部分 LSP 的资料后, 我的第一感觉是 Chromium 在创建 Socket 的时候是不是加了什么大魔法, [&#8230;]]]></description>
+		
+		
+		
+			</item>
+		<item>
+		<title>Chromium-EyeProtect: 珍爱眼睛,远离 Google Design</title>
+		<link>/archives/chromium-eyeprotect/</link>
+		
+		<dc:creator><![CDATA[FENGberd]]></dc:creator>
+		<pubDate>Sat, 04 May 2019 04:38:05 +0000</pubDate>
+				<category><![CDATA[踩坑]]></category>
+		<category><![CDATA[迷の代码]]></category>
+		<category><![CDATA[C++]]></category>
+		<category><![CDATA[Chrome]]></category>
+		<guid isPermaLink="false">/?p=325</guid>
+
+					<description><![CDATA[0x00 前言 印象中Chrome一直是很不错的一款浏览器,但随着Google的变化它的功能和UI也不再那么单纯. 从v69开始,Google将默认的Chrome UI改成了Material Refresh, 随后在v71的某个stable release中彻底删掉了用户回滚传统UI的选项. 对大部分用户而言, UI的变更可能根本不是值得在意的事情, 甚至可能有的用户没有注意到UI的变化. 但我是很难接受这个(个人感觉)效率极低而且很丑的UI的, 因此就有了自己修改一个Chromium的想法. * 此页面中部分内容可能已经过时, 请以 GitHub 上最新的 Patch 为准. 如果您想就UI是否好看和我讲道理或者把我批判一番, 建议立刻关闭此页面. FENGberd 不要问我图为什么都是糊的, 你得问 Snipaste&#8230;截图质量已经设为100了而且上传都没有压缩 :/ 0x01 获取代码 获取代码并编译的内容已迁移至 下载源码 &#38; 编译Chromium , 本文只介绍对Chromium进行的修改 0x02 开始修改 此处的修改说明是针对 74.0.3729.108(Stable) EyeProtect-v1.0.1 进行的 注意: 本项目中几乎所有绘制/样式相关的代码都来自v69的Chromium, 这些代码的版权都属于它们的原作者 0001. 添加Flags 为了让用户能方便的开启/关闭Eye-Protect功能, 同时也是为了保证EP出现问题时可以Fallback到原版UI而不需要去安装其他浏览器, 我们在 chrome://flags 里添加一个Flag来控制Eye-Protect功能. 首先我们来到 flag-metadata.json 并添加自己的Flag定义以便编译器能识别这个Flag 然后在 [&#8230;]]]></description>
+		
+		
+		
+			</item>
+		<item>
+		<title>下载源码 &#038; 编译Chromium</title>
+		<link>/archives/get-code-and-compile-chromium/</link>
+		
+		<dc:creator><![CDATA[FENGberd]]></dc:creator>
+		<pubDate>Sun, 24 Mar 2019 07:50:44 +0000</pubDate>
+				<category><![CDATA[迷の代码]]></category>
+		<category><![CDATA[C++]]></category>
+		<category><![CDATA[Chrome]]></category>
+		<guid isPermaLink="false">/?p=299</guid>
+
+					<description><![CDATA[0x00 前言 这篇Blog主要是说明在 Windows 上 Get Code &#38; Compile 的一些步骤和需要注意的坑, 主要是从 Chromium-EyeProtect 迁移过来的内容 注意: 在对Chromium这种大项目进行任何操作前请确保你已经了解了一些Git基本概念, 大部分代码分支切换、合并、更新均通过Git完成. Git不规范, 修库两行泪. 如果需要学习Git基本知识请参考 https://git-scm.com/book/en/v2/ , 这本书写的非常详细, 对于快速入门很有帮助 另外, Chromium的每个SNAPSHOT或者正式版都会建一个版本号Tag, 所以可以直接运行 git checkout -b eye-protect 75.0.3741.2这样的指令来直接切换到特定Release而不用去翻Commit日志 之前翻日志翻得头疼直到无意间敲了git tag 0x01 Get Code 既然要对Chromium动刀, 第一步肯定是Get Code了,官方在 https://www.chromium.org/developers/how-tos/get-the-code 已经很详尽的阐述了拉取代码的步骤, 此处不再赘述. 这里写出来的主要是操作过程中可能碰到的坑和可能加速开发效率的提示 (对初次接触depot_tools的人很重要, 这个工具资料很少, 用起来都得自己摸索): fetch代码时不能断点续传, 如果操作中断必须删掉整个文件夹重新fetch 建议传入 --nohooks 在fetch完成后手动使用gclient运行Hook, 防止不必要的意外 fetch代码时如果有翻阅Commit记录的需求, 不要传入 --no-history [&#8230;]]]></description>
+		
+		
+		
+			</item>
+	</channel>
+</rss>

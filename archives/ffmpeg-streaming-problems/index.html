@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head>
+	<title>FFmpeg 推送直播流的那些坑 | Berd&#039;s Playground (Deprecated)</title>
+
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="theme_author" content="dimpurr">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="application-name" content="Berd&#039;s Playground (Deprecated)">
+
+	<link rel="stylesheet" href="/wp-content/themes/clearision/style.css?t=1616595409">
+	<link rel="stylesheet" href="/wp-content/themes/clearision/style.opacity.css?t=1616595500">
+<style>body { background-image: url("https://static.berd.moe/images/background_repeat.png"); }</style>
+	<link rel="home" href="/">
+	<link rel="profile" href="https://gmpg.org/xfn/11">
+	<link rel="pingback" href="/xmlrpc.php">
+	<link rel="shortcut icon" type="image/x-icon">
+
+	<link rel="alternate" type="application/rdf+xml" title="RSS 1.0" href="/feed/rss/">
+	<link rel="alternate" type="application/rss+xml" title="RSS 2.0" href="/feed/">
+	<link rel="alternate" type="application/atom+xml" title="ATOM 1.0" href="/feed/atom/">
+
+	<!--[if lt IE 9]>
+	<script src="/wp-content/themes/clearision/js/html5shiv.min.js" type="text/javascript"></script>
+	<![endif]-->
+
+	<meta name="robots" content="max-image-preview:large">
+<link rel="dns-prefetch" href="//s.w.org">
+		<script type="text/javascript">
+			window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/13.1.0\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/13.1.0\/svg\/","svgExt":".svg","source":{"concatemoji":"\/wp-includes\/js\/wp-emoji-release.min.js?ver=5.8"}};
+			!function(e,a,t){var n,r,o,i=a.createElement("canvas"),p=i.getContext&&i.getContext("2d");function s(e,t){var a=String.fromCharCode;p.clearRect(0,0,i.width,i.height),p.fillText(a.apply(this,e),0,0);e=i.toDataURL();return p.clearRect(0,0,i.width,i.height),p.fillText(a.apply(this,t),0,0),e===i.toDataURL()}function c(e){var t=a.createElement("script");t.src=e,t.defer=t.type="text/javascript",a.getElementsByTagName("head")[0].appendChild(t)}for(o=Array("flag","emoji"),t.supports={everything:!0,everythingExceptFlag:!0},r=0;r<o.length;r++)t.supports[o[r]]=function(e){if(!p||!p.fillText)return!1;switch(p.textBaseline="top",p.font="600 32px Arial",e){case"flag":return s([127987,65039,8205,9895,65039],[127987,65039,8203,9895,65039])?!1:!s([55356,56826,55356,56819],[55356,56826,8203,55356,56819])&&!s([55356,57332,56128,56423,56128,56418,56128,56421,56128,56430,56128,56423,56128,56447],[55356,57332,8203,56128,56423,8203,56128,56418,8203,56128,56421,8203,56128,56430,8203,56128,56423,8203,56128,56447]);case"emoji":return!s([10084,65039,8205,55357,56613],[10084,65039,8203,55357,56613])}return!1}(o[r]),t.supports.everything=t.supports.everything&&t.supports[o[r]],"flag"!==o[r]&&(t.supports.everythingExceptFlag=t.supports.everythingExceptFlag&&t.supports[o[r]]);t.supports.everythingExceptFlag=t.supports.everythingExceptFlag&&!t.supports.flag,t.DOMReady=!1,t.readyCallback=function(){t.DOMReady=!0},t.supports.everything||(n=function(){t.readyCallback()},a.addEventListener?(a.addEventListener("DOMContentLoaded",n,!1),e.addEventListener("load",n,!1)):(e.attachEvent("onload",n),a.attachEvent("onreadystatechange",function(){"complete"===a.readyState&&t.readyCallback()})),(n=t.source||{}).concatemoji?c(n.concatemoji):n.wpemoji&&n.twemoji&&(c(n.twemoji),c(n.wpemoji)))}(window,document,window._wpemojiSettings);
+		</script>
+		<style type="text/css">img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}</style>
+	<link rel="stylesheet" id="wp-block-library-css" href="/wp-includes/css/dist/block-library/style.min.css?ver=5.8" type="text/css" media="all">
+<link rel="stylesheet" id="azc-tsh-css" href="/wp-content/plugins/azurecurve-toggle-showhide/style.css?ver=1.0.0" type="text/css" media="all">
+<style id="azc-tsh-inline-css" type="text/css">.azc_tsh_toggle_active {
+							background-image: url(/wp-content/plugins/azurecurve-toggle-showhide/images/azure_up.png) !important;
+						}
+						.azc_tsh_toggle_open_active {
+							background-image: url(/wp-content/plugins/azurecurve-toggle-showhide/images/azure_up.png);
+						}
+						.azc_tsh_toggle {
+							background-image: url(/wp-content/plugins/azurecurve-toggle-showhide/images/azure_down.png);
+						}
+						.azc_tsh_toggle_open {
+							background-image: url(/wp-content/plugins/azurecurve-toggle-showhide/images/azure_down.png) !important;
+						}</style>
+<script type="text/javascript" src="/wp-includes/js/jquery/jquery.min.js?ver=3.6.0" id="jquery-core-js"></script>
+<script type="text/javascript" src="/wp-includes/js/jquery/jquery-migrate.min.js?ver=3.3.2" id="jquery-migrate-js"></script>
+<script type="text/javascript" src="/wp-content/plugins/azurecurve-toggle-showhide/jquery.js?ver=3.9.1" id="azc-tsh-js"></script>
+<link rel="https://api.w.org/" href="/wp-json/">
+<link rel="alternate" type="application/json" href="/wp-json/wp/v2/posts/160">
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="/xmlrpc.php?rsd">
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="/wp-includes/wlwmanifest.xml"> 
+<meta name="generator" content="WordPress 5.8">
+<link rel="canonical" href="/archives/ffmpeg-streaming-problems/">
+<link rel="shortlink" href="/?p=160">
+<link rel="alternate" type="application/json+oembed" href="/wp-json/oembed/1.0/embed?url=https%3A%2F%2F%2Farchives%2Fffmpeg-streaming-problems%2F">
+<link rel="alternate" type="text/xml+oembed" href="/wp-json/oembed/1.0/embed?url=https%3A%2F%2F%2Farchives%2Fffmpeg-streaming-problems%2F&#038;format=xml">
+<style type="text/css">.recentcomments a{display:inline !important;padding:0 !important;margin:0 !important;}</style>
+<link rel="icon" href="/wp-content/uploads/2019/05/icon.png" sizes="32x32">
+<link rel="icon" href="/wp-content/uploads/2019/05/icon.png" sizes="192x192">
+<link rel="apple-touch-icon" href="/wp-content/uploads/2019/05/icon.png">
+<meta name="msapplication-TileImage" content="/wp-content/uploads/2019/05/icon.png">
+		<style type="text/css" id="wp-custom-css">/*
+You can add your own CSS here.
+
+Click the help icon above to learn more.
+*/
+body > * {
+	filter: grayscale();
+}</style>
+		</head>
+
+<body class="post-template-default single single-post postid-160 single-format-standard">
+	<div id="page">
+		<hgroup id="ctn_header">
+			<div id="title">
+				<h1 id="site-title">
+					<span>
+						<a href="/" title="Berd&#039;s Playground (Deprecated)" rel="home">Berd&#039;s Playground (Deprecated)</a>
+					</span>
+				</h1>
+				<h2 id="site-description">Won&#039;t receive any further updates.</h2>
+			</div>
+			<div id="title_r">
+								<a href="/feed/" target="_blank"><button id="tr_rss"></button></a>
+				<a href="/wp-admin/" target="_blank"><button id="tr_admin"></button></a>
+				<span id="tr_clear"></span>
+				<form id="tr_s_f" method="get" action="/">
+					<input id="tr_search" type="text" name="s" placeholder="" size="10">
+				</form>
+			</div>
+			<div class="clearfix"></div>
+		</hgroup>
+		<div id="float">
+			<a href="/" title="Berd&#039;s Playground (Deprecated)" rel="home">
+				<img id="logo" alt="Berd&#039;s Playground (Deprecated)" title="Berd&#039;s Playground (Deprecated)" src="/wp-content/uploads/2019/05/icon.png">
+			</a>
+			<nav id="nav" role="navigation">
+				<div class="menu-sliding-main-menu-container"><ul id="menu-sliding-main-menu" class="menu">
+<li id="menu-item-388" class="menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor menu-item-388"><a href="/categories/magic/">技术</a></li>
+<li id="menu-item-371" class="menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor current-menu-parent current-post-parent menu-item-371"><a href="/categories/magic/repair/">踩坑</a></li>
+<li id="menu-item-372" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-372"><a href="/categories/magic/code/">迷の代码</a></li>
+<li id="menu-item-373" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-373"><a href="/categories/magic/diy/">硬核魔改</a></li>
+<li id="menu-item-374" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-374"><a href="/categories/other/">零碎内容</a></li>
+</ul></div>			</nav>
+			<nav id="next" role="sencond_navigation">
+				<div class="menu-sliding-assist-menu-container"><ul id="menu-sliding-assist-menu" class="menu">
+<li id="menu-item-101" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-101"><a href="/about/">关于 &#038; 留言板</a></li>
+</ul></div>			</nav>
+		</div>
+<div id="ctn">
+	<div id="content">
+					<article class="post-160 post type-post status-publish format-standard hentry category-repair tag-ffmpeg">
+				<hgroup class="post_hctn">
+	<div class="post_time">
+		<div class="post_t_d">10/6</div>
+		<div class="post_t_u">15:42</div>
+	</div>
+
+	<div class="post_h_l">
+		<span class="post_ct"><a href="/categories/magic/repair/" rel="category tag">踩坑</a></span>
+		<h2 class="post_h"><a href="/archives/ffmpeg-streaming-problems/">FFmpeg 推送直播流的那些坑</a></h2>
+
+		<div class="post_tag">
+			
+			<a href="/tags/ffmpeg/" rel="tag">ffmpeg</a>
+			<span class="post_c">
+				<a href="/archives/ffmpeg-streaming-problems/#respond">No Reply</a>
+
+				
+							</span>
+		</div>
+	</div>
+</hgroup>
+
+<div class="post_t">
+			
+<p> 好久没写博客服务器都快长草了&#8230;今天来除除草<img src="/wp-content/plugins/tiebaface/images/yellow_25.png" style="width: 24px !important;height: 24px !important;min-height: 0 !important;"> </p>
+
+
+
+<p>昨天在某大佬群里看到一个需求:将一张静态图片和一个音频文件转为FLV格式的直播流并推送到RTMP服务器</p>
+
+
+
+<p>乍一看这似乎是一个非常简单的需求,一个命令搞定嘛,大佬跟我说搞了一个国庆我一开始是不信的<img src="/wp-content/plugins/tiebaface/images/yellow_16.png" style="width: 24px !important;height: 24px !important;min-height: 0 !important;"></p>
+
+
+
+<span id="more-160"></span>
+
+
+
+<p>
+
+当时我想到的就是简单的一个命令搞定:<code>ffmpeg -i Audio.wav -loop 1 -i Image.jpg -c:a aac -b:a 1400k -ar 44800 -c:v libx264 -f flv rtmp://YOURADDRESS</code></p>
+
+
+
+<p>但是在实际测试过程中,这个命令推送出去的流会出现无法播放的情况,具体表现为直播服务连接正常,但如图中所示视频完全无法播放而且显示离线(我使用twich调试时控制台输出m3u8文件不存在,现在看来应该是视频流有问题导致后端转码服务器无法正常解析并生成m3u8)</p>
+
+
+
+<div class="wp-block-image"><figure class="aligncenter"><a href="/wp-content/uploads/2017/10/snipaste_201701005_235242.png"><img loading="lazy" width="496" height="355" src="/wp-content/uploads/2017/10/snipaste_201701005_235242.png" alt="" class="wp-image-162" srcset="/wp-content/uploads/2017/10/snipaste_201701005_235242.png 496w, /wp-content/uploads/2017/10/snipaste_201701005_235242-300x215.png 300w" sizes="(max-width: 496px) 100vw, 496px"></a></figure></div>
+
+
+
+<div class="wp-block-image"><figure class="aligncenter"><a href="/wp-content/uploads/2017/10/snipaste_201701005_235255.png"><img loading="lazy" width="388" height="287" src="/wp-content/uploads/2017/10/snipaste_201701005_235255.png" alt="" class="wp-image-163" srcset="/wp-content/uploads/2017/10/snipaste_201701005_235255.png 388w, /wp-content/uploads/2017/10/snipaste_201701005_235255-300x222.png 300w" sizes="(max-width: 388px) 100vw, 388px"></a></figure></div>
+
+
+
+<p>经过多次排查,如果使用ffmpeg直接推送一个正常的flv文件就不会出这个问题,可以正常播放.而如果使用ffmpeg合并图片+音频为flv然后推送就会出错<strong>[值得一提的是,我使用的图片尺寸是1300&#215;865,这个尺寸如果直接转为YUV420是不被支持的(宽不能被2整除),猜测ffmpeg自动使用了YUV444格式,由于一些我不知道的原因,推送YUV444流就会出现这些奇怪的问题]</strong>,twich提示我&#8221;关键帧距离过长&#8221;.</p>
+
+
+
+<p>当我尝试在Google上找到答案时&#8230;发现那些问题/博客基本都是2012,2013年左右的东西,一些选项甚至已经被ffmpeg给弃用了(比如-g) <img src="/wp-content/plugins/tiebaface/images/yellow_16.png" style="width: 24px !important;height: 24px !important;min-height: 0 !important;"> 这就非常尴尬</p>
+
+
+
+<p>折腾了两小时(包括尝试固定帧率,随便加/删两个文档中的选项试试)后,我发现如果强制视频使用YUV420的格式推送就不会出现这个问题,但由于YUV420需要长宽能被2整除,我们可以用scale参数进行缩放:<code>-vf realtime,scale=1300x866,format=yuv420p</code></p>
+
+
+
+<p>加上这个命令后,播放倒是正常了,但却没有图像,只有一片黑+声音<img src="/wp-content/plugins/tiebaface/images/yellow_33.png" style="width: 24px !important;height: 24px !important;min-height: 0 !important;"></p>
+
+
+
+<p>经过输出为flv查看信息,发现这个视频只有1FPS&#8230;问题就在这,于是我尝试加上-r 30强制帧率<strong>[一些帖子说需要使用-framerate参数,但这是一个input参数而且是针对image2库来说的,我现在需要修改的是output]</strong>,加了这个参数后却又出现了上面的问题<img src="/wp-content/plugins/tiebaface/images/yellow_33.png" style="width: 24px !important;height: 24px !important;min-height: 0 !important;"><img src="/wp-content/plugins/tiebaface/images/yellow_33.png" style="width: 24px !important;height: 24px !important;min-height: 0 !important;"><img src="/wp-content/plugins/tiebaface/images/yellow_33.png" style="width: 24px !important;height: 24px !important;min-height: 0 !important;"></p>
+
+
+
+<p>又折腾了半天,终于在StackOverflow上找到一个设置libx264关键帧的方法(-g已经被废弃了),参考&nbsp;<a href="https://superuser.com/questions/908280/what-is-the-correct-way-to-fix-keyframes-in-ffmpeg-for-dash">What is the CORRECT way to fix keyframes in FFMPEG for DASH?</a><br>我使用的是这个参数:<code>-c:v libx264 -x264-params keyint=60</code> 工作正常,目前没发现问题</p>
+
+
+
+<p>将上面各个参数合并,最终我用下面的命令解决了这个问题&#8230;</p>
+
+
+
+<pre class="wp-block-preformatted">ffmpeg -y -loop 1 -i Image.jpg -i Audio.wav ^
+	-vf realtime,scale=1300x866,format=yuv420p ^
+	-r 30 -c:v libx264 -x264-params keyint=60 ^
+	-c:a aac -b:a 1400k -ar 44800 -f flv rtmp://YOURADDRESS
+</pre>
+		<h2 class="post_h_quote">FFmpeg 推送直播流的那些坑</h2>
+</div>				<nav id="post_nav">
+					<span id="p_n_l"><a href="/archives/add-serviceworker-to-zxda/" rel="prev">&larr; 给 ZXDA 加了个 ServiceWorker, 效果似乎还不错呢</a></span>
+					<span id="p_n_r"><a href="/archives/alipay-bill-batch-delete/" rel="next">支付宝订单批量删除代码 &rarr;</a></span>
+				</nav>
+				
+<div id="cmt" class="cmt">
+	
+	</div>			</article>
+			</div>
+</div>
+
+<div id="sidebar">
+	<div class="widget" id="one">
+			</div>
+	<div class="widget" id="two">
+			</div>
+	<div class="clearfix"></div>
+</div>
+<footer id="footer" role="contentinfo">
+    
+    <a href="http://dimpurr.com/" title="Dimpurr (钉子)" target="_blank">Dimpurr</a>'s
+    <a href="http://blog.dimpurr.com/clearision/" title="Clearision" target="_blank">Clearision</a><br>
+    Powered by <a href="https://wordpress.org/" title="WordPress" target="_blank">WordPress</a>
+
+    <script src="/wp-content/themes/clearision/js/script.js" type="text/javascript"></script>
+    <script type="text/javascript" src="/wp-includes/js/wp-embed.min.js?ver=5.8" id="wp-embed-js"></script>
+</footer>
+
+</div>
+</body>
+</html>

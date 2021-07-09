@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head>
+	<title>JavaScript AST 变量绑定静态分析的一些思路 | Berd&#039;s Playground (Deprecated)</title>
+
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="theme_author" content="dimpurr">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="application-name" content="Berd&#039;s Playground (Deprecated)">
+
+	<link rel="stylesheet" href="/wp-content/themes/clearision/style.css?t=1616595409">
+	<link rel="stylesheet" href="/wp-content/themes/clearision/style.opacity.css?t=1616595500">
+<style>body { background-image: url("https://static.berd.moe/images/background_repeat.png"); }</style>
+	<link rel="home" href="/">
+	<link rel="profile" href="https://gmpg.org/xfn/11">
+	<link rel="pingback" href="/xmlrpc.php">
+	<link rel="shortcut icon" type="image/x-icon">
+
+	<link rel="alternate" type="application/rdf+xml" title="RSS 1.0" href="/feed/rss/">
+	<link rel="alternate" type="application/rss+xml" title="RSS 2.0" href="/feed/">
+	<link rel="alternate" type="application/atom+xml" title="ATOM 1.0" href="/feed/atom/">
+
+	<!--[if lt IE 9]>
+	<script src="/wp-content/themes/clearision/js/html5shiv.min.js" type="text/javascript"></script>
+	<![endif]-->
+
+	<meta name="robots" content="max-image-preview:large">
+<link rel="dns-prefetch" href="//s.w.org">
+		<script type="text/javascript">
+			window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/13.1.0\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/13.1.0\/svg\/","svgExt":".svg","source":{"concatemoji":"\/wp-includes\/js\/wp-emoji-release.min.js?ver=5.8"}};
+			!function(e,a,t){var n,r,o,i=a.createElement("canvas"),p=i.getContext&&i.getContext("2d");function s(e,t){var a=String.fromCharCode;p.clearRect(0,0,i.width,i.height),p.fillText(a.apply(this,e),0,0);e=i.toDataURL();return p.clearRect(0,0,i.width,i.height),p.fillText(a.apply(this,t),0,0),e===i.toDataURL()}function c(e){var t=a.createElement("script");t.src=e,t.defer=t.type="text/javascript",a.getElementsByTagName("head")[0].appendChild(t)}for(o=Array("flag","emoji"),t.supports={everything:!0,everythingExceptFlag:!0},r=0;r<o.length;r++)t.supports[o[r]]=function(e){if(!p||!p.fillText)return!1;switch(p.textBaseline="top",p.font="600 32px Arial",e){case"flag":return s([127987,65039,8205,9895,65039],[127987,65039,8203,9895,65039])?!1:!s([55356,56826,55356,56819],[55356,56826,8203,55356,56819])&&!s([55356,57332,56128,56423,56128,56418,56128,56421,56128,56430,56128,56423,56128,56447],[55356,57332,8203,56128,56423,8203,56128,56418,8203,56128,56421,8203,56128,56430,8203,56128,56423,8203,56128,56447]);case"emoji":return!s([10084,65039,8205,55357,56613],[10084,65039,8203,55357,56613])}return!1}(o[r]),t.supports.everything=t.supports.everything&&t.supports[o[r]],"flag"!==o[r]&&(t.supports.everythingExceptFlag=t.supports.everythingExceptFlag&&t.supports[o[r]]);t.supports.everythingExceptFlag=t.supports.everythingExceptFlag&&!t.supports.flag,t.DOMReady=!1,t.readyCallback=function(){t.DOMReady=!0},t.supports.everything||(n=function(){t.readyCallback()},a.addEventListener?(a.addEventListener("DOMContentLoaded",n,!1),e.addEventListener("load",n,!1)):(e.attachEvent("onload",n),a.attachEvent("onreadystatechange",function(){"complete"===a.readyState&&t.readyCallback()})),(n=t.source||{}).concatemoji?c(n.concatemoji):n.wpemoji&&n.twemoji&&(c(n.twemoji),c(n.wpemoji)))}(window,document,window._wpemojiSettings);
+		</script>
+		<style type="text/css">img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}</style>
+	<link rel="stylesheet" id="wp-block-library-css" href="/wp-includes/css/dist/block-library/style.min.css?ver=5.8" type="text/css" media="all">
+<link rel="stylesheet" id="azc-tsh-css" href="/wp-content/plugins/azurecurve-toggle-showhide/style.css?ver=1.0.0" type="text/css" media="all">
+<style id="azc-tsh-inline-css" type="text/css">.azc_tsh_toggle_active {
+							background-image: url(/wp-content/plugins/azurecurve-toggle-showhide/images/azure_up.png) !important;
+						}
+						.azc_tsh_toggle_open_active {
+							background-image: url(/wp-content/plugins/azurecurve-toggle-showhide/images/azure_up.png);
+						}
+						.azc_tsh_toggle {
+							background-image: url(/wp-content/plugins/azurecurve-toggle-showhide/images/azure_down.png);
+						}
+						.azc_tsh_toggle_open {
+							background-image: url(/wp-content/plugins/azurecurve-toggle-showhide/images/azure_down.png) !important;
+						}</style>
+<script type="text/javascript" src="/wp-includes/js/jquery/jquery.min.js?ver=3.6.0" id="jquery-core-js"></script>
+<script type="text/javascript" src="/wp-includes/js/jquery/jquery-migrate.min.js?ver=3.3.2" id="jquery-migrate-js"></script>
+<script type="text/javascript" src="/wp-content/plugins/azurecurve-toggle-showhide/jquery.js?ver=3.9.1" id="azc-tsh-js"></script>
+<link rel="https://api.w.org/" href="/wp-json/">
+<link rel="alternate" type="application/json" href="/wp-json/wp/v2/posts/690">
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="/xmlrpc.php?rsd">
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="/wp-includes/wlwmanifest.xml"> 
+<meta name="generator" content="WordPress 5.8">
+<link rel="canonical" href="/archives/javascript-ast-static-binding-analysis/">
+<link rel="shortlink" href="/?p=690">
+<link rel="alternate" type="application/json+oembed" href="/wp-json/oembed/1.0/embed?url=https%3A%2F%2F%2Farchives%2Fjavascript-ast-static-binding-analysis%2F">
+<link rel="alternate" type="text/xml+oembed" href="/wp-json/oembed/1.0/embed?url=https%3A%2F%2F%2Farchives%2Fjavascript-ast-static-binding-analysis%2F&#038;format=xml">
+<style type="text/css">.recentcomments a{display:inline !important;padding:0 !important;margin:0 !important;}</style>
+<link rel="icon" href="/wp-content/uploads/2019/05/icon.png" sizes="32x32">
+<link rel="icon" href="/wp-content/uploads/2019/05/icon.png" sizes="192x192">
+<link rel="apple-touch-icon" href="/wp-content/uploads/2019/05/icon.png">
+<meta name="msapplication-TileImage" content="/wp-content/uploads/2019/05/icon.png">
+		<style type="text/css" id="wp-custom-css">/*
+You can add your own CSS here.
+
+Click the help icon above to learn more.
+*/
+body > * {
+	filter: grayscale();
+}</style>
+		</head>
+
+<body class="post-template-default single single-post postid-690 single-format-standard">
+	<div id="page">
+		<hgroup id="ctn_header">
+			<div id="title">
+				<h1 id="site-title">
+					<span>
+						<a href="/" title="Berd&#039;s Playground (Deprecated)" rel="home">Berd&#039;s Playground (Deprecated)</a>
+					</span>
+				</h1>
+				<h2 id="site-description">Won&#039;t receive any further updates.</h2>
+			</div>
+			<div id="title_r">
+								<a href="/feed/" target="_blank"><button id="tr_rss"></button></a>
+				<a href="/wp-admin/" target="_blank"><button id="tr_admin"></button></a>
+				<span id="tr_clear"></span>
+				<form id="tr_s_f" method="get" action="/">
+					<input id="tr_search" type="text" name="s" placeholder="" size="10">
+				</form>
+			</div>
+			<div class="clearfix"></div>
+		</hgroup>
+		<div id="float">
+			<a href="/" title="Berd&#039;s Playground (Deprecated)" rel="home">
+				<img id="logo" alt="Berd&#039;s Playground (Deprecated)" title="Berd&#039;s Playground (Deprecated)" src="/wp-content/uploads/2019/05/icon.png">
+			</a>
+			<nav id="nav" role="navigation">
+				<div class="menu-sliding-main-menu-container"><ul id="menu-sliding-main-menu" class="menu">
+<li id="menu-item-388" class="menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor menu-item-388"><a href="/categories/magic/">技术</a></li>
+<li id="menu-item-371" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-371"><a href="/categories/magic/repair/">踩坑</a></li>
+<li id="menu-item-372" class="menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor current-menu-parent current-post-parent menu-item-372"><a href="/categories/magic/code/">迷の代码</a></li>
+<li id="menu-item-373" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-373"><a href="/categories/magic/diy/">硬核魔改</a></li>
+<li id="menu-item-374" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-374"><a href="/categories/other/">零碎内容</a></li>
+</ul></div>			</nav>
+			<nav id="next" role="sencond_navigation">
+				<div class="menu-sliding-assist-menu-container"><ul id="menu-sliding-assist-menu" class="menu">
+<li id="menu-item-101" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-101"><a href="/about/">关于 &#038; 留言板</a></li>
+</ul></div>			</nav>
+		</div>
+<div id="ctn">
+	<div id="content">
+					<article class="post-690 post type-post status-publish format-standard hentry category-code tag-javascript">
+				<hgroup class="post_hctn">
+	<div class="post_time">
+		<div class="post_t_d">03/2</div>
+		<div class="post_t_u">16:14</div>
+	</div>
+
+	<div class="post_h_l">
+		<span class="post_ct"><a href="/categories/magic/code/" rel="category tag">迷の代码</a></span>
+		<h2 class="post_h"><a href="/archives/javascript-ast-static-binding-analysis/">JavaScript AST 变量绑定静态分析的一些思路</a></h2>
+
+		<div class="post_tag">
+			
+			<a href="/tags/javascript/" rel="tag">Javascript</a>
+			<span class="post_c">
+				<a href="/archives/javascript-ast-static-binding-analysis/#respond">No Reply</a>
+
+				
+							</span>
+		</div>
+	</div>
+</hgroup>
+
+<div class="post_t">
+			
+<h2>0x00 前言</h2>
+
+
+
+<p>最近一直在做和 JS 语法分析、代码重构等有关的一些项目, 但是由于种种原因不能公开发布.</p>
+
+
+
+<p>这些东西一直在私有库里吃灰也不太好, 就在博客稍微聊一下其中涉及到的 JavaScript 通过 AST 静态分析变量绑定的思路吧.</p>
+
+
+
+<p>本文使用的语言是 PHP, AST 分析框架是 <a rel="noreferrer noopener" aria-label="mck89/peast (opens in a new tab)" href="https://github.com/mck89/peast" target="_blank">mck89/peast</a>. 大部分框架生成的 AST 都大同小异, 本文的叙述应该是普遍适用的.</p>
+
+
+
+<span id="more-690"></span>
+
+
+
+<p>我的水平有限, 不能保证文章的绝对准确. 如文中有错漏请您在评论区留言或通过其他方式联系我更正, 非常感谢您的协助.</p>
+
+
+
+<h2>0x01 运行规范</h2>
+
+
+
+<p>查阅 <a rel="noreferrer noopener" aria-label="ECMAScript® 2015 Language Specification (opens in a new tab)" href="https://www.ecma-international.org/ecma-262/6.0/" target="_blank">ECMAScript® 2015 Language Specification</a> 第8章和第13.3节可知, JavaScript 在执行的时候将创建一些 Code Execution Contexts, 在同一时间只会有一个 Context 被执行.</p>
+
+
+
+<p>同时, 引擎将使用 Lexical Environment (简称为 Environment) 来实现变量的<strong>绑定</strong>, 即实现从 Identifier 到变量的映射. 每个 Environment 除了记录当前创建的变量外还可能会记录一个 <em>outer environment</em>, 以便寻找作用域更大的变量.</p>
+
+
+
+<p>我们可以将 Lexical Environment 划分为下面这几个范围</p>
+
+
+
+<ul>
+<li>global, 即没有 <em>outer environment</em> 的 Environment, 简单的说就是管全局变量的</li>
+<li>module, 顾名思义, 范围比 global 小一些, 只负责当前 Module 里面的变量</li>
+<li>function, 范围更小, 只记录 <em>当前函数中的变量</em>, 函数的参数也会记录在这一 Environment 中</li>
+</ul>
+
+
+
+<p>按照规范, 在执行代码时每个 Context 将会关联一个 <em>LexicalEnvironment </em>和一个 <em>VariableEnvironment</em>, 注意这两个部分虽然名字不同, 但它们的<strong>类型</strong>都是 Lexical Environment.</p>
+
+
+
+<p>其中前者负责记录在 <em>这一 Context中</em> 创建的<em>局部变量 (let 和 const 关键词创建)</em>, 而后者用于记录 <em>VariableStatements (var 关键字) 创建的变量</em>.</p>
+
+
+
+<div class="wp-block-image"><figure class="aligncenter size-large"><img loading="lazy" width="435" height="403" src="/wp-content/uploads/2020/03/image-6.png" alt="" class="wp-image-691" srcset="/wp-content/uploads/2020/03/image-6.png 435w, /wp-content/uploads/2020/03/image-6-300x278.png 300w" sizes="(max-width: 435px) 100vw, 435px"><figcaption>大概就是这样</figcaption></figure></div>
+
+
+
+<p>但是这里讨论的都是运行时的情况. 在静态分析时, 我们要面临的一大难题就是根本没有 Context 和 Environment 之类的东西, 手上有的就是一个 AST, 因此我们得自己实现一个类似 Environment 的机制来帮助变量绑定.</p>
+
+
+
+<h2>0x02 创建绑定</h2>
+
+
+
+<p>为了简化实现, 这里我们将不完全按照规范的定义来, 进行下面几点修改</p>
+
+
+
+<ul>
+<li>根据具体需求, 目前没有分析 Module 的需要, 因此剔除 module 这个类型</li>
+<li>不需要实现 Context 和 Code Realm, 因为我们不需要真正的去执行代码</li>
+<li>由于没有 Context, 我们直接使用 Environment 来替代它, 将 Environment 直接关联到代码 (即 AST Node)</li>
+<li>由于没有实现 Context, 也就没有 <em>LexicalEnvironment </em>和 <em>VariableEnvironment</em> 之分, 我们需要一些机制来区分 var 和 const/let 关键字定义的变量范围</li>
+<li>基于上一条原因, 我们再增加一个 <em>block </em>级别的 Environment 限定于块级变量的储存</li>
+<li>最后, 我肯定不愿意把每个类型的 Environment 都写一次, 要采用尽可能统一的实现</li>
+</ul>
+
+
+
+<p>有了这些修改, 我们就可以开始尝试实现了. 不难发现, Global, Function, Block 三个域应该呈现一个嵌套的关系, 采用下面的方式定义大小可比较的 LexicalEnvironment 类型会为我们实现绑定变量提供一定的便利.</p>
+
+
+
+<div class="wp-block-image"><figure class="aligncenter size-large"><img loading="lazy" width="395" height="108" src="/wp-content/uploads/2020/03/image-7.png" alt="" class="wp-image-692" srcset="/wp-content/uploads/2020/03/image-7.png 395w, /wp-content/uploads/2020/03/image-7-300x82.png 300w" sizes="(max-width: 395px) 100vw, 395px"></figure></div>
+
+
+
+<p>接下来我们需要实现变量的绑定. 扫描 AST 的时候, 常见的扫描方式是从外往内一层一层的扫, 例如, 对于下面的代码:</p>
+
+
+
+<pre class="wp-block-code"><code>StatementA;
+{
+	StatementC;
+	StatementD;
+}
+StatementB;</code></pre>
+
+
+
+<p>会生成类似于下图的 AST (画的不太好, 这个工具实在是不好排版)</p>
+
+
+
+<div class="wp-block-image"><figure class="aligncenter size-large"><img loading="lazy" width="503" height="352" src="/wp-content/uploads/2020/03/image-8.png" alt="" class="wp-image-693" srcset="/wp-content/uploads/2020/03/image-8.png 503w, /wp-content/uploads/2020/03/image-8-300x210.png 300w" sizes="(max-width: 503px) 100vw, 503px"></figure></div>
+
+
+
+<p>那么扫描时我们处理的顺序就是 Program-&gt;BlockStatement(外面的)-&gt;StatementA-&gt;BlockStatement(里面那个)-&gt;StatementC-&gt;StatementD-&gt;StatementB</p>
+
+
+
+<p>根据这个处理顺序来设计我们的程序, 我们可以考虑创建一个 $currentEnvironment 变量, 初始值为 GlobalEnvironment. 随后对扫描到的每一个 Node 都给它附加上 $currentEnvironment 当前对应的值, 就像下面这样 (打码是为了突出重点, 下面不再重复说明)</p>
+
+
+
+<div class="wp-block-image"><figure class="aligncenter size-large"><img loading="lazy" width="987" height="116" src="/wp-content/uploads/2020/03/image-9.png" alt="" class="wp-image-694" srcset="/wp-content/uploads/2020/03/image-9.png 987w, /wp-content/uploads/2020/03/image-9-300x35.png 300w, /wp-content/uploads/2020/03/image-9-768x90.png 768w" sizes="(max-width: 987px) 100vw, 987px"></figure></div>
+
+
+
+<p>接下来我们扫描到每一个 BlockStatement(储存块的 Statement) 和 FunctionExpression/FunctionDeclaration 时都创建适当的 Environment, 并将 $currentEnvironment 设定到这个值, 这样就可以确保我们进行的创建/绑定操作都绑定到了正确的地方.</p>
+
+
+
+<p>下图是一个简单的示例, 这里判断了 CatchClause 和 SwitchCase 是因为框架中这两个 Node 较为特别, 这里不深入研究.</p>
+
+
+
+<div class="wp-block-image"><figure class="aligncenter size-large"><img loading="lazy" width="425" height="174" src="/wp-content/uploads/2020/03/image-13.png" alt="" class="wp-image-698" srcset="/wp-content/uploads/2020/03/image-13.png 425w, /wp-content/uploads/2020/03/image-13-300x123.png 300w" sizes="(max-width: 425px) 100vw, 425px"></figure></div>
+
+
+
+<p>如果您熟悉 Peast 生成的 AST, 您可能已经发现这里的逻辑有一些问题, 请先耐心往下看.</p>
+
+
+
+<p>我们继续扫描, 当碰到 VariableDeclarator(定义变量的 Node) 就创建一个变量, 那么问题来了, 假如我有如下代码:</p>
+
+
+
+<pre class="wp-block-code"><code>function real()
+{
+	var winz = 233;
+	{
+		var sanae = 666;
+	}
+}</code></pre>
+
+
+
+<p>由于 FunctionDeclaration 的 $body (即函数体) 是一个 BlockStatement, 这必然会导致我们的程序创建一个下图的嵌套 Environment:</p>
+
+
+
+<div class="wp-block-image"><figure class="aligncenter size-large"><img loading="lazy" width="570" height="261" src="/wp-content/uploads/2020/03/image-10.png" alt="" class="wp-image-695" srcset="/wp-content/uploads/2020/03/image-10.png 570w, /wp-content/uploads/2020/03/image-10-300x137.png 300w" sizes="(max-width: 570px) 100vw, 570px"></figure></div>
+
+
+
+<p>变量 winz 看似正确注册了, 但它实际上应该被放到外面的 FunctionEnvironment中, 变量 sanae 更不应该被放在这个地方, 因为它们都是用关键词 <em>var</em> 定义的.</p>
+
+
+
+<p>还记得我们之前提到这三类 Environment 大小是可以比较的吗? 这就为解决问题提供了可能. 每个 Environment 在创建绑定之前先检查自身的类型值是否足够小, 如果不够小就调用 $outer 中的函数进行创建绑定, 这样一层一层往上传递就可以解决问题.</p>
+
+
+
+<div class="wp-block-image"><figure class="aligncenter size-large"><img loading="lazy" width="575" height="147" src="/wp-content/uploads/2020/03/image-11.png" alt="" class="wp-image-696" srcset="/wp-content/uploads/2020/03/image-11.png 575w, /wp-content/uploads/2020/03/image-11-300x77.png 300w" sizes="(max-width: 575px) 100vw, 575px"></figure></div>
+
+
+
+<p>当然, 我们还需要在碰到 VariableDeclaration 时进行类型的检查, 告诉 Environment 我们到底需要哪个级别的绑定</p>
+
+
+
+<div class="wp-block-image"><figure class="aligncenter size-large"><img loading="lazy" width="1024" height="150" src="/wp-content/uploads/2020/03/image-12-1024x150.png" alt="" class="wp-image-697" srcset="/wp-content/uploads/2020/03/image-12-1024x150.png 1024w, /wp-content/uploads/2020/03/image-12-300x44.png 300w, /wp-content/uploads/2020/03/image-12-768x112.png 768w, /wp-content/uploads/2020/03/image-12.png 1039w" sizes="(max-width: 1024px) 100vw, 1024px"></figure></div>
+
+
+
+<p>这样一来, 我们就基本实现了可用的绑定. 但是这里会有一个浪费内存的地方, 您可能已经注意到了, 我们还没有解决 FunctionEnvironment 和 BlockEnvironment 重叠的问题. 当然这很好解决, 我们只要判断上一级 Node 并避免创建新的 Environment 就可以了.</p>
+
+
+
+<div class="wp-block-image"><figure class="aligncenter size-large"><img loading="lazy" width="776" height="142" src="/wp-content/uploads/2020/03/image-14.png" alt="" class="wp-image-699" srcset="/wp-content/uploads/2020/03/image-14.png 776w, /wp-content/uploads/2020/03/image-14-300x55.png 300w, /wp-content/uploads/2020/03/image-14-768x141.png 768w" sizes="(max-width: 776px) 100vw, 776px"></figure></div>
+
+
+
+<h2>0x03 赋值和引用</h2>
+
+
+
+<p>每个变量通常会有两种状态, 赋值和引用. 对变量的赋值通常只会由 AssignmentExpression 完成(毕竟 ES6 里不能传递引用参数, 这里说的是改变参数导致传入变量被改变的行为)</p>
+
+
+
+<p>处理赋值较为简单, 我们只要在碰到 AssignmentExpression 时绑定即可.</p>
+
+
+
+<div class="wp-block-image"><figure class="aligncenter size-large"><img loading="lazy" width="455" height="130" src="/wp-content/uploads/2020/03/image-15.png" alt="" class="wp-image-700" srcset="/wp-content/uploads/2020/03/image-15.png 455w, /wp-content/uploads/2020/03/image-15-300x86.png 300w" sizes="(max-width: 455px) 100vw, 455px"></figure></div>
+
+
+
+<p>但是对于引用, 简单的方案是碰到 Identifier 时进行处理, 这就涉及一些较为复杂的因素. 根据我们的 AST 扫描模式, 一个 Identifier 可能被放在 FunctionDeclaration-&gt;$id, 也可能是 Assignment 左边的运算符, 这会导致我们把奇怪的东西绑定到变量上.</p>
+
+
+
+<p>解决这个问题花费了不少时间, 在这个阶段我采用传入一个 $ignoreIdentifier 数组说明哪些 Identifier 已经被处理过, 显然这个实现非常的不优雅并且会造成不可预期的问题(比如漏掉绑定).</p>
+
+
+
+<div class="wp-block-image"><figure class="aligncenter size-large"><img loading="lazy" width="432" height="134" src="/wp-content/uploads/2020/03/image-16.png" alt="" class="wp-image-701" srcset="/wp-content/uploads/2020/03/image-16.png 432w, /wp-content/uploads/2020/03/image-16-300x93.png 300w" sizes="(max-width: 432px) 100vw, 432px"></figure></div>
+
+
+
+<p>此外, 在面对复杂代码的时候这一实现仍然不完美, 对于下面的代码:</p>
+
+
+
+<pre class="wp-block-code"><code>function outer()
+{
+	function inner()
+	{
+		berd++;
+	}
+	var berd = 233;
+	inner();
+	console.info(berd);
+}</code></pre>
+
+
+
+<p>在执行时自然是没有问题的, 当我们运行 inner() 时 Context 中已经有了 berd 这个变量, 并且根据规范它实际上在进入 outer 这个Context 时就已经被创建了, 只是还没有被初始化, 也就是某些面试题里经典的 &#8220;提升&#8221;</p>
+
+
+
+<p>但是在我们的分析实现中, 扫描到 inner() 函数时我们的 Environment 中是没有 berd 这个变量的, 所以这一绑定会直接被跳过, 出现漏绑的问题</p>
+
+
+
+<h2>0x04 两次扫描</h2>
+
+
+
+<p>为了解决漏绑, 我最后得出的解决方案是扫描两遍. 这可能不是完美的解决方案, 但是已经解决了我踩到的所有坑.</p>
+
+
+
+<p>在第一遍扫描中, 我们只负责为各个 Node 创建 Environment, 并且为找到的变量定义创建绑定.</p>
+
+
+
+<div class="wp-block-image"><figure class="aligncenter size-large"><img loading="lazy" width="1024" height="471" src="/wp-content/uploads/2020/03/image-17-1024x471.png" alt="" class="wp-image-702" srcset="/wp-content/uploads/2020/03/image-17-1024x471.png 1024w, /wp-content/uploads/2020/03/image-17-300x138.png 300w, /wp-content/uploads/2020/03/image-17-768x353.png 768w, /wp-content/uploads/2020/03/image-17.png 1055w" sizes="(max-width: 1024px) 100vw, 1024px"></figure></div>
+
+
+
+<p>您可能已经注意到了, 我在下面的图片中将 FunctionDeclaration 直接作为一个变量来处理, 因为这种处理方式并不会造成太大的问题并且较为优雅.</p>
+
+
+
+<div class="wp-block-image"><figure class="aligncenter size-large"><img loading="lazy" width="799" height="484" src="/wp-content/uploads/2020/03/image-19.png" alt="" class="wp-image-704" srcset="/wp-content/uploads/2020/03/image-19.png 799w, /wp-content/uploads/2020/03/image-19-300x182.png 300w, /wp-content/uploads/2020/03/image-19-768x465.png 768w" sizes="(max-width: 799px) 100vw, 799px"></figure></div>
+
+
+
+<p>接下来在第二遍扫描中, 我们只管为扫描到的 Identifier 都执行一下绑定 get 就好了. 根据我们的扫描原理, 如果存在 AssignmentExpression, 我们会先尝试绑定 set, 因此只要在具体的 Binding 实现中忽略对同一个 Identifier 进行的重复绑定即可.</p>
+
+
+
+<div class="wp-block-image"><figure class="aligncenter size-large"><img loading="lazy" width="663" height="584" src="/wp-content/uploads/2020/03/image-18.png" alt="" class="wp-image-703" srcset="/wp-content/uploads/2020/03/image-18.png 663w, /wp-content/uploads/2020/03/image-18-300x264.png 300w" sizes="(max-width: 663px) 100vw, 663px"></figure></div>
+
+
+
+<p>大概就写到这里吧, 具体的完整源码我不方便给出, 不过关键的思路和代码我已经贴出来了. 如果您有兴趣, 顺着这个思路补完剩下的实现并不是很难的事情. 希望这篇博客能对您有帮助.</p>
+		<h2 class="post_h_quote">JavaScript AST 变量绑定静态分析的一些思路</h2>
+</div>				<nav id="post_nav">
+					<span id="p_n_l"><a href="/archives/windows-run-interesting-syntax/" rel="prev">&larr; Windows 运行 一些有趣的语法</a></span>
+					<span id="p_n_r"><a href="/archives/yu-ris-engine-crack/" rel="next">Yu-RIS 引擎认证回避笔记 &rarr;</a></span>
+				</nav>
+				
+<div id="cmt" class="cmt">
+	
+	</div>			</article>
+			</div>
+</div>
+
+<div id="sidebar">
+	<div class="widget" id="one">
+			</div>
+	<div class="widget" id="two">
+			</div>
+	<div class="clearfix"></div>
+</div>
+<footer id="footer" role="contentinfo">
+    
+    <a href="http://dimpurr.com/" title="Dimpurr (钉子)" target="_blank">Dimpurr</a>'s
+    <a href="http://blog.dimpurr.com/clearision/" title="Clearision" target="_blank">Clearision</a><br>
+    Powered by <a href="https://wordpress.org/" title="WordPress" target="_blank">WordPress</a>
+
+    <script src="/wp-content/themes/clearision/js/script.js" type="text/javascript"></script>
+    <script type="text/javascript" src="/wp-includes/js/wp-embed.min.js?ver=5.8" id="wp-embed-js"></script>
+</footer>
+
+</div>
+</body>
+</html>

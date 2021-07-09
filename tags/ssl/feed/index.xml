@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>SSL &#8211; Berd&#039;s Playground (Deprecated)</title>
+	<atom:link href="/tags/ssl/feed/" rel="self" type="application/rss+xml" />
+	<link>/</link>
+	<description>Won&#039;t receive any further updates.</description>
+	<lastBuildDate>Tue, 29 Jun 2021 01:02:33 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=5.8</generator>
+
+<image>
+	<url>/wp-content/uploads/2019/05/icon.png</url>
+	<title>SSL &#8211; Berd&#039;s Playground (Deprecated)</title>
+	<link>/</link>
+	<width>32</width>
+	<height>32</height>
+</image> 
+	<item>
+		<title>简单的给远程桌面连接 (Remote Desktop) 配置自定义 SSL 证书</title>
+		<link>/archives/remote-desktop-setup-ssl-certificate/</link>
+		
+		<dc:creator><![CDATA[FENGberd]]></dc:creator>
+		<pubDate>Tue, 24 Dec 2019 03:08:24 +0000</pubDate>
+				<category><![CDATA[技术]]></category>
+		<category><![CDATA[RDP]]></category>
+		<category><![CDATA[SSL]]></category>
+		<category><![CDATA[Windows]]></category>
+		<guid isPermaLink="false">/?p=375</guid>
+
+					<description><![CDATA[0x00 前言 通常新装的服务器都不会配有 RDP 加密证书, 我们连接的时候会看到一个证书错误警告. 大部分人都会直接忽略这个警告, 但在某种程度上这会造成一定的安全问题, 如受到 MITM 攻击等. 本文介绍了从准备证书到配置证书的全套流程, 有助于增强 RDP 连接的安全性. 0x01 准备证书 关于什么证书能用于 Windows RDP 连接, 在 Google 上我并没有找到相关资料. 在咨询了一些证书提供商客服后得到的回答是针对域名的加密证书可以用于 RDP 连接加密. 因此, 这里选择 Namecheap 提供的 PositiveSSL 单域名证书做演示. 下单流程非常简单, 在此不做赘述. 你当然可以使用自签证书, 但那就意味着要安装不安全的 CA, 反正我是不喜欢这么干的. 有时为了保证安全性, CA 会让你自己提供 CSR 并签发 CRT, 而在 Windows 下导入带私钥的证书时使用 PKCS12 (PFX) 格式会比较方便, 因此再用 openssl 合并一下. 输入 [&#8230;]]]></description>
+		
+		
+		
+			</item>
+	</channel>
+</rss>

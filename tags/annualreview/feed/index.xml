@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>AnnualReview &#8211; Berd&#039;s Playground (Deprecated)</title>
+	<atom:link href="/tags/annualreview/feed/" rel="self" type="application/rss+xml" />
+	<link>/</link>
+	<description>Won&#039;t receive any further updates.</description>
+	<lastBuildDate>Tue, 29 Jun 2021 01:02:32 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=5.8</generator>
+
+<image>
+	<url>/wp-content/uploads/2019/05/icon.png</url>
+	<title>AnnualReview &#8211; Berd&#039;s Playground (Deprecated)</title>
+	<link>/</link>
+	<width>32</width>
+	<height>32</height>
+</image> 
+	<item>
+		<title>2020 年度总结</title>
+		<link>/archives/2020-review/</link>
+		
+		<dc:creator><![CDATA[FENGberd]]></dc:creator>
+		<pubDate>Thu, 31 Dec 2020 11:00:00 +0000</pubDate>
+				<category><![CDATA[零碎内容]]></category>
+		<category><![CDATA[AnnualReview]]></category>
+		<guid isPermaLink="false">/?p=871</guid>
+
+					<description><![CDATA[0x00 前言 “惊喜不断” 的 2020 终于快结束啦，在年初疫情的影响下假期高强度加长，我也做了不少有意思的事，在年终总结一下吧因为这篇博客是风鸟在写，所以你不太可能会在这份年度总结中读到和线下生活相关的内容（ 0x01 今年玩的游戏 熟悉我的人应该都知道我有严重的 Motion Sick，大部分 3D 游戏都撑不过十分钟，于是今年也买了不少游戏玩了一会就放库里吃灰了 这就是我买的VN也吃灰的理由简单说说今年投入了不少时间的游戏吧，说起这个当然得先吹 NieR: Automata今年终于实现了全 100% 三周目完美毕业，可喜可贺，可喜可贺 接下来就是 Crystar 啦，这游戏虽然什么都好但就是不好玩，总体感觉还是制作很不错的游戏，但玩法太单一和强行多周目很让人头大 另一个游戏是 Code Vein，虽然在手感和剧情重复的机制上有一些问题，总体上还是很棒的目前刚刚开始二周目，计划在 2021 年把 100% 拿到手 还有不得不提的 Black Mesa，HL1 的重制版，大家都懂不过返校后基本没时间再碰了，目前也没达到全成就 今年 Halo MCC 终于更新完啦，光环的故事在 PC 上也走向了尾声，成就估计这辈子是刷不完了 接下来就是某个用黑黄公告跳票了三次的游戏了，当初画的饼真的没几个做出来的&#8230; 虽然游戏整体也不错，但画饼不填坑还是很不好的 除了上面提到的游戏，令人印象深刻的还有一些 NSFW VNs，这里就不多提了（如果你有关注我的频道，基本上每次我玩 VN 之前都会把游戏拆一遍然后在频道里水一下，看看记录大概就知道我玩了啥 0x02 今年挖的大坑 今年创建了 Berd&#8217;s Playground，从此开始了一去不复返的水频道生活（当然在学习和摸鱼之余我还是有认真做一点东西的.jpg BerdRefactorFramework 这是一个 JS 全自动反混淆框架最初只是被群友勾起好奇心去做的，到现在已经可以全自动拆 obfuscator.io，sojson [&#8230;]]]></description>
+		
+		
+		
+			</item>
+	</channel>
+</rss>

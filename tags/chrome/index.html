@@ -1,0 +1,568 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head>
+	<title>Chrome | Berd&#039;s Playground (Deprecated)</title>
+
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="theme_author" content="dimpurr">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="application-name" content="Berd&#039;s Playground (Deprecated)">
+
+	<link rel="stylesheet" href="/wp-content/themes/clearision/style.css?t=1616595409">
+	<link rel="stylesheet" href="/wp-content/themes/clearision/style.opacity.css?t=1616595500">
+<style>body { background-image: url("https://static.berd.moe/images/background_repeat.png"); }</style>
+	<link rel="home" href="/">
+	<link rel="profile" href="https://gmpg.org/xfn/11">
+	<link rel="pingback" href="/xmlrpc.php">
+	<link rel="shortcut icon" type="image/x-icon">
+
+	<link rel="alternate" type="application/rdf+xml" title="RSS 1.0" href="/feed/rss/">
+	<link rel="alternate" type="application/rss+xml" title="RSS 2.0" href="/feed/">
+	<link rel="alternate" type="application/atom+xml" title="ATOM 1.0" href="/feed/atom/">
+
+	<!--[if lt IE 9]>
+	<script src="/wp-content/themes/clearision/js/html5shiv.min.js" type="text/javascript"></script>
+	<![endif]-->
+
+	<meta name="robots" content="max-image-preview:large">
+<link rel="dns-prefetch" href="//s.w.org">
+<link rel="alternate" type="application/rss+xml" title="Berd&#039;s Playground (Deprecated) &raquo; Chrome Tag Feed" href="/tags/chrome/feed/">
+		<script type="text/javascript">
+			window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/13.1.0\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/13.1.0\/svg\/","svgExt":".svg","source":{"concatemoji":"\/wp-includes\/js\/wp-emoji-release.min.js?ver=5.8"}};
+			!function(e,a,t){var n,r,o,i=a.createElement("canvas"),p=i.getContext&&i.getContext("2d");function s(e,t){var a=String.fromCharCode;p.clearRect(0,0,i.width,i.height),p.fillText(a.apply(this,e),0,0);e=i.toDataURL();return p.clearRect(0,0,i.width,i.height),p.fillText(a.apply(this,t),0,0),e===i.toDataURL()}function c(e){var t=a.createElement("script");t.src=e,t.defer=t.type="text/javascript",a.getElementsByTagName("head")[0].appendChild(t)}for(o=Array("flag","emoji"),t.supports={everything:!0,everythingExceptFlag:!0},r=0;r<o.length;r++)t.supports[o[r]]=function(e){if(!p||!p.fillText)return!1;switch(p.textBaseline="top",p.font="600 32px Arial",e){case"flag":return s([127987,65039,8205,9895,65039],[127987,65039,8203,9895,65039])?!1:!s([55356,56826,55356,56819],[55356,56826,8203,55356,56819])&&!s([55356,57332,56128,56423,56128,56418,56128,56421,56128,56430,56128,56423,56128,56447],[55356,57332,8203,56128,56423,8203,56128,56418,8203,56128,56421,8203,56128,56430,8203,56128,56423,8203,56128,56447]);case"emoji":return!s([10084,65039,8205,55357,56613],[10084,65039,8203,55357,56613])}return!1}(o[r]),t.supports.everything=t.supports.everything&&t.supports[o[r]],"flag"!==o[r]&&(t.supports.everythingExceptFlag=t.supports.everythingExceptFlag&&t.supports[o[r]]);t.supports.everythingExceptFlag=t.supports.everythingExceptFlag&&!t.supports.flag,t.DOMReady=!1,t.readyCallback=function(){t.DOMReady=!0},t.supports.everything||(n=function(){t.readyCallback()},a.addEventListener?(a.addEventListener("DOMContentLoaded",n,!1),e.addEventListener("load",n,!1)):(e.attachEvent("onload",n),a.attachEvent("onreadystatechange",function(){"complete"===a.readyState&&t.readyCallback()})),(n=t.source||{}).concatemoji?c(n.concatemoji):n.wpemoji&&n.twemoji&&(c(n.twemoji),c(n.wpemoji)))}(window,document,window._wpemojiSettings);
+		</script>
+		<style type="text/css">img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}</style>
+	<link rel="stylesheet" id="wp-block-library-css" href="/wp-includes/css/dist/block-library/style.min.css?ver=5.8" type="text/css" media="all">
+<link rel="stylesheet" id="azc-tsh-css" href="/wp-content/plugins/azurecurve-toggle-showhide/style.css?ver=1.0.0" type="text/css" media="all">
+<style id="azc-tsh-inline-css" type="text/css">.azc_tsh_toggle_active {
+							background-image: url(/wp-content/plugins/azurecurve-toggle-showhide/images/azure_up.png) !important;
+						}
+						.azc_tsh_toggle_open_active {
+							background-image: url(/wp-content/plugins/azurecurve-toggle-showhide/images/azure_up.png);
+						}
+						.azc_tsh_toggle {
+							background-image: url(/wp-content/plugins/azurecurve-toggle-showhide/images/azure_down.png);
+						}
+						.azc_tsh_toggle_open {
+							background-image: url(/wp-content/plugins/azurecurve-toggle-showhide/images/azure_down.png) !important;
+						}</style>
+<script type="text/javascript" src="/wp-includes/js/jquery/jquery.min.js?ver=3.6.0" id="jquery-core-js"></script>
+<script type="text/javascript" src="/wp-includes/js/jquery/jquery-migrate.min.js?ver=3.3.2" id="jquery-migrate-js"></script>
+<script type="text/javascript" src="/wp-content/plugins/azurecurve-toggle-showhide/jquery.js?ver=3.9.1" id="azc-tsh-js"></script>
+<link rel="https://api.w.org/" href="/wp-json/">
+<link rel="alternate" type="application/json" href="/wp-json/wp/v2/tags/9">
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="/xmlrpc.php?rsd">
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="/wp-includes/wlwmanifest.xml"> 
+<meta name="generator" content="WordPress 5.8">
+<style type="text/css">.recentcomments a{display:inline !important;padding:0 !important;margin:0 !important;}</style>
+<link rel="icon" href="/wp-content/uploads/2019/05/icon.png" sizes="32x32">
+<link rel="icon" href="/wp-content/uploads/2019/05/icon.png" sizes="192x192">
+<link rel="apple-touch-icon" href="/wp-content/uploads/2019/05/icon.png">
+<meta name="msapplication-TileImage" content="/wp-content/uploads/2019/05/icon.png">
+		<style type="text/css" id="wp-custom-css">/*
+You can add your own CSS here.
+
+Click the help icon above to learn more.
+*/
+body > * {
+	filter: grayscale();
+}</style>
+		</head>
+
+<body class="archive tag tag-chrome tag-9">
+	<div id="page">
+		<hgroup id="ctn_header">
+			<div id="title">
+				<h1 id="site-title">
+					<span>
+						<a href="/" title="Berd&#039;s Playground (Deprecated)" rel="home">Berd&#039;s Playground (Deprecated)</a>
+					</span>
+				</h1>
+				<h2 id="site-description">Won&#039;t receive any further updates.</h2>
+			</div>
+			<div id="title_r">
+								<a href="/feed/" target="_blank"><button id="tr_rss"></button></a>
+				<a href="/wp-admin/" target="_blank"><button id="tr_admin"></button></a>
+				<span id="tr_clear"></span>
+				<form id="tr_s_f" method="get" action="/">
+					<input id="tr_search" type="text" name="s" placeholder="" size="10">
+				</form>
+			</div>
+			<div class="clearfix"></div>
+		</hgroup>
+		<div id="float">
+			<a href="/" title="Berd&#039;s Playground (Deprecated)" rel="home">
+				<img id="logo" alt="Berd&#039;s Playground (Deprecated)" title="Berd&#039;s Playground (Deprecated)" src="/wp-content/uploads/2019/05/icon.png">
+			</a>
+			<nav id="nav" role="navigation">
+				<div class="menu-sliding-main-menu-container"><ul id="menu-sliding-main-menu" class="menu">
+<li id="menu-item-388" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-388"><a href="/categories/magic/">技术</a></li>
+<li id="menu-item-371" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-371"><a href="/categories/magic/repair/">踩坑</a></li>
+<li id="menu-item-372" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-372"><a href="/categories/magic/code/">迷の代码</a></li>
+<li id="menu-item-373" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-373"><a href="/categories/magic/diy/">硬核魔改</a></li>
+<li id="menu-item-374" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-374"><a href="/categories/other/">零碎内容</a></li>
+</ul></div>			</nav>
+			<nav id="next" role="sencond_navigation">
+				<div class="menu-sliding-assist-menu-container"><ul id="menu-sliding-assist-menu" class="menu">
+<li id="menu-item-101" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-101"><a href="/about/">关于 &#038; 留言板</a></li>
+</ul></div>			</nav>
+		</div>
+<div id="ctn">
+	<div id="content">
+									<article class="post-893 post type-post status-publish format-standard hentry category-repair tag-chrome tag-edge">
+					<hgroup class="post_hctn">
+	<div class="post_time">
+		<div class="post_t_d">01/30</div>
+		<div class="post_t_u">21:58</div>
+	</div>
+
+	<div class="post_h_l">
+		<span class="post_ct"><a href="/categories/magic/repair/" rel="category tag">踩坑</a></span>
+		<h2 class="post_h"><a href="/archives/microsoft-edge-install-third-party-extensions/">在 Microsoft Edge 中安装第三方扩展的正确姿势</a></h2>
+
+		<div class="post_tag">
+			
+			<a href="/tags/chrome/" rel="tag">Chrome</a> <a href="/tags/edge/" rel="tag">Edge</a>
+			<span class="post_c">
+				<a href="/archives/microsoft-edge-install-third-party-extensions/#respond">No Reply</a>
+
+				
+							</span>
+		</div>
+	</div>
+</hgroup>
+
+<div class="post_t">
+			
+<h2>0x00 前言</h2>
+
+
+
+<p>最近从 Chromium-EyeProtect 迁移到了 Microsoft Edge, 不过我以前一直通过开发者模式加载的一些扩展又使得 Edge 在启动时弹出了 <a href="/archives/add-third-app-to-chrome/" data-type="URL" data-id="/archives/add-third-app-to-chrome/">这篇博客</a> 中提到的禁用提示</p>
+
+
+
+<div class="wp-block-image"><figure class="aligncenter size-large"><img loading="lazy" width="332" height="170" src="/wp-content/uploads/2021/01/image.png" alt="" class="wp-image-894" srcset="/wp-content/uploads/2021/01/image.png 332w, /wp-content/uploads/2021/01/image-300x154.png 300w" sizes="(max-width: 332px) 100vw, 332px"></figure></div>
+
+
+
+<p>这个提示在 Chromium 下可以通过安装一个开发者 APP 来解决，但在 Edge 上无法安装这个 APP</p>
+
+
+
+<p>此外，如果我尝试打包扩展后直接加载，依然会造成扩展无法启用，这篇博客简单的记录了我解决这个问题的方法</p>
+
+
+
+<div class="wp-block-image"><figure class="aligncenter size-large"><img loading="lazy" width="587" height="134" src="/wp-content/uploads/2021/01/image-1.png" alt="" class="wp-image-895" srcset="/wp-content/uploads/2021/01/image-1.png 587w, /wp-content/uploads/2021/01/image-1-300x68.png 300w" sizes="(max-width: 587px) 100vw, 587px"></figure></div>
+
+
+
+ <a href="/archives/microsoft-edge-install-third-party-extensions/#more-893" class="more-link">Read More →</a>		<h2 class="post_h_quote">在 Microsoft Edge 中安装第三方扩展的正确姿势</h2>
+</div>				</article>
+							<article class="post-849 post type-post status-publish format-standard hentry category-magic tag-chrome tag-malware">
+					<hgroup class="post_hctn">
+	<div class="post_time">
+		<div class="post_t_d">11/2</div>
+		<div class="post_t_u">23:25</div>
+	</div>
+
+	<div class="post_h_l">
+		<span class="post_ct"><a href="/categories/magic/" rel="category tag">技术</a></span>
+		<h2 class="post_h"><a href="/archives/chrome-malware-extension-modheader/">Chrome 恶意拓展 ModHeader 分析笔记</a></h2>
+
+		<div class="post_tag">
+			
+			<a href="/tags/chrome/" rel="tag">Chrome</a> <a href="/tags/malware/" rel="tag">Malware</a>
+			<span class="post_c">
+				<a href="/archives/chrome-malware-extension-modheader/#respond">No Reply</a>
+
+				
+							</span>
+		</div>
+	</div>
+</hgroup>
+
+<div class="post_t">
+			
+<h2>0x00 前言</h2>
+
+
+
+<p>一些废话就不说了, 见 <a rel="noreferrer noopener" href="/archives/chrome-spyware-extension-user-agent-switcher/" target="_blank">Chrome 恶意拓展 User-Agent Switcher 分析笔记</a> </p>
+
+
+
+<p>拓展ID: <code>idgpnmonknjnojddfkpgkljpfnnfcklj</code></p>
+
+
+
+<p>这次也是例行流量审查抓到的，拓展更新时间为 2020/10/31，还好没造成什么大危害</p>
+
+
+
+<p>真是万圣节惊喜 <img src="/wp-content/plugins/tiebaface/images/yellow_33.png" style="width: 24px !important;height: 24px !important;min-height: 0 !important;"><img src="/wp-content/plugins/tiebaface/images/yellow_33.png" style="width: 24px !important;height: 24px !important;min-height: 0 !important;"><img src="/wp-content/plugins/tiebaface/images/yellow_33.png" style="width: 24px !important;height: 24px !important;min-height: 0 !important;"></p>
+
+
+
+<figure class="wp-block-image size-large"><img loading="lazy" width="1002" height="583" src="/wp-content/uploads/2020/11/image-8.png" alt="" class="wp-image-858" srcset="/wp-content/uploads/2020/11/image-8.png 1002w, /wp-content/uploads/2020/11/image-8-300x175.png 300w, /wp-content/uploads/2020/11/image-8-768x447.png 768w" sizes="(max-width: 1002px) 100vw, 1002px"></figure>
+
+
+
+ <a href="/archives/chrome-malware-extension-modheader/#more-849" class="more-link">Read More →</a>		<h2 class="post_h_quote">Chrome 恶意拓展 ModHeader 分析笔记</h2>
+</div>				</article>
+							<article class="post-838 post type-post status-publish format-standard hentry category-magic tag-chrome tag-googlesucks tag-malware tag-reverse">
+					<hgroup class="post_hctn">
+	<div class="post_time">
+		<div class="post_t_d">10/27</div>
+		<div class="post_t_u">18:10</div>
+	</div>
+
+	<div class="post_h_l">
+		<span class="post_ct"><a href="/categories/magic/" rel="category tag">技术</a></span>
+		<h2 class="post_h"><a href="/archives/chrome-spyware-extension-user-agent-switcher/">Chrome 恶意拓展 User-Agent Switcher 分析笔记</a></h2>
+
+		<div class="post_tag">
+			
+			<a href="/tags/chrome/" rel="tag">Chrome</a> <a href="/tags/googlesucks/" rel="tag">GoogleSucks</a> <a href="/tags/malware/" rel="tag">Malware</a> <a href="/tags/reverse/" rel="tag">Reverse</a>
+			<span class="post_c">
+				<a href="/archives/chrome-spyware-extension-user-agent-switcher/#respond">No Reply</a>
+
+				
+							</span>
+		</div>
+	</div>
+</hgroup>
+
+<div class="post_t">
+			
+<h2>0x00 前言</h2>
+
+
+
+<p>今天在例行审查本机流量的时候发现 Chromium 在启动的时候请求了一个奇怪的域名: <code>www.useragentswitch.com</code>, 我的第一反应是可能拓展在检查更新或者进行用户量统计, 但仔细一想以前是没这种请求的, 就访问一下这个域名</p>
+
+
+
+<figure class="wp-block-image size-large"><img loading="lazy" width="1024" height="602" src="/wp-content/uploads/2020/10/snipaste_20201027_173422-1024x602.png" alt="" class="wp-image-839" srcset="/wp-content/uploads/2020/10/snipaste_20201027_173422-1024x602.png 1024w, /wp-content/uploads/2020/10/snipaste_20201027_173422-300x176.png 300w, /wp-content/uploads/2020/10/snipaste_20201027_173422-768x451.png 768w, /wp-content/uploads/2020/10/snipaste_20201027_173422.png 1426w" sizes="(max-width: 1024px) 100vw, 1024px"></figure>
+
+
+
+ <a href="/archives/chrome-spyware-extension-user-agent-switcher/#more-838" class="more-link">Read More →</a>		<h2 class="post_h_quote">Chrome 恶意拓展 User-Agent Switcher 分析笔记</h2>
+</div>				</article>
+							<article class="post-421 post type-post status-publish format-standard hentry category-magic tag-chrome">
+					<hgroup class="post_hctn">
+	<div class="post_time">
+		<div class="post_t_d">01/14</div>
+		<div class="post_t_u">13:35</div>
+	</div>
+
+	<div class="post_h_l">
+		<span class="post_ct"><a href="/categories/magic/" rel="category tag">技术</a></span>
+		<h2 class="post_h"><a href="/archives/chromium-setup-api-keys/">为 Chromium 设置 API Key 使用 Google 服务</a></h2>
+
+		<div class="post_tag">
+			
+			<a href="/tags/chrome/" rel="tag">Chrome</a>
+			<span class="post_c">
+				<a href="/archives/chromium-setup-api-keys/#respond">No Reply</a>
+
+				
+							</span>
+		</div>
+	</div>
+</hgroup>
+
+<div class="post_t">
+			
+<h2>0x00 前言</h2>
+
+
+
+<p>自编译的 Chromium 通常不会包含 Google API Key, 这就导致我们无法使用一系列的 Google 服务, 如登录和同步等.</p>
+
+
+
+<div class="wp-block-image"><figure class="aligncenter size-large"><img loading="lazy" width="1021" height="211" src="/wp-content/uploads/2020/01/snipaste_20200114_123729.png" alt="" class="wp-image-422" srcset="/wp-content/uploads/2020/01/snipaste_20200114_123729.png 1021w, /wp-content/uploads/2020/01/snipaste_20200114_123729-300x62.png 300w, /wp-content/uploads/2020/01/snipaste_20200114_123729-768x159.png 768w" sizes="(max-width: 1021px) 100vw, 1021px"></figure></div>
+
+
+
+<p>该问题实际上很好解决, 只要你有一个 Google 账户就能申请自己的 API Key 并配置到 Chromium 内. 更详细的操作请参考<a href="https://www.chromium.org/developers/how-tos/api-keys" target="_blank" rel="noreferrer noopener" aria-label="此处 (opens in a new tab)">此处</a>, 本文只介绍基础操作.</p>
+
+
+
+ <a href="/archives/chromium-setup-api-keys/#more-421" class="more-link">Read More →</a>		<h2 class="post_h_quote">为 Chromium 设置 API Key 使用 Google 服务</h2>
+</div>				</article>
+							<article class="post-355 post type-post status-publish format-standard hentry category-outdated category-repair category-code tag-cpp tag-chrome">
+					<hgroup class="post_hctn">
+	<div class="post_time">
+		<div class="post_t_d">10/4</div>
+		<div class="post_t_u">20:45</div>
+	</div>
+
+	<div class="post_h_l">
+		<span class="post_ct"><a href="/categories/outdated/" rel="category tag">失效/过期</a> <a href="/categories/magic/repair/" rel="category tag">踩坑</a> <a href="/categories/magic/code/" rel="category tag">迷の代码</a></span>
+		<h2 class="post_h"><a href="/archives/get-rid-of-chromium-lsp-bypass/">解决新版 Chromium 绕过LSP代理软件(如 Proxifier)</a></h2>
+
+		<div class="post_tag">
+			
+			<a href="/tags/cpp/" rel="tag">C++</a> <a href="/tags/chrome/" rel="tag">Chrome</a>
+			<span class="post_c">
+				<a href="/archives/get-rid-of-chromium-lsp-bypass/#respond">No Reply</a>
+
+				
+							</span>
+		</div>
+	</div>
+</hgroup>
+
+<div class="post_t">
+			
+<h2>0x00 前言</h2>
+
+
+
+<p><strong>Proxifier 新版已升级到 WFP 框架进行代理，本文已过期</strong></p>
+
+
+
+<p><strong>本文为流水账形式, 查看解决方案请 <a href="/archives/get-rid-of-chromium-lsp-bypass/#0x05">点这里</a></strong></p>
+
+
+
+<p>时间过的真快呢, 不知不觉高考完的第一个国庆就来了. 有了5天的长假, 我又想起来 <a href="https://github.com/fengberd/Chromium-EyeProtect/" target="_blank" rel="noreferrer noopener" aria-label=" (opens in a new tab)">Chromium-EyeProtect</a> 更新的事情了(上次更新是四个月前, <s>看到 README.md 的图了么</s>).不过, 用几天完成更新赶上最新的 <em>v77.0.3865.90 (Stable)</em> 后却出现了我意料之外的情况&#8230;</p>
+
+
+
+ <a href="/archives/get-rid-of-chromium-lsp-bypass/#more-355" class="more-link">Read More →</a>		<h2 class="post_h_quote">解决新版 Chromium 绕过LSP代理软件(如 Proxifier)</h2>
+</div>				</article>
+							<article class="post-325 post type-post status-publish format-standard hentry category-repair category-code tag-cpp tag-chrome">
+					<hgroup class="post_hctn">
+	<div class="post_time">
+		<div class="post_t_d">05/4</div>
+		<div class="post_t_u">12:38</div>
+	</div>
+
+	<div class="post_h_l">
+		<span class="post_ct"><a href="/categories/magic/repair/" rel="category tag">踩坑</a> <a href="/categories/magic/code/" rel="category tag">迷の代码</a></span>
+		<h2 class="post_h"><a href="/archives/chromium-eyeprotect/">Chromium-EyeProtect: 珍爱眼睛,远离 Google Design</a></h2>
+
+		<div class="post_tag">
+			
+			<a href="/tags/cpp/" rel="tag">C++</a> <a href="/tags/chrome/" rel="tag">Chrome</a>
+			<span class="post_c">
+				<a href="/archives/chromium-eyeprotect/#respond">No Reply</a>
+
+				
+							</span>
+		</div>
+	</div>
+</hgroup>
+
+<div class="post_t">
+			
+<style>code
+{
+display: inline-block;
+line-height: 14px;
+padding: 4px;
+}</style>
+
+
+
+<h2>0x00 前言</h2>
+
+
+
+<p>印象中Chrome一直是很不错的一款浏览器,但随着Google的变化它的功能和UI也不再那么单纯. 从v69开始,Google将默认的Chrome UI改成了Material Refresh, 随后在v71的某个stable release中彻底删掉了用户回滚传统UI的选项.</p>
+
+
+
+<p>对大部分用户而言, UI的变更可能根本不是值得在意的事情, 甚至可能有的用户没有注意到UI的变化. 但我是很难接受这个(个人感觉)效率极低而且很丑的UI的, 因此就有了自己修改一个Chromium的想法.</p>
+
+
+
+<p><em>* 此页面中部分内容可能已经过时, 请以 GitHub 上最新的 Patch 为准.</em></p>
+
+
+
+ <a href="/archives/chromium-eyeprotect/#more-325" class="more-link">Read More →</a>		<h2 class="post_h_quote">Chromium-EyeProtect: 珍爱眼睛,远离 Google Design</h2>
+</div>				</article>
+							<article class="post-299 post type-post status-publish format-standard hentry category-code tag-cpp tag-chrome">
+					<hgroup class="post_hctn">
+	<div class="post_time">
+		<div class="post_t_d">03/24</div>
+		<div class="post_t_u">15:50</div>
+	</div>
+
+	<div class="post_h_l">
+		<span class="post_ct"><a href="/categories/magic/code/" rel="category tag">迷の代码</a></span>
+		<h2 class="post_h"><a href="/archives/get-code-and-compile-chromium/">下载源码 &#038; 编译Chromium</a></h2>
+
+		<div class="post_tag">
+			
+			<a href="/tags/cpp/" rel="tag">C++</a> <a href="/tags/chrome/" rel="tag">Chrome</a>
+			<span class="post_c">
+				<a href="/archives/get-code-and-compile-chromium/#respond">No Reply</a>
+
+				
+							</span>
+		</div>
+	</div>
+</hgroup>
+
+<div class="post_t">
+			
+<style>code
+{
+display: inline-block;
+line-height: 14px;
+padding: 4px;
+}</style>
+
+
+
+<h2>0x00 前言</h2>
+
+
+
+<p>这篇Blog主要是说明在 Windows 上 Get Code &amp; Compile 的一些步骤和需要注意的坑, 主要是从 <a href="/archives/chromium-eyeprotect/">Chromium-EyeProtect</a> 迁移过来的内容</p>
+
+
+
+<figure class="wp-block-image"><img loading="lazy" width="512" height="128" src="/wp-content/uploads/2019/03/chromium_logo_1.png" alt="" class="wp-image-329" srcset="/wp-content/uploads/2019/03/chromium_logo_1.png 512w, /wp-content/uploads/2019/03/chromium_logo_1-300x75.png 300w" sizes="(max-width: 512px) 100vw, 512px"></figure>
+
+
+
+ <a href="/archives/get-code-and-compile-chromium/#more-299" class="more-link">Read More →</a>		<h2 class="post_h_quote">下载源码 &#038; 编译Chromium</h2>
+</div>				</article>
+							<article class="post-121 post type-post status-publish format-standard hentry category-outdated category-repair category-code tag-chrome">
+					<hgroup class="post_hctn">
+	<div class="post_time">
+		<div class="post_t_d">02/10</div>
+		<div class="post_t_u">13:48</div>
+	</div>
+
+	<div class="post_h_l">
+		<span class="post_ct"><a href="/categories/outdated/" rel="category tag">失效/过期</a> <a href="/categories/magic/repair/" rel="category tag">踩坑</a> <a href="/categories/magic/code/" rel="category tag">迷の代码</a></span>
+		<h2 class="post_h"><a href="/archives/load-alipay-cert-in-chrome/">在 Chrome 中加载企业支付宝的数字证书</a></h2>
+
+		<div class="post_tag">
+			
+			<a href="/tags/chrome/" rel="tag">Chrome</a>
+			<span class="post_c">
+				<a href="/archives/load-alipay-cert-in-chrome/#respond">No Reply</a>
+
+				
+							</span>
+		</div>
+	</div>
+</hgroup>
+
+<div class="post_t">
+			
+<p>我们都知道,支付宝是一个商业公司,Google是一个科技公司</p>
+
+
+
+<p><em>** 2019年以来,Google连Do no stupid都做不到, 根本不是以前的Do no evil. 上面那句话仅针对Do no evil的Google 🙂</em><br></p>
+
+
+
+<p>当支付宝开发跟不上Chrome的进步速度时就会出现&#8221;当前操作环境不支持支付宝控件&#8221;这种尴尬的情况(国内大部分银行也这样- -):<br></p>
+
+
+
+<figure class="wp-block-image"><a href="/wp-content/uploads/2017/02/snipaste_20170210_131321.png"><img loading="lazy" width="794" height="282" src="/wp-content/uploads/2017/02/snipaste_20170210_131321.png" alt="" class="wp-image-122" srcset="/wp-content/uploads/2017/02/snipaste_20170210_131321.png 794w, /wp-content/uploads/2017/02/snipaste_20170210_131321-300x107.png 300w, /wp-content/uploads/2017/02/snipaste_20170210_131321-768x273.png 768w" sizes="(max-width: 794px) 100vw, 794px"></a></figure>
+
+
+
+ <a href="/archives/load-alipay-cert-in-chrome/#more-121" class="more-link">Read More →</a>		<h2 class="post_h_quote">在 Chrome 中加载企业支付宝的数字证书</h2>
+</div>				</article>
+							<article class="post-104 post type-post status-publish format-standard hentry category-outdated category-repair tag-chrome">
+					<hgroup class="post_hctn">
+	<div class="post_time">
+		<div class="post_t_d">01/22</div>
+		<div class="post_t_u">16:37</div>
+	</div>
+
+	<div class="post_h_l">
+		<span class="post_ct"><a href="/categories/outdated/" rel="category tag">失效/过期</a> <a href="/categories/magic/repair/" rel="category tag">踩坑</a></span>
+		<h2 class="post_h"><a href="/archives/add-third-app-to-chrome/">给 Chrome 添加非应用商店扩展程序的正确姿势</a></h2>
+
+		<div class="post_tag">
+			
+			<a href="/tags/chrome/" rel="tag">Chrome</a>
+			<span class="post_c">
+				<a href="/archives/add-third-app-to-chrome/#respond">No Reply</a>
+
+				
+							</span>
+		</div>
+	</div>
+</hgroup>
+
+<div class="post_t">
+			
+<p><strong>从2018年(具体Chrome版本未知)开始此方法已失效,即使添加了信任安装源也无法正常启用拓展.</strong> <strong>请参阅 <a href="/archives/microsoft-edge-install-third-party-extensions/" data-type="URL" data-id="/archives/microsoft-edge-install-third-party-extensions/">这篇博客</a> 获取在 2021 年 (v77+) 有效的方法.</strong></p>
+
+
+
+<p>从Chrome 30+开始,非应用商店的拓展就无法正常启用了,比如</p>
+
+
+
+<figure class="wp-block-image"><a href="/wp-content/uploads/2017/01/1.png"><img loading="lazy" width="364" height="186" src="/wp-content/uploads/2017/01/1.png" alt="" class="wp-image-105" srcset="/wp-content/uploads/2017/01/1.png 364w, /wp-content/uploads/2017/01/1-300x153.png 300w" sizes="(max-width: 364px) 100vw, 364px"></a></figure>
+
+
+
+<p>那么,如何正确的启用这些拓展呢?</p>
+
+
+
+ <a href="/archives/add-third-app-to-chrome/#more-104" class="more-link">Read More →</a>		<h2 class="post_h_quote">给 Chrome 添加非应用商店扩展程序的正确姿势</h2>
+</div>				</article>
+						<div id="page_nav">
+							</div>
+			</div>
+</div>
+
+<div id="link" style="display:none">
+	<div id="link_content">
+		<h3 id="link_h">Links</h3>
+			</div>
+</div>
+
+<div id="sidebar">
+	<div class="widget" id="one">
+			</div>
+	<div class="widget" id="two">
+			</div>
+	<div class="clearfix"></div>
+</div>
+<footer id="footer" role="contentinfo">
+    
+    <a href="http://dimpurr.com/" title="Dimpurr (钉子)" target="_blank">Dimpurr</a>'s
+    <a href="http://blog.dimpurr.com/clearision/" title="Clearision" target="_blank">Clearision</a><br>
+    Powered by <a href="https://wordpress.org/" title="WordPress" target="_blank">WordPress</a>
+
+    <script src="/wp-content/themes/clearision/js/script.js" type="text/javascript"></script>
+    <script type="text/javascript" src="/wp-includes/js/wp-embed.min.js?ver=5.8" id="wp-embed-js"></script>
+</footer>
+
+</div>
+</body>
+</html>

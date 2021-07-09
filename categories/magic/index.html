@@ -1,0 +1,600 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head>
+	<title>技术 | Berd&#039;s Playground (Deprecated)</title>
+
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="theme_author" content="dimpurr">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="application-name" content="Berd&#039;s Playground (Deprecated)">
+
+	<link rel="stylesheet" href="/wp-content/themes/clearision/style.css?t=1616595409">
+	<link rel="stylesheet" href="/wp-content/themes/clearision/style.opacity.css?t=1616595500">
+<style>body { background-image: url("https://static.berd.moe/images/background_repeat.png"); }</style>
+	<link rel="home" href="/">
+	<link rel="profile" href="https://gmpg.org/xfn/11">
+	<link rel="pingback" href="/xmlrpc.php">
+	<link rel="shortcut icon" type="image/x-icon">
+
+	<link rel="alternate" type="application/rdf+xml" title="RSS 1.0" href="/feed/rss/">
+	<link rel="alternate" type="application/rss+xml" title="RSS 2.0" href="/feed/">
+	<link rel="alternate" type="application/atom+xml" title="ATOM 1.0" href="/feed/atom/">
+
+	<!--[if lt IE 9]>
+	<script src="/wp-content/themes/clearision/js/html5shiv.min.js" type="text/javascript"></script>
+	<![endif]-->
+
+	<meta name="robots" content="max-image-preview:large">
+<link rel="dns-prefetch" href="//s.w.org">
+<link rel="alternate" type="application/rss+xml" title="Berd&#039;s Playground (Deprecated) &raquo; 技术 Category Feed" href="/categories/magic/feed/">
+		<script type="text/javascript">
+			window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/13.1.0\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/13.1.0\/svg\/","svgExt":".svg","source":{"concatemoji":"\/wp-includes\/js\/wp-emoji-release.min.js?ver=5.8"}};
+			!function(e,a,t){var n,r,o,i=a.createElement("canvas"),p=i.getContext&&i.getContext("2d");function s(e,t){var a=String.fromCharCode;p.clearRect(0,0,i.width,i.height),p.fillText(a.apply(this,e),0,0);e=i.toDataURL();return p.clearRect(0,0,i.width,i.height),p.fillText(a.apply(this,t),0,0),e===i.toDataURL()}function c(e){var t=a.createElement("script");t.src=e,t.defer=t.type="text/javascript",a.getElementsByTagName("head")[0].appendChild(t)}for(o=Array("flag","emoji"),t.supports={everything:!0,everythingExceptFlag:!0},r=0;r<o.length;r++)t.supports[o[r]]=function(e){if(!p||!p.fillText)return!1;switch(p.textBaseline="top",p.font="600 32px Arial",e){case"flag":return s([127987,65039,8205,9895,65039],[127987,65039,8203,9895,65039])?!1:!s([55356,56826,55356,56819],[55356,56826,8203,55356,56819])&&!s([55356,57332,56128,56423,56128,56418,56128,56421,56128,56430,56128,56423,56128,56447],[55356,57332,8203,56128,56423,8203,56128,56418,8203,56128,56421,8203,56128,56430,8203,56128,56423,8203,56128,56447]);case"emoji":return!s([10084,65039,8205,55357,56613],[10084,65039,8203,55357,56613])}return!1}(o[r]),t.supports.everything=t.supports.everything&&t.supports[o[r]],"flag"!==o[r]&&(t.supports.everythingExceptFlag=t.supports.everythingExceptFlag&&t.supports[o[r]]);t.supports.everythingExceptFlag=t.supports.everythingExceptFlag&&!t.supports.flag,t.DOMReady=!1,t.readyCallback=function(){t.DOMReady=!0},t.supports.everything||(n=function(){t.readyCallback()},a.addEventListener?(a.addEventListener("DOMContentLoaded",n,!1),e.addEventListener("load",n,!1)):(e.attachEvent("onload",n),a.attachEvent("onreadystatechange",function(){"complete"===a.readyState&&t.readyCallback()})),(n=t.source||{}).concatemoji?c(n.concatemoji):n.wpemoji&&n.twemoji&&(c(n.twemoji),c(n.wpemoji)))}(window,document,window._wpemojiSettings);
+		</script>
+		<style type="text/css">img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}</style>
+	<link rel="stylesheet" id="wp-block-library-css" href="/wp-includes/css/dist/block-library/style.min.css?ver=5.8" type="text/css" media="all">
+<link rel="stylesheet" id="azc-tsh-css" href="/wp-content/plugins/azurecurve-toggle-showhide/style.css?ver=1.0.0" type="text/css" media="all">
+<style id="azc-tsh-inline-css" type="text/css">.azc_tsh_toggle_active {
+							background-image: url(/wp-content/plugins/azurecurve-toggle-showhide/images/azure_up.png) !important;
+						}
+						.azc_tsh_toggle_open_active {
+							background-image: url(/wp-content/plugins/azurecurve-toggle-showhide/images/azure_up.png);
+						}
+						.azc_tsh_toggle {
+							background-image: url(/wp-content/plugins/azurecurve-toggle-showhide/images/azure_down.png);
+						}
+						.azc_tsh_toggle_open {
+							background-image: url(/wp-content/plugins/azurecurve-toggle-showhide/images/azure_down.png) !important;
+						}</style>
+<script type="text/javascript" src="/wp-includes/js/jquery/jquery.min.js?ver=3.6.0" id="jquery-core-js"></script>
+<script type="text/javascript" src="/wp-includes/js/jquery/jquery-migrate.min.js?ver=3.3.2" id="jquery-migrate-js"></script>
+<script type="text/javascript" src="/wp-content/plugins/azurecurve-toggle-showhide/jquery.js?ver=3.9.1" id="azc-tsh-js"></script>
+<link rel="https://api.w.org/" href="/wp-json/">
+<link rel="alternate" type="application/json" href="/wp-json/wp/v2/categories/30">
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="/xmlrpc.php?rsd">
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="/wp-includes/wlwmanifest.xml"> 
+<meta name="generator" content="WordPress 5.8">
+<style type="text/css">.recentcomments a{display:inline !important;padding:0 !important;margin:0 !important;}</style>
+<link rel="icon" href="/wp-content/uploads/2019/05/icon.png" sizes="32x32">
+<link rel="icon" href="/wp-content/uploads/2019/05/icon.png" sizes="192x192">
+<link rel="apple-touch-icon" href="/wp-content/uploads/2019/05/icon.png">
+<meta name="msapplication-TileImage" content="/wp-content/uploads/2019/05/icon.png">
+		<style type="text/css" id="wp-custom-css">/*
+You can add your own CSS here.
+
+Click the help icon above to learn more.
+*/
+body > * {
+	filter: grayscale();
+}</style>
+		</head>
+
+<body class="archive category category-magic category-30">
+	<div id="page">
+		<hgroup id="ctn_header">
+			<div id="title">
+				<h1 id="site-title">
+					<span>
+						<a href="/" title="Berd&#039;s Playground (Deprecated)" rel="home">Berd&#039;s Playground (Deprecated)</a>
+					</span>
+				</h1>
+				<h2 id="site-description">Won&#039;t receive any further updates.</h2>
+			</div>
+			<div id="title_r">
+								<a href="/feed/" target="_blank"><button id="tr_rss"></button></a>
+				<a href="/wp-admin/" target="_blank"><button id="tr_admin"></button></a>
+				<span id="tr_clear"></span>
+				<form id="tr_s_f" method="get" action="/">
+					<input id="tr_search" type="text" name="s" placeholder="" size="10">
+				</form>
+			</div>
+			<div class="clearfix"></div>
+		</hgroup>
+		<div id="float">
+			<a href="/" title="Berd&#039;s Playground (Deprecated)" rel="home">
+				<img id="logo" alt="Berd&#039;s Playground (Deprecated)" title="Berd&#039;s Playground (Deprecated)" src="/wp-content/uploads/2019/05/icon.png">
+			</a>
+			<nav id="nav" role="navigation">
+				<div class="menu-sliding-main-menu-container"><ul id="menu-sliding-main-menu" class="menu">
+<li id="menu-item-388" class="menu-item menu-item-type-taxonomy menu-item-object-category current-menu-item menu-item-388"><a href="/categories/magic/" aria-current="page">技术</a></li>
+<li id="menu-item-371" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-371"><a href="/categories/magic/repair/">踩坑</a></li>
+<li id="menu-item-372" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-372"><a href="/categories/magic/code/">迷の代码</a></li>
+<li id="menu-item-373" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-373"><a href="/categories/magic/diy/">硬核魔改</a></li>
+<li id="menu-item-374" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-374"><a href="/categories/other/">零碎内容</a></li>
+</ul></div>			</nav>
+			<nav id="next" role="sencond_navigation">
+				<div class="menu-sliding-assist-menu-container"><ul id="menu-sliding-assist-menu" class="menu">
+<li id="menu-item-101" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-101"><a href="/about/">关于 &#038; 留言板</a></li>
+</ul></div>			</nav>
+		</div>
+<div id="ctn">
+	<div id="content">
+									<article class="post-907 post type-post status-publish format-standard hentry category-repair tag-biometric tag-fingerprint tag-windows">
+					<hgroup class="post_hctn">
+	<div class="post_time">
+		<div class="post_t_d">04/13</div>
+		<div class="post_t_u">22:47</div>
+	</div>
+
+	<div class="post_h_l">
+		<span class="post_ct"><a href="/categories/magic/repair/" rel="category tag">踩坑</a></span>
+		<h2 class="post_h"><a href="/archives/windows-server-2019-setup-pin-and-biometric-login/">在 Windows Server 2019 中配置 PIN 并启用 Windows Hello 指纹登录</a></h2>
+
+		<div class="post_tag">
+			
+			<a href="/tags/biometric/" rel="tag">Biometric</a> <a href="/tags/fingerprint/" rel="tag">Fingerprint</a> <a href="/tags/windows/" rel="tag">Windows</a>
+			<span class="post_c">
+				<a href="/archives/windows-server-2019-setup-pin-and-biometric-login/#respond">No Reply</a>
+
+				
+							</span>
+		</div>
+	</div>
+</hgroup>
+
+<div class="post_t">
+			
+<h2>0x00 前言</h2>
+
+
+
+<p>放在宿舍的计算机经常需要锁定和解锁，但这就带来了一些问题：一是反复输入长密码非常累人，二是可能产生潜在的安全隐患。</p>
+
+
+
+<p>如果我们能通过指纹登录，上述问题就迎刃而解了。但是当我尝试添加指纹的时候却发现 Windows 不让我这么做：</p>
+
+
+
+<figure class="wp-block-image size-large"><img loading="lazy" width="1024" height="611" src="/wp-content/uploads/2021/04/snipaste_20210413_212529-1024x611.png" alt="" class="wp-image-908" srcset="/wp-content/uploads/2021/04/snipaste_20210413_212529-1024x611.png 1024w, /wp-content/uploads/2021/04/snipaste_20210413_212529-300x179.png 300w, /wp-content/uploads/2021/04/snipaste_20210413_212529-768x459.png 768w, /wp-content/uploads/2021/04/snipaste_20210413_212529.png 1072w" sizes="(max-width: 1024px) 100vw, 1024px"></figure>
+
+
+
+<p>我相信即使是猴子也可以在 Google 上找到一堆解决方案，但是你基本不可能找到一个真正有用的方案（这篇文章不包含在内 <img src="/wp-content/plugins/tiebaface/images/yellow_25.png" style="width: 24px !important;height: 24px !important;min-height: 0 !important;">）。因为那些方案针对的问题根源和我们现在碰到的不同。Microsoft 把 Windows Server 的 Windows Hello 功能砍了一部分，并且要求我们 <a rel="noreferrer noopener" href="https://docs.microsoft.com/en-us/windows/security/identity-protection/hello-for-business/hello-overview" target="_blank">配置 Windows Hello for Business</a> 来实现 PIN 和生物特征登录。</p>
+
+
+
+<p>如果你已经配好了一套完整的 AD，也许上面的链接对你帮助更大。但是我并不想配置或加入域，因此这篇博客将记录一个另辟蹊径配置 Windows Hello 指纹登录的方法。</p>
+
+
+
+ <a href="/archives/windows-server-2019-setup-pin-and-biometric-login/#more-907" class="more-link">Read More →</a>		<h2 class="post_h_quote">在 Windows Server 2019 中配置 PIN 并启用 Windows Hello 指纹登录</h2>
+</div>				</article>
+							<article class="post-893 post type-post status-publish format-standard hentry category-repair tag-chrome tag-edge">
+					<hgroup class="post_hctn">
+	<div class="post_time">
+		<div class="post_t_d">01/30</div>
+		<div class="post_t_u">21:58</div>
+	</div>
+
+	<div class="post_h_l">
+		<span class="post_ct"><a href="/categories/magic/repair/" rel="category tag">踩坑</a></span>
+		<h2 class="post_h"><a href="/archives/microsoft-edge-install-third-party-extensions/">在 Microsoft Edge 中安装第三方扩展的正确姿势</a></h2>
+
+		<div class="post_tag">
+			
+			<a href="/tags/chrome/" rel="tag">Chrome</a> <a href="/tags/edge/" rel="tag">Edge</a>
+			<span class="post_c">
+				<a href="/archives/microsoft-edge-install-third-party-extensions/#respond">No Reply</a>
+
+				
+							</span>
+		</div>
+	</div>
+</hgroup>
+
+<div class="post_t">
+			
+<h2>0x00 前言</h2>
+
+
+
+<p>最近从 Chromium-EyeProtect 迁移到了 Microsoft Edge, 不过我以前一直通过开发者模式加载的一些扩展又使得 Edge 在启动时弹出了 <a href="/archives/add-third-app-to-chrome/" data-type="URL" data-id="/archives/add-third-app-to-chrome/">这篇博客</a> 中提到的禁用提示</p>
+
+
+
+<div class="wp-block-image"><figure class="aligncenter size-large"><img loading="lazy" width="332" height="170" src="/wp-content/uploads/2021/01/image.png" alt="" class="wp-image-894" srcset="/wp-content/uploads/2021/01/image.png 332w, /wp-content/uploads/2021/01/image-300x154.png 300w" sizes="(max-width: 332px) 100vw, 332px"></figure></div>
+
+
+
+<p>这个提示在 Chromium 下可以通过安装一个开发者 APP 来解决，但在 Edge 上无法安装这个 APP</p>
+
+
+
+<p>此外，如果我尝试打包扩展后直接加载，依然会造成扩展无法启用，这篇博客简单的记录了我解决这个问题的方法</p>
+
+
+
+<div class="wp-block-image"><figure class="aligncenter size-large"><img loading="lazy" width="587" height="134" src="/wp-content/uploads/2021/01/image-1.png" alt="" class="wp-image-895" srcset="/wp-content/uploads/2021/01/image-1.png 587w, /wp-content/uploads/2021/01/image-1-300x68.png 300w" sizes="(max-width: 587px) 100vw, 587px"></figure></div>
+
+
+
+ <a href="/archives/microsoft-edge-install-third-party-extensions/#more-893" class="more-link">Read More →</a>		<h2 class="post_h_quote">在 Microsoft Edge 中安装第三方扩展的正确姿势</h2>
+</div>				</article>
+							<article class="post-863 post type-post status-publish format-standard hentry category-repair tag-i210 tag-intel tag-nuc tag-troubleshoot tag-wol">
+					<hgroup class="post_hctn">
+	<div class="post_time">
+		<div class="post_t_d">12/5</div>
+		<div class="post_t_u">18:21</div>
+	</div>
+
+	<div class="post_h_l">
+		<span class="post_ct"><a href="/categories/magic/repair/" rel="category tag">踩坑</a></span>
+		<h2 class="post_h"><a href="/archives/intel-nuc-i210-wol-troubleshooting/">Intel NUC I210 网卡 WOL 唤醒的一个坑</a></h2>
+
+		<div class="post_tag">
+			
+			<a href="/tags/i210/" rel="tag">I210</a> <a href="/tags/intel/" rel="tag">Intel</a> <a href="/tags/nuc/" rel="tag">NUC</a> <a href="/tags/troubleshoot/" rel="tag">Troubleshoot</a> <a href="/tags/wol/" rel="tag">WOL</a>
+			<span class="post_c">
+				<a href="/archives/intel-nuc-i210-wol-troubleshooting/#respond">No Reply</a>
+
+				
+							</span>
+		</div>
+	</div>
+</hgroup>
+
+<div class="post_t">
+			
+<p>今天在写 WOL 文档的时候准备自己测试一下，结果却发现我的 NUC 两个网卡只有 I219-LM 可以正常唤醒，I210 一直没有响应我的唤醒请求</p>
+
+
+
+<p>我从来不是“能用就行”的性格，所以深入研究了一下，发现这种双网卡主板的配置实际可能存在需要注意的坑，在这里记录一下</p>
+
+
+
+ <a href="/archives/intel-nuc-i210-wol-troubleshooting/#more-863" class="more-link">Read More →</a>		<h2 class="post_h_quote">Intel NUC I210 网卡 WOL 唤醒的一个坑</h2>
+</div>				</article>
+							<article class="post-849 post type-post status-publish format-standard hentry category-magic tag-chrome tag-malware">
+					<hgroup class="post_hctn">
+	<div class="post_time">
+		<div class="post_t_d">11/2</div>
+		<div class="post_t_u">23:25</div>
+	</div>
+
+	<div class="post_h_l">
+		<span class="post_ct"><a href="/categories/magic/" rel="category tag">技术</a></span>
+		<h2 class="post_h"><a href="/archives/chrome-malware-extension-modheader/">Chrome 恶意拓展 ModHeader 分析笔记</a></h2>
+
+		<div class="post_tag">
+			
+			<a href="/tags/chrome/" rel="tag">Chrome</a> <a href="/tags/malware/" rel="tag">Malware</a>
+			<span class="post_c">
+				<a href="/archives/chrome-malware-extension-modheader/#respond">No Reply</a>
+
+				
+							</span>
+		</div>
+	</div>
+</hgroup>
+
+<div class="post_t">
+			
+<h2>0x00 前言</h2>
+
+
+
+<p>一些废话就不说了, 见 <a rel="noreferrer noopener" href="/archives/chrome-spyware-extension-user-agent-switcher/" target="_blank">Chrome 恶意拓展 User-Agent Switcher 分析笔记</a> </p>
+
+
+
+<p>拓展ID: <code>idgpnmonknjnojddfkpgkljpfnnfcklj</code></p>
+
+
+
+<p>这次也是例行流量审查抓到的，拓展更新时间为 2020/10/31，还好没造成什么大危害</p>
+
+
+
+<p>真是万圣节惊喜 <img src="/wp-content/plugins/tiebaface/images/yellow_33.png" style="width: 24px !important;height: 24px !important;min-height: 0 !important;"><img src="/wp-content/plugins/tiebaface/images/yellow_33.png" style="width: 24px !important;height: 24px !important;min-height: 0 !important;"><img src="/wp-content/plugins/tiebaface/images/yellow_33.png" style="width: 24px !important;height: 24px !important;min-height: 0 !important;"></p>
+
+
+
+<figure class="wp-block-image size-large"><img loading="lazy" width="1002" height="583" src="/wp-content/uploads/2020/11/image-8.png" alt="" class="wp-image-858" srcset="/wp-content/uploads/2020/11/image-8.png 1002w, /wp-content/uploads/2020/11/image-8-300x175.png 300w, /wp-content/uploads/2020/11/image-8-768x447.png 768w" sizes="(max-width: 1002px) 100vw, 1002px"></figure>
+
+
+
+ <a href="/archives/chrome-malware-extension-modheader/#more-849" class="more-link">Read More →</a>		<h2 class="post_h_quote">Chrome 恶意拓展 ModHeader 分析笔记</h2>
+</div>				</article>
+							<article class="post-838 post type-post status-publish format-standard hentry category-magic tag-chrome tag-googlesucks tag-malware tag-reverse">
+					<hgroup class="post_hctn">
+	<div class="post_time">
+		<div class="post_t_d">10/27</div>
+		<div class="post_t_u">18:10</div>
+	</div>
+
+	<div class="post_h_l">
+		<span class="post_ct"><a href="/categories/magic/" rel="category tag">技术</a></span>
+		<h2 class="post_h"><a href="/archives/chrome-spyware-extension-user-agent-switcher/">Chrome 恶意拓展 User-Agent Switcher 分析笔记</a></h2>
+
+		<div class="post_tag">
+			
+			<a href="/tags/chrome/" rel="tag">Chrome</a> <a href="/tags/googlesucks/" rel="tag">GoogleSucks</a> <a href="/tags/malware/" rel="tag">Malware</a> <a href="/tags/reverse/" rel="tag">Reverse</a>
+			<span class="post_c">
+				<a href="/archives/chrome-spyware-extension-user-agent-switcher/#respond">No Reply</a>
+
+				
+							</span>
+		</div>
+	</div>
+</hgroup>
+
+<div class="post_t">
+			
+<h2>0x00 前言</h2>
+
+
+
+<p>今天在例行审查本机流量的时候发现 Chromium 在启动的时候请求了一个奇怪的域名: <code>www.useragentswitch.com</code>, 我的第一反应是可能拓展在检查更新或者进行用户量统计, 但仔细一想以前是没这种请求的, 就访问一下这个域名</p>
+
+
+
+<figure class="wp-block-image size-large"><img loading="lazy" width="1024" height="602" src="/wp-content/uploads/2020/10/snipaste_20201027_173422-1024x602.png" alt="" class="wp-image-839" srcset="/wp-content/uploads/2020/10/snipaste_20201027_173422-1024x602.png 1024w, /wp-content/uploads/2020/10/snipaste_20201027_173422-300x176.png 300w, /wp-content/uploads/2020/10/snipaste_20201027_173422-768x451.png 768w, /wp-content/uploads/2020/10/snipaste_20201027_173422.png 1426w" sizes="(max-width: 1024px) 100vw, 1024px"></figure>
+
+
+
+ <a href="/archives/chrome-spyware-extension-user-agent-switcher/#more-838" class="more-link">Read More →</a>		<h2 class="post_h_quote">Chrome 恶意拓展 User-Agent Switcher 分析笔记</h2>
+</div>				</article>
+							<article class="post-813 post type-post status-publish format-standard hentry category-code tag-lua tag-reverse tag-xlua">
+					<hgroup class="post_hctn">
+	<div class="post_time">
+		<div class="post_t_d">09/21</div>
+		<div class="post_t_u">21:17</div>
+	</div>
+
+	<div class="post_h_l">
+		<span class="post_ct"><a href="/categories/magic/code/" rel="category tag">迷の代码</a></span>
+		<h2 class="post_h"><a href="/archives/xlua-reverse-note/">某游戏 xLua 逆向笔记</a></h2>
+
+		<div class="post_tag">
+			
+			<a href="/tags/lua/" rel="tag">Lua</a> <a href="/tags/reverse/" rel="tag">Reverse</a> <a href="/tags/xlua/" rel="tag">xLua</a>
+			<span class="post_c">
+				<a href="/archives/xlua-reverse-note/#respond">No Reply</a>
+
+				
+							</span>
+		</div>
+	</div>
+</hgroup>
+
+<div class="post_t">
+			
+<h2>0x00 前言</h2>
+
+
+
+<p>最近好像某款游戏挺火的，虽然我没怎么关注，不过群友在拆着玩，所以我也来凑个热闹 <img src="/wp-content/plugins/tiebaface/images/yellow_25.png" style="width: 24px !important;height: 24px !important;min-height: 0 !important;"></p>
+
+
+
+<p>因为我压根没装游戏，搞逆向调试啥的基本不可能，群友就给我扔了一堆 luac 来拆着玩，之前我也没拆过这种 lua 游戏，正好学习一下，于是就有了这篇博客 <img src="/wp-content/plugins/tiebaface/images/yellow_16.png" style="width: 24px !important;height: 24px !important;min-height: 0 !important;"></p>
+
+
+
+<figure class="wp-block-image size-large is-resized"><img loading="lazy" src="/wp-content/uploads/2020/09/image-22-1024x621.png" alt="" class="wp-image-836" width="580" height="351" srcset="/wp-content/uploads/2020/09/image-22-1024x621.png 1024w, /wp-content/uploads/2020/09/image-22-300x182.png 300w, /wp-content/uploads/2020/09/image-22-768x466.png 768w, /wp-content/uploads/2020/09/image-22.png 1037w" sizes="(max-width: 580px) 100vw, 580px"></figure>
+
+
+
+ <a href="/archives/xlua-reverse-note/#more-813" class="more-link">Read More →</a>		<h2 class="post_h_quote">某游戏 xLua 逆向笔记</h2>
+</div>				</article>
+							<article class="post-712 post type-post status-publish format-standard hentry category-magic tag-crack tag-reverse tag-yu-ris">
+					<hgroup class="post_hctn">
+	<div class="post_time">
+		<div class="post_t_d">04/29</div>
+		<div class="post_t_u">12:20</div>
+	</div>
+
+	<div class="post_h_l">
+		<span class="post_ct"><a href="/categories/magic/" rel="category tag">技术</a></span>
+		<h2 class="post_h"><a href="/archives/yu-ris-engine-crack/">Yu-RIS 引擎认证回避笔记</a></h2>
+
+		<div class="post_tag">
+			
+			<a href="/tags/crack/" rel="tag">Crack</a> <a href="/tags/reverse/" rel="tag">Reverse</a> <a href="/tags/yu-ris/" rel="tag">Yu-RIS</a>
+			<span class="post_c">
+				<a href="/archives/yu-ris-engine-crack/#respond">No Reply</a>
+
+				
+							</span>
+		</div>
+	</div>
+</hgroup>
+
+<div class="post_t">
+			
+<h2>0x00 前言</h2>
+
+
+
+<p>最近在做 Yu-RIS 的游戏解包和反编译, 发现 YSTB 的数据被加密了. 寻找 XOR 表的时候本来准备打个断点康康结果发现游戏居然要我输激活码 <img src="/wp-content/plugins/tiebaface/images/yellow_33.png" style="width: 24px !important;height: 24px !important;min-height: 0 !important;"></p>
+
+
+
+<figure class="wp-block-image size-large"><img loading="lazy" width="447" height="255" src="/wp-content/uploads/2020/04/logo_yu-ris_b.png" alt="" class="wp-image-740" srcset="/wp-content/uploads/2020/04/logo_yu-ris_b.png 447w, /wp-content/uploads/2020/04/logo_yu-ris_b-300x171.png 300w" sizes="(max-width: 447px) 100vw, 447px"></figure>
+
+
+
+<p><s>由于 XOR 表的算法静态分析实在是太难, 这里就采用先破解游戏然后打断点导出 Key 的方式来解密 YSTB 数据</s>. 本文主要内容还是游戏的破解过程, 不过分析完也找到了 XOR Key. 程序本身没有符号, 如果你看到奇怪的函数名或者变量名都是我加上去的 <img src="/wp-content/plugins/tiebaface/images/yellow_16.png" style="width: 24px !important;height: 24px !important;min-height: 0 !important;"></p>
+
+
+
+ <a href="/archives/yu-ris-engine-crack/#more-712" class="more-link">Read More →</a>		<h2 class="post_h_quote">Yu-RIS 引擎认证回避笔记</h2>
+</div>				</article>
+							<article class="post-690 post type-post status-publish format-standard hentry category-code tag-javascript">
+					<hgroup class="post_hctn">
+	<div class="post_time">
+		<div class="post_t_d">03/2</div>
+		<div class="post_t_u">16:14</div>
+	</div>
+
+	<div class="post_h_l">
+		<span class="post_ct"><a href="/categories/magic/code/" rel="category tag">迷の代码</a></span>
+		<h2 class="post_h"><a href="/archives/javascript-ast-static-binding-analysis/">JavaScript AST 变量绑定静态分析的一些思路</a></h2>
+
+		<div class="post_tag">
+			
+			<a href="/tags/javascript/" rel="tag">Javascript</a>
+			<span class="post_c">
+				<a href="/archives/javascript-ast-static-binding-analysis/#respond">No Reply</a>
+
+				
+							</span>
+		</div>
+	</div>
+</hgroup>
+
+<div class="post_t">
+			
+<h2>0x00 前言</h2>
+
+
+
+<p>最近一直在做和 JS 语法分析、代码重构等有关的一些项目, 但是由于种种原因不能公开发布.</p>
+
+
+
+<p>这些东西一直在私有库里吃灰也不太好, 就在博客稍微聊一下其中涉及到的 JavaScript 通过 AST 静态分析变量绑定的思路吧.</p>
+
+
+
+<p>本文使用的语言是 PHP, AST 分析框架是 <a rel="noreferrer noopener" aria-label="mck89/peast (opens in a new tab)" href="https://github.com/mck89/peast" target="_blank">mck89/peast</a>. 大部分框架生成的 AST 都大同小异, 本文的叙述应该是普遍适用的.</p>
+
+
+
+ <a href="/archives/javascript-ast-static-binding-analysis/#more-690" class="more-link">Read More →</a>		<h2 class="post_h_quote">JavaScript AST 变量绑定静态分析的一些思路</h2>
+</div>				</article>
+							<article class="post-682 post type-post status-publish format-standard hentry category-repair tag-explorer tag-windows">
+					<hgroup class="post_hctn">
+	<div class="post_time">
+		<div class="post_t_d">03/2</div>
+		<div class="post_t_u">11:41</div>
+	</div>
+
+	<div class="post_h_l">
+		<span class="post_ct"><a href="/categories/magic/repair/" rel="category tag">踩坑</a></span>
+		<h2 class="post_h"><a href="/archives/windows-run-interesting-syntax/">Windows 运行 一些有趣的语法</a></h2>
+
+		<div class="post_tag">
+			
+			<a href="/tags/explorer/" rel="tag">Explorer</a> <a href="/tags/windows/" rel="tag">Windows</a>
+			<span class="post_c">
+				<a href="/archives/windows-run-interesting-syntax/#respond">No Reply</a>
+
+				
+							</span>
+		</div>
+	</div>
+</hgroup>
+
+<div class="post_t">
+			
+<h2>0x00 前言</h2>
+
+
+
+<p>Windows Explorer 中有一个很实用的小工具 &#8220;运行&#8221; , 您可以用 Win+R 快捷键呼出这个小工具. </p>
+
+
+
+<div class="wp-block-image"><figure class="aligncenter size-large"><img loading="lazy" width="413" height="237" src="/wp-content/uploads/2020/03/image.png" alt="" class="wp-image-683" srcset="/wp-content/uploads/2020/03/image.png 413w, /wp-content/uploads/2020/03/image-300x172.png 300w" sizes="(max-width: 413px) 100vw, 413px"></figure></div>
+
+
+
+<p>这个常用的小工具并不只是单纯的 &#8220;执行一个可执行程序&#8221;, 它其实有很多额外的功能. 通过这个工具执行命令与在任意资源管理器窗口的地址栏中输入命令是完全等价的, 本文就探讨一下这个小工具(地址栏)可用的一些语法.</p>
+
+
+
+ <a href="/archives/windows-run-interesting-syntax/#more-682" class="more-link">Read More →</a>		<h2 class="post_h_quote">Windows 运行 一些有趣的语法</h2>
+</div>				</article>
+							<article class="post-643 post type-post status-publish format-standard hentry category-ctf tag-writeup">
+					<hgroup class="post_hctn">
+	<div class="post_time">
+		<div class="post_t_d">02/3</div>
+		<div class="post_t_u">21:24</div>
+	</div>
+
+	<div class="post_h_l">
+		<span class="post_ct"><a href="/categories/magic/ctf/" rel="category tag">CTF</a></span>
+		<h2 class="post_h"><a href="/archives/hacktm-ctf-2020-writeup/">HackTM CTF 2020 Writeup</a></h2>
+
+		<div class="post_tag">
+			
+			<a href="/tags/writeup/" rel="tag">Writeup</a>
+			<span class="post_c">
+				<a href="/archives/hacktm-ctf-2020-writeup/#respond">No Reply</a>
+
+				
+							</span>
+		</div>
+	</div>
+</hgroup>
+
+<div class="post_t">
+			
+<h2>0x00 前言</h2>
+
+
+
+<p>题目地址:  <a href="https://ctfx.hacktm.ro/">https://ctfx.hacktm.ro/</a> </p>
+
+
+
+<p>今天也是0分咸鱼呢.jpg</p>
+
+
+
+<p>睡了一觉起来就剩两小时了, 还在 Web 里面卡到时间结束&#8230; 没想到其实取证更好做.</p>
+
+
+
+ <a href="/archives/hacktm-ctf-2020-writeup/#more-643" class="more-link">Read More →</a>		<h2 class="post_h_quote">HackTM CTF 2020 Writeup</h2>
+</div>				</article>
+						<div id="page_nav">
+				<span aria-current="page" class="page-numbers current">1</span>
+<a class="page-numbers" href="/categories/magic/page/2/">2</a>
+<a class="page-numbers" href="/categories/magic/page/3/">3</a>
+<a class="next page-numbers" href="/categories/magic/page/2/">Next Page</a>			</div>
+			</div>
+</div>
+
+<div id="link" style="display:none">
+	<div id="link_content">
+		<h3 id="link_h">Links</h3>
+			</div>
+</div>
+
+<div id="sidebar">
+	<div class="widget" id="one">
+			</div>
+	<div class="widget" id="two">
+			</div>
+	<div class="clearfix"></div>
+</div>
+<footer id="footer" role="contentinfo">
+    
+    <a href="http://dimpurr.com/" title="Dimpurr (钉子)" target="_blank">Dimpurr</a>'s
+    <a href="http://blog.dimpurr.com/clearision/" title="Clearision" target="_blank">Clearision</a><br>
+    Powered by <a href="https://wordpress.org/" title="WordPress" target="_blank">WordPress</a>
+
+    <script src="/wp-content/themes/clearision/js/script.js" type="text/javascript"></script>
+    <script type="text/javascript" src="/wp-includes/js/wp-embed.min.js?ver=5.8" id="wp-embed-js"></script>
+</footer>
+
+</div>
+</body>
+</html>

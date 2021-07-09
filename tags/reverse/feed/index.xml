@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>Reverse &#8211; Berd&#039;s Playground (Deprecated)</title>
+	<atom:link href="/tags/reverse/feed/" rel="self" type="application/rss+xml" />
+	<link>/</link>
+	<description>Won&#039;t receive any further updates.</description>
+	<lastBuildDate>Tue, 29 Jun 2021 01:02:33 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=5.8</generator>
+
+<image>
+	<url>/wp-content/uploads/2019/05/icon.png</url>
+	<title>Reverse &#8211; Berd&#039;s Playground (Deprecated)</title>
+	<link>/</link>
+	<width>32</width>
+	<height>32</height>
+</image> 
+	<item>
+		<title>Chrome 恶意拓展 User-Agent Switcher 分析笔记</title>
+		<link>/archives/chrome-spyware-extension-user-agent-switcher/</link>
+		
+		<dc:creator><![CDATA[FENGberd]]></dc:creator>
+		<pubDate>Tue, 27 Oct 2020 10:10:17 +0000</pubDate>
+				<category><![CDATA[技术]]></category>
+		<category><![CDATA[Chrome]]></category>
+		<category><![CDATA[GoogleSucks]]></category>
+		<category><![CDATA[Malware]]></category>
+		<category><![CDATA[Reverse]]></category>
+		<guid isPermaLink="false">/?p=838</guid>
+
+					<description><![CDATA[0x00 前言 今天在例行审查本机流量的时候发现 Chromium 在启动的时候请求了一个奇怪的域名: www.useragentswitch.com, 我的第一反应是可能拓展在检查更新或者进行用户量统计, 但仔细一想以前是没这种请求的, 就访问一下这个域名 结果发现这是个空页面, 于是又转到 Chrome 应用商店准备看看评论区怎么说 看到这个 404, 这事就麻烦了, 很可能是拓展包含恶意代码被移除了. 下面对拓展代码进行审查. 0x01 文件提取 对于一个被移除的拓展, 一般我们是不能用各种下载器下载到 crx 的. 不过我们可以简单的从本地数据目录里直接提取. 转到 %localappdata%\Chromium\User Data\Default\Extensions 中寻找我们要提取的拓展 ID clddifkhlkcojbojppdojfeeikdkgiae, 再往下一级就是拓展的各种文件了 0x02 代码分析 拿到文件后先把各个 JS 丢去格式化一下, 然后逐个审查. 首先我去对比了一下 bootstrap.min.js 和 jquery.min.js, 看起来里面是没有藏恶意代码的. 接下来就看看 Background Script 在干什么吧. 我知道因为代码不多, 把所有文件分析一遍也是不难的, 但顺着 Manifest 往下找应该是最简便的方法, 拿这个点抬杠大可不必. 从 Manifest [&#8230;]]]></description>
+		
+		
+		
+			</item>
+		<item>
+		<title>某游戏 xLua 逆向笔记</title>
+		<link>/archives/xlua-reverse-note/</link>
+		
+		<dc:creator><![CDATA[FENGberd]]></dc:creator>
+		<pubDate>Mon, 21 Sep 2020 13:17:50 +0000</pubDate>
+				<category><![CDATA[迷の代码]]></category>
+		<category><![CDATA[Lua]]></category>
+		<category><![CDATA[Reverse]]></category>
+		<category><![CDATA[xLua]]></category>
+		<guid isPermaLink="false">/?p=813</guid>
+
+					<description><![CDATA[0x00 前言 最近好像某款游戏挺火的，虽然我没怎么关注，不过群友在拆着玩，所以我也来凑个热闹 因为我压根没装游戏，搞逆向调试啥的基本不可能，群友就给我扔了一堆 luac 来拆着玩，之前我也没拆过这种 lua 游戏，正好学习一下，于是就有了这篇博客 0x01 基本分析 拿到一堆 luac 后，第一件事当然是扔到 unluac 这个万能工具里面去跑一下看看能不能直接解开啦: 意料之内的报错了，错误提示 &#8220;The input chunk reports a non-standard lua format: 1&#8221; 让我们挑一个小一点的 luac 来研究一下: 用 HEX 编辑器打开后，首先要看 lua 版本，有的游戏可能会修改前面的 .Lua 头，但只要确定了是 lua bytecode 而不是 luajit 编译出来的东西，基本上都可以在文件开头找到版本号。这里是 Lua 5.3，结合 xlua.dll 中的 lua 版本字符串可以确定使用的引擎是 lua 5.3.5 随后我们来分析到底哪些地方是“自定义”的，其实这个“自定义格式”是 xLua 搞出来的而不是游戏公司搞出来的，但我一开始以为这个是游戏公司搞的自定义格式，分析了半天走了不少弯路 这里就走捷径直接到 xLua 的仓库中 查看更改，发现这么一条 [&#8230;]]]></description>
+		
+		
+		
+			</item>
+		<item>
+		<title>Yu-RIS 引擎认证回避笔记</title>
+		<link>/archives/yu-ris-engine-crack/</link>
+		
+		<dc:creator><![CDATA[FENGberd]]></dc:creator>
+		<pubDate>Wed, 29 Apr 2020 04:20:56 +0000</pubDate>
+				<category><![CDATA[技术]]></category>
+		<category><![CDATA[Crack]]></category>
+		<category><![CDATA[Reverse]]></category>
+		<category><![CDATA[Yu-RIS]]></category>
+		<guid isPermaLink="false">/?p=712</guid>
+
+					<description><![CDATA[0x00 前言 最近在做 Yu-RIS 的游戏解包和反编译, 发现 YSTB 的数据被加密了. 寻找 XOR 表的时候本来准备打个断点康康结果发现游戏居然要我输激活码 由于 XOR 表的算法静态分析实在是太难, 这里就采用先破解游戏然后打断点导出 Key 的方式来解密 YSTB 数据. 本文主要内容还是游戏的破解过程, 不过分析完也找到了 XOR Key. 程序本身没有符号, 如果你看到奇怪的函数名或者变量名都是我加上去的 0x01 基本分析 打开游戏 (这里是 Maggot Baits 实体版镜像, 来自 HACG) 后会提示输入激活码, 验证失败后会弹出一个消息框 (不要在意乱码) 游戏没有加壳或者进行保护, 所以这个过程很简单, 直接在 MessageBox 下断点往前追几步就可以找到激活码计算函数 0x02 算法分析 进入激活码校验函数, 可以看到游戏先尝试从文件加载激活码, 如果没找到再要求用户输入 然后激活码经过了一系列魔法运算(图中只是一小部分) 由于这些运算实在是太复杂了, 暂时放弃逆出算法的想法, 尝试进行爆破 之前试过直接在校验函数外面爆破失败了, 因此先继续分析看看还有什么其他魔法 继续向下分析, 可以发现 [&#8230;]]]></description>
+		
+		
+		
+			</item>
+	</channel>
+</rss>

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>ffmpeg &#8211; Berd&#039;s Playground (Deprecated)</title>
+	<atom:link href="/tags/ffmpeg/feed/" rel="self" type="application/rss+xml" />
+	<link>/</link>
+	<description>Won&#039;t receive any further updates.</description>
+	<lastBuildDate>Tue, 29 Jun 2021 01:02:55 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=5.8</generator>
+
+<image>
+	<url>/wp-content/uploads/2019/05/icon.png</url>
+	<title>ffmpeg &#8211; Berd&#039;s Playground (Deprecated)</title>
+	<link>/</link>
+	<width>32</width>
+	<height>32</height>
+</image> 
+	<item>
+		<title>FFmpeg 推送直播流的那些坑</title>
+		<link>/archives/ffmpeg-streaming-problems/</link>
+		
+		<dc:creator><![CDATA[FENGberd]]></dc:creator>
+		<pubDate>Fri, 06 Oct 2017 07:42:11 +0000</pubDate>
+				<category><![CDATA[踩坑]]></category>
+		<category><![CDATA[ffmpeg]]></category>
+		<guid isPermaLink="false">/?p=160</guid>
+
+					<description><![CDATA[好久没写博客服务器都快长草了&#8230;今天来除除草 昨天在某大佬群里看到一个需求:将一张静态图片和一个音频文件转为FLV格式的直播流并推送到RTMP服务器 乍一看这似乎是一个非常简单的需求,一个命令搞定嘛,大佬跟我说搞了一个国庆我一开始是不信的 当时我想到的就是简单的一个命令搞定:ffmpeg -i Audio.wav -loop 1 -i Image.jpg -c:a aac -b:a 1400k -ar 44800 -c:v libx264 -f flv rtmp://YOURADDRESS 但是在实际测试过程中,这个命令推送出去的流会出现无法播放的情况,具体表现为直播服务连接正常,但如图中所示视频完全无法播放而且显示离线(我使用twich调试时控制台输出m3u8文件不存在,现在看来应该是视频流有问题导致后端转码服务器无法正常解析并生成m3u8) 经过多次排查,如果使用ffmpeg直接推送一个正常的flv文件就不会出这个问题,可以正常播放.而如果使用ffmpeg合并图片+音频为flv然后推送就会出错[值得一提的是,我使用的图片尺寸是1300&#215;865,这个尺寸如果直接转为YUV420是不被支持的(宽不能被2整除),猜测ffmpeg自动使用了YUV444格式,由于一些我不知道的原因,推送YUV444流就会出现这些奇怪的问题],twich提示我&#8221;关键帧距离过长&#8221;. 当我尝试在Google上找到答案时&#8230;发现那些问题/博客基本都是2012,2013年左右的东西,一些选项甚至已经被ffmpeg给弃用了(比如-g) 这就非常尴尬 折腾了两小时(包括尝试固定帧率,随便加/删两个文档中的选项试试)后,我发现如果强制视频使用YUV420的格式推送就不会出现这个问题,但由于YUV420需要长宽能被2整除,我们可以用scale参数进行缩放:-vf realtime,scale=1300x866,format=yuv420p 加上这个命令后,播放倒是正常了,但却没有图像,只有一片黑+声音 经过输出为flv查看信息,发现这个视频只有1FPS&#8230;问题就在这,于是我尝试加上-r 30强制帧率[一些帖子说需要使用-framerate参数,但这是一个input参数而且是针对image2库来说的,我现在需要修改的是output],加了这个参数后却又出现了上面的问题 又折腾了半天,终于在StackOverflow上找到一个设置libx264关键帧的方法(-g已经被废弃了),参考&#160;What is the CORRECT way to fix keyframes in FFMPEG for DASH?我使用的是这个参数:-c:v libx264 -x264-params keyint=60 工作正常,目前没发现问题 将上面各个参数合并,最终我用下面的命令解决了这个问题&#8230; ffmpeg -y -loop 1 -i Image.jpg -i Audio.wav [&#8230;]]]></description>
+		
+		
+		
+			</item>
+	</channel>
+</rss>

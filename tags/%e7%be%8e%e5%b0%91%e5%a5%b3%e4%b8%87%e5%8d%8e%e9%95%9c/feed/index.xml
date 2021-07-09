@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>美少女万华镜 &#8211; Berd&#039;s Playground (Deprecated)</title>
+	<atom:link href="/tags/%E7%BE%8E%E5%B0%91%E5%A5%B3%E4%B8%87%E5%8D%8E%E9%95%9C/feed/" rel="self" type="application/rss+xml" />
+	<link>/</link>
+	<description>Won&#039;t receive any further updates.</description>
+	<lastBuildDate>Tue, 29 Jun 2021 01:02:33 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=5.8</generator>
+
+<image>
+	<url>/wp-content/uploads/2019/05/icon.png</url>
+	<title>美少女万华镜 &#8211; Berd&#039;s Playground (Deprecated)</title>
+	<link>/</link>
+	<width>32</width>
+	<height>32</height>
+</image> 
+	<item>
+		<title>《美少女万华镜》无剧透全流程攻略</title>
+		<link>/archives/biman-walkthrough/</link>
+		
+		<dc:creator><![CDATA[FENGberd]]></dc:creator>
+		<pubDate>Sat, 06 Jun 2020 06:31:27 +0000</pubDate>
+				<category><![CDATA[零碎内容]]></category>
+		<category><![CDATA[美少女万华镜]]></category>
+		<guid isPermaLink="false">/?p=744</guid>
+
+					<description><![CDATA[0x00 前言 最近万华镜好像很火, 于是跑去刷了一下 1~4 作. 搜攻略的时候发现网上有的攻略很缺德, 上来先让你进真结局然后进 BE, 还会在每个结局选项后面给你描述一下结局内容提前剧透一脸 于是就写了这个攻略, 本文给出游戏分歧模式和推荐玩法, 参考本攻略可以在不被剧透的情况下完整体验游戏剧情. 本文不包含 R-18 内容, 但文章涉及的游戏非全年龄 Galgame. 请根据相关法律法规和自身情况决定是否阅读本文. 没想到博客除草居然是写这个 0x01 呪われし伝説の少女 第一作是单线的, 游戏选项不会直接改变剧情, 但是把所有选项都看过一遍会在结局后面触发后日谈剧情. 可以考虑第一遍全选第一个选项、第二遍全选第二个选项刷两周目的模式, 也可以考虑每个选项存档、过剧情直到切换场景 (全黑画面然后换场) 然后读档选另一个选项的模式. 0x02 忘れな草と永遠の少女 第二作前三个选项是不影响剧情走向的, 可以用存档过剧情的方式刷完所有文本. BE内容各不同, 为了避免剧透没有写出内容. 具体分歧选项见下图, 注意在各个分歧点保留存档即可. 推荐游戏流程: BE1-&#62;BE3-&#62;BE2-&#62;真结局. 小提示: BE3 看医生的脸之前请做好心理准备, 就在下面的对话后面 0x2040&#160;かつて少女だった君へ ↑ 首先说明一下这是个 float 本作挺尴尬的, 基本上处于官方有意无意忽略的状态&#8230; 连个独立发布页都找不到 本作为单线超短剧情, 也不存在后日谈的设定, 攻略真的没啥写的 这里就提示下看到下面这扇门的时候有恐怖 CG, [&#8230;]]]></description>
+		
+		
+		
+			</item>
+	</channel>
+</rss>

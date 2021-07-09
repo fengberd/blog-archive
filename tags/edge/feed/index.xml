@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>Edge &#8211; Berd&#039;s Playground (Deprecated)</title>
+	<atom:link href="/tags/edge/feed/" rel="self" type="application/rss+xml" />
+	<link>/</link>
+	<description>Won&#039;t receive any further updates.</description>
+	<lastBuildDate>Tue, 29 Jun 2021 01:02:32 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=5.8</generator>
+
+<image>
+	<url>/wp-content/uploads/2019/05/icon.png</url>
+	<title>Edge &#8211; Berd&#039;s Playground (Deprecated)</title>
+	<link>/</link>
+	<width>32</width>
+	<height>32</height>
+</image> 
+	<item>
+		<title>在 Microsoft Edge 中安装第三方扩展的正确姿势</title>
+		<link>/archives/microsoft-edge-install-third-party-extensions/</link>
+		
+		<dc:creator><![CDATA[FENGberd]]></dc:creator>
+		<pubDate>Sat, 30 Jan 2021 13:58:50 +0000</pubDate>
+				<category><![CDATA[踩坑]]></category>
+		<category><![CDATA[Chrome]]></category>
+		<category><![CDATA[Edge]]></category>
+		<guid isPermaLink="false">/?p=893</guid>
+
+					<description><![CDATA[0x00 前言 最近从 Chromium-EyeProtect 迁移到了 Microsoft Edge, 不过我以前一直通过开发者模式加载的一些扩展又使得 Edge 在启动时弹出了 这篇博客 中提到的禁用提示 这个提示在 Chromium 下可以通过安装一个开发者 APP 来解决，但在 Edge 上无法安装这个 APP 此外，如果我尝试打包扩展后直接加载，依然会造成扩展无法启用，这篇博客简单的记录了我解决这个问题的方法 0x01 打包扩展 首先在 edge://extensions/ 页面启用左下角的开发人员模式，随后点击右上角的 打包扩展 按钮打包获得一个 crx 文件 把这个 crx 文件直接拖进扩展页面并安装，找到安装后的扩展，记录下这里的 ID 0x02 获取并安装 ADMX 管理模板 管理模板只需要安装一次，如果你以前安装过可以直接跳过这一步 现在，转到 Microsoft Edge Business 下载页面，选中你当前使用的 Version、Build 后点击 GET POLICY FILES 按钮下载对应的策略包 注意你并不需要在这个页面下载 Edge，只要 Version 和 Build [&#8230;]]]></description>
+		
+		
+		
+			</item>
+	</channel>
+</rss>

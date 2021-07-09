@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>Javascript &#8211; Berd&#039;s Playground (Deprecated)</title>
+	<atom:link href="/tags/javascript/feed/" rel="self" type="application/rss+xml" />
+	<link>/</link>
+	<description>Won&#039;t receive any further updates.</description>
+	<lastBuildDate>Tue, 29 Jun 2021 01:02:56 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=5.8</generator>
+
+<image>
+	<url>/wp-content/uploads/2019/05/icon.png</url>
+	<title>Javascript &#8211; Berd&#039;s Playground (Deprecated)</title>
+	<link>/</link>
+	<width>32</width>
+	<height>32</height>
+</image> 
+	<item>
+		<title>JavaScript AST 变量绑定静态分析的一些思路</title>
+		<link>/archives/javascript-ast-static-binding-analysis/</link>
+		
+		<dc:creator><![CDATA[FENGberd]]></dc:creator>
+		<pubDate>Mon, 02 Mar 2020 08:14:52 +0000</pubDate>
+				<category><![CDATA[迷の代码]]></category>
+		<category><![CDATA[Javascript]]></category>
+		<guid isPermaLink="false">/?p=690</guid>
+
+					<description><![CDATA[0x00 前言 最近一直在做和 JS 语法分析、代码重构等有关的一些项目, 但是由于种种原因不能公开发布. 这些东西一直在私有库里吃灰也不太好, 就在博客稍微聊一下其中涉及到的 JavaScript 通过 AST 静态分析变量绑定的思路吧. 本文使用的语言是 PHP, AST 分析框架是 mck89/peast. 大部分框架生成的 AST 都大同小异, 本文的叙述应该是普遍适用的. 我的水平有限, 不能保证文章的绝对准确. 如文中有错漏请您在评论区留言或通过其他方式联系我更正, 非常感谢您的协助. 0x01 运行规范 查阅 ECMAScript® 2015 Language Specification 第8章和第13.3节可知, JavaScript 在执行的时候将创建一些 Code Execution Contexts, 在同一时间只会有一个 Context 被执行. 同时, 引擎将使用 Lexical Environment (简称为 Environment) 来实现变量的绑定, 即实现从 Identifier 到变量的映射. 每个 Environment 除了记录当前创建的变量外还可能会记录一个 outer [&#8230;]]]></description>
+		
+		
+		
+			</item>
+		<item>
+		<title>支付宝订单批量删除代码</title>
+		<link>/archives/alipay-bill-batch-delete/</link>
+		
+		<dc:creator><![CDATA[FENGberd]]></dc:creator>
+		<pubDate>Sat, 07 Oct 2017 09:46:08 +0000</pubDate>
+				<category><![CDATA[迷の代码]]></category>
+		<category><![CDATA[Alipay]]></category>
+		<category><![CDATA[Javascript]]></category>
+		<guid isPermaLink="false">/?p=175</guid>
+
+					<description><![CDATA[扔到控制台执行就好,会在4s后自动刷新= = 操作不要太频繁 否则很容易炸验证码 我觉得700多个订单一个一个的删很蠢orz]]></description>
+		
+		
+		
+			</item>
+		<item>
+		<title>给 ZXDA 加了个 ServiceWorker, 效果似乎还不错呢</title>
+		<link>/archives/add-serviceworker-to-zxda/</link>
+		
+		<dc:creator><![CDATA[FENGberd]]></dc:creator>
+		<pubDate>Sat, 22 Apr 2017 13:46:06 +0000</pubDate>
+				<category><![CDATA[失效/过期]]></category>
+		<category><![CDATA[迷の代码]]></category>
+		<category><![CDATA[Javascript]]></category>
+		<category><![CDATA[ServiceWorker]]></category>
+		<category><![CDATA[ZXDA]]></category>
+		<guid isPermaLink="false">/?p=139</guid>
+
+					<description><![CDATA[最近在 DIYGOD大佬的博客 看到了ServiceWorker这个东西: 这等神器怎么能不赶紧加上呢 查找了 一些资料 然后参考了一下 这个博客 提供的JavaScript脚本后,终于用一下午折腾出来一个JS,如图 这个JS是基于我们站的实际情况修改的,主要是对HTML页面的离线请求与ajax离线请求做了一些优化 添加这个脚本后,网站访问速度确实得到了一定的提升,并且访问过的部分页面也可以离线访问了: 当然,对于离线状态下访问没有缓存的页面也有相应的措施: 在此放上URL: https://pl.zxda.net/sw.js 欢迎使用哦~ 建议使用前针对自己的网站做一些修改,下面解释一下这几个配置项: 这是之前的JS中就有的一些缓存设置 const offlineResources=[ // ↓无论如何都要缓存一下首页,主页都访问不了会很尴尬 '/', // ↓缓存提示缓存不存在的页面 '//static.zxda.net/offline/page.html', // ↓这是ajax页面的返回数据,&#60;s&#62;假装服务器返回了一个失败信息&#60;/s&#62; '//static.zxda.net/offline/ajax.html', ]; 不缓存的匹配表达式,根据网页中用到的各种请求配置 const ignoreFetch=[ /https?:\/\/seal.godaddy.com\//, /https?:\/\/.*.cnzz.com\//, /https?:\/\/.*.googleapis.com\//, /https?:\/\/.*.gstatic.com\//, ]; 这似乎是DIYGOD自己加上的,我稍微修改了一下 const offline={ // ↓图片不解释 img: '', // ↓普通HTML页面访问不了的提示 page: '//static.zxda.net/offline/page.html', // ↓ajax失败的离线数据 ajax: '//static.zxda.net/offline/ajax.html', }; 这块是自己加上的恩,被这些正则匹配到的是特殊路径 const specialUrls={ // ↓被这个匹配到的就当作ajax请求处理 ajax: /https?:\/\/pl.zxda.net\/ajax\// [&#8230;]]]></description>
+		
+		
+		
+			</item>
+		<item>
+		<title>某投票站的糟糕设计,直接把考试答案发到前端&#8230;</title>
+		<link>/archives/a-survey-platform-with-terrible-design/</link>
+		
+		<dc:creator><![CDATA[FENGberd]]></dc:creator>
+		<pubDate>Sat, 10 Dec 2016 11:43:45 +0000</pubDate>
+				<category><![CDATA[失效/过期]]></category>
+		<category><![CDATA[迷の代码]]></category>
+		<category><![CDATA[Javascript]]></category>
+		<guid isPermaLink="false">/?p=23</guid>
+
+					<description><![CDATA[这事情是这么开始的 2016-12-10晚上,某人给我发了这么个玩意 由于实在是闲得慌&#160;在好奇心的驱使下我就刨到了这么个玩意&#160;你说你一个问卷平台搞啥考试系统啊 然后我好奇的点进去看了看,按照这类网站的尿性来看肯定会有一些莫名其妙的设计 比如这是什么 马上研究了下这坨玩意,发现了神奇的东西_(:з」∠)_ 恰好和选项数量一样,并且还刚好4个选项中一个是true其他都是false,看起来似乎是答案呢于我是打开Developer Tools试了一下 var data=qstr.split('¤'); data.shift(); data.forEach(function(val) { val=val.split('§'); console.info(val) }); 怎么看都像答案啊喂 最后经过多个问卷的研究,半自动答题代码get√ var data=qstr.split('¤'); data.shift(); data.forEach(function(val) { val=val.split('§'); switch(val[0]) { case 'check': case 'radio': var info=new Array(); for(var i=12;i&#60;val.length;i++) { val[i]=val[i].split('〒'); if(val[i][0]=='true') { if(val[0]=='check') { info.push(i-11); } else { $('q'+val[1]+'_'+(i-11)).click(); } } } if(val[0]=='check') { console.info('ID:'+val[1]+'['+info.join(',')+']'); } break; } [&#8230;]]]></description>
+		
+		
+		
+			</item>
+	</channel>
+</rss>

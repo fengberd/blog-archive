@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>xLua &#8211; Berd&#039;s Playground (Deprecated)</title>
+	<atom:link href="/tags/xlua/feed/" rel="self" type="application/rss+xml" />
+	<link>/</link>
+	<description>Won&#039;t receive any further updates.</description>
+	<lastBuildDate>Tue, 29 Jun 2021 01:02:33 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=5.8</generator>
+
+<image>
+	<url>/wp-content/uploads/2019/05/icon.png</url>
+	<title>xLua &#8211; Berd&#039;s Playground (Deprecated)</title>
+	<link>/</link>
+	<width>32</width>
+	<height>32</height>
+</image> 
+	<item>
+		<title>某游戏 xLua 逆向笔记</title>
+		<link>/archives/xlua-reverse-note/</link>
+		
+		<dc:creator><![CDATA[FENGberd]]></dc:creator>
+		<pubDate>Mon, 21 Sep 2020 13:17:50 +0000</pubDate>
+				<category><![CDATA[迷の代码]]></category>
+		<category><![CDATA[Lua]]></category>
+		<category><![CDATA[Reverse]]></category>
+		<category><![CDATA[xLua]]></category>
+		<guid isPermaLink="false">/?p=813</guid>
+
+					<description><![CDATA[0x00 前言 最近好像某款游戏挺火的，虽然我没怎么关注，不过群友在拆着玩，所以我也来凑个热闹 因为我压根没装游戏，搞逆向调试啥的基本不可能，群友就给我扔了一堆 luac 来拆着玩，之前我也没拆过这种 lua 游戏，正好学习一下，于是就有了这篇博客 0x01 基本分析 拿到一堆 luac 后，第一件事当然是扔到 unluac 这个万能工具里面去跑一下看看能不能直接解开啦: 意料之内的报错了，错误提示 &#8220;The input chunk reports a non-standard lua format: 1&#8221; 让我们挑一个小一点的 luac 来研究一下: 用 HEX 编辑器打开后，首先要看 lua 版本，有的游戏可能会修改前面的 .Lua 头，但只要确定了是 lua bytecode 而不是 luajit 编译出来的东西，基本上都可以在文件开头找到版本号。这里是 Lua 5.3，结合 xlua.dll 中的 lua 版本字符串可以确定使用的引擎是 lua 5.3.5 随后我们来分析到底哪些地方是“自定义”的，其实这个“自定义格式”是 xLua 搞出来的而不是游戏公司搞出来的，但我一开始以为这个是游戏公司搞的自定义格式，分析了半天走了不少弯路 这里就走捷径直接到 xLua 的仓库中 查看更改，发现这么一条 [&#8230;]]]></description>
+		
+		
+		
+			</item>
+	</channel>
+</rss>

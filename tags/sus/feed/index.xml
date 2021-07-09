@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>SUS &#8211; Berd&#039;s Playground (Deprecated)</title>
+	<atom:link href="/tags/sus/feed/" rel="self" type="application/rss+xml" />
+	<link>/</link>
+	<description>Won&#039;t receive any further updates.</description>
+	<lastBuildDate>Thu, 02 Sep 2021 15:06:45 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=5.8</generator>
+
+<image>
+	<url>/wp-content/uploads/2019/05/icon.png</url>
+	<title>SUS &#8211; Berd&#039;s Playground (Deprecated)</title>
+	<link>/</link>
+	<width>32</width>
+	<height>32</height>
+</image> 
+	<item>
+		<title>SUS2019 新春欢乐赛-Writeup</title>
+		<link>/archives/sus2019-writeup/</link>
+		
+		<dc:creator><![CDATA[FENGberd]]></dc:creator>
+		<pubDate>Wed, 29 Jan 2020 16:09:13 +0000</pubDate>
+				<category><![CDATA[CTF]]></category>
+		<category><![CDATA[SUS]]></category>
+		<category><![CDATA[Writeup]]></category>
+		<guid isPermaLink="false">/?p=441</guid>
+
+					<description><![CDATA[0x00 前言 本来这只是一个社团的招新 CTF, 难度可能比较低, 不过我实在是闲的发霉就稍微来玩了一下, 顺手水一篇 Writeup. 文章内图片较多, 请注意流量. 此外由于题目是每日上新, 文章中题目出现的顺序并不能代表难度. 由于本次比赛是社团内部招新, 不对非 SEU 人员开放, 涉及到的服务器地址均进行了打码. 此外, 由于未经过多次审阅, 文章中可能存在错漏, 如发现问题请通过邮件联系我或直接在评论区留言. 0x01 Hello_SUS 直接输入Flag, 完成 这也要水一个题么 0x02 misc_hhh 提示就不管了, 都是后面加上去的, 懒得再看 下载到一个 hello.gif, 先丢给 binwalk 跑一下, 发现里面藏了个 zip 解压后得到两个小zip, 一个有密码一个提示文件损坏 损坏那个很清楚的提示了 fix_head, 用 HEX 编辑器打开, 第一眼就看到一个 50 4a. 改成 50 4b 保存, 检查一下后面的头是没问题的(否则可能打开连目录都显示不了), 解压后得到一张图片, 图片名称本身提示了一个网站 [&#8230;]]]></description>
+		
+		
+		<enclosure url="/wp-content/uploads/2020/02/bandicam-2020-02-01-14-42-34-538.mp4" length="497310" type="video/mp4" />
+<enclosure url="/wp-content/uploads/2020/02/output.webm" length="54276550" type="video/webm" />
+
+			</item>
+	</channel>
+</rss>

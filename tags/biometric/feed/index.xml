@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>Biometric &#8211; Berd&#039;s Playground (Deprecated)</title>
+	<atom:link href="/tags/biometric/feed/" rel="self" type="application/rss+xml" />
+	<link>/</link>
+	<description>Won&#039;t receive any further updates.</description>
+	<lastBuildDate>Tue, 29 Jun 2021 01:02:32 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=5.8</generator>
+
+<image>
+	<url>/wp-content/uploads/2019/05/icon.png</url>
+	<title>Biometric &#8211; Berd&#039;s Playground (Deprecated)</title>
+	<link>/</link>
+	<width>32</width>
+	<height>32</height>
+</image> 
+	<item>
+		<title>在 Windows Server 2019 中配置 PIN 并启用 Windows Hello 指纹登录</title>
+		<link>/archives/windows-server-2019-setup-pin-and-biometric-login/</link>
+		
+		<dc:creator><![CDATA[FENGberd]]></dc:creator>
+		<pubDate>Tue, 13 Apr 2021 14:47:20 +0000</pubDate>
+				<category><![CDATA[踩坑]]></category>
+		<category><![CDATA[Biometric]]></category>
+		<category><![CDATA[Fingerprint]]></category>
+		<category><![CDATA[Windows]]></category>
+		<guid isPermaLink="false">/?p=907</guid>
+
+					<description><![CDATA[0x00 前言 放在宿舍的计算机经常需要锁定和解锁，但这就带来了一些问题：一是反复输入长密码非常累人，二是可能产生潜在的安全隐患。 如果我们能通过指纹登录，上述问题就迎刃而解了。但是当我尝试添加指纹的时候却发现 Windows 不让我这么做： 我相信即使是猴子也可以在 Google 上找到一堆解决方案，但是你基本不可能找到一个真正有用的方案（这篇文章不包含在内 ）。因为那些方案针对的问题根源和我们现在碰到的不同。Microsoft 把 Windows Server 的 Windows Hello 功能砍了一部分，并且要求我们 配置 Windows Hello for Business 来实现 PIN 和生物特征登录。 如果你已经配好了一套完整的 AD，也许上面的链接对你帮助更大。但是我并不想配置或加入域，因此这篇博客将记录一个另辟蹊径配置 Windows Hello 指纹登录的方法。 0x01 问题溯源 首先，我们现在看到最直接的现象就是两个灰色按钮点不了，让我们先打开 The Inspect 看看这两个按钮的相关属性： 很明显，IsEnabled: false 表示这个按钮被禁用了（这不是重点），我们关注的是下面的 AutomationId: "CAddPinSetting_AddPinButton"，这个 ID 有助于在后面逆向时快速定位到逻辑。 你问为什么我不看添加指纹按钮？因为添加指纹实际上是可以通过调用 Windows Biometric Framework API 往 System Pool 里注册一个指纹完成的，这个框架没有被 MS 砍掉（因为 WH [&#8230;]]]></description>
+		
+		
+		
+			</item>
+	</channel>
+</rss>

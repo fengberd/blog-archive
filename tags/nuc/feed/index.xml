@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>NUC &#8211; Berd&#039;s Playground (Deprecated)</title>
+	<atom:link href="/tags/nuc/feed/" rel="self" type="application/rss+xml" />
+	<link>/</link>
+	<description>Won&#039;t receive any further updates.</description>
+	<lastBuildDate>Tue, 29 Jun 2021 01:02:32 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=5.8</generator>
+
+<image>
+	<url>/wp-content/uploads/2019/05/icon.png</url>
+	<title>NUC &#8211; Berd&#039;s Playground (Deprecated)</title>
+	<link>/</link>
+	<width>32</width>
+	<height>32</height>
+</image> 
+	<item>
+		<title>Intel NUC I210 网卡 WOL 唤醒的一个坑</title>
+		<link>/archives/intel-nuc-i210-wol-troubleshooting/</link>
+		
+		<dc:creator><![CDATA[FENGberd]]></dc:creator>
+		<pubDate>Sat, 05 Dec 2020 10:21:35 +0000</pubDate>
+				<category><![CDATA[踩坑]]></category>
+		<category><![CDATA[I210]]></category>
+		<category><![CDATA[Intel]]></category>
+		<category><![CDATA[NUC]]></category>
+		<category><![CDATA[Troubleshoot]]></category>
+		<category><![CDATA[WOL]]></category>
+		<guid isPermaLink="false">/?p=863</guid>
+
+					<description><![CDATA[今天在写 WOL 文档的时候准备自己测试一下，结果却发现我的 NUC 两个网卡只有 I219-LM 可以正常唤醒，I210 一直没有响应我的唤醒请求 我从来不是“能用就行”的性格，所以深入研究了一下，发现这种双网卡主板的配置实际可能存在需要注意的坑，在这里记录一下 0x01 Troubleshoot 最基本的 Troubleshoot 无非就是 BIOS 中是否开启了唤醒、网卡是否开启了 WOL、网线是没有插上等等，在此就不赘述了，不过我检查后面网线的连接性的时候发现了一个有意思的事情 当我把网线插到 NUC 关机状态下的 LAN1 (I219-LM) 的时候，网口的一个小绿灯会以 1HZ 左右的频率进行闪烁，而当我插到上面的 LAN2 (I210) 的时候，网口并没有任何反应 这很容易推断出可能是上面的网卡电源被切断了，在双网卡主板上这么设计是挺合理的，然而我在 BIOS 里翻了一圈并没有找到任何网卡电源配置，问题一度陷入僵局.jpg 0x02 Solution 搜索了一部分资料后，我发现部分 Linux 用户也碰到了类似的问题，而且可以通过软件上的设置来解决 于是我就去找了下 Intel 的网卡驱动配置文档，发现安装 PROSet 驱动包后会有一个单独的管理程序 Intel PROSet Adapter Configuration Utility 然后重点来了，这个程序中会列出我们在 devmgmt.msc 中看不到的一部分设置，其中就包括 &#8220;电源关闭状态下魔包唤醒&#8221;，这个值在 I210 上默认是禁用，而在 I219 上默认是启用的 如图，devmgmt.msc [&#8230;]]]></description>
+		
+		
+		
+			</item>
+	</channel>
+</rss>

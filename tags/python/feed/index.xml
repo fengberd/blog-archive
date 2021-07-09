@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>Python &#8211; Berd&#039;s Playground (Deprecated)</title>
+	<atom:link href="/tags/python/feed/" rel="self" type="application/rss+xml" />
+	<link>/</link>
+	<description>Won&#039;t receive any further updates.</description>
+	<lastBuildDate>Tue, 29 Jun 2021 01:02:56 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=5.8</generator>
+
+<image>
+	<url>/wp-content/uploads/2019/05/icon.png</url>
+	<title>Python &#8211; Berd&#039;s Playground (Deprecated)</title>
+	<link>/</link>
+	<width>32</width>
+	<height>32</height>
+</image> 
+	<item>
+		<title>短消息 PDU 编码的(伪)正确方式</title>
+		<link>/archives/sms-pdu-encoding/</link>
+		
+		<dc:creator><![CDATA[FENGberd]]></dc:creator>
+		<pubDate>Sun, 18 Dec 2016 10:10:51 +0000</pubDate>
+				<category><![CDATA[迷の代码]]></category>
+		<category><![CDATA[Python]]></category>
+		<guid isPermaLink="false">/?p=34</guid>
+
+					<description><![CDATA[现在市面上大多数的GSM模块发送消息都支持Text和PDU两种编码方式Text方式发送短信特简单,但缺点是不能发送中文 &#60;-废话于是就写了这篇文章记录一下PDU的构造方式 先说说A,B,C三块数据,这是关于SMSC(短信中心的),F,G,H三块数据也用同样的方法处理,不再重复,但是注意F块长度不包含F字符长度和B块长度注:如果你不知道SMSC地址,使用AT+CSCA?就能读出来(除非SIM模块坏了或者你手贱设置了错误的SMSC数据)数据块C: 将SMSC地址前面的+号去掉smsc=smsc.lstrip('+'); 用F将SMSC地址的长度补全为偶数smsc=smsc.ljust(int(round(len(smsc)/2.0))*2,'F'); 将SMSC地址的奇偶位交换 smsc=list(smsc); for k in range(len(smsc)/2): smsc[k*2],smsc[k*2+1]=smsc[k*2+1],smsc[k*2]; smsc=''.join(smsc); 数据块B: 一般来说,直接使用91就行了(国际格式号码),如果你要发到小灵通就用81 数据块A: 就是B+C的长度啦,但是B和C都是Hex数据,所以算出来要/2并转成Hex'%02X'%(len(smsc)/2+1) 数据块D: 这是基本参数数据块,暂时不写吧 数据块E: 信息类型,固定00即可 数据块I: 协议标识,固定00即可(普通GSM类型,点到点) 数据块J: 数据编码,建议UCS2(Unicode编码),值是08 数据块K: 信息有效期,一般写00,五分钟 最后是数据块L,M,这两个数据块就是信息内容 因为上面数据块J写的是08,使用UCS2编码,直接将数据转为UTF8编码的Hex数据即可作为M数据块&#60;-实际上麻烦死了同样求出长度放到最前面就能作为L数据块,直接贴代码吧&#8230;Python的%真的很好用 def ucs2_encode(text): result=''; for b in map(ord,text): result=result+'%02X%02X' % (b &#62;&#62; 8,b &#38; 0xFF); return '%02X%s' % (len(result)/2,result); 注:使用时需要传入unicode对象,如u'poi' 数据块全部弄好后,将所有数据加一起就可以传入GSM模块啦最后送上完整代码(只求保留作者;w;) def pdu_build(smsc,dest_address,content): if(len(content)&#62;70): raise Exception('Content too [&#8230;]]]></description>
+		
+		
+		
+			</item>
+	</channel>
+</rss>

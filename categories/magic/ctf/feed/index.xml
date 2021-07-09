@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>CTF &#8211; Berd&#039;s Playground (Deprecated)</title>
+	<atom:link href="/categories/magic/ctf/feed/" rel="self" type="application/rss+xml" />
+	<link>/</link>
+	<description>Won&#039;t receive any further updates.</description>
+	<lastBuildDate>Thu, 02 Sep 2021 15:06:45 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=5.8</generator>
+
+<image>
+	<url>/wp-content/uploads/2019/05/icon.png</url>
+	<title>CTF &#8211; Berd&#039;s Playground (Deprecated)</title>
+	<link>/</link>
+	<width>32</width>
+	<height>32</height>
+</image> 
+	<item>
+		<title>HackTM CTF 2020 Writeup</title>
+		<link>/archives/hacktm-ctf-2020-writeup/</link>
+		
+		<dc:creator><![CDATA[FENGberd]]></dc:creator>
+		<pubDate>Mon, 03 Feb 2020 13:24:45 +0000</pubDate>
+				<category><![CDATA[CTF]]></category>
+		<category><![CDATA[Writeup]]></category>
+		<guid isPermaLink="false">/?p=643</guid>
+
+					<description><![CDATA[0x00 前言 题目地址: https://ctfx.hacktm.ro/ 今天也是0分咸鱼呢.jpg 睡了一觉起来就剩两小时了, 还在 Web 里面卡到时间结束&#8230; 没想到其实取证更好做. 0x01 Strange PCAP 一个基础的 PCAP 取证题, 拿到文件先大致扫一眼发现有很多 USB Massive Storage 包, 初步猜测是要在这里面找 flag. 顺着一个一个翻数据包, 在 Frame 1224 发现了 ZIP 文件头和 Flag.txt 的字样, 提取出来看看. 提取数据后发现是一个加密压缩包, 用 010 Editor 查看发现是真加密. 接下来我们就得找密码了, 初步猜测一下可能得翻键盘发的 HID 包, 因为之前见到过 USB HID 的数据包类型. 往下翻果然看到大量 URB_INTERRUPT 类型. 我们将这些数据包用 tshark 导出, 详细过程可参考 奶冰的 2020 [&#8230;]]]></description>
+		
+		
+		
+			</item>
+		<item>
+		<title>SUS2019 新春欢乐赛-Writeup</title>
+		<link>/archives/sus2019-writeup/</link>
+		
+		<dc:creator><![CDATA[FENGberd]]></dc:creator>
+		<pubDate>Wed, 29 Jan 2020 16:09:13 +0000</pubDate>
+				<category><![CDATA[CTF]]></category>
+		<category><![CDATA[SUS]]></category>
+		<category><![CDATA[Writeup]]></category>
+		<guid isPermaLink="false">/?p=441</guid>
+
+					<description><![CDATA[0x00 前言 本来这只是一个社团的招新 CTF, 难度可能比较低, 不过我实在是闲的发霉就稍微来玩了一下, 顺手水一篇 Writeup. 文章内图片较多, 请注意流量. 此外由于题目是每日上新, 文章中题目出现的顺序并不能代表难度. 由于本次比赛是社团内部招新, 不对非 SEU 人员开放, 涉及到的服务器地址均进行了打码. 此外, 由于未经过多次审阅, 文章中可能存在错漏, 如发现问题请通过邮件联系我或直接在评论区留言. 0x01 Hello_SUS 直接输入Flag, 完成 这也要水一个题么 0x02 misc_hhh 提示就不管了, 都是后面加上去的, 懒得再看 下载到一个 hello.gif, 先丢给 binwalk 跑一下, 发现里面藏了个 zip 解压后得到两个小zip, 一个有密码一个提示文件损坏 损坏那个很清楚的提示了 fix_head, 用 HEX 编辑器打开, 第一眼就看到一个 50 4a. 改成 50 4b 保存, 检查一下后面的头是没问题的(否则可能打开连目录都显示不了), 解压后得到一张图片, 图片名称本身提示了一个网站 [&#8230;]]]></description>
+		
+		
+		<enclosure url="/wp-content/uploads/2020/02/bandicam-2020-02-01-14-42-34-538.mp4" length="497310" type="video/mp4" />
+<enclosure url="/wp-content/uploads/2020/02/output.webm" length="54276550" type="video/webm" />
+
+			</item>
+		<item>
+		<title>奶冰的 2020 新年红包 Writeup</title>
+		<link>/archives/milkice-2020-redpacket-writeup/</link>
+		
+		<dc:creator><![CDATA[FENGberd]]></dc:creator>
+		<pubDate>Wed, 01 Jan 2020 00:10:00 +0000</pubDate>
+				<category><![CDATA[CTF]]></category>
+		<category><![CDATA[Writeup]]></category>
+		<guid isPermaLink="false">/?p=389</guid>
+
+					<description><![CDATA[0x00 题目地址 https://milkice.me/2019/12/31/2019-summary/ 0x01 第一关 &#8211; DNS Record 先吐槽一下题目的设计, 我第一反应还以为这个域名是题目的入口网站，没想到这个域名就是题目&#8230; 使用 dig 直接挖DNS dig @8.8.8.8 +nocmd happy.2020.milkice.me any +multiline +noall +answer , 发现有一条TXT记录 一开始头疼了很久，试过 Base64, Base32 和各个 Rot 变种都没解开(某些 Base32 工具的实现实在是迷惑). 然后频道里更新了一条提示 于是转成全大写, 结合给出的第一条提示可知是 RFC4648 中除去 Base64 以外的算法. 由于 Base16 编码结果是纯数字排除,用 Base32 解之, 得到 https://milkice.me/sEcRets/stream.pcapng, 完成 0x02 第二关 &#8211; USB PCAP Replay 下载第一题得到的 PCAP , [&#8230;]]]></description>
+		
+		
+		
+			</item>
+		<item>
+		<title>HarryYu 的 2020 新年解密 Writeup</title>
+		<link>/archives/harryyu-2020-puzzle-writeup/</link>
+		
+		<dc:creator><![CDATA[FENGberd]]></dc:creator>
+		<pubDate>Tue, 31 Dec 2019 20:33:30 +0000</pubDate>
+				<category><![CDATA[CTF]]></category>
+		<category><![CDATA[Writeup]]></category>
+		<guid isPermaLink="false">/?p=402</guid>
+
+					<description><![CDATA[0x00 题目地址 在群里看到这个解密游戏, 感觉很有意思就玩了一下, 还是挺好玩的. 看了一眼红包都领完了, 正好失眠就来写个 Writeup. URL: https://harrynull.tech/2020/ 0x01 第一题 &#8211; Morse 刚刚拿到这题看着这个空白页面和满屏幕的 LOLOLO 我还是懵了很久的, 想了半天发现 LO 如果输入拼音只会有“咯”这一个字, 就把答案当成 咯 了&#8230; 没想到关键点藏在 WebSocket 的发送时间上, 难怪页面开头说了一句 &#8220;建议在较好的网络环境下游玩以获得最佳体验&#8221;. 当时只当是网络不好可能造成 WebSocket 掉线, 没想太多. 知道和时间相关就好办了, 很容易猜测到可能是 Morse, 写一个简单的 JS 输出 WebSocket 的发送时间: 采集到几分钟的数据应该就足够了, 将数据粘贴到文本编辑器进行分析, 发现时间长度大致分为 1s, 2s, 3s, 6s 几种. 根据出现频率不难猜测 6s 对应的可能是一个完整的发送周期结束, 据此进行分割再观察. 在一个周期中, 可以看到 L:3 [&#8230;]]]></description>
+		
+		
+		
+			</item>
+	</channel>
+</rss>

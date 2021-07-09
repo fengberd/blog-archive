@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>DISM &#8211; Berd&#039;s Playground (Deprecated)</title>
+	<atom:link href="/tags/dism/feed/" rel="self" type="application/rss+xml" />
+	<link>/</link>
+	<description>Won&#039;t receive any further updates.</description>
+	<lastBuildDate>Tue, 29 Jun 2021 01:02:33 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=5.8</generator>
+
+<image>
+	<url>/wp-content/uploads/2019/05/icon.png</url>
+	<title>DISM &#8211; Berd&#039;s Playground (Deprecated)</title>
+	<link>/</link>
+	<width>32</width>
+	<height>32</height>
+</image> 
+	<item>
+		<title>在 Windows 中创建恢复分区</title>
+		<link>/archives/windows-create-recovery-partition/</link>
+		
+		<dc:creator><![CDATA[FENGberd]]></dc:creator>
+		<pubDate>Thu, 08 Aug 2019 06:33:16 +0000</pubDate>
+				<category><![CDATA[踩坑]]></category>
+		<category><![CDATA[DISM]]></category>
+		<category><![CDATA[Windows]]></category>
+		<guid isPermaLink="false">/?p=337</guid>
+
+					<description><![CDATA[0x00 前言 本来这些东西都是系统自己管理的&#8230;结果一顿神奇操作后 Windows 把我系统盘上的分区弄的乱七八糟,只好删掉恢复分区重新建立. 这里记录一下完整的建立过程. 0x01 创建分区 一般我习惯将 Recovery 分区放在硬盘末尾, 这里直接用 DiskGenius 建立便于精确的指定位置和大小. 当然你也可以用 diskmgmt.msc 或者 diskpart 来操作, 由于这里由于需要把ESP(EFI)分区挪一挪防止出现空隙, 直接选择 DiskGenius 比较方便. 在 Windows Server 2012 下, winre.wim 的大小一般不会超过 300MB , 所以这里只需要建立一个 400MB 的恢复分区就完全够用. 首先计算出ESP分区、Recovery分区占用的扇区数量, 由于当前硬盘扇区大小是 512Bytes, 100MB的ESP分区就需要 100*1024*1024/512=204800 个扇区, 同理Recovery分区占用 400*1024*1024/512=819200 个扇区. 然后用磁盘总扇区数量减去两个分区扇区数量得到ESP分区的起始位置 1000215216-204800-819200=999191216, 由于这里需要对齐到2048个扇区, 所以还需要稍做调整, 后部空间也不会是整整的400M. 这里就不具体写计算过程了. 然后建立一个新的NTFS分区, Recovery分区应该是没有卷标的所以留空即可. 这里将新建的分区设置盘符为 L: 0x02 [&#8230;]]]></description>
+		
+		
+		
+			</item>
+	</channel>
+</rss>

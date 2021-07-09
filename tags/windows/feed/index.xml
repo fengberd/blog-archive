@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>Windows &#8211; Berd&#039;s Playground (Deprecated)</title>
+	<atom:link href="/tags/windows/feed/" rel="self" type="application/rss+xml" />
+	<link>/</link>
+	<description>Won&#039;t receive any further updates.</description>
+	<lastBuildDate>Tue, 29 Jun 2021 01:02:56 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=5.8</generator>
+
+<image>
+	<url>/wp-content/uploads/2019/05/icon.png</url>
+	<title>Windows &#8211; Berd&#039;s Playground (Deprecated)</title>
+	<link>/</link>
+	<width>32</width>
+	<height>32</height>
+</image> 
+	<item>
+		<title>在 Windows Server 2019 中配置 PIN 并启用 Windows Hello 指纹登录</title>
+		<link>/archives/windows-server-2019-setup-pin-and-biometric-login/</link>
+		
+		<dc:creator><![CDATA[FENGberd]]></dc:creator>
+		<pubDate>Tue, 13 Apr 2021 14:47:20 +0000</pubDate>
+				<category><![CDATA[踩坑]]></category>
+		<category><![CDATA[Biometric]]></category>
+		<category><![CDATA[Fingerprint]]></category>
+		<category><![CDATA[Windows]]></category>
+		<guid isPermaLink="false">/?p=907</guid>
+
+					<description><![CDATA[0x00 前言 放在宿舍的计算机经常需要锁定和解锁，但这就带来了一些问题：一是反复输入长密码非常累人，二是可能产生潜在的安全隐患。 如果我们能通过指纹登录，上述问题就迎刃而解了。但是当我尝试添加指纹的时候却发现 Windows 不让我这么做： 我相信即使是猴子也可以在 Google 上找到一堆解决方案，但是你基本不可能找到一个真正有用的方案（这篇文章不包含在内 ）。因为那些方案针对的问题根源和我们现在碰到的不同。Microsoft 把 Windows Server 的 Windows Hello 功能砍了一部分，并且要求我们 配置 Windows Hello for Business 来实现 PIN 和生物特征登录。 如果你已经配好了一套完整的 AD，也许上面的链接对你帮助更大。但是我并不想配置或加入域，因此这篇博客将记录一个另辟蹊径配置 Windows Hello 指纹登录的方法。 0x01 问题溯源 首先，我们现在看到最直接的现象就是两个灰色按钮点不了，让我们先打开 The Inspect 看看这两个按钮的相关属性： 很明显，IsEnabled: false 表示这个按钮被禁用了（这不是重点），我们关注的是下面的 AutomationId: "CAddPinSetting_AddPinButton"，这个 ID 有助于在后面逆向时快速定位到逻辑。 你问为什么我不看添加指纹按钮？因为添加指纹实际上是可以通过调用 Windows Biometric Framework API 往 System Pool 里注册一个指纹完成的，这个框架没有被 MS 砍掉（因为 WH [&#8230;]]]></description>
+		
+		
+		
+			</item>
+		<item>
+		<title>Windows 运行 一些有趣的语法</title>
+		<link>/archives/windows-run-interesting-syntax/</link>
+		
+		<dc:creator><![CDATA[FENGberd]]></dc:creator>
+		<pubDate>Mon, 02 Mar 2020 03:41:23 +0000</pubDate>
+				<category><![CDATA[踩坑]]></category>
+		<category><![CDATA[Explorer]]></category>
+		<category><![CDATA[Windows]]></category>
+		<guid isPermaLink="false">/?p=682</guid>
+
+					<description><![CDATA[0x00 前言 Windows Explorer 中有一个很实用的小工具 &#8220;运行&#8221; , 您可以用 Win+R 快捷键呼出这个小工具. 这个常用的小工具并不只是单纯的 &#8220;执行一个可执行程序&#8221;, 它其实有很多额外的功能. 通过这个工具执行命令与在任意资源管理器窗口的地址栏中输入命令是完全等价的, 本文就探讨一下这个小工具(地址栏)可用的一些语法. 由于网上很难找到资料, 本文无法涵盖所有可用的语法. 如果您了解更多有意思的语法欢迎与我交流. 0x01 执行一个可执行程序 首先自然要说我们最常用的运行方式了, 直接输入一个可执行程序的名称, 系统会根据环境变量搜寻并启动它. 当然您也可以输入绝对路径. 0x02 打开一个路径 由于使用运行和在资源管理器地址栏中进行输入一样, 如果您输入一个目录 (如 C:\Windows) 就会唤起一个新的资源管理器窗口指向您指定的路径. 当然, 您也可以打开所谓的 &#8220;网络路径&#8221;, 如 \\233.233.233.233. 0x03 打开一个URL 由于我对 Windows 处理 URL 的机制不了解, 这里只能讨论我观察到的现象. 在运行中输入一个 URL 将唤起对应 Scheme 的程序进行处理. 如 https:// 通常会唤起默认浏览器, 而 steam:// 会唤起 [&#8230;]]]></description>
+		
+		
+		
+			</item>
+		<item>
+		<title>简单的给远程桌面连接 (Remote Desktop) 配置自定义 SSL 证书</title>
+		<link>/archives/remote-desktop-setup-ssl-certificate/</link>
+		
+		<dc:creator><![CDATA[FENGberd]]></dc:creator>
+		<pubDate>Tue, 24 Dec 2019 03:08:24 +0000</pubDate>
+				<category><![CDATA[技术]]></category>
+		<category><![CDATA[RDP]]></category>
+		<category><![CDATA[SSL]]></category>
+		<category><![CDATA[Windows]]></category>
+		<guid isPermaLink="false">/?p=375</guid>
+
+					<description><![CDATA[0x00 前言 通常新装的服务器都不会配有 RDP 加密证书, 我们连接的时候会看到一个证书错误警告. 大部分人都会直接忽略这个警告, 但在某种程度上这会造成一定的安全问题, 如受到 MITM 攻击等. 本文介绍了从准备证书到配置证书的全套流程, 有助于增强 RDP 连接的安全性. 0x01 准备证书 关于什么证书能用于 Windows RDP 连接, 在 Google 上我并没有找到相关资料. 在咨询了一些证书提供商客服后得到的回答是针对域名的加密证书可以用于 RDP 连接加密. 因此, 这里选择 Namecheap 提供的 PositiveSSL 单域名证书做演示. 下单流程非常简单, 在此不做赘述. 你当然可以使用自签证书, 但那就意味着要安装不安全的 CA, 反正我是不喜欢这么干的. 有时为了保证安全性, CA 会让你自己提供 CSR 并签发 CRT, 而在 Windows 下导入带私钥的证书时使用 PKCS12 (PFX) 格式会比较方便, 因此再用 openssl 合并一下. 输入 [&#8230;]]]></description>
+		
+		
+		
+			</item>
+		<item>
+		<title>在 Windows 中创建恢复分区</title>
+		<link>/archives/windows-create-recovery-partition/</link>
+		
+		<dc:creator><![CDATA[FENGberd]]></dc:creator>
+		<pubDate>Thu, 08 Aug 2019 06:33:16 +0000</pubDate>
+				<category><![CDATA[踩坑]]></category>
+		<category><![CDATA[DISM]]></category>
+		<category><![CDATA[Windows]]></category>
+		<guid isPermaLink="false">/?p=337</guid>
+
+					<description><![CDATA[0x00 前言 本来这些东西都是系统自己管理的&#8230;结果一顿神奇操作后 Windows 把我系统盘上的分区弄的乱七八糟,只好删掉恢复分区重新建立. 这里记录一下完整的建立过程. 0x01 创建分区 一般我习惯将 Recovery 分区放在硬盘末尾, 这里直接用 DiskGenius 建立便于精确的指定位置和大小. 当然你也可以用 diskmgmt.msc 或者 diskpart 来操作, 由于这里由于需要把ESP(EFI)分区挪一挪防止出现空隙, 直接选择 DiskGenius 比较方便. 在 Windows Server 2012 下, winre.wim 的大小一般不会超过 300MB , 所以这里只需要建立一个 400MB 的恢复分区就完全够用. 首先计算出ESP分区、Recovery分区占用的扇区数量, 由于当前硬盘扇区大小是 512Bytes, 100MB的ESP分区就需要 100*1024*1024/512=204800 个扇区, 同理Recovery分区占用 400*1024*1024/512=819200 个扇区. 然后用磁盘总扇区数量减去两个分区扇区数量得到ESP分区的起始位置 1000215216-204800-819200=999191216, 由于这里需要对齐到2048个扇区, 所以还需要稍做调整, 后部空间也不会是整整的400M. 这里就不具体写计算过程了. 然后建立一个新的NTFS分区, Recovery分区应该是没有卷标的所以留空即可. 这里将新建的分区设置盘符为 L: 0x02 [&#8230;]]]></description>
+		
+		
+		
+			</item>
+		<item>
+		<title>&#8220;修复&#8221; NppExplorer 造成的 Notepad++ 卡死并且无法打开</title>
+		<link>/archives/fix-nppexplorer-stuck/</link>
+		
+		<dc:creator><![CDATA[FENGberd]]></dc:creator>
+		<pubDate>Sun, 25 Dec 2016 04:57:12 +0000</pubDate>
+				<category><![CDATA[踩坑]]></category>
+		<category><![CDATA[Notepad++]]></category>
+		<category><![CDATA[Windows]]></category>
+		<guid isPermaLink="false">/?p=65</guid>
+
+					<description><![CDATA[如果你某日遇到Notepad++突然卡死并且强制关闭后无法再次打开的问题,本文也许能告诉你一个正(luan )确(gao) 的修复(调教) 方法 如果你的Windows错误报告长的是这样↓ 并且Google后又不想就重启电脑(这已经成技术&#8221;专家&#8221;回复问题的标准格式了么),比如我的机器(写这篇文章的时候)关机大概需要30min左右- -↓ 再回过头看错误报告,里面不是说Waiting for&#160;SearchIndexer.exe么,我猜大概是这玩意卡死了 那就简单粗暴的解决就好了(x 稍等一会给SearchIndexer重启&#8230;. 然后就修好了]]></description>
+		
+		
+		
+			</item>
+	</channel>
+</rss>

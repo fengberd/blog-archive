@@ -1,0 +1,1747 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head>
+	<title>SUS2019 新春欢乐赛-Writeup | Berd&#039;s Playground (Deprecated)</title>
+
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="theme_author" content="dimpurr">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="application-name" content="Berd&#039;s Playground (Deprecated)">
+
+	<link rel="stylesheet" href="/wp-content/themes/clearision/style.css?t=1616595409">
+	<link rel="stylesheet" href="/wp-content/themes/clearision/style.opacity.css?t=1616595500">
+<style>body { background-image: url("https://static.berd.moe/images/background_repeat.png"); }</style>
+	<link rel="home" href="/">
+	<link rel="profile" href="https://gmpg.org/xfn/11">
+	<link rel="pingback" href="/xmlrpc.php">
+	<link rel="shortcut icon" type="image/x-icon">
+
+	<link rel="alternate" type="application/rdf+xml" title="RSS 1.0" href="/feed/rss/">
+	<link rel="alternate" type="application/rss+xml" title="RSS 2.0" href="/feed/">
+	<link rel="alternate" type="application/atom+xml" title="ATOM 1.0" href="/feed/atom/">
+
+	<!--[if lt IE 9]>
+	<script src="/wp-content/themes/clearision/js/html5shiv.min.js" type="text/javascript"></script>
+	<![endif]-->
+
+	<meta name="robots" content="max-image-preview:large">
+<link rel="dns-prefetch" href="//s.w.org">
+		<script type="text/javascript">
+			window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/13.1.0\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/13.1.0\/svg\/","svgExt":".svg","source":{"concatemoji":"\/wp-includes\/js\/wp-emoji-release.min.js?ver=5.8"}};
+			!function(e,a,t){var n,r,o,i=a.createElement("canvas"),p=i.getContext&&i.getContext("2d");function s(e,t){var a=String.fromCharCode;p.clearRect(0,0,i.width,i.height),p.fillText(a.apply(this,e),0,0);e=i.toDataURL();return p.clearRect(0,0,i.width,i.height),p.fillText(a.apply(this,t),0,0),e===i.toDataURL()}function c(e){var t=a.createElement("script");t.src=e,t.defer=t.type="text/javascript",a.getElementsByTagName("head")[0].appendChild(t)}for(o=Array("flag","emoji"),t.supports={everything:!0,everythingExceptFlag:!0},r=0;r<o.length;r++)t.supports[o[r]]=function(e){if(!p||!p.fillText)return!1;switch(p.textBaseline="top",p.font="600 32px Arial",e){case"flag":return s([127987,65039,8205,9895,65039],[127987,65039,8203,9895,65039])?!1:!s([55356,56826,55356,56819],[55356,56826,8203,55356,56819])&&!s([55356,57332,56128,56423,56128,56418,56128,56421,56128,56430,56128,56423,56128,56447],[55356,57332,8203,56128,56423,8203,56128,56418,8203,56128,56421,8203,56128,56430,8203,56128,56423,8203,56128,56447]);case"emoji":return!s([10084,65039,8205,55357,56613],[10084,65039,8203,55357,56613])}return!1}(o[r]),t.supports.everything=t.supports.everything&&t.supports[o[r]],"flag"!==o[r]&&(t.supports.everythingExceptFlag=t.supports.everythingExceptFlag&&t.supports[o[r]]);t.supports.everythingExceptFlag=t.supports.everythingExceptFlag&&!t.supports.flag,t.DOMReady=!1,t.readyCallback=function(){t.DOMReady=!0},t.supports.everything||(n=function(){t.readyCallback()},a.addEventListener?(a.addEventListener("DOMContentLoaded",n,!1),e.addEventListener("load",n,!1)):(e.attachEvent("onload",n),a.attachEvent("onreadystatechange",function(){"complete"===a.readyState&&t.readyCallback()})),(n=t.source||{}).concatemoji?c(n.concatemoji):n.wpemoji&&n.twemoji&&(c(n.twemoji),c(n.wpemoji)))}(window,document,window._wpemojiSettings);
+		</script>
+		<style type="text/css">img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}</style>
+	<link rel="stylesheet" id="wp-block-library-css" href="/wp-includes/css/dist/block-library/style.min.css?ver=5.8" type="text/css" media="all">
+<link rel="stylesheet" id="azc-tsh-css" href="/wp-content/plugins/azurecurve-toggle-showhide/style.css?ver=1.0.0" type="text/css" media="all">
+<style id="azc-tsh-inline-css" type="text/css">.azc_tsh_toggle_active {
+							background-image: url(/wp-content/plugins/azurecurve-toggle-showhide/images/azure_up.png) !important;
+						}
+						.azc_tsh_toggle_open_active {
+							background-image: url(/wp-content/plugins/azurecurve-toggle-showhide/images/azure_up.png);
+						}
+						.azc_tsh_toggle {
+							background-image: url(/wp-content/plugins/azurecurve-toggle-showhide/images/azure_down.png);
+						}
+						.azc_tsh_toggle_open {
+							background-image: url(/wp-content/plugins/azurecurve-toggle-showhide/images/azure_down.png) !important;
+						}</style>
+<script type="text/javascript" src="/wp-includes/js/jquery/jquery.min.js?ver=3.6.0" id="jquery-core-js"></script>
+<script type="text/javascript" src="/wp-includes/js/jquery/jquery-migrate.min.js?ver=3.3.2" id="jquery-migrate-js"></script>
+<script type="text/javascript" src="/wp-content/plugins/azurecurve-toggle-showhide/jquery.js?ver=3.9.1" id="azc-tsh-js"></script>
+<link rel="https://api.w.org/" href="/wp-json/">
+<link rel="alternate" type="application/json" href="/wp-json/wp/v2/posts/441">
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="/xmlrpc.php?rsd">
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="/wp-includes/wlwmanifest.xml"> 
+<meta name="generator" content="WordPress 5.8">
+<link rel="canonical" href="/archives/sus2019-writeup/">
+<link rel="shortlink" href="/?p=441">
+<link rel="alternate" type="application/json+oembed" href="/wp-json/oembed/1.0/embed?url=https%3A%2F%2F%2Farchives%2Fsus2019-writeup%2F">
+<link rel="alternate" type="text/xml+oembed" href="/wp-json/oembed/1.0/embed?url=https%3A%2F%2F%2Farchives%2Fsus2019-writeup%2F&#038;format=xml">
+<style type="text/css">.recentcomments a{display:inline !important;padding:0 !important;margin:0 !important;}</style>
+<link rel="icon" href="/wp-content/uploads/2019/05/icon.png" sizes="32x32">
+<link rel="icon" href="/wp-content/uploads/2019/05/icon.png" sizes="192x192">
+<link rel="apple-touch-icon" href="/wp-content/uploads/2019/05/icon.png">
+<meta name="msapplication-TileImage" content="/wp-content/uploads/2019/05/icon.png">
+		<style type="text/css" id="wp-custom-css">/*
+You can add your own CSS here.
+
+Click the help icon above to learn more.
+*/
+body > * {
+	filter: grayscale();
+}</style>
+		</head>
+
+<body class="post-template-default single single-post postid-441 single-format-standard">
+	<div id="page">
+		<hgroup id="ctn_header">
+			<div id="title">
+				<h1 id="site-title">
+					<span>
+						<a href="/" title="Berd&#039;s Playground (Deprecated)" rel="home">Berd&#039;s Playground (Deprecated)</a>
+					</span>
+				</h1>
+				<h2 id="site-description">Won&#039;t receive any further updates.</h2>
+			</div>
+			<div id="title_r">
+								<a href="/feed/" target="_blank"><button id="tr_rss"></button></a>
+				<a href="/wp-admin/" target="_blank"><button id="tr_admin"></button></a>
+				<span id="tr_clear"></span>
+				<form id="tr_s_f" method="get" action="/">
+					<input id="tr_search" type="text" name="s" placeholder="" size="10">
+				</form>
+			</div>
+			<div class="clearfix"></div>
+		</hgroup>
+		<div id="float">
+			<a href="/" title="Berd&#039;s Playground (Deprecated)" rel="home">
+				<img id="logo" alt="Berd&#039;s Playground (Deprecated)" title="Berd&#039;s Playground (Deprecated)" src="/wp-content/uploads/2019/05/icon.png">
+			</a>
+			<nav id="nav" role="navigation">
+				<div class="menu-sliding-main-menu-container"><ul id="menu-sliding-main-menu" class="menu">
+<li id="menu-item-388" class="menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor menu-item-388"><a href="/categories/magic/">技术</a></li>
+<li id="menu-item-371" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-371"><a href="/categories/magic/repair/">踩坑</a></li>
+<li id="menu-item-372" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-372"><a href="/categories/magic/code/">迷の代码</a></li>
+<li id="menu-item-373" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-373"><a href="/categories/magic/diy/">硬核魔改</a></li>
+<li id="menu-item-374" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-374"><a href="/categories/other/">零碎内容</a></li>
+</ul></div>			</nav>
+			<nav id="next" role="sencond_navigation">
+				<div class="menu-sliding-assist-menu-container"><ul id="menu-sliding-assist-menu" class="menu">
+<li id="menu-item-101" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-101"><a href="/about/">关于 &#038; 留言板</a></li>
+</ul></div>			</nav>
+		</div>
+<div id="ctn">
+	<div id="content">
+					<article class="post-441 post type-post status-publish format-standard hentry category-ctf tag-sus tag-writeup">
+				<hgroup class="post_hctn">
+	<div class="post_time">
+		<div class="post_t_d">01/30</div>
+		<div class="post_t_u">00:09</div>
+	</div>
+
+	<div class="post_h_l">
+		<span class="post_ct"><a href="/categories/magic/ctf/" rel="category tag">CTF</a></span>
+		<h2 class="post_h"><a href="/archives/sus2019-writeup/">SUS2019 新春欢乐赛-Writeup</a></h2>
+
+		<div class="post_tag">
+			
+			<a href="/tags/sus/" rel="tag">SUS</a> <a href="/tags/writeup/" rel="tag">Writeup</a>
+			<span class="post_c">
+				<a href="/archives/sus2019-writeup/#respond">No Reply</a>
+
+				
+							</span>
+		</div>
+	</div>
+</hgroup>
+
+<div class="post_t">
+			
+<h2>0x00 前言</h2>
+
+
+
+<p>本来这只是一个社团的招新 CTF, 难度可能比较低, 不过我实在是闲的发霉就稍微来玩了一下, 顺手水一篇 Writeup.</p>
+
+
+
+<p>文章内图片较多, 请注意流量. 此外由于题目是每日上新, 文章中题目出现的顺序并不能代表难度.</p>
+
+
+
+<p>由于本次比赛是社团内部招新,  不对非 SEU 人员开放, 涉及到的服务器地址均进行了打码.</p>
+
+
+
+<p>此外, 由于未经过多次审阅, 文章中可能存在错漏, 如发现问题请通过邮件联系我或直接在评论区留言.</p>
+
+
+
+<span id="more-441"></span>
+
+
+
+<h2>0x01 Hello_SUS</h2>
+
+
+
+<div class="wp-block-image"><figure class="aligncenter size-large"><img loading="lazy" width="645" height="282" src="/wp-content/uploads/2020/01/snipaste_20200129_214659.png" alt="" class="wp-image-442" srcset="/wp-content/uploads/2020/01/snipaste_20200129_214659.png 645w, /wp-content/uploads/2020/01/snipaste_20200129_214659-300x131.png 300w" sizes="(max-width: 645px) 100vw, 645px"></figure></div>
+
+
+
+<p>直接输入Flag, 完成 <s>这也要水一个题么</s></p>
+
+
+
+<h2>0x02 misc_hhh</h2>
+
+
+
+<p>提示就不管了, 都是后面加上去的, 懒得再看</p>
+
+
+
+<div class="wp-block-image"><figure class="aligncenter size-large"><img loading="lazy" width="651" height="338" src="/wp-content/uploads/2020/01/snipaste_20200129_214914.png" alt="" class="wp-image-443" srcset="/wp-content/uploads/2020/01/snipaste_20200129_214914.png 651w, /wp-content/uploads/2020/01/snipaste_20200129_214914-300x156.png 300w" sizes="(max-width: 651px) 100vw, 651px"></figure></div>
+
+
+
+<p>下载到一个 hello.gif, 先丢给 binwalk 跑一下, 发现里面藏了个 zip</p>
+
+
+
+<div class="wp-block-image"><figure class="aligncenter size-large"><img loading="lazy" width="828" height="245" src="/wp-content/uploads/2020/01/snipaste_20200129_215002.png" alt="" class="wp-image-444" srcset="/wp-content/uploads/2020/01/snipaste_20200129_215002.png 828w, /wp-content/uploads/2020/01/snipaste_20200129_215002-300x89.png 300w, /wp-content/uploads/2020/01/snipaste_20200129_215002-768x227.png 768w" sizes="(max-width: 828px) 100vw, 828px"></figure></div>
+
+
+
+<p>解压后得到两个小zip, 一个有密码一个提示文件损坏</p>
+
+
+
+<div class="wp-block-image"><figure class="aligncenter size-large"><img loading="lazy" width="886" height="246" src="/wp-content/uploads/2020/01/snipaste_20200129_215209.png" alt="" class="wp-image-446" srcset="/wp-content/uploads/2020/01/snipaste_20200129_215209.png 886w, /wp-content/uploads/2020/01/snipaste_20200129_215209-300x83.png 300w, /wp-content/uploads/2020/01/snipaste_20200129_215209-768x213.png 768w" sizes="(max-width: 886px) 100vw, 886px"></figure></div>
+
+
+
+<p> 损坏那个很清楚的提示了 fix_head, 用 HEX 编辑器打开, 第一眼就看到一个 50 4a.</p>
+
+
+
+<div class="wp-block-image"><figure class="aligncenter size-large"><img loading="lazy" width="1024" height="613" src="/wp-content/uploads/2020/01/snipaste_20200129_215306-1024x613.png" alt="" class="wp-image-447" srcset="/wp-content/uploads/2020/01/snipaste_20200129_215306-1024x613.png 1024w, /wp-content/uploads/2020/01/snipaste_20200129_215306-300x180.png 300w, /wp-content/uploads/2020/01/snipaste_20200129_215306-768x460.png 768w, /wp-content/uploads/2020/01/snipaste_20200129_215306.png 1268w" sizes="(max-width: 1024px) 100vw, 1024px"></figure></div>
+
+
+
+<p> 改成 50 4b 保存, 检查一下后面的头是没问题的(否则可能打开连目录都显示不了), 解压后得到一张图片, 图片名称本身提示了一个网站</p>
+
+
+
+<div class="wp-block-image"><figure class="aligncenter size-large"><img loading="lazy" width="768" height="654" src="/wp-content/uploads/2020/01/snipaste_20200129_215500.png" alt="" class="wp-image-448" srcset="/wp-content/uploads/2020/01/snipaste_20200129_215500.png 768w, /wp-content/uploads/2020/01/snipaste_20200129_215500-300x255.png 300w" sizes="(max-width: 768px) 100vw, 768px"></figure></div>
+
+
+
+<p>在该网站中找到一个解密工具, 丢进去获得 Flag 后半段</p>
+
+
+
+<div class="wp-block-image"><figure class="aligncenter size-large"><img loading="lazy" width="694" height="308" src="/wp-content/uploads/2020/01/snipaste_20200129_215546.png" alt="" class="wp-image-449" srcset="/wp-content/uploads/2020/01/snipaste_20200129_215546.png 694w, /wp-content/uploads/2020/01/snipaste_20200129_215546-300x133.png 300w" sizes="(max-width: 694px) 100vw, 694px"></figure></div>
+
+
+
+<p>前半段应该藏在那个 12_letters.zip 里面, 这个12提示的应该是指密码长度, 所以不太可能是假加密. 研究了一会这个 png 大概是没啥东西了, 只好把原来那张gif丢去 Stegsolve 里面看看.</p>
+
+
+
+<div class="wp-block-image"><figure class="aligncenter size-large"><img loading="lazy" width="826" height="302" src="/wp-content/uploads/2020/01/snipaste_20200129_215827.png" alt="" class="wp-image-450" srcset="/wp-content/uploads/2020/01/snipaste_20200129_215827.png 826w, /wp-content/uploads/2020/01/snipaste_20200129_215827-300x110.png 300w, /wp-content/uploads/2020/01/snipaste_20200129_215827-768x281.png 768w" sizes="(max-width: 826px) 100vw, 826px"></figure></div>
+
+
+
+<p>发现里面藏了个二维码, 扫出来的 Base64 解码后得到 <code>…. .. …   …  -. --- -  ..-. .-.. .- --.</code></p>
+
+
+
+<p>扔进 Morse Decoder 得到一个字符串, <code>thissnotflag</code>, 刚好12个字符. 用这个作为密码解压 12_letters.zip 得到 Flag 前半段, 完成.</p>
+
+
+
+<h2>0x03 misc_half</h2>
+
+
+
+<div class="wp-block-image"><figure class="aligncenter size-large"><img loading="lazy" width="647" height="344" src="/wp-content/uploads/2020/01/snipaste_20200129_220123.png" alt="" class="wp-image-451" srcset="/wp-content/uploads/2020/01/snipaste_20200129_220123.png 647w, /wp-content/uploads/2020/01/snipaste_20200129_220123-300x160.png 300w" sizes="(max-width: 647px) 100vw, 647px"></figure></div>
+
+
+
+<p>提示给的已经很明显了&#8230;下面连CSDN都找好了. 这题一部分肯定是和高度有关的. 不过拿到文件名称是 look_attribute, 我们还是先看一下属性</p>
+
+
+
+<div class="wp-block-image"><figure class="aligncenter size-large"><img loading="lazy" width="435" height="658" src="/wp-content/uploads/2020/01/snipaste_20200129_220334.png" alt="" class="wp-image-452" srcset="/wp-content/uploads/2020/01/snipaste_20200129_220334.png 435w, /wp-content/uploads/2020/01/snipaste_20200129_220334-198x300.png 198w" sizes="(max-width: 435px) 100vw, 435px"></figure></div>
+
+
+
+<p>第一个是暂时不知道干啥的 HEX Offset, 第二个是图片的 data url, 随便找个 <a href="https://github.com/fengberd" target="_blank" rel="noreferrer noopener" aria-label=" (opens in a new tab)">有img 元素的网页</a> 复制进去发现是个二维码, 得到了 Flag 前半段</p>
+
+
+
+<div class="wp-block-image"><figure class="aligncenter size-large"><img loading="lazy" width="802" height="434" src="/wp-content/uploads/2020/01/snipaste_20200129_220445.png" alt="" class="wp-image-453" srcset="/wp-content/uploads/2020/01/snipaste_20200129_220445.png 802w, /wp-content/uploads/2020/01/snipaste_20200129_220445-300x162.png 300w, /wp-content/uploads/2020/01/snipaste_20200129_220445-768x416.png 768w" sizes="(max-width: 802px) 100vw, 802px"></figure></div>
+
+
+
+<p>后半段肯定就是在被改高度截断的部分了. 丢进 HEX 编辑器后发现图片前面还有一段数据, 暂时没找到 JPEG 头, 跳到之前的 Offset 看看.</p>
+
+
+
+<div class="wp-block-image"><figure class="aligncenter size-large"><img loading="lazy" width="1024" height="613" src="/wp-content/uploads/2020/01/snipaste_20200129_220838-1024x613.png" alt="" class="wp-image-454" srcset="/wp-content/uploads/2020/01/snipaste_20200129_220838-1024x613.png 1024w, /wp-content/uploads/2020/01/snipaste_20200129_220838-300x180.png 300w, /wp-content/uploads/2020/01/snipaste_20200129_220838-768x460.png 768w, /wp-content/uploads/2020/01/snipaste_20200129_220838.png 1268w" sizes="(max-width: 1024px) 100vw, 1024px"></figure></div>
+
+
+
+<p>很明显了, 这玩意就是 JPEG 头. 再看一眼后面的高度是 01 4C, 结合之前给的 01-&gt;02 这个提示, 都不用试着改直接就能复原高度.</p>
+
+
+
+<div class="wp-block-image"><figure class="aligncenter size-large"><img loading="lazy" width="606" height="719" src="/wp-content/uploads/2020/01/snipaste_20200129_221048.png" alt="" class="wp-image-455" srcset="/wp-content/uploads/2020/01/snipaste_20200129_221048.png 606w, /wp-content/uploads/2020/01/snipaste_20200129_221048-253x300.png 253w" sizes="(max-width: 606px) 100vw, 606px"></figure></div>
+
+
+
+<p>扫一下得到一串核心价值观, 拿到 <a href="https://sym233.github.io/core-values-encoder/" target="_blank" rel="noreferrer noopener" aria-label="这个工具 (opens in a new tab)">这个工具</a> 解码得到 Flag 后半段, 完成.</p>
+
+
+
+<h2>0x04 OpenCV_easy</h2>
+
+
+
+<div class="wp-block-image"><figure class="aligncenter size-large"><img loading="lazy" width="647" height="327" src="/wp-content/uploads/2020/01/snipaste_20200129_221655.png" alt="" class="wp-image-457" srcset="/wp-content/uploads/2020/01/snipaste_20200129_221655.png 647w, /wp-content/uploads/2020/01/snipaste_20200129_221655-300x152.png 300w" sizes="(max-width: 647px) 100vw, 647px"></figure></div>
+
+
+
+<p>因为我这只是玩玩, 所以解法就比较随意了.  要什么 opencv, 丢进 PS, 替换颜色, 容差1直接搞定 <img src="/wp-content/plugins/tiebaface/images/yellow_25.png" style="width: 24px !important;height: 24px !important;min-height: 0 !important;"></p>
+
+
+
+<div class="wp-block-image"><figure class="aligncenter size-large"><img loading="lazy" width="1024" height="567" src="/wp-content/uploads/2020/01/snipaste_20200129_221414-1024x567.png" alt="" class="wp-image-456" srcset="/wp-content/uploads/2020/01/snipaste_20200129_221414-1024x567.png 1024w, /wp-content/uploads/2020/01/snipaste_20200129_221414-300x166.png 300w, /wp-content/uploads/2020/01/snipaste_20200129_221414-768x425.png 768w, /wp-content/uploads/2020/01/snipaste_20200129_221414.png 1408w" sizes="(max-width: 1024px) 100vw, 1024px"></figure></div>
+
+
+
+<h2>0x05 checkin</h2>
+
+
+
+<div class="wp-block-image"><figure class="aligncenter size-large"><img loading="lazy" width="670" height="289" src="/wp-content/uploads/2020/01/snipaste_20200129_221651.png" alt="" class="wp-image-458" srcset="/wp-content/uploads/2020/01/snipaste_20200129_221651.png 670w, /wp-content/uploads/2020/01/snipaste_20200129_221651-300x129.png 300w" sizes="(max-width: 670px) 100vw, 670px"></figure></div>
+
+
+
+<p>丢进 IDA, 发现是一个<em>某些物联网公司的代码水平</em>的字符串匹配.</p>
+
+
+
+<div class="wp-block-image"><figure class="aligncenter size-large"><img loading="lazy" width="1024" height="652" src="/wp-content/uploads/2020/01/snipaste_20200129_221643-1024x652.png" alt="" class="wp-image-459" srcset="/wp-content/uploads/2020/01/snipaste_20200129_221643-1024x652.png 1024w, /wp-content/uploads/2020/01/snipaste_20200129_221643-300x191.png 300w, /wp-content/uploads/2020/01/snipaste_20200129_221643-768x489.png 768w, /wp-content/uploads/2020/01/snipaste_20200129_221643.png 1432w" sizes="(max-width: 1024px) 100vw, 1024px"></figure></div>
+
+
+
+<p>一样的整点骚操作, 复制进NPP, 先把空格去掉然后稍微整几个正则替换一下.</p>
+
+
+
+<div class="wp-block-image"><figure class="aligncenter size-large"><img loading="lazy" width="599" height="636" src="/wp-content/uploads/2020/01/snipaste_20200129_222011.png" alt="" class="wp-image-460" srcset="/wp-content/uploads/2020/01/snipaste_20200129_222011.png 599w, /wp-content/uploads/2020/01/snipaste_20200129_222011-283x300.png 283w" sizes="(max-width: 599px) 100vw, 599px"></figure></div>
+
+
+
+<p>最后替换成了这样: <code>83,85,83,67,84,70,123,87,101,108,99,48,109,101,95,116,111,95,83,85,83,67,84,70,95,50,48,50,48,125,30</code></p>
+
+
+
+<p>然后随便找个网页打开 DevTools, 怎么简单怎么来 <img src="/wp-content/plugins/tiebaface/images/yellow_16.png" style="width: 24px !important;height: 24px !important;min-height: 0 !important;"></p>
+
+
+
+<div class="wp-block-image"><figure class="aligncenter size-large"><img loading="lazy" width="759" height="167" src="/wp-content/uploads/2020/01/snipaste_20200129_222158.png" alt="" class="wp-image-461" srcset="/wp-content/uploads/2020/01/snipaste_20200129_222158.png 759w, /wp-content/uploads/2020/01/snipaste_20200129_222158-300x66.png 300w" sizes="(max-width: 759px) 100vw, 759px"></figure></div>
+
+
+
+<h2>0x06 ez_x1r</h2>
+
+
+
+<div class="wp-block-image"><figure class="aligncenter size-large"><img loading="lazy" width="654" height="288" src="/wp-content/uploads/2020/01/snipaste_20200129_222439.png" alt="" class="wp-image-462" srcset="/wp-content/uploads/2020/01/snipaste_20200129_222439.png 654w, /wp-content/uploads/2020/01/snipaste_20200129_222439-300x132.png 300w" sizes="(max-width: 654px) 100vw, 654px"></figure></div>
+
+
+
+<p>嗯? 你们社团还上课的么, 反正我不知道.jpg</p>
+
+
+
+<div class="wp-block-image"><figure class="aligncenter size-large"><img loading="lazy" width="711" height="545" src="/wp-content/uploads/2020/01/snipaste_20200129_222532.png" alt="" class="wp-image-463" srcset="/wp-content/uploads/2020/01/snipaste_20200129_222532.png 711w, /wp-content/uploads/2020/01/snipaste_20200129_222532-300x230.png 300w" sizes="(max-width: 711px) 100vw, 711px"></figure></div>
+
+
+
+<p>丢进IDA, 发现就是简单的把输入 XOR 1 后和一个全局变量进行比较.</p>
+
+
+
+<div class="wp-block-image"><figure class="aligncenter size-large"><img loading="lazy" width="745" height="122" src="/wp-content/uploads/2020/01/snipaste_20200129_222621.png" alt="" class="wp-image-464" srcset="/wp-content/uploads/2020/01/snipaste_20200129_222621.png 745w, /wp-content/uploads/2020/01/snipaste_20200129_222621-300x49.png 300w" sizes="(max-width: 745px) 100vw, 745px"></figure></div>
+
+
+
+<p>拿到这个字符串, 然后, F12.jpg</p>
+
+
+
+<div class="wp-block-image"><figure class="aligncenter size-large"><img loading="lazy" width="710" height="151" src="/wp-content/uploads/2020/01/snipaste_20200129_222743.png" alt="" class="wp-image-465" srcset="/wp-content/uploads/2020/01/snipaste_20200129_222743.png 710w, /wp-content/uploads/2020/01/snipaste_20200129_222743-300x64.png 300w" sizes="(max-width: 710px) 100vw, 710px"></figure></div>
+
+
+
+<p>代码我没细看, 不知道为啥掉了个S, 反正手动补上就好了.</p>
+
+
+
+<h2>0x07 wait_for_AA</h2>
+
+
+
+<div class="wp-block-image"><figure class="aligncenter size-large"><img loading="lazy" width="657" height="291" src="/wp-content/uploads/2020/01/snipaste_20200129_223004.png" alt="" class="wp-image-466" srcset="/wp-content/uploads/2020/01/snipaste_20200129_223004.png 657w, /wp-content/uploads/2020/01/snipaste_20200129_223004-300x133.png 300w" sizes="(max-width: 657px) 100vw, 657px"></figure></div>
+
+
+
+<p>照样丢进IDA, 发现是一个超长 sleep 后面输出 Flag</p>
+
+
+
+<div class="wp-block-image"><figure class="aligncenter size-large"><img loading="lazy" width="798" height="236" src="/wp-content/uploads/2020/01/snipaste_20200129_222959.png" alt="" class="wp-image-467" srcset="/wp-content/uploads/2020/01/snipaste_20200129_222959.png 798w, /wp-content/uploads/2020/01/snipaste_20200129_222959-300x89.png 300w, /wp-content/uploads/2020/01/snipaste_20200129_222959-768x227.png 768w" sizes="(max-width: 798px) 100vw, 798px"></figure></div>
+
+
+
+<p>这里当然可以选择把 calc_flag 单独剥离出来跑一遍, 不过我懒, 直接打补丁</p>
+
+
+
+<div class="wp-block-image"><figure class="aligncenter size-large"><img loading="lazy" width="498" height="350" src="/wp-content/uploads/2020/01/snipaste_20200129_223132.png" alt="" class="wp-image-468" srcset="/wp-content/uploads/2020/01/snipaste_20200129_223132.png 498w, /wp-content/uploads/2020/01/snipaste_20200129_223132-300x211.png 300w" sizes="(max-width: 498px) 100vw, 498px"></figure></div>
+
+
+
+<p>然后丢进 Linux 虚拟机跑一下, 完成</p>
+
+
+
+<div class="wp-block-image"><figure class="aligncenter size-large"><img loading="lazy" width="696" height="171" src="/wp-content/uploads/2020/01/snipaste_20200129_223222.png" alt="" class="wp-image-469" srcset="/wp-content/uploads/2020/01/snipaste_20200129_223222.png 696w, /wp-content/uploads/2020/01/snipaste_20200129_223222-300x74.png 300w" sizes="(max-width: 696px) 100vw, 696px"></figure></div>
+
+
+
+<h2>0x08 bbbb4444se</h2>
+
+
+
+<figure class="wp-block-image size-large"><img loading="lazy" width="657" height="295" src="/wp-content/uploads/2020/01/snipaste_20200129_223256.png" alt="" class="wp-image-470" srcset="/wp-content/uploads/2020/01/snipaste_20200129_223256.png 657w, /wp-content/uploads/2020/01/snipaste_20200129_223256-300x135.png 300w" sizes="(max-width: 657px) 100vw, 657px"></figure>
+
+
+
+<p>一开始还以为就是个 Base64, 不过解码了一下发现事情好像并没有这么简单.</p>
+
+
+
+<div class="wp-block-image"><figure class="aligncenter size-large"><img loading="lazy" width="1017" height="633" src="/wp-content/uploads/2020/01/snipaste_20200129_223404.png" alt="" class="wp-image-471" srcset="/wp-content/uploads/2020/01/snipaste_20200129_223404.png 1017w, /wp-content/uploads/2020/01/snipaste_20200129_223404-300x187.png 300w, /wp-content/uploads/2020/01/snipaste_20200129_223404-768x478.png 768w" sizes="(max-width: 1017px) 100vw, 1017px"></figure></div>
+
+
+
+<p>感觉改算法的可能性不大, 先看看它的 Base Table 是不是改过.</p>
+
+
+
+<div class="wp-block-image"><figure class="aligncenter size-large is-resized"><img loading="lazy" src="/wp-content/uploads/2020/01/snipaste_20200129_223512.png" alt="" class="wp-image-472" width="537" height="350" srcset="/wp-content/uploads/2020/01/snipaste_20200129_223512.png 537w, /wp-content/uploads/2020/01/snipaste_20200129_223512-300x196.png 300w" sizes="(max-width: 537px) 100vw, 537px"></figure></div>
+
+
+
+<p>注意红框中部分, 正常的 Base64 表是 <code>A-Za-z0-9+/</code>, 这里明显把 a-z 和 A-Z 调了一下位置. 那这怎么办?</p>
+
+
+
+<div class="wp-block-image"><figure class="aligncenter size-large"><img loading="lazy" width="810" height="130" src="/wp-content/uploads/2020/01/snipaste_20200129_223802.png" alt="" class="wp-image-473" srcset="/wp-content/uploads/2020/01/snipaste_20200129_223802.png 810w, /wp-content/uploads/2020/01/snipaste_20200129_223802-300x48.png 300w, /wp-content/uploads/2020/01/snipaste_20200129_223802-768x123.png 768w" sizes="(max-width: 810px) 100vw, 810px"></figure></div>
+
+
+
+<p>还记得我的 F12 么, 先随便找一个 <a rel="noreferrer noopener" aria-label="JavaScript Base64实现 (opens in a new tab)" href="https://stackoverflow.com/questions/246801/how-can-you-encode-a-string-to-base64-in-javascript" target="_blank">JavaScript Base64实现</a>, 把它的表稍微改一下, 解码, 完成.</p>
+
+
+
+<h2>0x09 mengxin_lfsr</h2>
+
+
+
+<div class="wp-block-image"><figure class="aligncenter size-large"><img loading="lazy" width="617" height="687" src="/wp-content/uploads/2020/01/snipaste_20200129_223920.png" alt="" class="wp-image-474" srcset="/wp-content/uploads/2020/01/snipaste_20200129_223920.png 617w, /wp-content/uploads/2020/01/snipaste_20200129_223920-269x300.png 269w" sizes="(max-width: 617px) 100vw, 617px"></figure></div>
+
+
+
+<p>一开始拿到这题我是拒绝的, 因为要研究新的加密算法, 我前几天才在 <s>[数据删除]</s> 折腾加密算法折腾到吐.</p>
+
+
+
+<div class="wp-block-image"><figure class="aligncenter size-large"><img loading="lazy" width="451" height="132" src="/wp-content/uploads/2020/01/snipaste_20200129_224025.png" alt="" class="wp-image-475" srcset="/wp-content/uploads/2020/01/snipaste_20200129_224025.png 451w, /wp-content/uploads/2020/01/snipaste_20200129_224025-300x88.png 300w" sizes="(max-width: 451px) 100vw, 451px"></figure></div>
+
+
+
+<p>不过大概看了一下, 你这个题好像 Flag 不长啊?</p>
+
+
+
+<div class="wp-block-image"><figure class="aligncenter size-large"><img loading="lazy" width="665" height="264" src="/wp-content/uploads/2020/01/snipaste_20200129_224113.png" alt="" class="wp-image-476" srcset="/wp-content/uploads/2020/01/snipaste_20200129_224113.png 665w, /wp-content/uploads/2020/01/snipaste_20200129_224113-300x119.png 300w" sizes="(max-width: 665px) 100vw, 665px"></figure></div>
+
+
+
+<p>嗯, 咱不会逆算法但咱会爆破. 不要吐槽为什么最大值要设为 500000, 顺手敲的, 反正取第一个值就好了.</p>
+
+
+
+<div class="wp-block-image"><figure class="aligncenter size-large"><img loading="lazy" width="677" height="443" src="/wp-content/uploads/2020/01/snipaste_20200129_224255.png" alt="" class="wp-image-477" srcset="/wp-content/uploads/2020/01/snipaste_20200129_224255.png 677w, /wp-content/uploads/2020/01/snipaste_20200129_224255-300x196.png 300w" sizes="(max-width: 677px) 100vw, 677px"></figure></div>
+
+
+
+<p>然后丢进计算器, 得到 Flag. 你问我为什么不用 Python 直接输出? 因为我并不熟悉这语言, 就是不会的意思.</p>
+
+
+
+<h2>0x0A ez_http_header</h2>
+
+
+
+<div class="wp-block-image"><figure class="aligncenter size-large"><img loading="lazy" width="659" height="288" src="/wp-content/uploads/2020/01/snipaste_20200129_224420.png" alt="" class="wp-image-478" srcset="/wp-content/uploads/2020/01/snipaste_20200129_224420.png 659w, /wp-content/uploads/2020/01/snipaste_20200129_224420-300x131.png 300w" sizes="(max-width: 659px) 100vw, 659px"></figure></div>
+
+
+
+<div class="wp-block-image"><figure class="aligncenter size-large"><img loading="lazy" width="423" height="194" src="/wp-content/uploads/2020/01/snipaste_20200129_224754.png" alt="" class="wp-image-483" srcset="/wp-content/uploads/2020/01/snipaste_20200129_224754.png 423w, /wp-content/uploads/2020/01/snipaste_20200129_224754-300x138.png 300w" sizes="(max-width: 423px) 100vw, 423px"></figure></div>
+
+
+
+<p>第一个挺明显的, 加个 Referer 就好了.</p>
+
+
+
+<div class="wp-block-image"><figure class="aligncenter size-large"><img loading="lazy" width="382" height="188" src="/wp-content/uploads/2020/01/snipaste_20200129_224520.png" alt="" class="wp-image-480" srcset="/wp-content/uploads/2020/01/snipaste_20200129_224520.png 382w, /wp-content/uploads/2020/01/snipaste_20200129_224520-300x148.png 300w" sizes="(max-width: 382px) 100vw, 382px"></figure></div>
+
+
+
+<p>第二个翻了半天RFC, 试了 Authentication, UA, XFF 都不对, 结果是要在 Cookie 里整一个 <code>user=admin</code>, 真就比脑洞.</p>
+
+
+
+<div class="wp-block-image"><figure class="aligncenter size-large"><img loading="lazy" width="385" height="214" src="/wp-content/uploads/2020/01/snipaste_20200129_224605.png" alt="" class="wp-image-481" srcset="/wp-content/uploads/2020/01/snipaste_20200129_224605.png 385w, /wp-content/uploads/2020/01/snipaste_20200129_224605-300x167.png 300w" sizes="(max-width: 385px) 100vw, 385px"></figure></div>
+
+
+
+<p>这个更简单了, UA 里直接设成 SUS</p>
+
+
+
+<div class="wp-block-image"><figure class="aligncenter size-large"><img loading="lazy" width="393" height="187" src="/wp-content/uploads/2020/01/snipaste_20200129_224653.png" alt="" class="wp-image-482" srcset="/wp-content/uploads/2020/01/snipaste_20200129_224653.png 393w, /wp-content/uploads/2020/01/snipaste_20200129_224653-300x143.png 300w" sizes="(max-width: 393px) 100vw, 393px"></figure></div>
+
+
+
+<p>第四个, 明显是 Client-IP 或者 XFF, 两个都打上就能 Bypass (其实只需要 XFF), 完成</p>
+
+
+
+<h2>0x0B easy_http</h2>
+
+
+
+<div class="wp-block-image"><figure class="aligncenter size-large"><img loading="lazy" width="658" height="519" src="/wp-content/uploads/2020/01/snipaste_20200129_224842.png" alt="" class="wp-image-484" srcset="/wp-content/uploads/2020/01/snipaste_20200129_224842.png 658w, /wp-content/uploads/2020/01/snipaste_20200129_224842-300x237.png 300w" sizes="(max-width: 658px) 100vw, 658px"></figure></div>
+
+
+
+<div class="wp-block-image"><figure class="aligncenter size-large"><img loading="lazy" width="1024" height="612" src="/wp-content/uploads/2020/01/snipaste_20200129_224922-1024x612.png" alt="" class="wp-image-485" srcset="/wp-content/uploads/2020/01/snipaste_20200129_224922-1024x612.png 1024w, /wp-content/uploads/2020/01/snipaste_20200129_224922-300x179.png 300w, /wp-content/uploads/2020/01/snipaste_20200129_224922-768x459.png 768w, /wp-content/uploads/2020/01/snipaste_20200129_224922.png 1056w" sizes="(max-width: 1024px) 100vw, 1024px"></figure></div>
+
+
+
+<p>打开发现一个 &#8220;检测系统&#8221;, Ctrl+U 先看看源码.</p>
+
+
+
+<div class="wp-block-image"><figure class="aligncenter size-large"><img loading="lazy" width="931" height="639" src="/wp-content/uploads/2020/01/snipaste_20200129_224955.png" alt="" class="wp-image-486" srcset="/wp-content/uploads/2020/01/snipaste_20200129_224955.png 931w, /wp-content/uploads/2020/01/snipaste_20200129_224955-300x206.png 300w, /wp-content/uploads/2020/01/snipaste_20200129_224955-768x527.png 768w" sizes="(max-width: 931px) 100vw, 931px"></figure></div>
+
+
+
+<p>在底部发现一段代码, 应该就是点击提交的时候 POST 到的 <code>ctf.php</code> 的源码, 我不是很懂为啥它要写个 /admin.php, 误导了我半天.</p>
+
+
+
+<div class="wp-block-image"><figure class="aligncenter size-large"><img loading="lazy" width="675" height="425" src="/wp-content/uploads/2020/01/snipaste_20200129_225225.png" alt="" class="wp-image-487" srcset="/wp-content/uploads/2020/01/snipaste_20200129_225225.png 675w, /wp-content/uploads/2020/01/snipaste_20200129_225225-300x189.png 300w" sizes="(max-width: 675px) 100vw, 675px"></figure></div>
+
+
+
+<p>看这源码还不支持 HTTPS 的, 有够丢人. 只好随便找个服务器配置一下记录日志.</p>
+
+
+
+<div class="wp-block-image"><figure class="aligncenter size-large"><img loading="lazy" width="838" height="425" src="/wp-content/uploads/2020/01/snipaste_20200129_225337.png" alt="" class="wp-image-488" srcset="/wp-content/uploads/2020/01/snipaste_20200129_225337.png 838w, /wp-content/uploads/2020/01/snipaste_20200129_225337-300x152.png 300w, /wp-content/uploads/2020/01/snipaste_20200129_225337-768x389.png 768w" sizes="(max-width: 838px) 100vw, 838px"></figure></div>
+
+
+
+<p>填入对应的URL, 提交, 完成.</p>
+
+
+
+<h2>0x0C Easy_php</h2>
+
+
+
+<div class="wp-block-image"><figure class="aligncenter size-large"><img loading="lazy" width="610" height="561" src="/wp-content/uploads/2020/01/snipaste_20200129_225444.png" alt="" class="wp-image-489" srcset="/wp-content/uploads/2020/01/snipaste_20200129_225444.png 610w, /wp-content/uploads/2020/01/snipaste_20200129_225444-300x276.png 300w" sizes="(max-width: 610px) 100vw, 610px"></figure></div>
+
+
+
+<p>这个题嘛, 当然可以写个 PHP 进行碰撞, 原理很明显是让两个 MD5 都变成 <code>0e一串数字</code> 的形式, 然后用两个等号比较的时候就等价于 <code>0==0</code>. 不过我为啥不直接 Google 一个现成的值呢 <img src="/wp-content/plugins/tiebaface/images/yellow_25.png" style="width: 24px !important;height: 24px !important;min-height: 0 !important;"></p>
+
+
+
+<figure class="wp-block-image size-large"><img loading="lazy" width="919" height="461" src="/wp-content/uploads/2020/01/snipaste_20200129_225611.png" alt="" class="wp-image-490" srcset="/wp-content/uploads/2020/01/snipaste_20200129_225611.png 919w, /wp-content/uploads/2020/01/snipaste_20200129_225611-300x150.png 300w, /wp-content/uploads/2020/01/snipaste_20200129_225611-768x385.png 768w" sizes="(max-width: 919px) 100vw, 919px"></figure>
+
+
+
+<p>页面上还有一个前端限制最大长度为5, 照样 F12 改一下, 提交, 完成.</p>
+
+
+
+<h2>0x0D 武林秘籍</h2>
+
+
+
+<div class="wp-block-image"><figure class="aligncenter size-large"><img loading="lazy" width="614" height="692" src="/wp-content/uploads/2020/01/snipaste_20200129_225727.png" alt="" class="wp-image-491" srcset="/wp-content/uploads/2020/01/snipaste_20200129_225727.png 614w, /wp-content/uploads/2020/01/snipaste_20200129_225727-266x300.png 266w" sizes="(max-width: 614px) 100vw, 614px"></figure></div>
+
+
+
+<div class="wp-block-image"><figure class="aligncenter size-large"><img loading="lazy" width="1024" height="620" src="/wp-content/uploads/2020/01/snipaste_20200129_225816-1024x620.png" alt="" class="wp-image-492" srcset="/wp-content/uploads/2020/01/snipaste_20200129_225816-1024x620.png 1024w, /wp-content/uploads/2020/01/snipaste_20200129_225816-300x182.png 300w, /wp-content/uploads/2020/01/snipaste_20200129_225816-768x465.png 768w, /wp-content/uploads/2020/01/snipaste_20200129_225816.png 1046w" sizes="(max-width: 1024px) 100vw, 1024px"></figure></div>
+
+
+
+<p>打开页面就有一个不工作的按钮和下面不知道飞哪去的 Copyright. 只好丢进 Postman 提交试试.</p>
+
+
+
+<div class="wp-block-image"><figure class="aligncenter size-large"><img loading="lazy" width="811" height="722" src="/wp-content/uploads/2020/01/snipaste_20200129_230013.png" alt="" class="wp-image-493" srcset="/wp-content/uploads/2020/01/snipaste_20200129_230013.png 811w, /wp-content/uploads/2020/01/snipaste_20200129_230013-300x267.png 300w, /wp-content/uploads/2020/01/snipaste_20200129_230013-768x684.png 768w" sizes="(max-width: 811px) 100vw, 811px"></figure></div>
+
+
+
+<p>随便写个数字会提示 x 不能是数字, 而随便写个字符串会提示 x 太小, 估计是下面这种代码</p>
+
+
+
+<pre class="wp-block-code"><code>if(is_numeric($_POST&#91;'x'])) die('XD');
+if($_POST&#91;'x'] &lt; 100) die('XDD');</code></pre>
+
+
+
+<p>这种情况应该就只能考虑用提交数组绕过了, 可能还能提交其他值不过我没想到.</p>
+
+
+
+<div class="wp-block-image"><figure class="aligncenter size-large"><img loading="lazy" width="821" height="706" src="/wp-content/uploads/2020/01/snipaste_20200129_230414.png" alt="" class="wp-image-494" srcset="/wp-content/uploads/2020/01/snipaste_20200129_230414.png 821w, /wp-content/uploads/2020/01/snipaste_20200129_230414-300x258.png 300w, /wp-content/uploads/2020/01/snipaste_20200129_230414-768x660.png 768w" sizes="(max-width: 821px) 100vw, 821px"></figure></div>
+
+
+
+<p>绕过后得到一个奇怪的 Flag, 提交了一下提示 Flag 错误, 看来是得检查 robots.txt</p>
+
+
+
+<div class="wp-block-image"><figure class="aligncenter size-large"><img loading="lazy" width="563" height="264" src="/wp-content/uploads/2020/01/snipaste_20200129_230508.png" alt="" class="wp-image-495" srcset="/wp-content/uploads/2020/01/snipaste_20200129_230508.png 563w, /wp-content/uploads/2020/01/snipaste_20200129_230508-300x141.png 300w" sizes="(max-width: 563px) 100vw, 563px"></figure></div>
+
+
+
+<p>解码得到一个字符串 <code>th1s_1s_y0ur_fl4g.php</code>, 访问一下康康.</p>
+
+
+
+<div class="wp-block-image"><figure class="aligncenter size-large"><img loading="lazy" width="480" height="237" src="/wp-content/uploads/2020/01/snipaste_20200129_230606.png" alt="" class="wp-image-496" srcset="/wp-content/uploads/2020/01/snipaste_20200129_230606.png 480w, /wp-content/uploads/2020/01/snipaste_20200129_230606-300x148.png 300w" sizes="(max-width: 480px) 100vw, 480px"></figure></div>
+
+
+
+<p>进来又是老套路, 整个 Cookie, <code>user=admin</code>, 完成.</p>
+
+
+
+<h2>0x0E upload</h2>
+
+
+
+<div class="wp-block-image"><figure class="aligncenter size-large"><img loading="lazy" width="616" height="289" src="/wp-content/uploads/2020/01/snipaste_20200129_230717.png" alt="" class="wp-image-497" srcset="/wp-content/uploads/2020/01/snipaste_20200129_230717.png 616w, /wp-content/uploads/2020/01/snipaste_20200129_230717-300x141.png 300w" sizes="(max-width: 616px) 100vw, 616px"></figure></div>
+
+
+
+<div class="wp-block-image"><figure class="aligncenter size-large"><img loading="lazy" width="589" height="406" src="/wp-content/uploads/2020/01/snipaste_20200129_230741.png" alt="" class="wp-image-498" srcset="/wp-content/uploads/2020/01/snipaste_20200129_230741.png 589w, /wp-content/uploads/2020/01/snipaste_20200129_230741-300x207.png 300w" sizes="(max-width: 589px) 100vw, 589px"></figure></div>
+
+
+
+<p>进来看到一个简单的上传 Form, 简单的测试后发现只允许上传图片. 康康源码, 下面直接给了一个 include, 这难度压的确实很低. 不管怎么说, 先找个图片加段一句话扔进去吧.</p>
+
+
+
+<div class="wp-block-image"><figure class="aligncenter size-large"><img loading="lazy" width="346" height="284" src="/wp-content/uploads/2020/01/snipaste_20200129_230923.png" alt="" class="wp-image-499" srcset="/wp-content/uploads/2020/01/snipaste_20200129_230923.png 346w, /wp-content/uploads/2020/01/snipaste_20200129_230923-300x246.png 300w" sizes="(max-width: 346px) 100vw, 346px"></figure></div>
+
+
+
+<p>结果这玩意还不让我直接写 <code>&lt;?</code> 这个标签, 只好改用 <code>&lt;script language=php&gt;</code></p>
+
+
+
+<div class="wp-block-image"><figure class="aligncenter size-large"><img loading="lazy" width="816" height="602" src="/wp-content/uploads/2020/01/snipaste_20200129_231147.png" alt="" class="wp-image-500" srcset="/wp-content/uploads/2020/01/snipaste_20200129_231147.png 816w, /wp-content/uploads/2020/01/snipaste_20200129_231147-300x221.png 300w, /wp-content/uploads/2020/01/snipaste_20200129_231147-768x567.png 768w" sizes="(max-width: 816px) 100vw, 816px"></figure></div>
+
+
+
+<p>然后丢进 Postman 读一下 Flag, 完成.</p>
+
+
+
+<h2>0x0F Have_Fun</h2>
+
+
+
+<div class="wp-block-image"><figure class="aligncenter size-large"><img loading="lazy" width="606" height="289" src="/wp-content/uploads/2020/01/snipaste_20200129_231249.png" alt="" class="wp-image-501" srcset="/wp-content/uploads/2020/01/snipaste_20200129_231249.png 606w, /wp-content/uploads/2020/01/snipaste_20200129_231249-300x143.png 300w" sizes="(max-width: 606px) 100vw, 606px"></figure></div>
+
+
+
+<div class="wp-block-image"><figure class="aligncenter size-large is-resized"><img loading="lazy" src="/wp-content/uploads/2020/01/snipaste_20200129_231255.png" alt="" class="wp-image-502" width="580" height="377" srcset="/wp-content/uploads/2020/01/snipaste_20200129_231255.png 986w, /wp-content/uploads/2020/01/snipaste_20200129_231255-300x195.png 300w, /wp-content/uploads/2020/01/snipaste_20200129_231255-768x500.png 768w" sizes="(max-width: 580px) 100vw, 580px"></figure></div>
+
+
+
+<p>打开看是一个简单的登录页面, 使用 admin/admin 可以登录成功但没什么卵用.</p>
+
+
+
+<div class="wp-block-image"><figure class="aligncenter size-large"><img loading="lazy" width="758" height="369" src="/wp-content/uploads/2020/01/snipaste_20200129_231333.png" alt="" class="wp-image-503" srcset="/wp-content/uploads/2020/01/snipaste_20200129_231333.png 758w, /wp-content/uploads/2020/01/snipaste_20200129_231333-300x146.png 300w" sizes="(max-width: 758px) 100vw, 758px"></figure></div>
+
+
+
+<p>康康源码, 居然是把用户凭据装在 XML 里提交的? 再结合这玩意是 PHP, <strong>并且会在返回信息中附上提交的用户名,</strong> 想到可能是 XXE Attack.</p>
+
+
+
+<figure class="wp-block-gallery aligncenter columns-2 is-cropped"><ul class="blocks-gallery-grid">
+<li class="blocks-gallery-item"><figure><img loading="lazy" width="341" height="250" src="/wp-content/uploads/2020/01/snipaste_20200129_231734.png" alt="" data-id="504" class="wp-image-504" srcset="/wp-content/uploads/2020/01/snipaste_20200129_231734.png 341w, /wp-content/uploads/2020/01/snipaste_20200129_231734-300x220.png 300w" sizes="(max-width: 341px) 100vw, 341px"></figure></li>
+<li class="blocks-gallery-item"><figure><img loading="lazy" width="744" height="512" src="/wp-content/uploads/2020/01/snipaste_20200129_231716.png" alt="" data-id="505" data-full-url="/wp-content/uploads/2020/01/snipaste_20200129_231716.png" data-link="/?attachment_id=505" class="wp-image-505" srcset="/wp-content/uploads/2020/01/snipaste_20200129_231716.png 744w, /wp-content/uploads/2020/01/snipaste_20200129_231716-300x206.png 300w" sizes="(max-width: 744px) 100vw, 744px"></figure></li>
+</ul></figure>
+
+
+
+<p>构造一个 Payload 进行测试, 果然就打出了 <code>SUS2019.php</code> 的内容. 这里还有个坑, 页面提示里文件名是全大写的, 结果实际的文件拓展名是小写 <img src="/wp-content/plugins/tiebaface/images/yellow_33.png" style="width: 24px !important;height: 24px !important;min-height: 0 !important;"></p>
+
+
+
+<p>看一下这个文件应该是用 <code>parse_str</code> 覆盖全局变量实现任意包含, 不过 <code>SUS2020.php</code> 是不存在的, 试了下 <code>/flag</code> 也不存在, 只好考虑远程包含.</p>
+
+
+
+<div class="wp-block-image"><figure class="aligncenter size-large"><img loading="lazy" width="716" height="582" src="/wp-content/uploads/2020/01/snipaste_20200129_232226.png" alt="" class="wp-image-506" srcset="/wp-content/uploads/2020/01/snipaste_20200129_232226.png 716w, /wp-content/uploads/2020/01/snipaste_20200129_232226-300x244.png 300w" sizes="(max-width: 716px) 100vw, 716px"></figure></div>
+
+
+
+<p>构造一个写一句话的 PHP, 执行即可. 当然我省略了判断是否可写之类的, 因为之前已经做过了.</p>
+
+
+
+<div class="wp-block-image"><figure class="aligncenter size-large"><img loading="lazy" width="613" height="477" src="/wp-content/uploads/2020/01/snipaste_20200129_232347.png" alt="" class="wp-image-507" srcset="/wp-content/uploads/2020/01/snipaste_20200129_232347.png 613w, /wp-content/uploads/2020/01/snipaste_20200129_232347-300x233.png 300w" sizes="(max-width: 613px) 100vw, 613px"></figure></div>
+
+
+
+<p>列一下根目录, 发现一个 flag 和 readflag. 但是刚刚为什么直接包含 /flag 失败呢?</p>
+
+
+
+<div class="wp-block-image"><figure class="aligncenter size-large"><img loading="lazy" width="583" height="382" src="/wp-content/uploads/2020/01/snipaste_20200129_232431.png" alt="" class="wp-image-508" srcset="/wp-content/uploads/2020/01/snipaste_20200129_232431.png 583w, /wp-content/uploads/2020/01/snipaste_20200129_232431-300x197.png 300w" sizes="(max-width: 583px) 100vw, 583px"></figure></div>
+
+
+
+<p>进一步查看权限, 原来 flag 被设成了100&#8230; 直接执行 readflag, 完成. 顺手删了一下 shell 文件, 不留垃圾.</p>
+
+
+
+<h2>0x10 Download_ctf</h2>
+
+
+
+<div class="wp-block-image"><figure class="aligncenter size-large"><img loading="lazy" width="727" height="506" src="/wp-content/uploads/2020/01/snipaste_20200130_001609.png" alt="" class="wp-image-527" srcset="/wp-content/uploads/2020/01/snipaste_20200130_001609.png 727w, /wp-content/uploads/2020/01/snipaste_20200130_001609-300x209.png 300w" sizes="(max-width: 727px) 100vw, 727px"></figure></div>
+
+
+
+<div class="wp-block-image"><figure class="aligncenter size-large"><img loading="lazy" width="488" height="152" src="/wp-content/uploads/2020/01/snipaste_20200130_001641.png" alt="" class="wp-image-528" srcset="/wp-content/uploads/2020/01/snipaste_20200130_001641.png 488w, /wp-content/uploads/2020/01/snipaste_20200130_001641-300x93.png 300w" sizes="(max-width: 488px) 100vw, 488px"></figure></div>
+
+
+
+<p>拿到题目, 相当的简洁, 只有一个 URL 告诉你下一步. 初步分析是将文件名 Base64 编码后提交. 此时访问一下 /flag.php, 发现不是 404, 文件是存在的.</p>
+
+
+
+<div class="wp-block-image"><figure class="aligncenter size-large"><img loading="lazy" width="739" height="267" src="/wp-content/uploads/2020/01/snipaste_20200130_001823.png" alt="" class="wp-image-529" srcset="/wp-content/uploads/2020/01/snipaste_20200130_001823.png 739w, /wp-content/uploads/2020/01/snipaste_20200130_001823-300x108.png 300w" sizes="(max-width: 739px) 100vw, 739px"></figure></div>
+
+
+
+<p>把文件名改成 <code>flag.php</code> 试试, 发现 php 三个字被删掉了. 这里还不能确定是什么过滤, 需要进一步验证.</p>
+
+
+
+<div class="wp-block-image"><figure class="aligncenter size-large"><img loading="lazy" width="774" height="211" src="/wp-content/uploads/2020/01/snipaste_20200130_002041.png" alt="" class="wp-image-531" srcset="/wp-content/uploads/2020/01/snipaste_20200130_002041.png 774w, /wp-content/uploads/2020/01/snipaste_20200130_002041-300x82.png 300w, /wp-content/uploads/2020/01/snipaste_20200130_002041-768x209.png 768w" sizes="(max-width: 774px) 100vw, 774px"></figure></div>
+
+
+
+<p>提交 <code>flag.pphphp</code>, 发现显示出了正常的 flag.php, 看来只是简单的 str_replace. 但是仍然提示 flag.php 无法找到, 可能是跑去子文件夹里找了. 先采用一层一层往上翻目录尝试读取 /etc/passwd 的方式先看看这文件夹有几级. </p>
+
+
+
+<ul>
+<li>../etc/passwd</li>
+<li>../../etc/passwd</li>
+<li>../../../etc/passwd</li>
+<li>&#8230;&#8230;&#8230;</li>
+<li>../../../../../../../etc/passwd</li>
+</ul>
+
+
+
+<p>找到目录级数后, 再一级一级的往下读 flag.php</p>
+
+
+
+<div class="wp-block-image"><figure class="aligncenter size-large"><img loading="lazy" width="894" height="344" src="/wp-content/uploads/2020/01/snipaste_20200130_002431.png" alt="" class="wp-image-532" srcset="/wp-content/uploads/2020/01/snipaste_20200130_002431.png 894w, /wp-content/uploads/2020/01/snipaste_20200130_002431-300x115.png 300w, /wp-content/uploads/2020/01/snipaste_20200130_002431-768x296.png 768w" sizes="(max-width: 894px) 100vw, 894px"></figure></div>
+
+
+
+<p>结果发生了有趣的事情, 只到了第一级目录提示信息就从 <em>can&#8217;t find</em> 变成了 <em>can&#8217;t down</em>, 这也许暗示了路径是对的, 但我们需要采用其他方法读取 flag.</p>
+
+
+
+<div class="wp-block-image"><figure class="aligncenter size-large"><img loading="lazy" width="872" height="748" src="/wp-content/uploads/2020/01/snipaste_20200130_002722.png" alt="" class="wp-image-533" srcset="/wp-content/uploads/2020/01/snipaste_20200130_002722.png 872w, /wp-content/uploads/2020/01/snipaste_20200130_002722-300x257.png 300w, /wp-content/uploads/2020/01/snipaste_20200130_002722-768x659.png 768w" sizes="(max-width: 872px) 100vw, 872px"></figure></div>
+
+
+
+<p>于是改成读取 index.php, 打开发现正确获取 flag 的姿势是设置 Cookie 并访问 <code>?method=login</code>, 完成.</p>
+
+
+
+<h2>0x11 Hello_pwn</h2>
+
+
+
+<div class="wp-block-image"><figure class="aligncenter size-large"><img loading="lazy" width="612" height="298" src="/wp-content/uploads/2020/01/snipaste_20200129_232931.png" alt="" class="wp-image-511" srcset="/wp-content/uploads/2020/01/snipaste_20200129_232931.png 612w, /wp-content/uploads/2020/01/snipaste_20200129_232931-300x146.png 300w" sizes="(max-width: 612px) 100vw, 612px"></figure></div>
+
+
+
+<div class="wp-block-image"><figure class="aligncenter size-large"><img loading="lazy" width="479" height="251" src="/wp-content/uploads/2020/01/snipaste_20200129_233012.png" alt="" class="wp-image-512" srcset="/wp-content/uploads/2020/01/snipaste_20200129_233012.png 479w, /wp-content/uploads/2020/01/snipaste_20200129_233012-300x157.png 300w" sizes="(max-width: 479px) 100vw, 479px"></figure></div>
+
+
+
+<p>nc 连上, 送分题. </p>
+
+
+
+<h2>0x12 use_pwntools</h2>
+
+
+
+<div class="wp-block-image"><figure class="aligncenter size-large"><img loading="lazy" width="609" height="310" src="/wp-content/uploads/2020/01/snipaste_20200129_233043.png" alt="" class="wp-image-513" srcset="/wp-content/uploads/2020/01/snipaste_20200129_233043.png 609w, /wp-content/uploads/2020/01/snipaste_20200129_233043-300x153.png 300w" sizes="(max-width: 609px) 100vw, 609px"></figure></div>
+
+
+
+<div class="wp-block-image"><figure class="aligncenter size-large"><img loading="lazy" width="564" height="230" src="/wp-content/uploads/2020/01/snipaste_20200129_233326.png" alt="" class="wp-image-514" srcset="/wp-content/uploads/2020/01/snipaste_20200129_233326.png 564w, /wp-content/uploads/2020/01/snipaste_20200129_233326-300x122.png 300w" sizes="(max-width: 564px) 100vw, 564px"></figure></div>
+
+
+
+<p>简单的写个小脚本连接, 这里是不能用 Python Interactive Shell 的, 会造成无法显示 Flag. 如果不喜欢被刷屏这里也可以加句 <code>r.recvuntil('SUS')</code>, 我倒是不介意.</p>
+
+
+
+<div class="wp-block-image"><figure class="aligncenter size-large"><img loading="lazy" width="750" height="496" src="/wp-content/uploads/2020/01/snipaste_20200129_233406.png" alt="" class="wp-image-515" srcset="/wp-content/uploads/2020/01/snipaste_20200129_233406.png 750w, /wp-content/uploads/2020/01/snipaste_20200129_233406-300x198.png 300w" sizes="(max-width: 750px) 100vw, 750px"></figure></div>
+
+
+
+<p>直接拿到 Flag, 也是送分题.</p>
+
+
+
+<h2>0x13 pwd</h2>
+
+
+
+<div class="wp-block-image"><figure class="aligncenter size-large"><img loading="lazy" width="605" height="327" src="/wp-content/uploads/2020/01/snipaste_20200129_233514.png" alt="" class="wp-image-516" srcset="/wp-content/uploads/2020/01/snipaste_20200129_233514.png 605w, /wp-content/uploads/2020/01/snipaste_20200129_233514-300x162.png 300w" sizes="(max-width: 605px) 100vw, 605px"></figure></div>
+
+
+
+<p>我 PWN 超蔡的, 如果有写错了请各位指正.</p>
+
+
+
+<div class="wp-block-image"><figure class="aligncenter size-large"><img loading="lazy" width="613" height="333" src="/wp-content/uploads/2020/01/snipaste_20200129_233638.png" alt="" class="wp-image-517" srcset="/wp-content/uploads/2020/01/snipaste_20200129_233638.png 613w, /wp-content/uploads/2020/01/snipaste_20200129_233638-300x163.png 300w" sizes="(max-width: 613px) 100vw, 613px"></figure></div>
+
+
+
+<p>看一眼题, 教科书式的溢出, 还送了一个 gift 函数直接运行 shell.</p>
+
+
+
+<div class="wp-block-image"><figure class="aligncenter size-large"><img loading="lazy" width="745" height="412" src="/wp-content/uploads/2020/01/snipaste_20200129_233807.png" alt="" class="wp-image-518" srcset="/wp-content/uploads/2020/01/snipaste_20200129_233807.png 745w, /wp-content/uploads/2020/01/snipaste_20200129_233807-300x166.png 300w" sizes="(max-width: 745px) 100vw, 745px"></figure></div>
+
+
+
+<p>直接上 GDB, 先把程序炸了再说. </p>
+
+
+
+<div class="wp-block-image"><figure class="aligncenter size-large"><img loading="lazy" width="768" height="468" src="/wp-content/uploads/2020/01/snipaste_20200129_234056.png" alt="" class="wp-image-519" srcset="/wp-content/uploads/2020/01/snipaste_20200129_234056.png 768w, /wp-content/uploads/2020/01/snipaste_20200129_234056-300x183.png 300w" sizes="(max-width: 768px) 100vw, 768px"></figure></div>
+
+
+
+<p>现在程序跑到 main 函数的 ret 了, 看一下寄存器发现 RSP 被淹了, 直接找到 Offset. 顺便用 <code>info address gift</code> 看一眼 gift 函数的地址.</p>
+
+
+
+<div class="wp-block-image"><figure class="aligncenter size-large"><img loading="lazy" width="639" height="369" src="/wp-content/uploads/2020/01/snipaste_20200129_234341.png" alt="" class="wp-image-520" srcset="/wp-content/uploads/2020/01/snipaste_20200129_234341.png 639w, /wp-content/uploads/2020/01/snipaste_20200129_234341-300x173.png 300w" sizes="(max-width: 639px) 100vw, 639px"></figure></div>
+
+
+
+<p>简单构造 Payload, 完成.</p>
+
+
+
+<h2>0x14 input</h2>
+
+
+
+<div class="wp-block-image"><figure class="aligncenter size-large"><img loading="lazy" width="615" height="321" src="/wp-content/uploads/2020/01/snipaste_20200129_234431.png" alt="" class="wp-image-521" srcset="/wp-content/uploads/2020/01/snipaste_20200129_234431.png 615w, /wp-content/uploads/2020/01/snipaste_20200129_234431-300x157.png 300w" sizes="(max-width: 615px) 100vw, 615px"></figure></div>
+
+
+
+<p>你们说这个炒鸡简单, 但是我炒了好久啊&#8230;  我还是太蔡了.</p>
+
+
+
+<div class="wp-block-image"><figure class="aligncenter size-large"><img loading="lazy" width="568" height="550" src="/wp-content/uploads/2020/01/snipaste_20200129_234547.png" alt="" class="wp-image-522" srcset="/wp-content/uploads/2020/01/snipaste_20200129_234547.png 568w, /wp-content/uploads/2020/01/snipaste_20200129_234547-300x290.png 300w" sizes="(max-width: 568px) 100vw, 568px"></figure></div>
+
+
+
+<p>丢进 IDA 看一眼, 大概是读了一个 position, 然后从 <code>v7[pos]</code> 开始写输入 a 的数据. 这里 a 的长度被卡的很死, 刚好 8 bytes 够塞一个指针, 看来只能从这个 position 做手脚.</p>
+
+
+
+<p>这里先贴一个 64 位的栈帧结构, 来源见水印(右下角). 我们的目的就是把返回地址淹掉, 跳转到 gift 函数(这个文件也有 gift)</p>
+
+
+
+<div class="wp-block-image"><figure class="aligncenter size-large"><img loading="lazy" width="864" height="384" src="/wp-content/uploads/2020/01/snipaste_20200129_234739.png" alt="" class="wp-image-523" srcset="/wp-content/uploads/2020/01/snipaste_20200129_234739.png 864w, /wp-content/uploads/2020/01/snipaste_20200129_234739-300x133.png 300w, /wp-content/uploads/2020/01/snipaste_20200129_234739-768x341.png 768w" sizes="(max-width: 864px) 100vw, 864px"></figure></div>
+
+
+
+<div class="wp-block-image"><figure class="aligncenter size-large"><img loading="lazy" width="785" height="258" src="/wp-content/uploads/2020/01/snipaste_20200129_234937.png" alt="" class="wp-image-524" srcset="/wp-content/uploads/2020/01/snipaste_20200129_234937.png 785w, /wp-content/uploads/2020/01/snipaste_20200129_234937-300x99.png 300w, /wp-content/uploads/2020/01/snipaste_20200129_234937-768x252.png 768w" sizes="(max-width: 785px) 100vw, 785px"></figure></div>
+
+
+
+<p>切回 IDA 进行分析, 发现主函数分了 96 bytes 的栈.</p>
+
+
+
+<div class="wp-block-image"><figure class="aligncenter size-large"><img loading="lazy" width="1024" height="300" src="/wp-content/uploads/2020/01/snipaste_20200130_000008-1024x300.png" alt="" class="wp-image-525" srcset="/wp-content/uploads/2020/01/snipaste_20200130_000008-1024x300.png 1024w, /wp-content/uploads/2020/01/snipaste_20200130_000008-300x88.png 300w, /wp-content/uploads/2020/01/snipaste_20200130_000008-768x225.png 768w, /wp-content/uploads/2020/01/snipaste_20200130_000008.png 1301w" sizes="(max-width: 1024px) 100vw, 1024px"></figure></div>
+
+
+
+<p>然后查看主函数的栈分布情况, 可以发现我们要写入的 char 数组就位于栈顶, 因此我们只要让一开始的 position 为 96 即可直接写到 RBP, 但是我们要淹的是 RBP 前面的返回地址, 因此 position 还需要再加 8.</p>
+
+
+
+<p>由于这里读入的 position 后面会转成 ushort, 而且在程序开头有输入大小不能超过 100 的限制, 考虑利用负数溢出到我们想要的值. <code>-65536 + 104 = -65432</code></p>
+
+
+
+<div class="wp-block-image"><figure class="aligncenter size-large"><img loading="lazy" width="562" height="405" src="/wp-content/uploads/2020/01/snipaste_20200130_000656.png" alt="" class="wp-image-526" srcset="/wp-content/uploads/2020/01/snipaste_20200130_000656.png 562w, /wp-content/uploads/2020/01/snipaste_20200130_000656-300x216.png 300w" sizes="(max-width: 562px) 100vw, 562px"></figure></div>
+
+
+
+<p>完成, 这大概我玩 PWN 的第二个程序吧&#8230;</p>
+
+
+
+<h2>0x15 Pwn3-format</h2>
+
+
+
+<div class="wp-block-image"><figure class="aligncenter size-large"><img loading="lazy" width="727" height="384" src="/wp-content/uploads/2020/01/snipaste_20200130_141828.png" alt="" class="wp-image-534" srcset="/wp-content/uploads/2020/01/snipaste_20200130_141828.png 727w, /wp-content/uploads/2020/01/snipaste_20200130_141828-300x158.png 300w" sizes="(max-width: 727px) 100vw, 727px"></figure></div>
+
+
+
+<div class="wp-block-image"><figure class="aligncenter size-large"><img loading="lazy" width="791" height="449" src="/wp-content/uploads/2020/01/snipaste_20200130_141931.png" alt="" class="wp-image-535" srcset="/wp-content/uploads/2020/01/snipaste_20200130_141931.png 791w, /wp-content/uploads/2020/01/snipaste_20200130_141931-300x170.png 300w, /wp-content/uploads/2020/01/snipaste_20200130_141931-768x436.png 768w" sizes="(max-width: 791px) 100vw, 791px"></figure></div>
+
+
+
+<p>这题解的真是一言难尽&#8230;首先拿到文件丢进 IDA, 一眼就看到左边有个 <code>getflag</code> 函数, 然后, 就研究了两天到底怎么让这个 printf 写到返回地址跳转去 <code>getflag</code>&#8230;.</p>
+
+
+
+<div class="wp-block-image"><figure class="aligncenter size-large"><img loading="lazy" width="563" height="327" src="/wp-content/uploads/2020/01/snipaste_20200130_142053.png" alt="" class="wp-image-536" srcset="/wp-content/uploads/2020/01/snipaste_20200130_142053.png 563w, /wp-content/uploads/2020/01/snipaste_20200130_142053-300x174.png 300w" sizes="(max-width: 563px) 100vw, 563px"></figure></div>
+
+
+
+<p>不料下面还有个 <code>when(year)</code> 长这样. 所以只要能让传入的参数 <code>a1 == 2021</code> 成立, 即之前传入的全局变量 year 为 2021 即可解出.</p>
+
+
+
+<div class="wp-block-image"><figure class="aligncenter size-large"><img loading="lazy" width="812" height="383" src="/wp-content/uploads/2020/01/snipaste_20200130_142214.png" alt="" class="wp-image-537" srcset="/wp-content/uploads/2020/01/snipaste_20200130_142214.png 812w, /wp-content/uploads/2020/01/snipaste_20200130_142214-300x142.png 300w, /wp-content/uploads/2020/01/snipaste_20200130_142214-768x362.png 768w" sizes="(max-width: 812px) 100vw, 812px"></figure></div>
+
+
+
+<p>先用 gdb 取得 year 的地址: <code>0x804C040</code></p>
+
+
+
+<div class="wp-block-image"><figure class="aligncenter size-large"><img loading="lazy" width="813" height="432" src="/wp-content/uploads/2020/01/snipaste_20200130_142513.png" alt="" class="wp-image-539" srcset="/wp-content/uploads/2020/01/snipaste_20200130_142513.png 813w, /wp-content/uploads/2020/01/snipaste_20200130_142513-300x159.png 300w, /wp-content/uploads/2020/01/snipaste_20200130_142513-768x408.png 768w" sizes="(max-width: 813px) 100vw, 813px"></figure></div>
+
+
+
+<p>然后构建一个简单的脚本. pwntools 的自动测试 offset 功能很方便, 都不需要去分析 binary.</p>
+
+
+
+<div class="wp-block-image"><figure class="aligncenter size-large"><img loading="lazy" width="644" height="305" src="/wp-content/uploads/2020/01/snipaste_20200130_142648.png" alt="" class="wp-image-540" srcset="/wp-content/uploads/2020/01/snipaste_20200130_142648.png 644w, /wp-content/uploads/2020/01/snipaste_20200130_142648-300x142.png 300w" sizes="(max-width: 644px) 100vw, 644px"></figure></div>
+
+
+
+<p>直接执行, 完成.</p>
+
+
+
+<h2>0x16 迷宫</h2>
+
+
+
+<div class="wp-block-image"><figure class="aligncenter size-large"><img loading="lazy" width="703" height="523" src="/wp-content/uploads/2020/01/snipaste_20200130_141736.png" alt="" class="wp-image-541" srcset="/wp-content/uploads/2020/01/snipaste_20200130_141736.png 703w, /wp-content/uploads/2020/01/snipaste_20200130_141736-300x223.png 300w" sizes="(max-width: 703px) 100vw, 703px"></figure></div>
+
+
+
+<p>一开始还以为图片里藏了啥, 不过后来研究了一圈啥都没有, 想想既然放到 crypto 了应该是什么移位密码.</p>
+
+
+
+<div class="wp-block-image"><figure class="aligncenter size-large"><img loading="lazy" width="1024" height="567" src="/wp-content/uploads/2020/01/snipaste_20200130_143321-1024x567.png" alt="" class="wp-image-542" srcset="/wp-content/uploads/2020/01/snipaste_20200130_143321-1024x567.png 1024w, /wp-content/uploads/2020/01/snipaste_20200130_143321-300x166.png 300w, /wp-content/uploads/2020/01/snipaste_20200130_143321-768x425.png 768w, /wp-content/uploads/2020/01/snipaste_20200130_143321.png 1408w" sizes="(max-width: 1024px) 100vw, 1024px"></figure></div>
+
+
+
+<p>稍微数了一下图片里的格子刚好是25个, 然后密码字符串也是25个字, 那无非就是两种可能, 一是将密码按顺序填入格子然后走一遍迷宫得到解, 二是按着走迷宫顺序填入密码然后得到解.</p>
+
+
+
+<div class="wp-block-image"><figure class="aligncenter size-large"><img loading="lazy" width="603" height="650" src="/wp-content/uploads/2020/01/snipaste_20200130_143530.png" alt="" class="wp-image-543" srcset="/wp-content/uploads/2020/01/snipaste_20200130_143530.png 603w, /wp-content/uploads/2020/01/snipaste_20200130_143530-278x300.png 278w" sizes="(max-width: 603px) 100vw, 603px"></figure></div>
+
+
+
+<p>观察一下密码, 很幸运, 尾端出现了 SUS 三个字, 而这恰好是 Flag 的开头. 整个密码中只有这三个大写 SUS, 绝对是它没错. 再按照迷宫布局大概试一下无疑是从左下开始顺着迷宫填字.</p>
+
+
+
+<div class="wp-block-image"><figure class="aligncenter size-large"><img loading="lazy" width="1024" height="567" src="/wp-content/uploads/2020/01/snipaste_20200130_144058-1024x567.png" alt="" class="wp-image-544" srcset="/wp-content/uploads/2020/01/snipaste_20200130_144058-1024x567.png 1024w, /wp-content/uploads/2020/01/snipaste_20200130_144058-300x166.png 300w, /wp-content/uploads/2020/01/snipaste_20200130_144058-768x425.png 768w, /wp-content/uploads/2020/01/snipaste_20200130_144058.png 1408w" sizes="(max-width: 1024px) 100vw, 1024px"></figure></div>
+
+
+
+<p>在格子里按之前找的顺序填字, 再把下面的图层扔掉, 完成, 拿到个 FB 很开心.</p>
+
+
+
+<h2>0x17 rand</h2>
+
+
+
+<div class="wp-block-image"><figure class="aligncenter size-large"><img loading="lazy" width="690" height="371" src="/wp-content/uploads/2020/01/snipaste_20200130_160655.png" alt="" class="wp-image-545" srcset="/wp-content/uploads/2020/01/snipaste_20200130_160655.png 690w, /wp-content/uploads/2020/01/snipaste_20200130_160655-300x161.png 300w" sizes="(max-width: 690px) 100vw, 690px"></figure></div>
+
+
+
+<div class="wp-block-image"><figure class="aligncenter size-large"><img loading="lazy" width="739" height="584" src="/wp-content/uploads/2020/01/snipaste_20200130_160733.png" alt="" class="wp-image-546" srcset="/wp-content/uploads/2020/01/snipaste_20200130_160733.png 739w, /wp-content/uploads/2020/01/snipaste_20200130_160733-300x237.png 300w" sizes="(max-width: 739px) 100vw, 739px"></figure></div>
+
+
+
+<p>这题卡了我好几天了&#8230; 题出的很简单, 就是让你和服务器对一下时间然后按着 C++ 的伪随机数生成器生成100个随机数.</p>
+
+
+
+<p>但是 pwntools 是 Python 写的, 而 Python 生成的随机数和 <code>rand()</code> 的结果相差甚远.</p>
+
+
+
+<p>不过后来我发现了 <a rel="noreferrer noopener" aria-label="这个 Gist (opens in a new tab)" href="https://gist.github.com/SakiiR/a073f22c3943a530a2574dd7fde13e38" target="_blank">这个 Gist</a>, 能在 Python 中直接调用 libc 来生成随机数, 事情一下就变得简单了起来.</p>
+
+
+
+<div class="wp-block-image"><figure class="aligncenter size-large"><img loading="lazy" width="334" height="301" src="/wp-content/uploads/2020/01/snipaste_20200130_161041.png" alt="" class="wp-image-547" srcset="/wp-content/uploads/2020/01/snipaste_20200130_161041.png 334w, /wp-content/uploads/2020/01/snipaste_20200130_161041-300x270.png 300w" sizes="(max-width: 334px) 100vw, 334px"></figure></div>
+
+
+
+<p>构造这样一个简单的脚本, 就可以成功拿到 shell. 但是在远程执行的时候碰到了一些问题, 初步猜测是时间与服务器不同步. 如果是因为 libc 版本不同而导致 rand 实现不同, 那这麻烦就大了.</p>
+
+
+
+<div class="wp-block-image"><figure class="aligncenter size-large"><img loading="lazy" width="650" height="571" src="/wp-content/uploads/2020/01/snipaste_20200130_161146.png" alt="" class="wp-image-548" srcset="/wp-content/uploads/2020/01/snipaste_20200130_161146.png 650w, /wp-content/uploads/2020/01/snipaste_20200130_161146-300x264.png 300w" sizes="(max-width: 650px) 100vw, 650px"></figure></div>
+
+
+
+<p>稍微把脚本改一下, 给时间加一个偏移量, 然后我们来爆破这个偏移.</p>
+
+
+
+<div class="wp-block-image"><figure class="aligncenter size-large"><img loading="lazy" width="587" height="574" src="/wp-content/uploads/2020/01/snipaste_20200130_161307.png" alt="" class="wp-image-549" srcset="/wp-content/uploads/2020/01/snipaste_20200130_161307.png 587w, /wp-content/uploads/2020/01/snipaste_20200130_161307-300x293.png 300w" sizes="(max-width: 587px) 100vw, 587px"></figure></div>
+
+
+
+<p>跑脚本拿 Flag, 完成. 这题真不应该扔到 pwn, 我觉得就是个 misc 题.</p>
+
+
+
+<h2>0x18 ez_sql</h2>
+
+
+
+<div class="wp-block-image"><figure class="aligncenter size-large"><img loading="lazy" width="666" height="306" src="/wp-content/uploads/2020/01/snipaste_20200130_185544.png" alt="" class="wp-image-550" srcset="/wp-content/uploads/2020/01/snipaste_20200130_185544.png 666w, /wp-content/uploads/2020/01/snipaste_20200130_185544-300x138.png 300w" sizes="(max-width: 666px) 100vw, 666px"></figure></div>
+
+
+
+<p>这题, 搞清楚过滤了啥然后丢进 sqlmap 就出来了. 不过那个没啥意思, 还是表演一个手工注入.</p>
+
+
+
+<div class="wp-block-image"><figure class="aligncenter size-large"><img loading="lazy" width="518" height="348" src="/wp-content/uploads/2020/01/snipaste_20200130_185647.png" alt="" class="wp-image-551" srcset="/wp-content/uploads/2020/01/snipaste_20200130_185647.png 518w, /wp-content/uploads/2020/01/snipaste_20200130_185647-300x202.png 300w" sizes="(max-width: 518px) 100vw, 518px"></figure></div>
+
+
+
+<p>打开题目发现是一个简单查询页面, 通过整数ID查询用户.</p>
+
+
+
+<div class="wp-block-image"><figure class="aligncenter size-large"><img loading="lazy" width="490" height="276" src="/wp-content/uploads/2020/01/snipaste_20200130_185735.png" alt="" class="wp-image-552" srcset="/wp-content/uploads/2020/01/snipaste_20200130_185735.png 490w, /wp-content/uploads/2020/01/snipaste_20200130_185735-300x169.png 300w" sizes="(max-width: 490px) 100vw, 490px"></figure></div>
+
+
+
+<p>但是初步测试的时候发现过滤了空格&#8230;这里考虑用 <code>/**/</code> 代替空格, 当然你也可以用 Tab 和其他字符.</p>
+
+
+
+<div class="wp-block-image"><figure class="aligncenter size-large"><img loading="lazy" width="592" height="243" src="/wp-content/uploads/2020/01/snipaste_20200130_190206.png" alt="" class="wp-image-554" srcset="/wp-content/uploads/2020/01/snipaste_20200130_190206.png 592w, /wp-content/uploads/2020/01/snipaste_20200130_190206-300x123.png 300w" sizes="(max-width: 592px) 100vw, 592px"></figure></div>
+
+
+
+<p> 先把数据库名字整出来 </p>
+
+
+
+<div class="wp-block-image"><figure class="aligncenter size-large"><img loading="lazy" width="739" height="210" src="/wp-content/uploads/2020/01/snipaste_20200130_190250.png" alt="" class="wp-image-555" srcset="/wp-content/uploads/2020/01/snipaste_20200130_190250.png 739w, /wp-content/uploads/2020/01/snipaste_20200130_190250-300x85.png 300w" sizes="(max-width: 739px) 100vw, 739px"></figure></div>
+
+
+
+<p>然后再看看表名, 这里用的是 <code>1/**/AND/**/0/**/UNION/**/SELECT/**/table_schema,/**/table_name/**/FROM/**/information_schema.tables/**/where/**/table_schema='security'/**/limit/**/1,1</code></p>
+
+
+
+<figure class="wp-block-image size-large"><img loading="lazy" width="599" height="206" src="/wp-content/uploads/2020/01/snipaste_20200130_191031.png" alt="" class="wp-image-556" srcset="/wp-content/uploads/2020/01/snipaste_20200130_191031.png 599w, /wp-content/uploads/2020/01/snipaste_20200130_191031-300x103.png 300w" sizes="(max-width: 599px) 100vw, 599px"></figure>
+
+
+
+<p>总共发现了 <code>emails</code>,<code>referers</code>,<code>uagents</code>,<code>users</code> 四个表, 先看看这些表里有啥. 同理把各个 column 列出来, 用的 payload 是 <code>1/**/AND/**/0/**/UNION/**/SELECT/**/table_name,column_name/**/FROM/**/information_schema.columns/**/where/**/table_schema='security'/**/limit/**/1,1</code></p>
+
+
+
+<div class="wp-block-image"><figure class="aligncenter size-large"><img loading="lazy" width="819" height="176" src="/wp-content/uploads/2020/01/snipaste_20200130_191325.png" alt="" class="wp-image-557" srcset="/wp-content/uploads/2020/01/snipaste_20200130_191325.png 819w, /wp-content/uploads/2020/01/snipaste_20200130_191325-300x64.png 300w, /wp-content/uploads/2020/01/snipaste_20200130_191325-768x165.png 768w" sizes="(max-width: 819px) 100vw, 819px"></figure></div>
+
+
+
+<div class="wp-block-image"><figure class="aligncenter size-large"><img loading="lazy" width="816" height="202" src="/wp-content/uploads/2020/01/snipaste_20200130_191423.png" alt="" class="wp-image-558" srcset="/wp-content/uploads/2020/01/snipaste_20200130_191423.png 816w, /wp-content/uploads/2020/01/snipaste_20200130_191423-300x74.png 300w, /wp-content/uploads/2020/01/snipaste_20200130_191423-768x190.png 768w" sizes="(max-width: 816px) 100vw, 816px"></figure></div>
+
+
+
+<p>后面就是重复的扒数据时间, 扒到第8条的时候发现了 flag, 运气真好啊（迫真）<img src="/wp-content/plugins/tiebaface/images/yellow_16.png" style="width: 24px !important;height: 24px !important;min-height: 0 !important;"> 还是推荐直接上 sqlmap, 把整个裤子拖下来慢慢看 csv 比较舒服.</p>
+
+
+
+<h2>0x19 遇事不决？</h2>
+
+
+
+<div class="wp-block-image"><figure class="aligncenter size-large"><img loading="lazy" width="751" height="435" src="/wp-content/uploads/2020/01/snipaste_20200131_133753.png" alt="" class="wp-image-562" srcset="/wp-content/uploads/2020/01/snipaste_20200131_133753.png 751w, /wp-content/uploads/2020/01/snipaste_20200131_133753-300x174.png 300w" sizes="(max-width: 751px) 100vw, 751px"></figure></div>
+
+
+
+<div class="wp-block-image"><figure class="aligncenter size-large"><img loading="lazy" width="1024" height="613" src="/wp-content/uploads/2020/01/snipaste_20200131_140450-1024x613.png" alt="" class="wp-image-564" srcset="/wp-content/uploads/2020/01/snipaste_20200131_140450-1024x613.png 1024w, /wp-content/uploads/2020/01/snipaste_20200131_140450-300x180.png 300w, /wp-content/uploads/2020/01/snipaste_20200131_140450-768x460.png 768w, /wp-content/uploads/2020/01/snipaste_20200131_140450.png 1268w" sizes="(max-width: 1024px) 100vw, 1024px"></figure></div>
+
+
+
+<p>拿到题目发现最外面是一个 &#8220;加密&#8221; 压缩包, 但是用 HEX 编辑器打开查看发现数据区两个文件的加密位都是 00 00, 典型的假加密压缩包.</p>
+
+
+
+<div class="wp-block-image"><figure class="aligncenter size-large"><img loading="lazy" width="1024" height="152" src="/wp-content/uploads/2020/01/snipaste_20200131_140539-1024x152.png" alt="" class="wp-image-565" srcset="/wp-content/uploads/2020/01/snipaste_20200131_140539-1024x152.png 1024w, /wp-content/uploads/2020/01/snipaste_20200131_140539-300x45.png 300w, /wp-content/uploads/2020/01/snipaste_20200131_140539-768x114.png 768w, /wp-content/uploads/2020/01/snipaste_20200131_140539.png 1216w" sizes="(max-width: 1024px) 100vw, 1024px"></figure></div>
+
+
+
+<p>拉到下面的目录区域, 找到加密标志 <code>09 00</code> 均修改为 <code>00 00</code> 即可解压两个文件.</p>
+
+
+
+<div class="wp-block-image"><figure class="aligncenter size-large"><img loading="lazy" width="1024" height="330" src="/wp-content/uploads/2020/01/snipaste_20200131_140843-1024x330.png" alt="" class="wp-image-566" srcset="/wp-content/uploads/2020/01/snipaste_20200131_140843-1024x330.png 1024w, /wp-content/uploads/2020/01/snipaste_20200131_140843-300x97.png 300w, /wp-content/uploads/2020/01/snipaste_20200131_140843-768x248.png 768w, /wp-content/uploads/2020/01/snipaste_20200131_140843.png 1478w" sizes="(max-width: 1024px) 100vw, 1024px"></figure></div>
+
+
+
+<p>解压后得到另外一个加密的压缩包, 大致检查了一下是真加密. 注意到有一个文件和之前明文压缩包内的文件是相同的, 这里就回到了新年红包那会玩的 zip plain text attack了.</p>
+
+
+
+<p>具体的攻击细节请参考 <a rel="noreferrer noopener" aria-label="奶冰的 2020 新年红包 Writeup (opens in a new tab)" href="/archives/milkice-2020-redpacket-writeup/" target="_blank">奶冰的 2020 新年红包 Writeup</a>, 这里因为已经提供了明文压缩包, 就不存在压缩软件不同导致无法破解的问题.</p>
+
+
+
+<p>不过这里还有一个小问题是 rbkrack 是不支持 GBK 编码的, 中文文件名称传入会导致无法识别, 我们可以考虑采用 -a 参数让程序自动找出相同的文件进行攻击.</p>
+
+
+
+<div class="wp-block-image"><figure class="aligncenter size-large"><img loading="lazy" width="651" height="590" src="/wp-content/uploads/2020/01/snipaste_20200131_141310.png" alt="" class="wp-image-567" srcset="/wp-content/uploads/2020/01/snipaste_20200131_141310.png 651w, /wp-content/uploads/2020/01/snipaste_20200131_141310-300x272.png 300w" sizes="(max-width: 651px) 100vw, 651px"></figure></div>
+
+
+
+<p>这个压缩包还是挺难跑的, 跑了四分钟左右才攻击成功. 然后同样的套路进行解压, 第二层就解开了.</p>
+
+
+
+<div class="wp-block-image"><figure class="aligncenter size-large"><img loading="lazy" width="996" height="359" src="/wp-content/uploads/2020/01/snipaste_20200131_143833.png" alt="" class="wp-image-569" srcset="/wp-content/uploads/2020/01/snipaste_20200131_143833.png 996w, /wp-content/uploads/2020/01/snipaste_20200131_143833-300x108.png 300w, /wp-content/uploads/2020/01/snipaste_20200131_143833-768x277.png 768w" sizes="(max-width: 996px) 100vw, 996px"></figure></div>
+
+
+
+<p>第三层里的压缩包换成了 RAR, 而且开了目录名加密甚至没办法看到文件. 提示还给了个佛言加密.</p>
+
+
+
+<div class="wp-block-image"><figure class="aligncenter size-large"><img loading="lazy" width="794" height="534" src="/wp-content/uploads/2020/01/snipaste_20200131_144248.png" alt="" class="wp-image-570" srcset="/wp-content/uploads/2020/01/snipaste_20200131_144248.png 794w, /wp-content/uploads/2020/01/snipaste_20200131_144248-300x202.png 300w, /wp-content/uploads/2020/01/snipaste_20200131_144248-768x517.png 768w" sizes="(max-width: 794px) 100vw, 794px"></figure></div>
+
+
+
+<p>到 <a rel="noreferrer noopener" aria-label="这个在线工具 (opens in a new tab)" href="http://www.keyfc.net/bbs/tools/tudoucode.aspx" target="_blank">这个在线工具</a> 解码给的提示, 就能得到密码, 第三层就解开了.</p>
+
+
+
+<div class="wp-block-image"><figure class="aligncenter size-large"><img loading="lazy" width="635" height="282" src="/wp-content/uploads/2020/01/snipaste_20200131_144401.png" alt="" class="wp-image-571" srcset="/wp-content/uploads/2020/01/snipaste_20200131_144401.png 635w, /wp-content/uploads/2020/01/snipaste_20200131_144401-300x133.png 300w" sizes="(max-width: 635px) 100vw, 635px"></figure></div>
+
+
+
+<p>然后第四层又是一个加密压缩包, 这次只给了密码长度和结构的提示.</p>
+
+
+
+<div class="wp-block-image"><figure class="aligncenter size-large"><img loading="lazy" width="633" height="173" src="/wp-content/uploads/2020/01/snipaste_20200131_145101.png" alt="" class="wp-image-572" srcset="/wp-content/uploads/2020/01/snipaste_20200131_145101.png 633w, /wp-content/uploads/2020/01/snipaste_20200131_145101-300x82.png 300w" sizes="(max-width: 633px) 100vw, 633px"></figure></div>
+
+
+
+<p>先试一下爆破, <s>由于 Kali 自带的 rarcrack 是不支持指定密码结构的, 这里先打个字典然后上其他工具.</s> 我看了一下发现 rarcrack 可以通过改进度文件实现指定伪密码结构, 下面直接开始爆破.</p>
+
+
+
+<div class="wp-block-image"><figure class="aligncenter size-large"><img loading="lazy" width="543" height="351" src="/wp-content/uploads/2020/01/snipaste_20200131_150252.png" alt="" class="wp-image-574" srcset="/wp-content/uploads/2020/01/snipaste_20200131_150252.png 543w, /wp-content/uploads/2020/01/snipaste_20200131_150252-300x194.png 300w" sizes="(max-width: 543px) 100vw, 543px"></figure></div>
+
+
+
+<div class="wp-block-image"><figure class="aligncenter size-large"><img loading="lazy" width="723" height="574" src="/wp-content/uploads/2020/01/snipaste_20200131_151151.png" alt="" class="wp-image-575" srcset="/wp-content/uploads/2020/01/snipaste_20200131_151151.png 723w, /wp-content/uploads/2020/01/snipaste_20200131_151151-300x238.png 300w" sizes="(max-width: 723px) 100vw, 723px"></figure></div>
+
+
+
+<div class="wp-block-image"><figure class="aligncenter size-large"><img loading="lazy" width="657" height="300" src="/wp-content/uploads/2020/01/snipaste_20200131_151244.png" alt="" class="wp-image-576" srcset="/wp-content/uploads/2020/01/snipaste_20200131_151244.png 657w, /wp-content/uploads/2020/01/snipaste_20200131_151244-300x137.png 300w" sizes="(max-width: 657px) 100vw, 657px"></figure></div>
+
+
+
+<p>跑了半天终于跑出来了, 然后得到了一个文件名带 emoji 的图片.</p>
+
+
+
+<div class="wp-block-image"><figure class="aligncenter size-large"><img loading="lazy" width="1024" height="648" src="/wp-content/uploads/2020/01/snipaste_20200131_151510-1024x648.png" alt="" class="wp-image-577" srcset="/wp-content/uploads/2020/01/snipaste_20200131_151510-1024x648.png 1024w, /wp-content/uploads/2020/01/snipaste_20200131_151510-300x190.png 300w, /wp-content/uploads/2020/01/snipaste_20200131_151510-768x486.png 768w, /wp-content/uploads/2020/01/snipaste_20200131_151510.png 1100w" sizes="(max-width: 1024px) 100vw, 1024px"></figure></div>
+
+
+
+<p>打开发现是一个被抹掉定位点的二维码.</p>
+
+
+
+<div class="wp-block-image"><figure class="aligncenter size-large"><img loading="lazy" width="1024" height="648" src="/wp-content/uploads/2020/01/snipaste_20200131_151654-1024x648.png" alt="" class="wp-image-579" srcset="/wp-content/uploads/2020/01/snipaste_20200131_151654-1024x648.png 1024w, /wp-content/uploads/2020/01/snipaste_20200131_151654-300x190.png 300w, /wp-content/uploads/2020/01/snipaste_20200131_151654-768x486.png 768w, /wp-content/uploads/2020/01/snipaste_20200131_151654.png 1100w" sizes="(max-width: 1024px) 100vw, 1024px"></figure></div>
+
+
+
+<p>丢进 PS 修一下, 扫出来就是 flag. 这题没抢到 FB, 主要是中间跑去买了个 010 Editor 然后还水了会群 <s><em>Frhed 实在是太难用了</em></s>.</p>
+
+
+
+<h2>0x1A 氪金让你变强</h2>
+
+
+
+<div class="wp-block-image"><figure class="aligncenter size-large"><img loading="lazy" width="650" height="423" src="/wp-content/uploads/2020/01/snipaste_20200131_195045.png" alt="" class="wp-image-580" srcset="/wp-content/uploads/2020/01/snipaste_20200131_195045.png 650w, /wp-content/uploads/2020/01/snipaste_20200131_195045-300x195.png 300w" sizes="(max-width: 650px) 100vw, 650px"></figure></div>
+
+
+
+<div class="wp-block-image"><figure class="aligncenter size-large"><img loading="lazy" width="471" height="507" src="/wp-content/uploads/2020/01/snipaste_20200131_195531.png" alt="" class="wp-image-581" srcset="/wp-content/uploads/2020/01/snipaste_20200131_195531.png 471w, /wp-content/uploads/2020/01/snipaste_20200131_195531-279x300.png 279w" sizes="(max-width: 471px) 100vw, 471px"></figure></div>
+
+
+
+<p>访问题目看一眼, 是服务端用 curl 请求了一个地址然后比对返回数据. 这里我最开始能想到的有三个解法. 如果你有更多 idea 欢迎在下面留言.</p>
+
+
+
+<h4>0x1A-1 使用 File 协议直接读 Flag</h4>
+
+
+
+<p>这个思路很简单, 直接使用 <code>file:///</code> 伪协议读取 flag.php 就行了, 有难度的主要是怎么获取 Web 路径. </p>
+
+
+
+<div class="wp-block-image"><figure class="aligncenter size-large"><img loading="lazy" width="615" height="494" src="/wp-content/uploads/2020/01/snipaste_20200131_195842.png" alt="" class="wp-image-582" srcset="/wp-content/uploads/2020/01/snipaste_20200131_195842.png 615w, /wp-content/uploads/2020/01/snipaste_20200131_195842-300x241.png 300w" sizes="(max-width: 615px) 100vw, 615px"></figure></div>
+
+
+
+<p>但是这场比赛的路径几乎都是默认的 <code>/var/www/html</code>. 很幸运的, 这台服务器也是, 轻松拿到 flag.</p>
+
+
+
+<h4>0x1A-2 使用自己的服务器返回数据</h4>
+
+
+
+<div class="wp-block-image"><figure class="aligncenter size-large"><img loading="lazy" width="675" height="337" src="/wp-content/uploads/2020/01/snipaste_20200131_200040.png" alt="" class="wp-image-583" srcset="/wp-content/uploads/2020/01/snipaste_20200131_200040.png 675w, /wp-content/uploads/2020/01/snipaste_20200131_200040-300x150.png 300w" sizes="(max-width: 675px) 100vw, 675px"></figure></div>
+
+
+
+<p>这个算是比较直白的解法了, 只要你手上<s><em>服务器多</em></s>有服务器, 随便找一台丢个 PHP 进去返回 <code>$_POST['x']</code> 即可. 这大概就是题目暗示的 <strong>&#8220;氪金&#8221;</strong>?</p>
+
+
+
+<h4>0x1A-3 白嫖比赛题中的服务器</h4>
+
+
+
+<p>这个思路和上面的差不多, 不过这是我们没有钱又想做题的情况. 比赛题中有几个上传漏洞, 我们只要随便找一个题传一个 PHP, 再让这边请求一下就好了.</p>
+
+
+
+<h2>0x1B easy_unserialize</h2>
+
+
+
+<div class="wp-block-image"><figure class="aligncenter size-large"><img loading="lazy" width="643" height="282" src="/wp-content/uploads/2020/01/snipaste_20200131_211453.png" alt="" class="wp-image-586" srcset="/wp-content/uploads/2020/01/snipaste_20200131_211453.png 643w, /wp-content/uploads/2020/01/snipaste_20200131_211453-300x132.png 300w" sizes="(max-width: 643px) 100vw, 643px"></figure></div>
+
+
+
+<div class="wp-block-image"><figure class="aligncenter size-large"><img loading="lazy" width="503" height="378" src="/wp-content/uploads/2020/01/snipaste_20200131_211714.png" alt="" class="wp-image-587" srcset="/wp-content/uploads/2020/01/snipaste_20200131_211714.png 503w, /wp-content/uploads/2020/01/snipaste_20200131_211714-300x225.png 300w" sizes="(max-width: 503px) 100vw, 503px"></figure></div>
+
+
+
+<p>教科书似的反序列化, 连 flag 在哪都说了&#8230;</p>
+
+
+
+<div class="wp-block-image"><figure class="aligncenter size-large"><img loading="lazy" width="620" height="341" src="/wp-content/uploads/2020/01/snipaste_20200131_211747.png" alt="" class="wp-image-588" srcset="/wp-content/uploads/2020/01/snipaste_20200131_211747.png 620w, /wp-content/uploads/2020/01/snipaste_20200131_211747-300x165.png 300w" sizes="(max-width: 620px) 100vw, 620px"></figure></div>
+
+
+
+<p>我不会手敲序列化字符串, 所以在本地写一个 PHP 文件稍微输出一下.</p>
+
+
+
+<div class="wp-block-image"><figure class="aligncenter size-large"><img loading="lazy" width="673" height="219" src="/wp-content/uploads/2020/01/snipaste_20200131_211846.png" alt="" class="wp-image-589" srcset="/wp-content/uploads/2020/01/snipaste_20200131_211846.png 673w, /wp-content/uploads/2020/01/snipaste_20200131_211846-300x98.png 300w" sizes="(max-width: 673px) 100vw, 673px"></figure></div>
+
+
+
+<p>然后直接提交就完成了, 送分题.</p>
+
+
+
+<h2>0x1C where_1s_AA</h2>
+
+
+
+<div class="wp-block-image"><figure class="aligncenter size-large"><img loading="lazy" width="646" height="305" src="/wp-content/uploads/2020/01/snipaste_20200131_234534.png" alt="" class="wp-image-592" srcset="/wp-content/uploads/2020/01/snipaste_20200131_234534.png 646w, /wp-content/uploads/2020/01/snipaste_20200131_234534-300x142.png 300w" sizes="(max-width: 646px) 100vw, 646px"></figure></div>
+
+
+
+<div class="wp-block-image"><figure class="aligncenter size-large"><img loading="lazy" width="1024" height="584" src="/wp-content/uploads/2020/01/snipaste_20200131_234614-1024x584.png" alt="" class="wp-image-593" srcset="/wp-content/uploads/2020/01/snipaste_20200131_234614-1024x584.png 1024w, /wp-content/uploads/2020/01/snipaste_20200131_234614-300x171.png 300w, /wp-content/uploads/2020/01/snipaste_20200131_234614-768x438.png 768w, /wp-content/uploads/2020/01/snipaste_20200131_234614.png 1339w" sizes="(max-width: 1024px) 100vw, 1024px"></figure></div>
+
+
+
+<p>这道题确实比较不一样, 丢进 IDA 先看到的就是一个逗人玩的 main 函数, main 上面的 check 就是实际输出 flag 的函数, 不过当时我没注意到这个</p>
+
+
+
+<div class="wp-block-image"><figure class="aligncenter size-large"><img loading="lazy" width="1024" height="258" src="/wp-content/uploads/2020/01/snipaste_20200131_234821-1024x258.png" alt="" class="wp-image-594" srcset="/wp-content/uploads/2020/01/snipaste_20200131_234821-1024x258.png 1024w, /wp-content/uploads/2020/01/snipaste_20200131_234821-300x76.png 300w, /wp-content/uploads/2020/01/snipaste_20200131_234821-768x193.png 768w, /wp-content/uploads/2020/01/snipaste_20200131_234821.png 1195w" sizes="(max-width: 1024px) 100vw, 1024px"></figure></div>
+
+
+
+<p>最开始分析的时候注意到一个 _init_proc 函数可能会有关, 刚好手上建好了 Debug 环境所以直接下断点跟进去 (其实这里不需要断点, 直接静态分析追进 base_init 后面就很清晰了)</p>
+
+
+
+<div class="wp-block-image"><figure class="aligncenter size-large"><img loading="lazy" width="643" height="242" src="/wp-content/uploads/2020/01/snipaste_20200131_235024.png" alt="" class="wp-image-595" srcset="/wp-content/uploads/2020/01/snipaste_20200131_235024.png 643w, /wp-content/uploads/2020/01/snipaste_20200131_235024-300x113.png 300w" sizes="(max-width: 643px) 100vw, 643px"></figure></div>
+
+
+
+<p>进了 base_init 可以清晰的看到这里取了 CWD 然后直接传入 check 函数, 继续追进去</p>
+
+
+
+<div class="wp-block-image"><figure class="aligncenter size-large"><img loading="lazy" width="574" height="442" src="/wp-content/uploads/2020/01/snipaste_20200131_235136.png" alt="" class="wp-image-596" srcset="/wp-content/uploads/2020/01/snipaste_20200131_235136.png 574w, /wp-content/uploads/2020/01/snipaste_20200131_235136-300x231.png 300w" sizes="(max-width: 574px) 100vw, 574px"></figure></div>
+
+
+
+<p>最开始 IDA 转出来的伪代码并不是这样的. 现在的是稍微修复后的结果.</p>
+
+
+
+<div class="wp-block-image"><figure class="aligncenter size-large"><img loading="lazy" width="562" height="672" src="/wp-content/uploads/2020/01/snipaste_20200131_235303.png" alt="" class="wp-image-597" srcset="/wp-content/uploads/2020/01/snipaste_20200131_235303.png 562w, /wp-content/uploads/2020/01/snipaste_20200131_235303-251x300.png 251w" sizes="(max-width: 562px) 100vw, 562px"></figure></div>
+
+
+
+<p> 由于字符串里塞了大量的 &#8216;\0&#8217;, 一开始 IDA 显示的数组定义看起来就是这种↑</p>
+
+
+
+<div class="wp-block-image"><figure class="aligncenter size-large"><img loading="lazy" width="354" height="184" src="/wp-content/uploads/2020/01/snipaste_20200131_235458.png" alt="" class="wp-image-598" srcset="/wp-content/uploads/2020/01/snipaste_20200131_235458.png 354w, /wp-content/uploads/2020/01/snipaste_20200131_235458-300x156.png 300w" sizes="(max-width: 354px) 100vw, 354px"></figure></div>
+
+
+
+<p>拉到下面看, 对 a1 的引用很明显是字符串取索引 i, 同理下面的 v7 是我们这一堆数据的开头, 很容易看出其实是一整个字符数组. 然后用 IDA 的新建 array 功能稍微修复一下就好了.</p>
+
+
+
+<div class="wp-block-image"><figure class="aligncenter size-large"><img loading="lazy" width="511" height="253" src="/wp-content/uploads/2020/01/snipaste_20200131_235638.png" alt="" class="wp-image-599" srcset="/wp-content/uploads/2020/01/snipaste_20200131_235638.png 511w, /wp-content/uploads/2020/01/snipaste_20200131_235638-300x149.png 300w" sizes="(max-width: 511px) 100vw, 511px"></figure></div>
+
+
+
+<p>修复后的代码大概是这样的, 原来的 <code>f()</code> 实际上就是将参数原样返回. 可以注意到这里有个 <code>4 * i</code>, 每个 0 都被跳过了.</p>
+
+
+
+<p>然后我们要做的就是将这个字符数组弄出来. 简单的骚操作可以参考上面的 0x05 checkin, 最后得到的字符串是 <code>%jcf%77U'iU_dUOekhU^[Whj</code></p>
+
+
+
+<p>注意到下面 v2 在比较前还有个 + &#8216;\n&#8217; 的操作, 所以我们再按一下 F12.jpg</p>
+
+
+
+<div class="wp-block-image"><figure class="aligncenter size-large"><img loading="lazy" width="665" height="179" src="/wp-content/uploads/2020/02/snipaste_20200201_000031.png" alt="" class="wp-image-600" srcset="/wp-content/uploads/2020/02/snipaste_20200201_000031.png 665w, /wp-content/uploads/2020/02/snipaste_20200201_000031-300x81.png 300w" sizes="(max-width: 665px) 100vw, 665px"></figure></div>
+
+
+
+<p>这样就把满足 <code>v6 == 1</code> 条件的 CWD 找到了.</p>
+
+
+
+<div class="wp-block-image"><figure class="aligncenter size-large"><img loading="lazy" width="497" height="277" src="/wp-content/uploads/2020/02/snipaste_20200201_000112.png" alt="" class="wp-image-601" srcset="/wp-content/uploads/2020/02/snipaste_20200201_000112.png 497w, /wp-content/uploads/2020/02/snipaste_20200201_000112-300x167.png 300w" sizes="(max-width: 497px) 100vw, 497px"></figure></div>
+
+
+
+<p>如果你疑惑为什么我不直接爆破要去找 CWD, 看后面的引用中有 CWD, 就算我们爆破了后面输出的 flag 也不太可能是正确的.</p>
+
+
+
+<div class="wp-block-image"><figure class="aligncenter size-large"><img loading="lazy" width="736" height="168" src="/wp-content/uploads/2020/02/snipaste_20200201_000240.png" alt="" class="wp-image-602" srcset="/wp-content/uploads/2020/02/snipaste_20200201_000240.png 736w, /wp-content/uploads/2020/02/snipaste_20200201_000240-300x68.png 300w" sizes="(max-width: 736px) 100vw, 736px"></figure></div>
+
+
+
+<p>然后把程序放到我们找到的目录里跑一下, 完成.</p>
+
+
+
+<h2>0x1D 音游</h2>
+
+
+
+<div class="wp-block-image"><figure class="aligncenter size-large"><img loading="lazy" width="672" height="398" src="/wp-content/uploads/2020/02/snipaste_20200201_143837.png" alt="" class="wp-image-603" srcset="/wp-content/uploads/2020/02/snipaste_20200201_143837.png 672w, /wp-content/uploads/2020/02/snipaste_20200201_143837-300x178.png 300w" sizes="(max-width: 672px) 100vw, 672px"></figure></div>
+
+
+
+<figure class="wp-block-video aligncenter"><video controls src="/wp-content/uploads/2020/02/bandicam-2020-02-01-14-42-34-538.mp4"></video></figure>
+
+
+
+<p>拿到题目发现是一个在线的音游, 判定很严格而且做工看起来不是很好&#8230;大致翻一圈请求没有直接搜到 Flag.</p>
+
+
+
+<div class="wp-block-image"><figure class="aligncenter size-large"><img loading="lazy" width="1024" height="579" src="/wp-content/uploads/2020/02/snipaste_20200201_144524-1024x579.png" alt="" class="wp-image-606" srcset="/wp-content/uploads/2020/02/snipaste_20200201_144524-1024x579.png 1024w, /wp-content/uploads/2020/02/snipaste_20200201_144524-300x170.png 300w, /wp-content/uploads/2020/02/snipaste_20200201_144524-768x434.png 768w, /wp-content/uploads/2020/02/snipaste_20200201_144524.png 1174w" sizes="(max-width: 1024px) 100vw, 1024px"></figure></div>
+
+
+
+<p>追踪失败关键字 &#8220;菜&#8221; 我们可以看到判断游戏失败实际上是在判断 <code>models.cube</code> 和 <code>models.auto_cube</code> 的位置偏差是否过大.</p>
+
+
+
+<p>虽然我现在也不知道 Flag 在哪, 反正时间很充裕,  现在的思路大致是先整一个自动过关把游戏打通了再说. 我们可以想办法让 cube 和 auto_cube 的位置更新同步, 这样就可以实现全自动过关了.</p>
+
+
+
+<div class="wp-block-image"><figure class="aligncenter size-large"><img loading="lazy" width="542" height="241" src="/wp-content/uploads/2020/02/snipaste_20200201_145018.png" alt="" class="wp-image-607" srcset="/wp-content/uploads/2020/02/snipaste_20200201_145018.png 542w, /wp-content/uploads/2020/02/snipaste_20200201_145018-300x133.png 300w" sizes="(max-width: 542px) 100vw, 542px"></figure></div>
+
+
+
+<p>继续分析之前加载 Cube 的部分, 可以发现这个部分给 auto_cube, cube1, cube2 都加载了 <code>KeyFrames</code>, 初步猜测这个 <code>KeyFrames</code> 很可能就是 Beatmap.</p>
+
+
+
+<div class="wp-block-image"><figure class="aligncenter size-large"><img loading="lazy" width="638" height="270" src="/wp-content/uploads/2020/02/snipaste_20200201_145311.png" alt="" class="wp-image-608" srcset="/wp-content/uploads/2020/02/snipaste_20200201_145311.png 638w, /wp-content/uploads/2020/02/snipaste_20200201_145311-300x127.png 300w" sizes="(max-width: 638px) 100vw, 638px"></figure></div>
+
+
+
+<p>由于这些 Cube 都采用了几乎相同的初始化方案, 不妨试一下直接给 <code>cube.KeyFrames</code> 赋个值.</p>
+
+
+
+<figure class="wp-block-video aligncenter"><video controls src="/wp-content/uploads/2020/02/output.webm"></video><figcaption> 这个视频我已经尽量压了&#8230;实在是没办法减小到50M内 </figcaption></figure>
+
+
+
+<p>所以就变成全自动了 <img src="/wp-content/plugins/tiebaface/images/yellow_16.png" style="width: 24px !important;height: 24px !important;min-height: 0 !important;">, 一路上都没见到啥特别的, 但是在最后我们可以看到路上躺了一个蜜汁字符串.</p>
+
+
+
+<div class="wp-block-image"><figure class="aligncenter size-large"><img loading="lazy" width="1024" height="418" src="/wp-content/uploads/2020/02/snipaste_20200201_150917-1024x418.png" alt="" class="wp-image-609" srcset="/wp-content/uploads/2020/02/snipaste_20200201_150917-1024x418.png 1024w, /wp-content/uploads/2020/02/snipaste_20200201_150917-300x122.png 300w, /wp-content/uploads/2020/02/snipaste_20200201_150917-768x313.png 768w, /wp-content/uploads/2020/02/snipaste_20200201_150917.png 1037w" sizes="(max-width: 1024px) 100vw, 1024px"></figure></div>
+
+
+
+<p>不难看出这个字符串是一个 3D 对象, 所以我们来请求里面找一下, 发现了一个很可疑的 <code>secret.obj</code></p>
+
+
+
+<div class="wp-block-image"><figure class="aligncenter size-large"><img loading="lazy" width="1024" height="467" src="/wp-content/uploads/2020/02/snipaste_20200201_151018-1024x467.png" alt="" class="wp-image-611" srcset="/wp-content/uploads/2020/02/snipaste_20200201_151018-1024x467.png 1024w, /wp-content/uploads/2020/02/snipaste_20200201_151018-300x137.png 300w, /wp-content/uploads/2020/02/snipaste_20200201_151018-768x350.png 768w, /wp-content/uploads/2020/02/snipaste_20200201_151018-1536x700.png 1536w, /wp-content/uploads/2020/02/snipaste_20200201_151018.png 1659w" sizes="(max-width: 1024px) 100vw, 1024px"></figure></div>
+
+
+
+<p>在 WebGL 里加载的 .obj 文件八成是 3D 模型, 直接扔进 Blender <s><em>我也不知道为什么我 Steam 库里有这玩意反正就是有</em></s>, 得到 Flag, 完成.</p>
+
+
+
+<h2>0x1E xuanjiang</h2>
+
+
+
+<div class="wp-block-image"><figure class="aligncenter size-large"><img loading="lazy" width="680" height="304" src="/wp-content/uploads/2020/02/snipaste_20200201_175054.png" alt="" class="wp-image-614" srcset="/wp-content/uploads/2020/02/snipaste_20200201_175054.png 680w, /wp-content/uploads/2020/02/snipaste_20200201_175054-300x134.png 300w" sizes="(max-width: 680px) 100vw, 680px"></figure></div>
+
+
+
+<p>宣讲? 那是什么东西我不知道啊.jpg 不过题还是要做的.</p>
+
+
+
+<div class="wp-block-image"><figure class="aligncenter size-large"><img loading="lazy" width="595" height="481" src="/wp-content/uploads/2020/02/snipaste_20200201_175135.png" alt="" class="wp-image-615" srcset="/wp-content/uploads/2020/02/snipaste_20200201_175135.png 595w, /wp-content/uploads/2020/02/snipaste_20200201_175135-300x243.png 300w" sizes="(max-width: 595px) 100vw, 595px"></figure></div>
+
+
+
+<p>看一眼题, 大概有三个地方需要绕过, 都是很简单的玩意. 这个也是送分题.</p>
+
+
+
+<div class="wp-block-image"><figure class="aligncenter size-large"><img loading="lazy" width="717" height="597" src="/wp-content/uploads/2020/02/snipaste_20200201_175304.png" alt="" class="wp-image-617" srcset="/wp-content/uploads/2020/02/snipaste_20200201_175304.png 717w, /wp-content/uploads/2020/02/snipaste_20200201_175304-300x250.png 300w" sizes="(max-width: 717px) 100vw, 717px"></figure></div>
+
+
+
+<p>第一处, 利用 PHP 在比较 int 和 string 的时候会截断 string 最前面的数字进行比较就可以过.</p>
+
+
+
+<div class="wp-block-image"><figure class="aligncenter size-large"><img loading="lazy" width="600" height="535" src="/wp-content/uploads/2020/02/snipaste_20200201_175440.png" alt="" class="wp-image-618" srcset="/wp-content/uploads/2020/02/snipaste_20200201_175440.png 600w, /wp-content/uploads/2020/02/snipaste_20200201_175440-300x268.png 300w" sizes="(max-width: 600px) 100vw, 600px"></figure></div>
+
+
+
+<p>第二处整个 URL 编码就可以过了&#8230; <code>#'&amp;</code> -&gt; <code>%23%27%26</code></p>
+
+
+
+<div class="wp-block-image"><figure class="aligncenter size-large"><img loading="lazy" width="867" height="586" src="/wp-content/uploads/2020/02/snipaste_20200201_175559.png" alt="" class="wp-image-619" srcset="/wp-content/uploads/2020/02/snipaste_20200201_175559.png 867w, /wp-content/uploads/2020/02/snipaste_20200201_175559-300x203.png 300w, /wp-content/uploads/2020/02/snipaste_20200201_175559-768x519.png 768w" sizes="(max-width: 867px) 100vw, 867px"></figure></div>
+
+
+
+<p>第三处, 由于 stripos 返回的是字符串首次出现的位置, 只要我们提交的 Payload 里开头就是 flag, 这个判断条件就变成了 0 &gt; 1, 就可以到下一步, 完成.</p>
+
+
+
+<h2>0x1F rop_1</h2>
+
+
+
+<div class="wp-block-image"><figure class="aligncenter size-large"><img loading="lazy" width="624" height="431" src="/wp-content/uploads/2020/02/snipaste_20200202_141407.png" alt="" class="wp-image-620" srcset="/wp-content/uploads/2020/02/snipaste_20200202_141407.png 624w, /wp-content/uploads/2020/02/snipaste_20200202_141407-300x207.png 300w" sizes="(max-width: 624px) 100vw, 624px"></figure></div>
+
+
+
+<p>啊, 懒得写了, 大致思路就是找块空内存, 调用 read 读一下 <code>/bin/sh</code> 然后跳到 system 执行就好了. 中间踩了不少坑, 我的 PWN 还是蔡.</p>
+
+
+
+<div class="wp-block-image"><figure class="aligncenter size-large"><img loading="lazy" width="525" height="483" src="/wp-content/uploads/2020/02/snipaste_20200202_141556.png" alt="" class="wp-image-622" srcset="/wp-content/uploads/2020/02/snipaste_20200202_141556.png 525w, /wp-content/uploads/2020/02/snipaste_20200202_141556-300x276.png 300w" sizes="(max-width: 525px) 100vw, 525px"></figure></div>
+
+
+
+<p>直接放 Payload 吧</p>
+
+
+
+<h2>0x20 消失的flag</h2>
+
+
+
+<div class="wp-block-image"><figure class="aligncenter size-large"><img loading="lazy" width="621" height="313" src="/wp-content/uploads/2020/02/snipaste_20200202_182938.png" alt="" class="wp-image-623" srcset="/wp-content/uploads/2020/02/snipaste_20200202_182938.png 621w, /wp-content/uploads/2020/02/snipaste_20200202_182938-300x151.png 300w" sizes="(max-width: 621px) 100vw, 621px"></figure></div>
+
+
+
+<div class="wp-block-image"><figure class="aligncenter size-large"><img loading="lazy" width="1024" height="344" src="/wp-content/uploads/2020/02/snipaste_20200202_194020-1024x344.png" alt="" class="wp-image-624" srcset="/wp-content/uploads/2020/02/snipaste_20200202_194020-1024x344.png 1024w, /wp-content/uploads/2020/02/snipaste_20200202_194020-300x101.png 300w, /wp-content/uploads/2020/02/snipaste_20200202_194020-768x258.png 768w, /wp-content/uploads/2020/02/snipaste_20200202_194020.png 1210w" sizes="(max-width: 1024px) 100vw, 1024px"></figure></div>
+
+
+
+<p>拿到程序先跑一下, 发现输出了一些很像 ASCII 字符画的东西.</p>
+
+
+
+<div class="wp-block-image"><figure class="aligncenter size-large"><img loading="lazy" width="472" height="333" src="/wp-content/uploads/2020/02/snipaste_20200202_194106.png" alt="" class="wp-image-625" srcset="/wp-content/uploads/2020/02/snipaste_20200202_194106.png 472w, /wp-content/uploads/2020/02/snipaste_20200202_194106-300x212.png 300w" sizes="(max-width: 472px) 100vw, 472px"></figure></div>
+
+
+
+<p>丢进 IDA 看一眼, 发现这里用随机数输出的方式来打印各行, 算法比较绕不好分析.</p>
+
+
+
+<div class="wp-block-image"><figure class="aligncenter size-large"><img loading="lazy" width="918" height="460" src="/wp-content/uploads/2020/02/snipaste_20200202_194217.png" alt="" class="wp-image-626" srcset="/wp-content/uploads/2020/02/snipaste_20200202_194217.png 918w, /wp-content/uploads/2020/02/snipaste_20200202_194217-300x150.png 300w, /wp-content/uploads/2020/02/snipaste_20200202_194217-768x385.png 768w" sizes="(max-width: 918px) 100vw, 918px"></figure></div>
+
+
+
+<p>但是我们可以根据题目意思将种子 Patch 为 0, 然后直接运行就可以出结果了.</p>
+
+
+
+<div class="wp-block-image"><figure class="aligncenter size-large"><img loading="lazy" width="1024" height="131" src="/wp-content/uploads/2020/02/snipaste_20200202_194301-1024x131.png" alt="" class="wp-image-627" srcset="/wp-content/uploads/2020/02/snipaste_20200202_194301-1024x131.png 1024w, /wp-content/uploads/2020/02/snipaste_20200202_194301-300x38.png 300w, /wp-content/uploads/2020/02/snipaste_20200202_194301-768x98.png 768w, /wp-content/uploads/2020/02/snipaste_20200202_194301-1536x196.png 1536w, /wp-content/uploads/2020/02/snipaste_20200202_194301.png 1935w" sizes="(max-width: 1024px) 100vw, 1024px"></figure></div>
+
+
+
+<p>如果屏幕不够宽可以把自动换行关掉查看.</p>
+
+
+
+<h2>0x21 ez_cpp</h2>
+
+
+
+<div class="wp-block-image"><figure class="aligncenter size-large"><img loading="lazy" width="633" height="321" src="/wp-content/uploads/2020/02/snipaste_20200202_211044.png" alt="" class="wp-image-628" srcset="/wp-content/uploads/2020/02/snipaste_20200202_211044.png 633w, /wp-content/uploads/2020/02/snipaste_20200202_211044-300x152.png 300w" sizes="(max-width: 633px) 100vw, 633px"></figure></div>
+
+
+
+<div class="wp-block-image"><figure class="aligncenter size-large"><img loading="lazy" width="1024" height="521" src="/wp-content/uploads/2020/02/snipaste_20200202_213215-1024x521.png" alt="" class="wp-image-630" srcset="/wp-content/uploads/2020/02/snipaste_20200202_213215-1024x521.png 1024w, /wp-content/uploads/2020/02/snipaste_20200202_213215-300x153.png 300w, /wp-content/uploads/2020/02/snipaste_20200202_213215-768x391.png 768w, /wp-content/uploads/2020/02/snipaste_20200202_213215.png 1172w" sizes="(max-width: 1024px) 100vw, 1024px"></figure></div>
+
+
+
+<div class="wp-block-image"><figure class="aligncenter size-large"><img loading="lazy" width="596" height="329" src="/wp-content/uploads/2020/02/snipaste_20200202_211406.png" alt="" class="wp-image-629" srcset="/wp-content/uploads/2020/02/snipaste_20200202_211406.png 596w, /wp-content/uploads/2020/02/snipaste_20200202_211406-300x166.png 300w" sizes="(max-width: 596px) 100vw, 596px"></figure></div>
+
+
+
+<p>拿到程序丢进 IDA, 这不像是 cpp 啊&#8230; 掏出 DIE 看一眼, 原来是外面套了个 UPX, 直接使用 <code>upx -d</code> 就可以解开.</p>
+
+
+
+<div class="wp-block-image"><figure class="aligncenter size-large"><img loading="lazy" width="928" height="612" src="/wp-content/uploads/2020/02/snipaste_20200202_212957.png" alt="" class="wp-image-631" srcset="/wp-content/uploads/2020/02/snipaste_20200202_212957.png 928w, /wp-content/uploads/2020/02/snipaste_20200202_212957-300x198.png 300w, /wp-content/uploads/2020/02/snipaste_20200202_212957-768x506.png 768w" sizes="(max-width: 928px) 100vw, 928px"></figure></div>
+
+
+
+<p>解开后直接分析 main 函数, 前面的都是一些输出, 可以看到在这里构建了一个<em>一看就不是STL函数</em> 的 <code>Str1ng</code>. 并且将 <code>SUSCTF{this^1s^n0t^fl4g}</code> 作为参数之一传入.</p>
+
+
+
+<div class="wp-block-image"><figure class="aligncenter size-large"><img loading="lazy" width="744" height="335" src="/wp-content/uploads/2020/02/snipaste_20200202_213635.png" alt="" class="wp-image-633" srcset="/wp-content/uploads/2020/02/snipaste_20200202_213635.png 744w, /wp-content/uploads/2020/02/snipaste_20200202_213635-300x135.png 300w" sizes="(max-width: 744px) 100vw, 744px"></figure></div>
+
+
+
+<p>追进 Str1ng 可以看到这个函数中读取了我们的输入内容, 然后作为参数传给 <code>Str2ng::trans</code> 函数.</p>
+
+
+
+<p>之前传入的那个字符串被作为 <code>Str2ng::Str2ng</code> 的参数之一. 这个函数只是简单的进行了赋值, 没什么特别的.</p>
+
+
+
+<div class="wp-block-image"><figure class="aligncenter size-large"><img loading="lazy" width="1024" height="358" src="/wp-content/uploads/2020/02/snipaste_20200202_213919-1024x358.png" alt="" class="wp-image-634" srcset="/wp-content/uploads/2020/02/snipaste_20200202_213919-1024x358.png 1024w, /wp-content/uploads/2020/02/snipaste_20200202_213919-300x105.png 300w, /wp-content/uploads/2020/02/snipaste_20200202_213919-768x269.png 768w, /wp-content/uploads/2020/02/snipaste_20200202_213919.png 1072w" sizes="(max-width: 1024px) 100vw, 1024px"></figure></div>
+
+
+
+<p>下一步追进 <code>Str2ng::trans</code> 函数, 发现之前传入的 a2 其实只是一个 char, 并且使用的时候进行了一个 <code>a2 - '0'</code> 的操作, 很容易联想到可能是要输入一个数字.</p>
+
+
+
+<p>继续分析代码, 代码将 <code>this[i]</code> 进行 XOR 操作, 并且是从 <code>i = 7</code> 开始的, 刚好跳过了上面字符串中的 <code>SUSCTF{</code> 这几个字.</p>
+
+
+
+<div class="wp-block-image"><figure class="aligncenter size-large"><img loading="lazy" width="518" height="228" src="/wp-content/uploads/2020/02/snipaste_20200202_214147.png" alt="" class="wp-image-635" srcset="/wp-content/uploads/2020/02/snipaste_20200202_214147.png 518w, /wp-content/uploads/2020/02/snipaste_20200202_214147-300x132.png 300w" sizes="(max-width: 518px) 100vw, 518px"></figure></div>
+
+
+
+<p>接下来就简单了, 暂时不去分析 out 中判断输入是否正确的操作, 我们先把数字 0-9 试一遍. 运气还不错, 在输入 1 的时候就拿到了 flag.</p>
+
+
+
+<h2>0x22 ret2moon</h2>
+
+
+
+<div class="wp-block-image"><figure class="aligncenter size-large"><img loading="lazy" width="616" height="396" src="/wp-content/uploads/2020/02/snipaste_20200202_230603.png" alt="" class="wp-image-637" srcset="/wp-content/uploads/2020/02/snipaste_20200202_230603.png 616w, /wp-content/uploads/2020/02/snipaste_20200202_230603-300x193.png 300w" sizes="(max-width: 616px) 100vw, 616px"></figure></div>
+
+
+
+<div class="wp-block-image"><figure class="aligncenter size-large"><img loading="lazy" width="312" height="149" src="/wp-content/uploads/2020/02/snipaste_20200202_220350.png" alt="" class="wp-image-639" srcset="/wp-content/uploads/2020/02/snipaste_20200202_220350.png 312w, /wp-content/uploads/2020/02/snipaste_20200202_220350-300x143.png 300w" sizes="(max-width: 312px) 100vw, 312px"></figure></div>
+
+
+
+<p>拿到题目跑 checksec 的时候发现开了一堆保护, 初步估计是不能直接写返回地址跳转了.</p>
+
+
+
+<div class="wp-block-image"><figure class="aligncenter size-large"><img loading="lazy" width="984" height="768" src="/wp-content/uploads/2020/02/snipaste_20200202_230437.png" alt="" class="wp-image-638" srcset="/wp-content/uploads/2020/02/snipaste_20200202_230437.png 984w, /wp-content/uploads/2020/02/snipaste_20200202_230437-300x234.png 300w, /wp-content/uploads/2020/02/snipaste_20200202_230437-768x599.png 768w" sizes="(max-width: 984px) 100vw, 984px"></figure></div>
+
+
+
+<p>丢进 IDA, 检查字符串的时候发现一个 <code>system("/bin/sh")</code>, 这块代码本来是没分析出函数的, 就紧跟在 main 下面. 总之思路肯定是跳转到这个函数, 只是暂时不确定如何操作.</p>
+
+
+
+<div class="wp-block-image"><figure class="aligncenter size-large"><img loading="lazy" width="605" height="347" src="/wp-content/uploads/2020/02/snipaste_20200202_230405.png" alt="" class="wp-image-640" srcset="/wp-content/uploads/2020/02/snipaste_20200202_230405.png 605w, /wp-content/uploads/2020/02/snipaste_20200202_230405-300x172.png 300w" sizes="(max-width: 605px) 100vw, 605px"></figure></div>
+
+
+
+<p>检查输入函数的时候发现了一个可控的偏移量 target, 这里就比较有意思了.</p>
+
+
+
+<p>如果我们的 target 足够大, 就可以超过 buf 然后淹到堆栈上面. 注意到下面又输入了一个 char, 再结合上面 main 函数的返回地址和 moon 函数的入口地址只差了最后一个字节, 大致就有了利用思路.</p>
+
+
+
+<div class="wp-block-image"><figure class="aligncenter size-large"><img loading="lazy" width="897" height="560" src="/wp-content/uploads/2020/02/snipaste_20200202_231338.png" alt="" class="wp-image-641" srcset="/wp-content/uploads/2020/02/snipaste_20200202_231338.png 897w, /wp-content/uploads/2020/02/snipaste_20200202_231338-300x187.png 300w, /wp-content/uploads/2020/02/snipaste_20200202_231338-768x479.png 768w" sizes="(max-width: 897px) 100vw, 897px"></figure></div>
+
+
+
+<p>查看反汇编, 计算出我们需要的 target 值是 <code>0x30 + 8</code>, 接下来的事情就简单了.</p>
+
+
+
+<div class="wp-block-image"><figure class="aligncenter size-large"><img loading="lazy" width="519" height="334" src="/wp-content/uploads/2020/02/snipaste_20200202_231441.png" alt="" class="wp-image-642" srcset="/wp-content/uploads/2020/02/snipaste_20200202_231441.png 519w, /wp-content/uploads/2020/02/snipaste_20200202_231441-300x193.png 300w" sizes="(max-width: 519px) 100vw, 519px"></figure></div>
+
+
+
+<p>构造一个简单的脚本, 执行即可获得 shell, 完成.</p>
+		<h2 class="post_h_quote">SUS2019 新春欢乐赛-Writeup</h2>
+</div>				<nav id="post_nav">
+					<span id="p_n_l"><a href="/archives/chromium-setup-api-keys/" rel="prev">&larr; 为 Chromium 设置 API Key 使用 Google 服务</a></span>
+					<span id="p_n_r"><a href="/archives/hacktm-ctf-2020-writeup/" rel="next">HackTM CTF 2020 Writeup &rarr;</a></span>
+				</nav>
+				
+<div id="cmt" class="cmt">
+	
+	</div>			</article>
+			</div>
+</div>
+
+<div id="sidebar">
+	<div class="widget" id="one">
+			</div>
+	<div class="widget" id="two">
+			</div>
+	<div class="clearfix"></div>
+</div>
+<footer id="footer" role="contentinfo">
+    
+    <a href="http://dimpurr.com/" title="Dimpurr (钉子)" target="_blank">Dimpurr</a>'s
+    <a href="http://blog.dimpurr.com/clearision/" title="Clearision" target="_blank">Clearision</a><br>
+    Powered by <a href="https://wordpress.org/" title="WordPress" target="_blank">WordPress</a>
+
+    <script src="/wp-content/themes/clearision/js/script.js" type="text/javascript"></script>
+    <script type="text/javascript" src="/wp-includes/js/wp-embed.min.js?ver=5.8" id="wp-embed-js"></script>
+</footer>
+
+</div>
+</body>
+</html>
